@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E4BB5731BB410240043C80C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5721BB410240043C80C /* AppDelegate.swift */; };
-		4E4BB5751BB410240043C80C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5741BB410240043C80C /* ViewController.swift */; };
-		4E4BB5781BB410240043C80C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E4BB5761BB410240043C80C /* Main.storyboard */; };
-		4E4BB57A1BB410240043C80C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E4BB5791BB410240043C80C /* Assets.xcassets */; };
-		4E4BB57D1BB410240043C80C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E4BB57B1BB410240043C80C /* LaunchScreen.storyboard */; };
 		4E4BB5881BB410240043C80C /* ELColorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5871BB410240043C80C /* ELColorGameTests.swift */; };
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
+		9A61DB5818A569AF036CBEA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6C83B9E80E9C361916BDFE /* Main.storyboard */; };
+		9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */; };
+		9A6996BD7D6701CD3B528077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A603B96F16924EAF14D8E07 /* Assets.xcassets */; };
+		9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66DDEC747665108D8A2ACD /* AppDelegate.swift */; };
+		9A6EA39412E55D4F4EF594A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E06221E3F87BB9065AF54 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +35,18 @@
 
 /* Begin PBXFileReference section */
 		4E4BB56F1BB410240043C80C /* ELColorGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELColorGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E4BB5721BB410240043C80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E4BB5741BB410240043C80C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4E4BB5771BB410240043C80C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4E4BB5791BB410240043C80C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4E4BB57C1BB410240043C80C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4E4BB57E1BB410240043C80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E4BB5831BB410240043C80C /* ELColorGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELColorGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4BB5871BB410240043C80C /* ELColorGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELColorGameTests.swift; sourceTree = "<group>"; };
 		4E4BB5891BB410240043C80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E4BB58E1BB410240043C80C /* ELColorGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELColorGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELColorGameUITests.swift; sourceTree = "<group>"; };
 		4E4BB5941BB410240043C80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A603B96F16924EAF14D8E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A627BB6505FDE67148A5621 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ELColorGame/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		9A650A8C4C3305EB21B9D1D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		9A66DDEC747665108D8A2ACD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A67096A98AF85E62A342136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ELColorGame/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		9A6E06221E3F87BB9065AF54 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 		4E4BB5661BB410240043C80C = {
 			isa = PBXGroup;
 			children = (
-				4E4BB5711BB410240043C80C /* ELColorGame */,
+				9A6AAEA3D9B549575A831B3F /* ELColorGame */,
 				4E4BB5861BB410240043C80C /* ELColorGameTests */,
 				4E4BB5911BB410240043C80C /* ELColorGameUITests */,
 				4E4BB5701BB410240043C80C /* Products */,
@@ -92,19 +92,6 @@
 				4E4BB58E1BB410240043C80C /* ELColorGameUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		4E4BB5711BB410240043C80C /* ELColorGame */ = {
-			isa = PBXGroup;
-			children = (
-				4E4BB5721BB410240043C80C /* AppDelegate.swift */,
-				4E4BB5741BB410240043C80C /* ViewController.swift */,
-				4E4BB5761BB410240043C80C /* Main.storyboard */,
-				4E4BB5791BB410240043C80C /* Assets.xcassets */,
-				4E4BB57B1BB410240043C80C /* LaunchScreen.storyboard */,
-				4E4BB57E1BB410240043C80C /* Info.plist */,
-			);
-			path = ELColorGame;
 			sourceTree = "<group>";
 		};
 		4E4BB5861BB410240043C80C /* ELColorGameTests */ = {
@@ -123,6 +110,51 @@
 				4E4BB5941BB410240043C80C /* Info.plist */,
 			);
 			path = ELColorGameUITests;
+			sourceTree = "<group>";
+		};
+		9A6178CD868CFEC84CFB11A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A650A8C4C3305EB21B9D1D9 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A620445F29B8D4640417471 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9A603B96F16924EAF14D8E07 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9A67B30A97BB292EC48615D9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9A66DDEC747665108D8A2ACD /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		9A6838F502088CA9E0C0FEA1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */,
+				9A6C83B9E80E9C361916BDFE /* Main.storyboard */,
+				9A6E06221E3F87BB9065AF54 /* ViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9A6AAEA3D9B549575A831B3F /* ELColorGame */ = {
+			isa = PBXGroup;
+			children = (
+				9A67B30A97BB292EC48615D9 /* Application */,
+				9A6178CD868CFEC84CFB11A4 /* Supporting Files */,
+				9A620445F29B8D4640417471 /* Resources */,
+				9A6838F502088CA9E0C0FEA1 /* UI */,
+			);
+			path = ELColorGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +260,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E4BB57D1BB410240043C80C /* LaunchScreen.storyboard in Resources */,
-				4E4BB57A1BB410240043C80C /* Assets.xcassets in Resources */,
-				4E4BB5781BB410240043C80C /* Main.storyboard in Resources */,
+				9A6996BD7D6701CD3B528077 /* Assets.xcassets in Resources */,
+				9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */,
+				9A61DB5818A569AF036CBEA1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E4BB5751BB410240043C80C /* ViewController.swift in Sources */,
-				4E4BB5731BB410240043C80C /* AppDelegate.swift in Sources */,
+				9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */,
+				9A6EA39412E55D4F4EF594A4 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,18 +324,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4E4BB5761BB410240043C80C /* Main.storyboard */ = {
+		9A6C83B9E80E9C361916BDFE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4E4BB5771BB410240043C80C /* Base */,
+				9A627BB6505FDE67148A5621 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		4E4BB57B1BB410240043C80C /* LaunchScreen.storyboard */ = {
+		9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4E4BB57C1BB410240043C80C /* Base */,
+				9A67096A98AF85E62A342136 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -398,7 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ELColorGame/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ELColorGame/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.ELColorGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,7 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ELColorGame/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ELColorGame/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.ELColorGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,6 +515,7 @@
 				4E4BB5991BB410240043C80C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E4BB59A1BB410240043C80C /* Build configuration list for PBXNativeTarget "ELColorGameTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +524,7 @@
 				4E4BB59C1BB410240043C80C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E4BB59D1BB410240043C80C /* Build configuration list for PBXNativeTarget "ELColorGameUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +533,7 @@
 				4E4BB59F1BB410240043C80C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
