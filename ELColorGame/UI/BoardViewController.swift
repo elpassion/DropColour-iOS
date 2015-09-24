@@ -102,7 +102,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     
     func pointDidChanged(point: CGPoint) {
         print("point:\(point)")
-        var indexOfArray = Int(arc4random()) % circleViewsArray.count
+        let indexOfArray = Int(arc4random()) % circleViewsArray.count
         circleViewsArray[indexOfArray].animation = "zoomIn"
         circleViewsArray[indexOfArray].animateNext { () -> () in
             self.circleViewsArray[indexOfArray].removeFromSuperview()
