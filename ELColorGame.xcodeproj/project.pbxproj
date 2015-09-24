@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E2943B61BB425D0006E6B2A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2943B51BB425D0006E6B2A /* CircleView.swift */; settings = {ASSET_TAGS = (); }; };
 		4E4BB5881BB410240043C80C /* ELColorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5871BB410240043C80C /* ELColorGameTests.swift */; };
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
 		9A61DB5818A569AF036CBEA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6C83B9E80E9C361916BDFE /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E2943B51BB425D0006E6B2A /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		4E4BB56F1BB410240043C80C /* ELColorGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELColorGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4BB5831BB410240043C80C /* ELColorGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELColorGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4BB5871BB410240043C80C /* ELColorGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELColorGameTests.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */,
 				9A6C83B9E80E9C361916BDFE /* Main.storyboard */,
 				9A6E06221E3F87BB9065AF54 /* BoardViewController.swift */,
+				4E2943B51BB425D0006E6B2A /* CircleView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2943B61BB425D0006E6B2A /* CircleView.swift in Sources */,
 				9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */,
 				9A6EA39412E55D4F4EF594A4 /* BoardViewController.swift in Sources */,
 			);
