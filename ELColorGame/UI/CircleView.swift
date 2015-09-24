@@ -40,7 +40,7 @@ class CircleView: UIView {
     func detectTouch(recognizer:UIPanGestureRecognizer) {
         let translation = recognizer.translationInView(self.superview)
         self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
-        
+
         print("center\(self.center)")
         if (delegate != nil) {
             let point:CGPoint = self.center
