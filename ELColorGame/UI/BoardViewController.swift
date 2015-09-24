@@ -9,11 +9,14 @@
 import UIKit
 
 class BoardViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let grid_x = 6
-        let grid_y = 9
+        configureBoard()
+    }
+    func configureBoard() {
+        let grid_x = 7
+        let grid_y = 10
         let dimensionSingleCell = 50
         for var y = 0; y < grid_y; y++ {
             for var x = 0; x < grid_x; x++ {
@@ -22,7 +25,6 @@ class BoardViewController: UIViewController {
                 self.view.addSubview(ballView)
             }
         }
-
     }
 }
 
