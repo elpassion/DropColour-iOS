@@ -12,6 +12,7 @@
 		4E4BB5881BB410240043C80C /* ELColorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5871BB410240043C80C /* ELColorGameTests.swift */; };
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
 		4E4D9EA91BB4A87F001104C7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D9EA81BB4A87F001104C7 /* StartViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAD1BB4B11A001104C7 /* Fonts.swift */; settings = {ASSET_TAGS = (); }; };
 		9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */; };
 		9A6996BD7D6701CD3B528077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A603B96F16924EAF14D8E07 /* Assets.xcassets */; };
 		9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66DDEC747665108D8A2ACD /* AppDelegate.swift */; };
@@ -46,6 +47,8 @@
 		4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELColorGameUITests.swift; sourceTree = "<group>"; };
 		4E4BB5941BB410240043C80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E4D9EA81BB4A87F001104C7 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BebasNeueBold.otf; path = ../../../../../../Downloads/Dropcolor/bebas/BebasNeueBold.otf; sourceTree = "<group>"; };
+		4E4D9EAD1BB4B11A001104C7 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		9A603B96F16924EAF14D8E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A650A8C4C3305EB21B9D1D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		9A66DDEC747665108D8A2ACD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,8 +145,17 @@
 			isa = PBXGroup;
 			children = (
 				9A603B96F16924EAF14D8E07 /* Assets.xcassets */,
+				9A6DDE6BEB95CEFD8F23BD71 /* Fonts */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9A626FF127B52599D55ED20B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4E4D9EAD1BB4B11A001104C7 /* Fonts.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9A67B30A97BB292EC48615D9 /* Application */ = {
@@ -152,6 +164,14 @@
 				9A66DDEC747665108D8A2ACD /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		9A67E335396F17EF76E29551 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9A626FF127B52599D55ED20B /* Fonts */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9A6838F502088CA9E0C0FEA1 /* UI */ = {
@@ -172,8 +192,17 @@
 				9A6178CD868CFEC84CFB11A4 /* Supporting Files */,
 				9A620445F29B8D4640417471 /* Resources */,
 				9A6838F502088CA9E0C0FEA1 /* UI */,
+				9A67E335396F17EF76E29551 /* Helpers */,
 			);
 			path = ELColorGame;
+			sourceTree = "<group>";
+		};
+		9A6DDE6BEB95CEFD8F23BD71 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9FBC9D9B73E2FB0AEAEBAFC9 /* Frameworks */ = {
@@ -365,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E2943B61BB425D0006E6B2A /* CircleView.swift in Sources */,
+				4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */,
 				4E4D9EA91BB4A87F001104C7 /* StartViewController.swift in Sources */,
 				9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */,
 				9A6EA39412E55D4F4EF594A4 /* BoardViewController.swift in Sources */,

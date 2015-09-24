@@ -21,6 +21,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         configureTopView()
         configureBackgroundBoardView()
         configureBoardView()
+        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
     }
     
     func configureTopView() {
@@ -98,4 +99,3 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         print("point:\(point)")
     }
 }
-
