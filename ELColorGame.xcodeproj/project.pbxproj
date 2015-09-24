@@ -11,7 +11,6 @@
 		4E2943B61BB425D0006E6B2A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2943B51BB425D0006E6B2A /* CircleView.swift */; settings = {ASSET_TAGS = (); }; };
 		4E4BB5881BB410240043C80C /* ELColorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5871BB410240043C80C /* ELColorGameTests.swift */; };
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
-		9A61DB5818A569AF036CBEA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6C83B9E80E9C361916BDFE /* Main.storyboard */; };
 		9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */; };
 		9A6996BD7D6701CD3B528077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A603B96F16924EAF14D8E07 /* Assets.xcassets */; };
 		9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66DDEC747665108D8A2ACD /* AppDelegate.swift */; };
@@ -46,7 +45,6 @@
 		4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELColorGameUITests.swift; sourceTree = "<group>"; };
 		4E4BB5941BB410240043C80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A603B96F16924EAF14D8E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9A627BB6505FDE67148A5621 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ELColorGame/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		9A650A8C4C3305EB21B9D1D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		9A66DDEC747665108D8A2ACD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A67096A98AF85E62A342136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ELColorGame/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */,
-				9A6C83B9E80E9C361916BDFE /* Main.storyboard */,
 				9A6E06221E3F87BB9065AF54 /* BoardViewController.swift */,
 				4E2943B51BB425D0006E6B2A /* CircleView.swift */,
 			);
@@ -292,7 +289,6 @@
 			files = (
 				9A6996BD7D6701CD3B528077 /* Assets.xcassets in Resources */,
 				9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */,
-				9A61DB5818A569AF036CBEA1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,14 +399,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9A6C83B9E80E9C361916BDFE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9A627BB6505FDE67148A5621 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
