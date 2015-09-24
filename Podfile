@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'ELColorGame' do
   pod 'SnapKit'
+  pod 'Spring'
 end
 
 target 'ELColorGameTests' do

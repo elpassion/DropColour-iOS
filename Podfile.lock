@@ -1,10 +1,13 @@
 PODS:
   - SnapKit (0.15.0)
+  - Spring (1.0.3)
 
 DEPENDENCIES:
   - SnapKit
+  - Spring
 
 SPEC CHECKSUMS:
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
 COCOAPODS: 0.38.2
