@@ -11,7 +11,7 @@ import SnapKit
 
 class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     
-    let diameterSingleCircle = 44
+    let diameterSingleCircle = 50
     var topView:UIView = UIView()
     var boardView:UIView = UIView()
     
