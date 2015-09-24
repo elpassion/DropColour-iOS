@@ -14,6 +14,9 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     let diameterSingleCircle = 50
     var topView:UIView = UIView()
     var boardView:UIView = UIView()
+    var circlePointsArray:[CGPoint] = []
+    var circleViewsArray:[CircleView] = []
+    var circleView:CircleView = CircleView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,13 +52,15 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         print("prossibleViewOnScreenVertically: \(possibleCircleOnY)")
         let spacing = (self.view.frame.size.width - CGFloat(diameterSingleCircle * grid_x)) / CGFloat(grid_x + 1)
         print("spacing\(spacing)")
-        var ballView: CircleView
         for var y = 0; y < grid_y; y++ {
             for var x = 0; x < grid_x; x++ {
-                ballView = CircleView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
-                ballView.delegate = self
-                ballView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
-                self.boardView.addSubview(ballView)
+                circleView = CircleView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
+                circleView.delegate = self
+                circleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
+                self.boardView.addSubview(circleView)
+                circlePointsArray.append(circleView.center)
+                circleViewsArray.append(circleView)
+                print(circlePointsArray)
             }
         }
         self.view.addSubview(boardView)
@@ -75,13 +80,13 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         let grid_x = possibleCircleOnX
         let grid_y = possibleCircleOnY
         let spacing = (self.view.frame.size.width - CGFloat(diameterSingleCircle * grid_x)) / CGFloat(grid_x + 1)
-        var ballView:UIView
+        var backgroundCircleView:UIView
         for var y = 0; y < grid_y; y++ {
             for var x = 0; x < grid_x; x++ {
-                ballView = UIView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
-                ballView.backgroundColor = UIColor(red:0.24, green:0.23, blue:0.37, alpha:1)
-                ballView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
-                self.boardView.addSubview(ballView)
+                backgroundCircleView = UIView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
+                backgroundCircleView.backgroundColor = UIColor(red:0.24, green:0.23, blue:0.37, alpha:1)
+                backgroundCircleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
+                self.boardView.addSubview(backgroundCircleView)
             }
         }
         self.view.addSubview(boardView)
