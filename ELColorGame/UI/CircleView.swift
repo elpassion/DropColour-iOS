@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Spring
 
 protocol CircleViewPointChangeDelegate {
     func pointDidChanged(point:CGPoint)
 }
 
-class CircleView: UIView {
+class CircleView: SpringView {
     
     var delegate:CircleViewPointChangeDelegate? = nil
     var lastLocation:CGPoint = CGPointMake(0, 0)
