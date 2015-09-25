@@ -148,7 +148,8 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     }
     
     func didTapOnPauseButton() {
-        print("pause button tapped")
+        let menuViewController = MenuViewController()
+        presentViewController(menuViewController, animated: true, completion: nil)
     }
     
     //Logic
