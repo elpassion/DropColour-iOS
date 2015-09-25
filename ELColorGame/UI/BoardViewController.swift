@@ -19,6 +19,8 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     var circleView:CircleView = CircleView()
     let pauseButton = UIButton(frame: CGRectZero)
     let restartButton = UIButton(frame: CGRectZero)
+    let scoreTextLabel:UILabel = UILabel(frame: CGRectZero)
+    let scoreNumberLabel:UILabel = UILabel(frame: CGRectZero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         configureBoardView()
         configureRestartButton()
         configurePauseButton()
+        configureScoreTextLabel()
     }
     
     func configureTopView() {
@@ -96,6 +99,27 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(0)
+        }
+    }
+    
+    func configureScoreTextLabel () {
+        scoreNumberLabel.text = "250"
+        scoreNumberLabel.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
+        scoreNumberLabel.font = UIFont(name: BebasNeueBold, size: 46)
+        self.view.addSubview(scoreNumberLabel)
+        
+        scoreNumberLabel.snp_makeConstraints { (make) -> Void in
+            make.centerX.equalTo(0)
+            make.top.equalTo(30)
+        }
+        
+        scoreTextLabel.text = "SCORE"
+        scoreTextLabel.font = UIFont(name: BebasNeueBold, size: 17)
+        scoreTextLabel.textColor = UIColor(red:0.49, green:0.46, blue:0.78, alpha:1)
+        self.view.addSubview(scoreTextLabel)
+        scoreTextLabel.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(scoreNumberLabel.snp_bottom)
+            make.centerX.equalTo(0)
         }
     }
     
