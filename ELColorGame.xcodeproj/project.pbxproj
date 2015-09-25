@@ -13,6 +13,7 @@
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
 		4E4D9EA91BB4A87F001104C7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D9EA81BB4A87F001104C7 /* StartViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAD1BB4B11A001104C7 /* Fonts.swift */; settings = {ASSET_TAGS = (); }; };
+		4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */; settings = {ASSET_TAGS = (); }; };
 		4EDD7FFB1BB556F10032DF1B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD7FFA1BB556F10032DF1B /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */; };
 		9A6996BD7D6701CD3B528077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A603B96F16924EAF14D8E07 /* Assets.xcassets */; };
@@ -48,7 +49,7 @@
 		4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELColorGameUITests.swift; sourceTree = "<group>"; };
 		4E4BB5941BB410240043C80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E4D9EA81BB4A87F001104C7 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BebasNeueBold.otf; path = ../../../../../../Downloads/Dropcolor/bebas/BebasNeueBold.otf; sourceTree = "<group>"; };
+		4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeueBold.otf; sourceTree = "<group>"; };
 		4E4D9EAD1BB4B11A001104C7 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4EDD7FFA1BB556F10032DF1B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9A603B96F16924EAF14D8E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -323,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A6996BD7D6701CD3B528077 /* Assets.xcassets in Resources */,
+				4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */,
 				9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
