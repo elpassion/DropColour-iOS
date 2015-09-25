@@ -53,6 +53,7 @@ class MenuViewController: UIViewController {
     func configureResumeButton() {
         resumeButton.setTitle("RESUME", forState: UIControlState.Normal)
         resumeButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
+        resumeButton.contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
         resumeButton.addTarget(self, action: Selector("didTapOnResumeButton"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(resumeButton)
         resumeButton.snp_makeConstraints { (make) -> Void in
@@ -61,7 +62,7 @@ class MenuViewController: UIViewController {
             make.centerX.equalTo(0)
             make.centerY.equalTo(0)
         }
-        resumeButton.setTitleColor(UIColor(hue:0.66, saturation:0.81, brightness:0.33, alpha:1), forState: UIControlState.Normal)
+        resumeButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         resumeButton.layer.cornerRadius = 27.5
         resumeButton.backgroundColor = UIColor(red:0, green:0.57, blue:0.99, alpha:1)
     }
@@ -73,6 +74,7 @@ class MenuViewController: UIViewController {
     func configureNewGameButton() {
         newGameButton.setTitle("NEW GAME", forState: UIControlState.Normal)
         newGameButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
+        newGameButton.contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
         newGameButton.addTarget(self, action: Selector("didTapOnNewGameButton"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(newGameButton)
         newGameButton.snp_makeConstraints { (make) -> Void in
@@ -81,7 +83,7 @@ class MenuViewController: UIViewController {
             make.height.equalTo(55)
             make.centerX.equalTo(0)
         }
-        newGameButton.setTitleColor(UIColor(hue:0.66, saturation:0.81, brightness:0.33, alpha:1), forState: UIControlState.Normal)
+        newGameButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         newGameButton.layer.cornerRadius = 27.5
         newGameButton.backgroundColor = UIColor(red:0.38, green:0.87, blue:0.1, alpha:1)
     }
@@ -94,6 +96,7 @@ class MenuViewController: UIViewController {
     func configureQuitButton() {
         quitButton.setTitle("QUIT", forState: UIControlState.Normal)
         quitButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
+        quitButton.contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
         quitButton.addTarget(self, action: Selector("didTapOnQuitButton"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(quitButton)
         quitButton.snp_makeConstraints { (make) -> Void in
@@ -102,7 +105,7 @@ class MenuViewController: UIViewController {
             make.height.equalTo(55)
             make.centerX.equalTo(0)
         }
-        quitButton.setTitleColor(UIColor(hue:0.66, saturation:0.81, brightness:0.33, alpha:1), forState: UIControlState.Normal)
+        quitButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         quitButton.layer.cornerRadius = 27.5
         quitButton.backgroundColor = UIColor(red:0.91, green:0.15, blue:0.33, alpha:1)
     }
