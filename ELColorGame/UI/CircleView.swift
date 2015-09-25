@@ -33,13 +33,7 @@ class CircleView: SpringView {
             UIColor(red:0.29, green:0.56, blue:0.89, alpha:1),
         ]
         self.backgroundColor = colorsArray[Int(arc4random() % 4)]
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.frame = self.bounds
-        gradient.colors = [CGColorCreateCopyWithAlpha(UIColor.whiteColor().CGColor, 0.15)!, CGColorCreateCopyWithAlpha(UIColor.blackColor().CGColor, 0.15)!]
-        self.layer.insertSublayer(gradient, atIndex: 0)
-        self.layer.cornerRadius = 20
-        self.clipsToBounds = true
-    
+        addGradientForView(self)
         initialPosition = self.center
     }
     
@@ -62,5 +56,14 @@ class CircleView: SpringView {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.superview?.bringSubviewToFront(self)
         lastLocation = self.center
+    }
+    
+    func addGradientForView(view: UIView) {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = self.bounds
+        gradient.colors = [CGColorCreateCopyWithAlpha(UIColor.whiteColor().CGColor, 0.15)!, CGColorCreateCopyWithAlpha(UIColor.blackColor().CGColor, 0.15)!]
+        self.layer.insertSublayer(gradient, atIndex: 0)
+        self.layer.cornerRadius = 20
+        self.clipsToBounds = true
     }
 }
