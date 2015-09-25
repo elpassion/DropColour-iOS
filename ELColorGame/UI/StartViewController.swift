@@ -34,7 +34,7 @@ class StartViewController: UIViewController {
     
     func configureNewGameButton() {
         newGameButton.setTitle("NEW GAME", forState: UIControlState.Normal)
-        newGameButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 20)
+        newGameButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
         newGameButton.addTarget(self, action: Selector("didTapOnButtonStart"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(newGameButton)
         newGameButton.snp_makeConstraints { (make) -> Void in

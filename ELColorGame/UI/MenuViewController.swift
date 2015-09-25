@@ -38,7 +38,7 @@ class MenuViewController: UIViewController {
     
     func configureResumeButton() {
         resumeButton.setTitle("RESUME", forState: UIControlState.Normal)
-        resumeButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 20)
+        resumeButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
         resumeButton.addTarget(self, action: Selector("didTapOnResumeButton"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(resumeButton)
         resumeButton.snp_makeConstraints { (make) -> Void in
@@ -58,7 +58,7 @@ class MenuViewController: UIViewController {
     
     func configureNewGameButton() {
         newGameButton.setTitle("NEW GAME", forState: UIControlState.Normal)
-        newGameButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 20)
+        newGameButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
         newGameButton.addTarget(self, action: Selector("didTapOnNewGameButton"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(newGameButton)
         newGameButton.snp_makeConstraints { (make) -> Void in
@@ -79,7 +79,7 @@ class MenuViewController: UIViewController {
     
     func configureQuitButton() {
         quitButton.setTitle("QUIT", forState: UIControlState.Normal)
-        quitButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 20)
+        quitButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
         quitButton.addTarget(self, action: Selector("didTapOnQuitButton"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(quitButton)
         quitButton.snp_makeConstraints { (make) -> Void in
