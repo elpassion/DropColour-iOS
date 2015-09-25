@@ -14,13 +14,14 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     let diameterSingleCircle = 50
     var topView:UIView = UIView()
     var boardView:UIView = UIView()
-    var circlePointsArray:[CGPoint] = []
+    var backgroundBoardView = UIView()
     var circleViewsArray:[CircleView] = []
     var circleView:CircleView = CircleView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
         configureTopView()
         configureBackgroundBoardView()
         configureBoardView()
@@ -28,7 +29,6 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     }
     
     func configureTopView() {
-        topView.backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
         self.view.addSubview(topView)
         topView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(0)
@@ -39,7 +39,6 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     }
     
     func configureBoardView() {
-        boardView.backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
         let sizeXscreen:Int = Int(self.view.frame.size.width)
         let sizeYscreen:Int = Int(self.view.frame.size.height) - Int(self.view.frame.size.height * 0.12)
         let possibleCircleOnX = (sizeXscreen - 100 - (sizeXscreen % diameterSingleCircle)) / diameterSingleCircle
@@ -58,9 +57,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
                 circleView.delegate = self
                 circleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
                 self.boardView.addSubview(circleView)
-                circlePointsArray.append(circleView.center)
                 circleViewsArray.append(circleView)
-                print(circlePointsArray)
             }
         }
         self.view.addSubview(boardView)
@@ -86,11 +83,11 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
                 backgroundCircleView = UIView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
                 backgroundCircleView.backgroundColor = UIColor(red:0.24, green:0.23, blue:0.37, alpha:1)
                 backgroundCircleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
-                self.boardView.addSubview(backgroundCircleView)
+                self.backgroundBoardView.addSubview(backgroundCircleView)
             }
         }
-        self.view.addSubview(boardView)
-        boardView.snp_makeConstraints { (make) -> Void in
+        self.view.addSubview(backgroundBoardView)
+        backgroundBoardView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(self.topView.snp_bottom)
             make.left.equalTo(0)
             make.right.equalTo(0)
@@ -100,12 +97,31 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     
     //Delegate method 
     
-    func pointDidChanged(point: CGPoint) {
-        print("point:\(point)")
-        let indexOfArray = Int(arc4random()) % circleViewsArray.count
-        circleViewsArray[indexOfArray].animation = "zoomIn"
-        circleViewsArray[indexOfArray].animateNext { () -> () in
-            self.circleViewsArray[indexOfArray].removeFromSuperview()
+    func pointDidChanged(initialPoint: CGPoint, view: CircleView) {
+//        print("point:\(initialPoint)")
+        
+        let possibleView = circleViewWith(view.center, overView: view)
+        if let possibleView = possibleView {
+            if let index = circleViewsArray.indexOf(possibleView) {
+                circleViewsArray.removeAtIndex(index)
+            }
+            if let index = circleViewsArray.indexOf(view) {
+                circleViewsArray.removeAtIndex(index)
+            }
+            possibleView.removeFromSuperview()
+            view.removeFromSuperview()
+        } else {
+            view.center = initialPoint
         }
+    }
+    //Logic
+    
+    func circleViewWith(point: CGPoint, overView: CircleView) -> CircleView? {
+        for circleView in circleViewsArray {
+            if CGRectContainsPoint(circleView.frame, point) && circleView != overView && overView.backgroundColor == circleView.backgroundColor {
+                return circleView
+            }
+        }
+        return nil
     }
 }

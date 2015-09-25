@@ -10,7 +10,7 @@ import UIKit
 import Spring
 
 protocol CircleViewPointChangeDelegate {
-    func pointDidChanged(point:CGPoint)
+    func pointDidChanged(initialPoint:CGPoint, view:CircleView)
 }
 
 class CircleView: SpringView {
@@ -18,6 +18,7 @@ class CircleView: SpringView {
     var delegate:CircleViewPointChangeDelegate? = nil
     var lastLocation:CGPoint = CGPointMake(0, 0)
     var colors:[UIColor] = []
+    var initialPosition:CGPoint = CGPoint()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,6 +33,7 @@ class CircleView: SpringView {
             UIColor(red:0.29, green:0.56, blue:0.89, alpha:1),
         ]
         self.backgroundColor = colors[Int(arc4random() % 4)]
+        initialPosition = self.center
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,18 +43,12 @@ class CircleView: SpringView {
     func detectTouch(recognizer:UIPanGestureRecognizer) {
         let translation = recognizer.translationInView(self.superview)
         self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
-
-        print("center\(self.center)")
-        if (delegate != nil) {
-            let point:CGPoint = self.center
-            delegate?.pointDidChanged(point)
-        }
-        
         if recognizer.state == .Began {
             print("began")
         } else if recognizer.state == .Changed {
             print("changed")
         } else if recognizer.state == .Ended {
+            delegate?.pointDidChanged(initialPosition, view: self)
             print("ended")
         }
     }
