@@ -15,10 +15,20 @@ class MenuViewController: UIViewController {
     let newGameButton = UIButton(frame: CGRectZero)
     let quitButton = UIButton(frame: CGRectZero)
     
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.modalPresentationStyle = UIModalPresentationStyle.Custom
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         self.view = UIView()
-        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.view.backgroundColor = UIColor.clearColor()
+        
         configureBlurEffectView()
         configureResumeButton()
         configureNewGameButton()
@@ -26,7 +36,7 @@ class MenuViewController: UIViewController {
     }
     
     func configureBlurEffectView () {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.contentView.backgroundColor = UIColor.clearColor()
         self.view.addSubview(blurEffectView)
