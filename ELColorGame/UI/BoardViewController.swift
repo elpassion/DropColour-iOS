@@ -102,8 +102,6 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     //Delegate method 
     
     func pointDidChanged(initialPoint: CGPoint, view: CircleView) {
-//        print("point:\(initialPoint)")
-        
         let possibleView = circleViewWith(view.center, overView: view)
         if let possibleView = possibleView {
             if let index = circleViewsArray.indexOf(possibleView) {
