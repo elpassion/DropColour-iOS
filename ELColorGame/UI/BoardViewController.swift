@@ -24,12 +24,12 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
+        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         configureTopView()
         configureBackgroundBoardView()
         configureBoardView()
         configureRestartButton()
         configurePauseButton()
-        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
     }
     
     func configureTopView() {
