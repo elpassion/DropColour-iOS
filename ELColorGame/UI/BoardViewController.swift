@@ -135,8 +135,14 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
             if let index = circleViewsArray.indexOf(view) {
                 circleViewsArray.removeAtIndex(index)
             }
-            possibleView.removeFromSuperview()
-            view.removeFromSuperview()
+            possibleView.animation = "zoomOut"
+            view.animation = "zoomOut"
+            possibleView.animateNext({ () -> () in
+                possibleView.removeFromSuperview()
+            })
+            view.animateNext({ () -> () in
+                view.removeFromSuperview()
+            })
         } else {
             view.center = initialPoint
         }
