@@ -16,6 +16,7 @@ class StartViewController: UIViewController {
     
     override func loadView() {
         self.view = UIView()
+        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         configureBackgroundImageView()
         configureNewGameButton()
     }
