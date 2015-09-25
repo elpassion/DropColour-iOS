@@ -144,7 +144,10 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
                 view.removeFromSuperview()
             })
         } else {
-            view.center = initialPoint
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                view.center = initialPoint
+                self.addBounceAnimation(view.layer)
+            })
         }
     }
     
@@ -191,5 +194,18 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
             }
         }
         return nil
+    }
+    
+    //Animation
+    
+    func addBounceAnimation(layer: CALayer) {
+        let keyFrame: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        keyFrame.values = [0.8, 0.9, 1.6, 1.0]
+        keyFrame.keyTimes = [0, 0.3, 0.75, 1]
+        keyFrame.duration = 0.4
+        keyFrame.removedOnCompletion = false
+        keyFrame.fillMode = kCAFillModeForwards
+        keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
+        layer.addAnimation(keyFrame, forKey: "transform.scale")
     }
 }
