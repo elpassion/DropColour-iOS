@@ -14,6 +14,8 @@ class MenuViewController: UIViewController {
     let resumeButton = UIButton(frame: CGRectZero)
     let newGameButton = UIButton(frame: CGRectZero)
     let quitButton = UIButton(frame: CGRectZero)
+    let pauseImageView = UIImageView(frame: CGRectZero)
+    let pauseLabelText = UILabel(frame: CGRectZero)
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -33,6 +35,8 @@ class MenuViewController: UIViewController {
         configureResumeButton()
         configureNewGameButton()
         configureQuitButton()
+        configurePauseLabelText()
+        configurePauseImageView()
     }
     
     func configureBlurEffectView () {
@@ -108,5 +112,24 @@ class MenuViewController: UIViewController {
         presentViewController(startViewController, animated: true, completion: nil)
     }
     
-
+    func configurePauseLabelText() {
+        pauseLabelText.text = "PAUSE"
+        pauseLabelText.font = UIFont(name: BebasNeueBold, size: 30)
+        pauseLabelText.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
+        self.view.addSubview(pauseLabelText)
+        pauseLabelText.snp_makeConstraints { (make) -> Void in
+            make.centerX.equalTo(0)
+            make.bottom.equalTo(resumeButton.snp_top).offset(-40)
+        }
+    }
+    
+    func configurePauseImageView () {
+        pauseImageView.image = UIImage(named: "pause_icon")
+        pauseImageView.contentMode = UIViewContentMode.ScaleAspectFit
+        self.view.addSubview(pauseImageView)
+        pauseImageView.snp_makeConstraints { (make) -> Void in
+            make.bottom.equalTo(pauseLabelText.snp_top).offset(-20)
+            make.centerX.equalTo(0)
+        }
+    }
 }
