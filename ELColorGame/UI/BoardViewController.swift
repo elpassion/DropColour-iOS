@@ -202,7 +202,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         let keyFrame: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         keyFrame.values = [0.8, 0.9, 1.6, 1.0]
         keyFrame.keyTimes = [0, 0.3, 0.75, 1]
-        keyFrame.duration = 0.4
+        keyFrame.duration = 0.3
         keyFrame.removedOnCompletion = false
         keyFrame.fillMode = kCAFillModeForwards
         keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
