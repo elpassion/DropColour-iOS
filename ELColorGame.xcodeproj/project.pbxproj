@@ -13,6 +13,8 @@
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
 		4E4D9EA91BB4A87F001104C7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D9EA81BB4A87F001104C7 /* StartViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAD1BB4B11A001104C7 /* Fonts.swift */; settings = {ASSET_TAGS = (); }; };
+		4E6B6E6B1BB59CCF0033EF7C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6B6E691BB59CCF0033EF7C /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
+		4E6B6E6C1BB59CCF0033EF7C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6B6E6A1BB59CCF0033EF7C /* Crashlytics.framework */; settings = {ASSET_TAGS = (); }; };
 		4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */; settings = {ASSET_TAGS = (); }; };
 		4EDD7FFB1BB556F10032DF1B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD7FFA1BB556F10032DF1B /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */; };
@@ -51,6 +53,8 @@
 		4E4D9EA81BB4A87F001104C7 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeueBold.otf; sourceTree = "<group>"; };
 		4E4D9EAD1BB4B11A001104C7 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		4E6B6E691BB59CCF0033EF7C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		4E6B6E6A1BB59CCF0033EF7C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		4EDD7FFA1BB556F10032DF1B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9A603B96F16924EAF14D8E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A650A8C4C3305EB21B9D1D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */,
+				4E6B6E6C1BB59CCF0033EF7C /* Crashlytics.framework in Frameworks */,
+				4E6B6E6B1BB59CCF0033EF7C /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +218,8 @@
 		9FBC9D9B73E2FB0AEAEBAFC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E6B6E691BB59CCF0033EF7C /* Fabric.framework */,
+				4E6B6E6A1BB59CCF0033EF7C /* Crashlytics.framework */,
 				EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */,
 			);
 			name = Frameworks;
@@ -230,6 +238,7 @@
 				4E4BB56D1BB410240043C80C /* Resources */,
 				B743410976E404A8A0A43A3A /* Embed Pods Frameworks */,
 				DE7B02E4421720D70E847F5F /* Copy Pods Resources */,
+				4E6B6E681BB59CAA0033EF7C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -360,6 +369,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		4E6B6E681BB59CAA0033EF7C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "./Fabric.framework/run 4fb6504551d9582cf1d2a1b3cd181e74a6b932fd a548a049d3e5ca6c1cea1bec687fa3d529d6e8189235c6b20e8b0d89f5910489";
+			shellScript = "";
 		};
 		B743410976E404A8A0A43A3A /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -538,10 +560,15 @@
 			baseConfigurationReference = EB25787C5D17C5AD4E56455B /* Pods-ELColorGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/ELColorGame/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.ELColorGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2430dbd7-e26f-4e8a-a939-ab8f00d03f53";
 			};
 			name = Debug;
 		};
@@ -550,10 +577,15 @@
 			baseConfigurationReference = 1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/ELColorGame/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.ELColorGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7a750174-2222-4148-bc94-8e4617cea6bb";
 			};
 			name = Release;
 		};
