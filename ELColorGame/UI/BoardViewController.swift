@@ -21,6 +21,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     let restartButton = UIButton(frame: CGRectZero)
     let scoreTextLabel:UILabel = UILabel(frame: CGRectZero)
     let scoreNumberLabel:UILabel = UILabel(frame: CGRectZero)
+    var scoreNumber:Int = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +104,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     }
     
     func configureScoreTextLabel () {
-        scoreNumberLabel.text = "250"
+        scoreNumberLabel.text = "0"
         scoreNumberLabel.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
         scoreNumberLabel.font = UIFont(name: BebasNeueBold, size: 46)
         self.view.addSubview(scoreNumberLabel)
@@ -144,7 +145,6 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     //Buttons
     
     func configureRestartButton() {
-//        pauseButton.setTitle("Restart", forState: UIControlState.Normal)
         restartButton.setImage(UIImage(named: "restart"), forState: UIControlState.Normal)
         restartButton.addTarget(self, action: Selector("didTapOnRestartButton"), forControlEvents: UIControlEvents.TouchUpInside)
         self.topView.addSubview(restartButton)
@@ -179,6 +179,8 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     func circleViewWith(point: CGPoint, overView: CircleView) -> CircleView? {
         for circleView in circleViewsArray {
             if CGRectContainsPoint(circleView.frame, point) && circleView != overView && overView.backgroundColor == circleView.backgroundColor {
+                scoreNumber += 4
+                scoreNumberLabel.text = "\(scoreNumber)"
                 return circleView
             }
         }
