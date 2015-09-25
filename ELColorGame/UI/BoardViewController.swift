@@ -17,6 +17,8 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     var backgroundBoardView = UIView()
     var circleViewsArray:[CircleView] = []
     var circleView:CircleView = CircleView()
+    let pauseButton = UIButton(frame: CGRectZero)
+    let restartButton = UIButton(frame: CGRectZero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,8 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         configureTopView()
         configureBackgroundBoardView()
         configureBoardView()
+        configureRestartButton()
+        configurePauseButton()
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
     }
     
@@ -114,6 +118,39 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
             view.center = initialPoint
         }
     }
+    
+    //Buttons
+    
+    func configureRestartButton() {
+//        pauseButton.setTitle("Restart", forState: UIControlState.Normal)
+        restartButton.setImage(UIImage(named: "restart"), forState: UIControlState.Normal)
+        restartButton.addTarget(self, action: Selector("didTapOnRestartButton"), forControlEvents: UIControlEvents.TouchUpInside)
+        self.topView.addSubview(restartButton)
+        restartButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(40)
+            make.right.equalTo(-40)
+        }
+    }
+    
+    func configurePauseButton() {
+        pauseButton.setImage(UIImage(named: "pause"), forState: UIControlState.Normal)
+        pauseButton.addTarget(self, action: Selector("didTapOnPauseButton"), forControlEvents: UIControlEvents.TouchUpInside)
+        self.topView.addSubview(pauseButton)
+        pauseButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(40)
+            make.left.equalTo(40)
+        }
+    }
+    
+    func didTapOnRestartButton() {
+        let boardViewController = BoardViewController()
+        presentViewController(boardViewController, animated: true, completion: nil)
+    }
+    
+    func didTapOnPauseButton() {
+        print("pause button tapped")
+    }
+    
     //Logic
     
     func circleViewWith(point: CGPoint, overView: CircleView) -> CircleView? {
