@@ -35,7 +35,7 @@ class CircleView: SpringView {
         self.backgroundColor = colorsArray[Int(arc4random() % 4)]
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
-        gradient.colors = [CGColorCreateCopyWithAlpha(UIColor.whiteColor().CGColor, 0.2)!, CGColorCreateCopyWithAlpha(UIColor.blackColor().CGColor, 0.2)!]
+        gradient.colors = [CGColorCreateCopyWithAlpha(UIColor.whiteColor().CGColor, 0.15)!, CGColorCreateCopyWithAlpha(UIColor.blackColor().CGColor, 0.15)!]
         self.layer.insertSublayer(gradient, atIndex: 0)
         self.layer.cornerRadius = 20
         self.clipsToBounds = true
