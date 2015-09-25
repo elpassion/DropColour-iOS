@@ -35,6 +35,7 @@ class StartViewController: UIViewController {
     func configureNewGameButton() {
         newGameButton.setTitle("NEW GAME", forState: UIControlState.Normal)
         newGameButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
+        newGameButton.contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
         newGameButton.addTarget(self, action: Selector("didTapOnButtonStart"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(newGameButton)
         newGameButton.snp_makeConstraints { (make) -> Void in
@@ -43,7 +44,7 @@ class StartViewController: UIViewController {
             make.centerX.equalTo(0)
             make.centerY.equalTo(80)
         }
-        newGameButton.setTitleColor(UIColor(hue:0.66, saturation:0.81, brightness:0.33, alpha:1), forState: UIControlState.Normal)
+        newGameButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         newGameButton.layer.cornerRadius = 27.5
         newGameButton.backgroundColor = UIColor(red:0.42, green:0.88, blue:0.1, alpha:1)
     }
