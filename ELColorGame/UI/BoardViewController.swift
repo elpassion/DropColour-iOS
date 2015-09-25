@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import AVFoundation
 
 class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     
@@ -188,12 +189,23 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     func circleViewWith(point: CGPoint, overView: CircleView) -> CircleView? {
         for circleView in circleViewsArray {
             if CGRectContainsPoint(circleView.frame, point) && circleView != overView && overView.backgroundColor == circleView.backgroundColor {
+                playSound()
                 scoreNumber += 4
                 scoreNumberLabel.text = "\(scoreNumber)"
                 return circleView
             }
         }
         return nil
+    }
+    
+    //Sound
+    
+    func playSound() {
+        if let soundURL = NSBundle.mainBundle().URLForResource("bubble_pop_sound", withExtension: "m4a") {
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundURL, &mySound)
+            AudioServicesPlaySystemSound(mySound);
+        }
     }
     
     //Animation
