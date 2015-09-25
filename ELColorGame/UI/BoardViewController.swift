@@ -23,15 +23,15 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     let scoreTextLabel:UILabel = UILabel(frame: CGRectZero)
     let scoreNumberLabel:UILabel = UILabel(frame: CGRectZero)
     var scoreNumber:Int = Int()
+    var myTimer: NSTimer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        myTimer = NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: "timerDidFire:", userInfo: nil, repeats: true)
         view.backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         configureTopView()
         configureBackgroundBoardView()
-        configureBoardView()
         configureRestartButton()
         configurePauseButton()
         configureScoreTextLabel()
@@ -52,23 +52,19 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         let sizeYscreen:Int = Int(self.view.frame.size.height) - Int(self.view.frame.size.height * 0.12)
         let possibleCircleOnX = (sizeXscreen - 100 - (sizeXscreen % diameterSingleCircle)) / diameterSingleCircle
         let possibleCircleOnY = (sizeYscreen - 150 - (sizeYscreen % diameterSingleCircle)) / diameterSingleCircle
-        print("sizeXscreen\(sizeXscreen)")
-        print("sizeYscreen\(sizeYscreen)")
-        let grid_x = possibleCircleOnX
-        let grid_y = possibleCircleOnY
-        print("prossibleViewOnScreenHorizontally: \(possibleCircleOnX)")
-        print("prossibleViewOnScreenVertically: \(possibleCircleOnY)")
+        let grid_x:Int = possibleCircleOnX
+        let grid_y:Int = possibleCircleOnY
         let spacing = (self.view.frame.size.width - CGFloat(diameterSingleCircle * grid_x)) / CGFloat(grid_x + 1)
-        print("spacing\(spacing)")
-        for var y = 0; y < grid_y; y++ {
-            for var x = 0; x < grid_x; x++ {
-                circleView = CircleView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
-                circleView.delegate = self
-                circleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
-                self.boardView.addSubview(circleView)
-                circleViewsArray.append(circleView)
-            }
-        }
+        
+        let x = random() % grid_x
+        let y = random() % grid_y
+        
+        circleView = CircleView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
+        circleView.delegate = self
+        circleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
+        self.boardView.addSubview(circleView)
+        circleViewsArray.append(circleView)
+
         self.view.addSubview(boardView)
         boardView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(self.topView.snp_bottom)
@@ -219,5 +215,12 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         keyFrame.fillMode = kCAFillModeForwards
         keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
         layer.addAnimation(keyFrame, forKey: "transform.scale")
+    }
+    
+    //timer
+    
+    func timerDidFire(timer: NSTimer) {
+        print("timer after 1 second")
+        configureBoardView()
     }
 }
