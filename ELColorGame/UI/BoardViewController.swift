@@ -17,6 +17,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     var boardView:UIView = UIView()
     var backgroundBoardView = UIView()
     var circleViewsArray:[CircleView] = []
+    var circlePointsArray: [CGPoint] = []
     var circleView:CircleView = CircleView()
     let pauseButton = UIButton(frame: CGRectZero)
     let restartButton = UIButton(frame: CGRectZero)
@@ -27,14 +28,15 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myTimer = NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: "timerDidFire:", userInfo: nil, repeats: true)
         view.backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         configureTopView()
         configureBackgroundBoardView()
+        configureBoardView()
         configureRestartButton()
         configurePauseButton()
         configureScoreTextLabel()
+        myTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerDidStart:", userInfo: nil, repeats: true)
     }
     
     func configureTopView() {
@@ -47,7 +49,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         }
     }
     
-    func configureBoardView() {
+    func generateCircleView() {
         let sizeXscreen:Int = Int(self.view.frame.size.width)
         let sizeYscreen:Int = Int(self.view.frame.size.height) - Int(self.view.frame.size.height * 0.12)
         let possibleCircleOnX = (sizeXscreen - 100 - (sizeXscreen % diameterSingleCircle)) / diameterSingleCircle
@@ -62,9 +64,19 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         circleView = CircleView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
         circleView.delegate = self
         circleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
-        self.boardView.addSubview(circleView)
-        circleViewsArray.append(circleView)
-
+        
+        if let point = contains(circlePointsArray, element: circleView.center) {
+            print("Circle view with point: \(point) is in array, generate other point")
+        }
+        else {
+            print("This element is first time in array")
+            self.boardView.addSubview(circleView)
+            circleViewsArray.append(circleView)
+            circlePointsArray.append(circleView.center)
+        }
+    }
+    
+    func configureBoardView() {
         self.view.addSubview(boardView)
         boardView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(self.topView.snp_bottom)
@@ -127,9 +139,11 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         let possibleView = circleViewWith(view.center, overView: view)
         if let possibleView = possibleView {
             if let index = circleViewsArray.indexOf(possibleView) {
+                circlePointsArray.removeAtIndex(index)
                 circleViewsArray.removeAtIndex(index)
             }
             if let index = circleViewsArray.indexOf(view) {
+                circlePointsArray.removeAtIndex(index)
                 circleViewsArray.removeAtIndex(index)
             }
             possibleView.animation = "zoomOut"
@@ -171,6 +185,8 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     }
     
     func didTapOnRestartButton() {
+        circleViewsArray.removeAll()
+        circlePointsArray.removeAll()
         let boardViewController = BoardViewController()
         presentViewController(boardViewController, animated: true, completion: nil)
     }
@@ -219,8 +235,19 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     
     //timer
     
-    func timerDidFire(timer: NSTimer) {
-        print("timer after 1 second")
-        configureBoardView()
+    func timerDidStart(timer: NSTimer) {
+        generateCircleView()
+    }
+    
+    //Helper for points array
+    
+    func contains(values: [CGPoint], element: CGPoint) -> CGPoint? {
+        for value in values {
+            if value == element {
+                return element
+            }
+        }
+        return nil
+    }
     }
 }
