@@ -12,6 +12,11 @@ import AVFoundation
 
 class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     
+    var gridX:Int = Int()
+    var gridY:Int = Int()
+    var spacing:CGFloat = CGFloat()
+    
+    let menuViewController = MenuViewController()
     let diameterSingleCircle = 50
     var topView:UIView = UIView()
     var boardView:UIView = UIView()
@@ -26,9 +31,27 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     var scoreNumber:Int = Int()
     var myTimer: NSTimer?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        
+        let sizeXscreen:Int = Int(UIScreen.mainScreen().bounds.size.width)
+        let sizeYscreen:Int = Int(UIScreen.mainScreen().bounds.size.height) - Int(UIScreen.mainScreen().bounds.size.height * 0.12)
+        let possibleCircleOnX = (sizeXscreen - 100 - (sizeXscreen % diameterSingleCircle)) / diameterSingleCircle
+        let possibleCircleOnY = (sizeYscreen - 150 - (sizeYscreen % diameterSingleCircle)) / diameterSingleCircle
+        self.gridX = possibleCircleOnX
+        self.gridY = possibleCircleOnY
+        self.spacing = (UIScreen.mainScreen().bounds.size.width - CGFloat(diameterSingleCircle * gridX
+            )) / CGFloat(gridX + 1)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    override func loadView() {
+        self.view = UIView()
+        self.view.backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         configureTopView()
         configureBackgroundBoardView()
@@ -50,18 +73,8 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     }
     
     func generateCircleView() {
-        let sizeXscreen:Int = Int(self.view.frame.size.width)
-        let sizeYscreen:Int = Int(self.view.frame.size.height) - Int(self.view.frame.size.height * 0.12)
-        let possibleCircleOnX = (sizeXscreen - 100 - (sizeXscreen % diameterSingleCircle)) / diameterSingleCircle
-        let possibleCircleOnY = (sizeYscreen - 150 - (sizeYscreen % diameterSingleCircle)) / diameterSingleCircle
-        let grid_x:Int = possibleCircleOnX
-        let grid_y:Int = possibleCircleOnY
-        let spacing = (self.view.frame.size.width - CGFloat(diameterSingleCircle * grid_x)) / CGFloat(grid_x + 1)
-        
-        optionallyFinishGame(grid_x, gridY: grid_y)
-        
-        let x = random() % grid_x
-        let y = random() % grid_y
+        let x = random() % gridX
+        let y = random() % gridY
         
         circleView = CircleView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
         circleView.delegate = self
@@ -89,16 +102,9 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     }
     
     func configureBackgroundBoardView() {
-        let sizeXscreen:Int = Int(self.view.frame.size.width)
-        let sizeYscreen:Int = Int(self.view.frame.size.height) - Int(self.view.frame.size.height * 0.12)
-        let possibleCircleOnX = (sizeXscreen - 100 - (sizeXscreen % diameterSingleCircle)) / diameterSingleCircle
-        let possibleCircleOnY = (sizeYscreen - 150 - (sizeYscreen % diameterSingleCircle)) / diameterSingleCircle
-        let grid_x = possibleCircleOnX
-        let grid_y = possibleCircleOnY
-        let spacing = (self.view.frame.size.width - CGFloat(diameterSingleCircle * grid_x)) / CGFloat(grid_x + 1)
         var backgroundCircleView:UIView
-        for var y = 0; y < grid_y; y++ {
-            for var x = 0; x < grid_x; x++ {
+        for var y = 0; y < gridY; y++ {
+            for var x = 0; x < gridX; x++ {
                 backgroundCircleView = UIView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
                 backgroundCircleView.backgroundColor = UIColor(red:0.24, green:0.23, blue:0.37, alpha:1)
                 backgroundCircleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
@@ -187,14 +193,13 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     }
     
     func didTapOnRestartButton() {
-        circleViewsArray.removeAll()
-        circlePointsArray.removeAll()
+        myTimer?.invalidate()
         let boardViewController = BoardViewController()
         presentViewController(boardViewController, animated: true, completion: nil)
     }
     
     func didTapOnPauseButton() {
-        let menuViewController = MenuViewController()
+        myTimer?.invalidate()
         presentViewController(menuViewController, animated: true, completion: nil)
     }
     
@@ -237,7 +242,14 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     
     //timer
     
+    internal func startTimer() {
+        myTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerDidStart:", userInfo: nil, repeats: true)
+    }
+
     func timerDidStart(timer: NSTimer) {
+        if canFinishGame() {
+            finishGame()
+        }
         generateCircleView()
     }
     
@@ -254,11 +266,16 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     
     //game over
     
-    func optionallyFinishGame(gridX: Int, gridY: Int) {
+    func canFinishGame () -> Bool {
         if circleViewsArray.count == gridX * gridY {
-            myTimer?.invalidate()
-            let gameOverViewController = GameOverViewController(score: scoreNumber)
-            presentViewController(gameOverViewController, animated: true, completion: nil)
+            return true
         }
+        return false
+    }
+    
+    func finishGame() {
+        myTimer?.invalidate()
+        let gameOverViewController = GameOverViewController(score: scoreNumber)
+        presentViewController(gameOverViewController, animated: true, completion: nil)
     }
 }
