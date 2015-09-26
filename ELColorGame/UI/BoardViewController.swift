@@ -85,7 +85,10 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate, Menu
         }
         else {
             print("This element is first time in array")
-            self.boardView.addSubview(circleView)
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.addAppearAnimation(self.circleView.layer)
+                self.boardView.addSubview(self.circleView)
+            })
             circleViewsArray.append(circleView)
             circlePointsArray.append(circleView.center)
         }
@@ -235,6 +238,17 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate, Menu
         keyFrame.values = [0.8, 0.9, 1.6, 1.0]
         keyFrame.keyTimes = [0, 0.3, 0.75, 1]
         keyFrame.duration = 0.3
+        keyFrame.removedOnCompletion = false
+        keyFrame.fillMode = kCAFillModeForwards
+        keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
+        layer.addAnimation(keyFrame, forKey: "transform.scale")
+    }
+    
+    func addAppearAnimation(layer: CALayer) {
+        let keyFrame: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        keyFrame.values = [0.0, 0.2, 0.5, 1.4, 1.0]
+        keyFrame.keyTimes = [0, 0.3, 0.5, 0.75, 1]
+        keyFrame.duration = 0.4
         keyFrame.removedOnCompletion = false
         keyFrame.fillMode = kCAFillModeForwards
         keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
