@@ -249,7 +249,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate, Menu
     
     //timer
     
-    internal func startTimer() {
+    func startTimer() {
         myTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerDidStart:", userInfo: nil, repeats: true)
     }
 
