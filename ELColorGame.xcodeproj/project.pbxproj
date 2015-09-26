@@ -266,7 +266,7 @@
 		9A6AFB6F09445B62FE028C7B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9A6FA770E1E3B4223443F814 /* CircleView */,
+				9A6FA770E1E3B4223443F814 /* UIView */,
 				D1C162051F749B0650FCF5F8 /* UIButton */,
 			);
 			path = Components;
@@ -280,12 +280,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		9A6FA770E1E3B4223443F814 /* CircleView */ = {
+		9A6FA770E1E3B4223443F814 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
 				9A641A8E6FFBC061A7ADF863 /* CircleView.swift */,
 			);
-			path = CircleView;
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		9FBC9D9B73E2FB0AEAEBAFC9 /* Frameworks */ = {
