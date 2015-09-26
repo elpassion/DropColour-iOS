@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol MenuViewControllerDelegate {
+    func resumeButtonPressed(menuViewController:MenuViewController)
+}
+
 class MenuViewController: UIViewController {
     
+    var delegate:MenuViewControllerDelegate? = nil
     var blurEffectView: UIVisualEffectView = UIVisualEffectView(frame: CGRectZero)
     let resumeButton = UIButton(frame: CGRectZero)
     let newGameButton = UIButton(frame: CGRectZero)
@@ -68,7 +73,9 @@ class MenuViewController: UIViewController {
     }
     
     func didTapOnResumeButton() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: {
+            delegate?.resumeButtonPressed(self)
+        })
     }
     
     func configureNewGameButton() {

@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import AVFoundation
 
-class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
+class BoardViewController: UIViewController, CircleViewPointChangeDelegate, MenuViewControllerDelegate {
     
     var gridX:Int = Int()
     var gridY:Int = Int()
@@ -200,6 +200,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
     
     func didTapOnPauseButton() {
         myTimer?.invalidate()
+        menuViewController.delegate = self
         presentViewController(menuViewController, animated: true, completion: nil)
     }
     
@@ -238,6 +239,11 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         keyFrame.fillMode = kCAFillModeForwards
         keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
         layer.addAnimation(keyFrame, forKey: "transform.scale")
+    }
+    
+    //MenuViewController delegate method
+    
+    func resumeButtonPressed(menuViewController: MenuViewController) {
     }
     
     //timer
