@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077E3DC81BB70BEF00DE5F3B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E3DC71BB70BEF00DE5F3B /* Button.swift */; settings = {ASSET_TAGS = (); }; };
 		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; settings = {ASSET_TAGS = (); }; };
 		4E4BB5881BB410240043C80C /* ELColorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5871BB410240043C80C /* ELColorGameTests.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		077E3DC71BB70BEF00DE5F3B /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.release.xcconfig"; sourceTree = "<group>"; };
 		4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubble_pop_sound.m4a; sourceTree = "<group>"; };
 		4E4BB56F1BB410240043C80C /* ELColorGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELColorGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				9A6FA770E1E3B4223443F814 /* CircleView */,
+				D1C162051F749B0650FCF5F8 /* UIButton */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -293,6 +296,14 @@
 				EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1C162051F749B0650FCF5F8 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				077E3DC71BB70BEF00DE5F3B /* Button.swift */,
+			);
+			path = UIButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,6 +505,7 @@
 				4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */,
 				9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */,
 				9A691889E2944596D7AC15AF /* StartViewController.swift in Sources */,
+				077E3DC81BB70BEF00DE5F3B /* Button.swift in Sources */,
 				9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */,
 				9A627CEB0EFC2BF211E2DB93 /* GameBoardViewController.swift in Sources */,
 				9A66EE950DDBEA218650392C /* GameOverViewController.swift in Sources */,
