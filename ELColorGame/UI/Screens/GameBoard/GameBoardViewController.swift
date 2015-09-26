@@ -269,6 +269,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
 
     func timerDidStart(timer: NSTimer) {
         if canFinishGame() {
+            self.boardView.userInteractionEnabled = false
             finishGame()
         }
         generateCircleView()
