@@ -264,7 +264,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     //timer
     
     func startTimer() {
-        myTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerDidStart:", userInfo: nil, repeats: true)
+        myTimer = NSTimer.scheduledTimerWithTimeInterval(0.07, target: self, selector: "timerDidStart:", userInfo: nil, repeats: true)
     }
 
     func timerDidStart(timer: NSTimer) {
