@@ -27,7 +27,7 @@ class StartViewController: UIViewController {
     }
     
     func configureNewGameButton() {
-        newGameButton.closureButtonAction = { self.presentGameBoardViewController() }
+        newGameButton.buttonActionClosure = { self.presentGameBoardViewController() }
         setupNewGameButtonLayout()
     }
     

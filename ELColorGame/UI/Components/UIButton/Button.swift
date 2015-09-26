@@ -10,7 +10,7 @@ import UIKit
 
 class Button: UIButton {
     
-    var closureButtonAction: (() -> ())?
+    var buttonActionClosure: (() -> ())?
     
     init(title: String, color: UIColor) {
         super.init(frame: CGRectZero)
@@ -29,8 +29,8 @@ class Button: UIButton {
     }
     
     func didTapOnButton(button: UIButton) {
-        if let closureButtonAction = closureButtonAction {
-            closureButtonAction()
+        if let buttonActionClosure = buttonActionClosure {
+            buttonActionClosure()
         }
     }
 }
