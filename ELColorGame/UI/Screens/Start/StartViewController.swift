@@ -12,7 +12,7 @@ import SnapKit
 class StartViewController: UIViewController {
     
     let backgroundImage:UIImageView = UIImageView()
-    let newGameButton = UIButton(frame: CGRectZero)
+    let newGameButton:Button = Button(title: "NEW GAME", color: UIColor(red:0.42, green:0.88, blue:0.1, alpha:1))
     
     override func loadView() {
         self.view = UIView()
@@ -23,20 +23,29 @@ class StartViewController: UIViewController {
     
     func configureBackgroundImageView() {
         backgroundImage.image = UIImage(named: "background")
-        self.view.addSubview(backgroundImage)
-        backgroundImage.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(0)
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.bottom.equalTo(0)
-        }
+        setupBackgroundImageViewLayout()
     }
     
     func configureNewGameButton() {
-        newGameButton.setTitle("NEW GAME", forState: UIControlState.Normal)
-        newGameButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
-        newGameButton.contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
-        newGameButton.addTarget(self, action: Selector("didTapOnButtonStart"), forControlEvents: UIControlEvents.TouchUpInside)
+        newGameButton.closureButtonAction = { self.presentGameBoardViewController() }
+        setupNewGameButtonLayout()
+    }
+    
+    func presentGameBoardViewController() {
+        let gameBoardViewController = GameBoardViewController()
+        presentViewController(gameBoardViewController, animated: true, completion: nil)
+    }
+    
+    //Layout 
+    
+    func setupBackgroundImageViewLayout() {
+        self.view.addSubview(backgroundImage)
+        backgroundImage.snp_makeConstraints { (make) -> Void in
+            make.edges.equalTo(0)
+        }
+    }
+    
+    func setupNewGameButtonLayout() {
         self.view.addSubview(newGameButton)
         newGameButton.snp_makeConstraints { (make) -> Void in
             make.width.equalTo(170)
@@ -44,13 +53,5 @@ class StartViewController: UIViewController {
             make.centerX.equalTo(0)
             make.centerY.equalTo(80)
         }
-        newGameButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        newGameButton.layer.cornerRadius = 27.5
-        newGameButton.backgroundColor = UIColor(red:0.42, green:0.88, blue:0.1, alpha:1)
-    }
-    
-    func didTapOnButtonStart() {
-        let gameBoardViewController = GameBoardViewController()
-        presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
 }
