@@ -59,7 +59,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate, Menu
         configureRestartButton()
         configurePauseButton()
         configureScoreTextLabel()
-        myTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerDidStart:", userInfo: nil, repeats: true)
+        startTimer()
     }
     
     func configureTopView() {
@@ -244,6 +244,7 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate, Menu
     //MenuViewController delegate method
     
     func resumeButtonPressed(menuViewController: MenuViewController) {
+        startTimer()
     }
     
     //timer
