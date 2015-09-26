@@ -14,6 +14,7 @@ class GameOverViewController: UIViewController {
     let yourScoreTextLabel = UILabel(frame: CGRectZero)
     var scoreNumber: Int = Int()
     let cancelButton = UIButton(frame: CGRectZero)
+    let tryAgainButton = UIButton(frame: CGRectZero)
     
     init(score: Int) {
         super.init(nibName: nil, bundle: nil)
@@ -32,6 +33,7 @@ class GameOverViewController: UIViewController {
         configureBlurEffectView()
         configureYourScoreTextLabel()
         configureCancelButton()
+        configureTryAgainButton()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -80,8 +82,31 @@ class GameOverViewController: UIViewController {
         cancelButton.backgroundColor = UIColor(red:0.91, green:0.15, blue:0.33, alpha:1)
     }
     
+    func configureTryAgainButton() {
+        tryAgainButton.setTitle("TRY AGAIN", forState: UIControlState.Normal)
+        tryAgainButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
+        tryAgainButton.contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
+        tryAgainButton.addTarget(self, action: Selector("didTapOnTryAgainButton"), forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(tryAgainButton)
+        tryAgainButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(cancelButton.snp_bottom).offset(30)
+            make.width.equalTo(170)
+            make.height.equalTo(55)
+            make.centerX.equalTo(0)
+        }
+        tryAgainButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        tryAgainButton.layer.cornerRadius = 27.5
+        tryAgainButton.backgroundColor = UIColor(red:0.38, green:0.87, blue:0.1, alpha:1)
+    }
+
+    
     func didTapOnCancelButton() {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func didTapOnTryAgainButton() {
+        let gameBoardViewController = GameBoardViewController()
+        presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
     
     func configureGestureRecognizer(myView: UIView) {
