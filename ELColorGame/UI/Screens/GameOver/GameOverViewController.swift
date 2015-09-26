@@ -34,6 +34,11 @@ class GameOverViewController: UIViewController {
         configureCancelButton()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        configureGestureRecognizer(self.view)
+    }
+    
     func configureBlurEffectView () {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -77,5 +82,10 @@ class GameOverViewController: UIViewController {
     
     func didTapOnCancelButton() {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func configureGestureRecognizer(myView: UIView) {
+        myView.userInteractionEnabled = true
+        myView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("didTapOnCancelButton")))
     }
 }
