@@ -58,6 +58,8 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         let grid_y:Int = possibleCircleOnY
         let spacing = (self.view.frame.size.width - CGFloat(diameterSingleCircle * grid_x)) / CGFloat(grid_x + 1)
         
+        optionallyFinishGame(grid_x, gridY: grid_y)
+        
         let x = random() % grid_x
         let y = random() % grid_y
         
@@ -249,5 +251,14 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate {
         }
         return nil
     }
+    
+    //game over
+    
+    func optionallyFinishGame(gridX: Int, gridY: Int) {
+        if circleViewsArray.count == gridX * gridY {
+            myTimer?.invalidate()
+            let gameOverViewController = GameOverViewController(score: scoreNumber)
+            presentViewController(gameOverViewController, animated: true, completion: nil)
+        }
     }
 }
