@@ -9,13 +9,13 @@
 import UIKit
 import Spring
 
-protocol CircleViewPointChangeDelegate {
+protocol CircleViewPointDidChangedDelegate {
     func pointDidChanged(initialPoint:CGPoint, view:CircleView)
 }
 
 class CircleView: SpringView {
     
-    var delegate:CircleViewPointChangeDelegate? = nil
+    var delegate:CircleViewPointDidChangedDelegate? = nil
     var lastLocation:CGPoint = CGPointMake(0, 0)
     var colorsArray:[UIColor] = []
     var initialPosition:CGPoint = CGPoint()

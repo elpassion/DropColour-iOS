@@ -1,5 +1,5 @@
 //
-//  BoardViewController.swift
+//  GameBoardViewController.swift
 //  ELColorGame
 //
 //  Created by Mateusz Szklarek on 24/09/15.
@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import AVFoundation
 
-class BoardViewController: UIViewController, CircleViewPointChangeDelegate, MenuViewControllerDelegate {
+class GameBoardViewController: UIViewController, CircleViewPointDidChangedDelegate, MenuViewControllerDelegate {
     
     var gridX:Int = Int()
     var gridY:Int = Int()
@@ -197,8 +197,8 @@ class BoardViewController: UIViewController, CircleViewPointChangeDelegate, Menu
     
     func didTapOnRestartButton() {
         myTimer?.invalidate()
-        let boardViewController = BoardViewController()
-        presentViewController(boardViewController, animated: true, completion: nil)
+        let gameBoardViewController = GameBoardViewController()
+        presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
     
     func didTapOnPauseButton() {

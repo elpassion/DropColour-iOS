@@ -50,7 +50,7 @@ class StartViewController: UIViewController {
     }
     
     func didTapOnButtonStart() {
-        let boardViewController = BoardViewController()
-        presentViewController(boardViewController, animated: true, completion: nil)
+        let gameBoardViewController = GameBoardViewController()
+        presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
 }
