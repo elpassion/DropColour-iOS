@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import AVFoundation
 
-class GameBoardViewController: UIViewController, CircleViewPointDidChangedDelegate, MenuViewControllerDelegate {
+class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewControllerDelegate {
     
     var gridX:Int = Int()
     var gridY:Int = Int()
