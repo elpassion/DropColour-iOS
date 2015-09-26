@@ -4,7 +4,17 @@ PODS:
 
 DEPENDENCIES:
   - SnapKit
-  - Spring
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
+
+EXTERNAL SOURCES:
+  Spring:
+    :branch: swift2
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 18d5c7b74489de8044e34767f856d1e574f0820e
+    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
