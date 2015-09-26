@@ -45,9 +45,7 @@ class CircleView: SpringView {
         let translation = recognizer.translationInView(self.superview)
         self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
         if recognizer.state == .Began {
-            print("began")
         } else if recognizer.state == .Changed {
-            print("changed")
         } else if recognizer.state == .Ended {
             delegate?.pointDidChanged(initialPosition, view: self)
             print("ended")
