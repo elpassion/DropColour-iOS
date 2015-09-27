@@ -34,7 +34,6 @@ class MenuViewController: UIViewController {
     
     override func loadView() {
         self.view = UIView()
-        self.view.backgroundColor = UIColor.clearColor()
         configureBlurEffectView()
         configureResumeButton()
         configureNewGameButton()
