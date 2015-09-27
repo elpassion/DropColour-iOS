@@ -43,6 +43,8 @@ class MenuViewController: UIViewController {
         configurePauseImageView()
     }
     
+    //Subviews
+    
     func configureBlurEffectView () {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -54,20 +56,9 @@ class MenuViewController: UIViewController {
         setupResumeButtonLayout()
     }
     
-    func didTapResumeButton() {
-        self.dismissViewControllerAnimated(true, completion: {
-            delegate?.resumeButtonPressed(self)
-        })
-    }
-    
     func configureNewGameButton() {
         newGameButton.buttonActionClosure = { self.didTapNewGameButton() }
         setupNewGameButtonLayout()
-    }
-    
-    func didTapNewGameButton() {
-        let gameBoardViewController = GameBoardViewController()
-        self.presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
     
     func configureQuitButton() {
@@ -75,30 +66,35 @@ class MenuViewController: UIViewController {
         setupQuitButtonLayout()
     }
     
-    func didTapQuitButton() {
-        let startViewController = StartViewController()
-        self.presentViewController(startViewController, animated: true, completion: nil)
-    }
-    
     func configurePauseLabelText() {
         pauseLabelText.text = "PAUSE"
         pauseLabelText.font = UIFont(name: BebasNeueBold, size: 30)
         pauseLabelText.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
-        self.view.addSubview(pauseLabelText)
-        pauseLabelText.snp_makeConstraints { (make) -> Void in
-            make.centerX.equalTo(0)
-            make.bottom.equalTo(resumeButton.snp_top).offset(-40)
-        }
+        setupPauseTextLabelLayout()
     }
     
     func configurePauseImageView () {
         pauseImageView.image = UIImage(named: "pause_icon")
         pauseImageView.contentMode = UIViewContentMode.ScaleAspectFit
-        self.view.addSubview(pauseImageView)
-        pauseImageView.snp_makeConstraints { (make) -> Void in
-            make.bottom.equalTo(pauseLabelText.snp_top).offset(-20)
-            make.centerX.equalTo(0)
-        }
+        setupPauseImageViewLayout()
+    }
+    
+    //Button actions
+    
+    func didTapResumeButton() {
+        self.dismissViewControllerAnimated(true, completion: {
+            delegate?.resumeButtonPressed(self)
+        })
+    }
+    
+    func didTapNewGameButton() {
+        let gameBoardViewController = GameBoardViewController()
+        self.presentViewController(gameBoardViewController, animated: true, completion: nil)
+    }
+    
+    func didTapQuitButton() {
+        let startViewController = StartViewController()
+        self.presentViewController(startViewController, animated: true, completion: nil)
     }
     
     //Layout
@@ -136,6 +132,22 @@ class MenuViewController: UIViewController {
             make.top.equalTo(newGameButton.snp_bottom).offset(15)
             make.width.equalTo(170)
             make.height.equalTo(55)
+            make.centerX.equalTo(0)
+        }
+    }
+    
+    func setupPauseTextLabelLayout() {
+        self.view.addSubview(pauseLabelText)
+        pauseLabelText.snp_makeConstraints { (make) -> Void in
+            make.centerX.equalTo(0)
+            make.bottom.equalTo(resumeButton.snp_top).offset(-40)
+        }
+    }
+    
+    func setupPauseImageViewLayout() {
+        self.view.addSubview(pauseImageView)
+        pauseImageView.snp_makeConstraints { (make) -> Void in
+            make.bottom.equalTo(pauseLabelText.snp_top).offset(-20)
             make.centerX.equalTo(0)
         }
     }
