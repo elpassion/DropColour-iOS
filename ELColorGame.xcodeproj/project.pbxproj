@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		077E3DC81BB70BEF00DE5F3B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E3DC71BB70BEF00DE5F3B /* Button.swift */; settings = {ASSET_TAGS = (); }; };
+		07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */; settings = {ASSET_TAGS = (); }; };
 		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; settings = {ASSET_TAGS = (); }; };
 		4E4BB5881BB410240043C80C /* ELColorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5871BB410240043C80C /* ELColorGameTests.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		077E3DC71BB70BEF00DE5F3B /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CAAnimation.swift"; sourceTree = "<group>"; };
 		1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.release.xcconfig"; sourceTree = "<group>"; };
 		4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubble_pop_sound.m4a; sourceTree = "<group>"; };
 		4E4BB56F1BB410240043C80C /* ELColorGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELColorGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +230,7 @@
 				9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */,
 				9A695691D5EC3EBA3100FA2D /* Screens */,
 				9A6AFB6F09445B62FE028C7B /* Components */,
+				D1C164280D3B137458185903 /* Extensions */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -304,6 +307,22 @@
 				077E3DC71BB70BEF00DE5F3B /* Button.swift */,
 			);
 			path = UIButton;
+			sourceTree = "<group>";
+		};
+		D1C164280D3B137458185903 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D1C16FA6AD2217149E1B9D9A /* UIView+CAAnimation */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D1C16FA6AD2217149E1B9D9A /* UIView+CAAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */,
+			);
+			path = "UIView+CAAnimation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,6 +523,7 @@
 			files = (
 				4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */,
 				9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */,
+				07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */,
 				9A691889E2944596D7AC15AF /* StartViewController.swift in Sources */,
 				077E3DC81BB70BEF00DE5F3B /* Button.swift in Sources */,
 				9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */,
