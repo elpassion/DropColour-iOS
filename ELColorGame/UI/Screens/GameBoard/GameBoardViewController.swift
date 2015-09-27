@@ -86,7 +86,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         else {
             print("This element is first time in array")
             UIView.animateWithDuration(0.2, animations: { () -> Void in
-                self.addAppearAnimation(self.circleView.layer)
+                self.circleView.addAppearAnimation()
                 self.boardView.addSubview(self.circleView)
             })
             circleViewsArray.append(circleView)
@@ -148,7 +148,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     
     func pointDidChanging(view: CircleView) {
         UIView.animateWithDuration(0.15, animations: { () -> Void in
-            self.addScaleAnimation(view.layer)
+            view.addIncreaseSizeAnimation()
         })
     }
     
@@ -174,7 +174,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         } else {
             UIView.animateWithDuration(0.2, animations: { () -> Void in
                 view.center = initialPoint
-                self.addBounceAnimation(view.layer)
+                view.addBounceAnimation()
             })
         }
     }
@@ -236,41 +236,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
             AudioServicesPlaySystemSound(mySound);
         }
     }
-    
-    //Animation
-    
-    func addScaleAnimation(layer: CALayer) {
-        let keyFrame: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-        keyFrame.values = [1.2]
-        keyFrame.keyTimes = [1]
-        keyFrame.removedOnCompletion = false
-        keyFrame.fillMode = kCAFillModeForwards
-        keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
-        layer.addAnimation(keyFrame, forKey: "transform.scale")
-    }
-    
-    func addBounceAnimation(layer: CALayer) {
-        let keyFrame: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-        keyFrame.values = [0.25, 0.4, 1.3, 1.0]
-        keyFrame.keyTimes = [0, 0.3, 0.75, 1]
-        keyFrame.duration = 0.3
-        keyFrame.removedOnCompletion = false
-        keyFrame.fillMode = kCAFillModeForwards
-        keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
-        layer.addAnimation(keyFrame, forKey: "transform.scale")
-    }
-    
-    func addAppearAnimation(layer: CALayer) {
-        let keyFrame: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-        keyFrame.values = [0.0, 0.2, 0.5, 1.4, 1.0]
-        keyFrame.keyTimes = [0, 0.3, 0.5, 0.75, 1]
-        keyFrame.duration = 0.4
-        keyFrame.removedOnCompletion = false
-        keyFrame.fillMode = kCAFillModeForwards
-        keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
-        layer.addAnimation(keyFrame, forKey: "transform.scale")
-    }
-    
+        
     //MenuViewController delegate method
     
     func resumeButtonPressed(menuViewController: MenuViewController) {
