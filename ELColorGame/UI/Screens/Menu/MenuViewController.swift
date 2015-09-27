@@ -52,17 +52,23 @@ class MenuViewController: UIViewController {
     }
     
     func configureResumeButton() {
-        resumeButton.buttonActionClosure = { self.didTapResumeButton() }
+        resumeButton.buttonActionClosure = { [weak self] in
+            self?.didTapResumeButton()
+        }
         setupResumeButtonLayout()
     }
     
     func configureNewGameButton() {
-        newGameButton.buttonActionClosure = { self.didTapNewGameButton() }
+        newGameButton.buttonActionClosure = { [weak self] in
+            self?.didTapNewGameButton()
+        }
         setupNewGameButtonLayout()
     }
     
     func configureQuitButton() {
-        quitButton.buttonActionClosure = { self.didTapQuitButton() }
+        quitButton.buttonActionClosure = { [weak self] in
+            self?.didTapQuitButton()
+        }
         setupQuitButtonLayout()
     }
     

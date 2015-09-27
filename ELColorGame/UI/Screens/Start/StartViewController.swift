@@ -29,7 +29,9 @@ class StartViewController: UIViewController {
     }
     
     func configureNewGameButton() {
-        newGameButton.buttonActionClosure = { self.didTapNewGameButton() }
+        newGameButton.buttonActionClosure = { [weak self] in
+            self?.didTapNewGameButton()
+        }
         setupNewGameButtonLayout()
     }
     
