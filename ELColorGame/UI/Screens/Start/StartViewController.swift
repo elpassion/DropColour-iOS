@@ -35,7 +35,7 @@ class StartViewController: UIViewController {
         setupNewGameButtonLayout()
     }
     
-    //Button actions
+    //Action method
     
     func didTapNewGameButton() {
         let gameBoardViewController = GameBoardViewController()

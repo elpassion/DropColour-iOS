@@ -41,6 +41,8 @@ class GameOverViewController: UIViewController {
         configureGestureRecognizer(self.view)
     }
     
+    //Subviews
+    
     func configureBlurEffectView () {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -99,6 +101,7 @@ class GameOverViewController: UIViewController {
         tryAgainButton.backgroundColor = UIColor(red:0.38, green:0.87, blue:0.1, alpha:1)
     }
 
+    //Actions method
     
     func didTapOnCancelButton() {
         self.dismissViewControllerAnimated(true, completion: nil)
