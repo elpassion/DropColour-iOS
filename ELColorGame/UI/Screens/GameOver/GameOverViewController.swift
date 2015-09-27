@@ -31,8 +31,8 @@ class GameOverViewController: UIViewController {
         self.view = UIView()
         configureBlurEffectView()
         configureScoreTextLabel()
-        configureCancelButton()
         configureTryAgainButton()
+        configureCancelButton()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -105,9 +105,9 @@ class GameOverViewController: UIViewController {
         }
     }
     
-    func setupCancelButtonLayout() {
-        self.view.addSubview(cancelButton)
-        cancelButton.snp_makeConstraints { (make) -> Void in
+    func setupTryAgainButtonLayout() {
+        self.view.addSubview(tryAgainButton)
+        tryAgainButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(scoreTextLabel.snp_bottom).offset(30)
             make.width.equalTo(170)
             make.height.equalTo(55)
@@ -115,10 +115,10 @@ class GameOverViewController: UIViewController {
         }
     }
     
-    func setupTryAgainButtonLayout() {
-        self.view.addSubview(tryAgainButton)
-        tryAgainButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(cancelButton.snp_bottom).offset(30)
+    func setupCancelButtonLayout() {
+        self.view.addSubview(cancelButton)
+        cancelButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(tryAgainButton.snp_bottom).offset(15)
             make.width.equalTo(170)
             make.height.equalTo(55)
             make.centerX.equalTo(0)
