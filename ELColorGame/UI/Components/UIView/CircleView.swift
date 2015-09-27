@@ -11,6 +11,7 @@ import Spring
 
 protocol CircleViewDelegate {
     func pointDidChanged(initialPoint:CGPoint, view:CircleView)
+    func pointDidChanging(view: CircleView)
 }
 
 class CircleView: SpringView {
@@ -46,13 +47,14 @@ class CircleView: SpringView {
         self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
         if recognizer.state == .Began {
         } else if recognizer.state == .Changed {
+            delegate?.pointDidChanging(self)
+            self.superview?.bringSubviewToFront(self)
         } else if recognizer.state == .Ended {
             delegate?.pointDidChanged(initialPosition, view: self)
             print("ended")
         }
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.superview?.bringSubviewToFront(self)
         lastLocation = self.center
     }
     

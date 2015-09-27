@@ -144,7 +144,13 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         }
     }
     
-    //Delegate method 
+    //Delegate method
+    
+    func pointDidChanging(view: CircleView) {
+        UIView.animateWithDuration(0.15, animations: { () -> Void in
+            self.addScaleAnimation(view.layer)
+        })
+    }
     
     func pointDidChanged(initialPoint: CGPoint, view: CircleView) {
         let possibleView = circleViewWith(view.center, overView: view)
@@ -232,6 +238,16 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     }
     
     //Animation
+    
+    func addScaleAnimation(layer: CALayer) {
+        let keyFrame: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        keyFrame.values = [1.2]
+        keyFrame.keyTimes = [1]
+        keyFrame.removedOnCompletion = false
+        keyFrame.fillMode = kCAFillModeForwards
+        keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
+        layer.addAnimation(keyFrame, forKey: "transform.scale")
+    }
     
     func addBounceAnimation(layer: CALayer) {
         let keyFrame: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
