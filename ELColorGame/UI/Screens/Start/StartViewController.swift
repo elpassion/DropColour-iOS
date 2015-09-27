@@ -21,17 +21,21 @@ class StartViewController: UIViewController {
         configureNewGameButton()
     }
     
+    //Subviews
+    
     func configureBackgroundImageView() {
         backgroundImage.image = UIImage(named: "background")
         setupBackgroundImageViewLayout()
     }
     
     func configureNewGameButton() {
-        newGameButton.buttonActionClosure = { self.presentGameBoardViewController() }
+        newGameButton.buttonActionClosure = { self.didTapNewGameButton() }
         setupNewGameButtonLayout()
     }
     
-    func presentGameBoardViewController() {
+    //Button actions
+    
+    func didTapNewGameButton() {
         let gameBoardViewController = GameBoardViewController()
         presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
