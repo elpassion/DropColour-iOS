@@ -251,7 +251,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     
     func addBounceAnimation(layer: CALayer) {
         let keyFrame: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-        keyFrame.values = [0.8, 0.9, 1.6, 1.0]
+        keyFrame.values = [0.25, 0.4, 1.3, 1.0]
         keyFrame.keyTimes = [0, 0.3, 0.75, 1]
         keyFrame.duration = 0.3
         keyFrame.removedOnCompletion = false
