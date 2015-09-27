@@ -47,7 +47,6 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func loadView() {
         self.view = UIView()
         self.view.backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
@@ -62,14 +61,50 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     }
     
     func configureTopView() {
-        self.view.addSubview(topView)
-        topView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(0)
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.height.equalTo(self.view).multipliedBy(0.12)
-        }
+        setupTopViewLayout()
     }
+    
+    func configureBackgroundBoardView() {
+        var backgroundCircleView:UIView
+        for var y = 0; y < gridY; y++ {
+            for var x = 0; x < gridX; x++ {
+                backgroundCircleView = UIView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
+                backgroundCircleView.backgroundColor = UIColor(red:0.24, green:0.23, blue:0.37, alpha:1)
+                backgroundCircleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
+                self.backgroundBoardView.addSubview(backgroundCircleView)
+            }
+        }
+        setupBackgroundBoardViewLayout()
+    }
+    
+    func configureBoardView() {
+        setupBoardViewLayout()
+    }
+    
+    func configureRestartButton() {
+        restartButton.setImage(UIImage(named: "restart"), forState: UIControlState.Normal)
+        restartButton.addTarget(self, action: Selector("didTapOnRestartButton"), forControlEvents: UIControlEvents.TouchUpInside)
+        setupRestartButtonLayout()
+    }
+    
+    func configurePauseButton() {
+        pauseButton.setImage(UIImage(named: "pause"), forState: UIControlState.Normal)
+        pauseButton.addTarget(self, action: Selector("didTapOnPauseButton"), forControlEvents: UIControlEvents.TouchUpInside)
+        setupPauseButtonLayout()
+    }
+    
+    func configureScoreTextLabel () {
+        scoreNumberLabel.text = "0"
+        scoreNumberLabel.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
+        scoreNumberLabel.font = UIFont(name: BebasNeueBold, size: 46)
+        scoreTextLabel.text = "SCORE"
+        scoreTextLabel.font = UIFont(name: BebasNeueBold, size: 17)
+        scoreTextLabel.textColor = UIColor(red:0.49, green:0.46, blue:0.78, alpha:1)
+        setupScoreNumberLabelLayout()
+        setupScoreTextLabelLayout()
+    }
+
+    //Dynamic circle 
     
     func generateCircleView() {
         let x = random() % gridX
@@ -78,7 +113,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         circleView = CircleView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
         circleView.delegate = self
         circleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
-        
+
         if let point = contains(circlePointsArray, element: circleView.center) {
             print("Circle view with point: \(point) is in array, generate other point")
         }
@@ -93,57 +128,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         }
     }
     
-    func configureBoardView() {
-        self.view.addSubview(boardView)
-        boardView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(self.topView.snp_bottom)
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.bottom.equalTo(0)
-        }
-    }
-    
-    func configureBackgroundBoardView() {
-        var backgroundCircleView:UIView
-        for var y = 0; y < gridY; y++ {
-            for var x = 0; x < gridX; x++ {
-                backgroundCircleView = UIView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
-                backgroundCircleView.backgroundColor = UIColor(red:0.24, green:0.23, blue:0.37, alpha:1)
-                backgroundCircleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
-                self.backgroundBoardView.addSubview(backgroundCircleView)
-            }
-        }
-        self.view.addSubview(backgroundBoardView)
-        backgroundBoardView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(self.topView.snp_bottom)
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.bottom.equalTo(0)
-        }
-    }
-    
-    func configureScoreTextLabel () {
-        scoreNumberLabel.text = "0"
-        scoreNumberLabel.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
-        scoreNumberLabel.font = UIFont(name: BebasNeueBold, size: 46)
-        self.view.addSubview(scoreNumberLabel)
-        
-        scoreNumberLabel.snp_makeConstraints { (make) -> Void in
-            make.centerX.equalTo(0)
-            make.top.equalTo(30)
-        }
-        
-        scoreTextLabel.text = "SCORE"
-        scoreTextLabel.font = UIFont(name: BebasNeueBold, size: 17)
-        scoreTextLabel.textColor = UIColor(red:0.49, green:0.46, blue:0.78, alpha:1)
-        self.view.addSubview(scoreTextLabel)
-        scoreTextLabel.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(scoreNumberLabel.snp_bottom)
-            make.centerX.equalTo(0)
-        }
-    }
-    
-    //Delegate method
+    //CircleViewDelegate method
     
     func pointDidChanging(view: CircleView) {
         UIView.animateWithDuration(0.15, animations: { () -> Void in
@@ -178,27 +163,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         }
     }
     
-    //Buttons
-    
-    func configureRestartButton() {
-        restartButton.setImage(UIImage(named: "restart"), forState: UIControlState.Normal)
-        restartButton.addTarget(self, action: Selector("didTapOnRestartButton"), forControlEvents: UIControlEvents.TouchUpInside)
-        self.topView.addSubview(restartButton)
-        restartButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(40)
-            make.right.equalTo(-40)
-        }
-    }
-    
-    func configurePauseButton() {
-        pauseButton.setImage(UIImage(named: "pause"), forState: UIControlState.Normal)
-        pauseButton.addTarget(self, action: Selector("didTapOnPauseButton"), forControlEvents: UIControlEvents.TouchUpInside)
-        self.topView.addSubview(pauseButton)
-        pauseButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(40)
-            make.left.equalTo(40)
-        }
-    }
+    //Action methods 
     
     func didTapOnRestartButton() {
         myTimer?.invalidate()
@@ -235,14 +200,14 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
             AudioServicesPlaySystemSound(mySound);
         }
     }
-        
-    //MenuViewController delegate method
+    
+    //MenuViewControllerDelegate method
     
     func resumeButtonPressed(menuViewController: MenuViewController) {
         startTimer()
     }
     
-    //timer
+    //Timer
     
     func startTimer() {
         myTimer = NSTimer.scheduledTimerWithTimeInterval(0.07, target: self, selector: "timerDidStart:", userInfo: nil, repeats: true)
@@ -267,7 +232,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         return nil
     }
     
-    //game over
+    //Game over
     
     func canFinishGame () -> Bool {
         if circleViewsArray.count == gridX * gridY {
@@ -280,5 +245,69 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         myTimer?.invalidate()
         let gameOverViewController = GameOverViewController(score: scoreNumber)
         presentViewController(gameOverViewController, animated: true, completion: nil)
+    }
+    
+    //Layout
+    
+    func setupTopViewLayout() {
+        self.view.addSubview(topView)
+        topView.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(0)
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.height.equalTo(self.view).multipliedBy(0.12)
+        }
+    }
+    
+    func setupBackgroundBoardViewLayout() {
+        self.view.addSubview(backgroundBoardView)
+        backgroundBoardView.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(self.topView.snp_bottom)
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.bottom.equalTo(0)
+        }
+    }
+    
+    func setupBoardViewLayout() {
+        self.view.addSubview(boardView)
+        boardView.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(self.topView.snp_bottom)
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.bottom.equalTo(0)
+        }
+    }
+    
+    func setupScoreNumberLabelLayout() {
+        self.view.addSubview(scoreNumberLabel)
+        scoreNumberLabel.snp_makeConstraints { (make) -> Void in
+            make.centerX.equalTo(0)
+            make.top.equalTo(30)
+        }
+    }
+    
+    func setupRestartButtonLayout() {
+        self.topView.addSubview(restartButton)
+        restartButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(40)
+            make.right.equalTo(-40)
+        }
+    }
+    
+    func setupScoreTextLabelLayout() {
+        self.view.addSubview(scoreTextLabel)
+        scoreTextLabel.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(scoreNumberLabel.snp_bottom)
+            make.centerX.equalTo(0)
+        }
+    }
+    
+    func setupPauseButtonLayout() {
+        self.topView.addSubview(pauseButton)
+        pauseButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(40)
+            make.left.equalTo(40)
+        }
     }
 }
