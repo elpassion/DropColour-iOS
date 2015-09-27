@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIView {
+extension UIView {
 
     func addIncreaseSizeAnimation() {
         configureKeyFrameAnimationWithValues([1.2], keyTimes: [1])
