@@ -40,8 +40,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         let possibleCircleOnY = (sizeYscreen - 150 - (sizeYscreen % diameterSingleCircle)) / diameterSingleCircle
         self.gridX = possibleCircleOnX
         self.gridY = possibleCircleOnY
-        self.spacing = (UIScreen.mainScreen().bounds.size.width - CGFloat(diameterSingleCircle * gridX
-            )) / CGFloat(gridX + 1)
+        self.spacing = (UIScreen.mainScreen().bounds.size.width - CGFloat(diameterSingleCircle * gridX)) / CGFloat(gridX + 1)
     }
 
     required init?(coder aDecoder: NSCoder) {
