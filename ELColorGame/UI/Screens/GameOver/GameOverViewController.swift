@@ -47,10 +47,7 @@ class GameOverViewController: UIViewController {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.contentView.backgroundColor = UIColor.clearColor()
-        self.view.addSubview(blurEffectView)
-        blurEffectView.snp_makeConstraints { (make) -> Void in
-            make.edges.equalTo(0)
-        }
+        setupBlurEffectViewLayout()
     }
     
     func configureYourScoreTextLabel() {
@@ -60,11 +57,7 @@ class GameOverViewController: UIViewController {
         yourScoreTextLabel.text = "YOUR SCORE\n\(scoreNumber)"
         yourScoreTextLabel.font = UIFont(name: BebasNeueBold, size: 30)
         yourScoreTextLabel.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
-        self.view.addSubview(yourScoreTextLabel)
-        yourScoreTextLabel.snp_makeConstraints { (make) -> Void in
-            make.centerX.equalTo(0)
-            make.centerY.equalTo(0)
-        }
+        setupScoreTextLabelLayout()
     }
     
     func configureCancelButton() {
@@ -115,5 +108,21 @@ class GameOverViewController: UIViewController {
     func configureGestureRecognizer(myView: UIView) {
         myView.userInteractionEnabled = true
         myView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("didTapOnCancelButton")))
+    }
+    
+    //Layout
+    
+    func setupBlurEffectViewLayout() {
+        self.view.addSubview(blurEffectView)
+        blurEffectView.snp_makeConstraints { (make) -> Void in
+            make.edges.equalTo(0)
+        }
+    }
+    
+    func setupScoreTextLabelLayout() {
+        self.view.addSubview(yourScoreTextLabel)
+        yourScoreTextLabel.snp_makeConstraints { (make) -> Void in
+            make.center.equalTo(0)
+        }
     }
 }
