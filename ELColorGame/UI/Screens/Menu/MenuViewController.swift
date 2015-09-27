@@ -84,7 +84,7 @@ class MenuViewController: UIViewController {
         setupPauseImageViewLayout()
     }
     
-    //Actions method
+    //Action methods
     
     func didTapResumeButton() {
         self.dismissViewControllerAnimated(true, completion: {
