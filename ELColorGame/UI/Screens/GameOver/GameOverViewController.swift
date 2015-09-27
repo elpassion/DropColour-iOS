@@ -11,10 +11,10 @@ import UIKit
 class GameOverViewController: UIViewController {
 
     var blurEffectView: UIVisualEffectView = UIVisualEffectView(frame: CGRectZero)
-    let yourScoreTextLabel = UILabel(frame: CGRectZero)
+    let scoreTextLabel = UILabel(frame: CGRectZero)
     var scoreNumber: Int = Int()
-    let cancelButton = UIButton(frame: CGRectZero)
-    let tryAgainButton = UIButton(frame: CGRectZero)
+    let cancelButton = Button(title: "CANCEL", color: UIColor(red:0.91, green:0.15, blue:0.33, alpha:1))
+    let tryAgainButton = Button(title: "TRY AGAIN", color: UIColor(red:0.38, green:0.87, blue:0.1, alpha:1))
     
     init(score: Int) {
         super.init(nibName: nil, bundle: nil)
@@ -29,9 +29,8 @@ class GameOverViewController: UIViewController {
     
     override func loadView() {
         self.view = UIView()
-        self.view.backgroundColor = UIColor.clearColor()
         configureBlurEffectView()
-        configureYourScoreTextLabel()
+        configureScoreTextLabel()
         configureCancelButton()
         configureTryAgainButton()
     }
@@ -50,53 +49,33 @@ class GameOverViewController: UIViewController {
         setupBlurEffectViewLayout()
     }
     
-    func configureYourScoreTextLabel() {
-        yourScoreTextLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
-        yourScoreTextLabel.numberOfLines = 2
-        yourScoreTextLabel.textAlignment = NSTextAlignment.Center
-        yourScoreTextLabel.text = "YOUR SCORE\n\(scoreNumber)"
-        yourScoreTextLabel.font = UIFont(name: BebasNeueBold, size: 30)
-        yourScoreTextLabel.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
+    func configureScoreTextLabel() {
+        scoreTextLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
+        scoreTextLabel.numberOfLines = 2
+        scoreTextLabel.textAlignment = NSTextAlignment.Center
+        scoreTextLabel.text = "YOUR SCORE\n\(scoreNumber)"
+        scoreTextLabel.font = UIFont(name: BebasNeueBold, size: 30)
+        scoreTextLabel.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
         setupScoreTextLabelLayout()
     }
     
     func configureCancelButton() {
-        cancelButton.setTitle("CANCEL", forState: UIControlState.Normal)
-        cancelButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
-        cancelButton.contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
-        cancelButton.addTarget(self, action: Selector("didTapOnCancelButton"), forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(cancelButton)
-        cancelButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(yourScoreTextLabel.snp_bottom).offset(30)
-            make.width.equalTo(170)
-            make.height.equalTo(55)
-            make.centerX.equalTo(0)
+        cancelButton.buttonActionClosure = { [weak self] in
+            self?.dismissGameOverViewController()
         }
-        cancelButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        cancelButton.layer.cornerRadius = 27.5
-        cancelButton.backgroundColor = UIColor(red:0.91, green:0.15, blue:0.33, alpha:1)
+        setupCancelButtonLayout()
     }
     
     func configureTryAgainButton() {
-        tryAgainButton.setTitle("TRY AGAIN", forState: UIControlState.Normal)
-        tryAgainButton.titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
-        tryAgainButton.contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
-        tryAgainButton.addTarget(self, action: Selector("didTapOnTryAgainButton"), forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(tryAgainButton)
-        tryAgainButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(cancelButton.snp_bottom).offset(30)
-            make.width.equalTo(170)
-            make.height.equalTo(55)
-            make.centerX.equalTo(0)
+        tryAgainButton.buttonActionClosure = { [weak self] in
+            self?.didTapOnTryAgainButton()
         }
-        tryAgainButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        tryAgainButton.layer.cornerRadius = 27.5
-        tryAgainButton.backgroundColor = UIColor(red:0.38, green:0.87, blue:0.1, alpha:1)
+        setupTryAgainButtonLayout()
     }
 
-    //Actions method
+    //Action methods
     
-    func didTapOnCancelButton() {
+    func dismissGameOverViewController() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -107,7 +86,7 @@ class GameOverViewController: UIViewController {
     
     func configureGestureRecognizer(myView: UIView) {
         myView.userInteractionEnabled = true
-        myView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("didTapOnCancelButton")))
+        myView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("dismissGameOverViewController")))
     }
     
     //Layout
@@ -120,9 +99,29 @@ class GameOverViewController: UIViewController {
     }
     
     func setupScoreTextLabelLayout() {
-        self.view.addSubview(yourScoreTextLabel)
-        yourScoreTextLabel.snp_makeConstraints { (make) -> Void in
+        self.view.addSubview(scoreTextLabel)
+        scoreTextLabel.snp_makeConstraints { (make) -> Void in
             make.center.equalTo(0)
+        }
+    }
+    
+    func setupCancelButtonLayout() {
+        self.view.addSubview(cancelButton)
+        cancelButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(scoreTextLabel.snp_bottom).offset(30)
+            make.width.equalTo(170)
+            make.height.equalTo(55)
+            make.centerX.equalTo(0)
+        }
+    }
+    
+    func setupTryAgainButtonLayout() {
+        self.view.addSubview(tryAgainButton)
+        tryAgainButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(cancelButton.snp_bottom).offset(30)
+            make.width.equalTo(170)
+            make.height.equalTo(55)
+            make.centerX.equalTo(0)
         }
     }
 }
