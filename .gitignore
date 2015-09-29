@@ -19,7 +19,3 @@ DerivedData
 
 # CocoaPods
 Pods/
-
-# Babelish
-.babelish.token
-translations_strings.csv
