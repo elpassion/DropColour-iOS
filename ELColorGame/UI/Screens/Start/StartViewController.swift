@@ -13,12 +13,14 @@ class StartViewController: UIViewController {
     
     let backgroundImage:UIImageView = UIImageView()
     let newGameButton:Button = Button(title: "NEW GAME", color: UIColor(red:0.42, green:0.88, blue:0.1, alpha:1))
+    let topPlayersButton = Button(title: "TOP PLAYERS", color: UIColor(red:0.33, green:0.78, blue:0.78, alpha:1))
     
     override func loadView() {
         self.view = UIView()
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         configureBackgroundImageView()
         configureNewGameButton()
+        configureTopPlayersButtons()
     }
     
     //Subviews
@@ -33,6 +35,13 @@ class StartViewController: UIViewController {
             self?.didTapNewGameButton()
         }
         setupNewGameButtonLayout()
+    }
+    
+    func configureTopPlayersButtons() {
+        topPlayersButton.buttonActionClosure = { [weak self] in
+            print("Top players button tapped")
+        }
+        setupTopPlayersButtonLayout()
     }
     
     //Action method
@@ -58,6 +67,16 @@ class StartViewController: UIViewController {
             make.height.equalTo(55)
             make.centerX.equalTo(0)
             make.centerY.equalTo(80)
+        }
+    }
+    
+    func setupTopPlayersButtonLayout() {
+        self.view.addSubview(topPlayersButton)
+        topPlayersButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(newGameButton.snp_bottom).offset(15)
+            make.width.equalTo(170)
+            make.height.equalTo(55)
+            make.centerX.equalTo(0)
         }
     }
 }
