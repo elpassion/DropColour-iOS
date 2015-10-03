@@ -664,9 +664,9 @@
 				INFOPLIST_FILE = "$(SRCROOT)/ELColorGame/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.ELColorGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.DropColor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2430dbd7-e26f-4e8a-a939-ab8f00d03f53";
+				PROVISIONING_PROFILE = "8b6f2e38-ac36-4993-a48d-3011fcccf290";
 			};
 			name = Debug;
 		};
@@ -682,9 +682,9 @@
 				INFOPLIST_FILE = "$(SRCROOT)/ELColorGame/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.ELColorGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.DropColor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7a750174-2222-4148-bc94-8e4617cea6bb";
+				PROVISIONING_PROFILE = "b2883755-67ba-419c-aac8-3c3395631955";
 			};
 			name = Release;
 		};
