@@ -109,6 +109,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     func generateCircleView() {
         let x = random() % gridX
         let y = random() % gridY
+        let randomBomb = random() % 15
         
         circleView = CircleView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
         circleView.delegate = self
@@ -123,11 +124,46 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
                 self.circleView.addAppearAnimation()
                 self.boardView.addSubview(self.circleView)
             })
+            if randomBomb == 7 {
+                addRandomBomb(circleView)
+            }
             circleViewsArray.append(circleView)
         }
     }
     
+    func addRandomBomb(view: CircleView) {
+        let imageView: UIImageView = UIImageView()
+        imageView.image = UIImage(named: "bomb_icon")
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        view.addSubview(imageView)
+        imageView.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(5)
+            make.left.equalTo(5)
+            make.right.equalTo(-5)
+            make.bottom.equalTo(-5)
+        }
+    }
+    
     //CircleViewDelegate method
+    
+    func circleDidTouched(view: CircleView) {
+        if view.subviews.first != nil {
+            playBombSound()
+            for circle in circleViewsArray {
+                if circle.backgroundColor == view.backgroundColor {
+                    if let index = circleViewsArray.indexOf(circle) {
+                        circleViewsArray.removeAtIndex(index)
+                        scoreNumber += 4
+                        scoreNumberLabel.text = "\(scoreNumber)"
+                    }
+                    circle.animation = "zoomOut"
+                    circle.animateNext({ () -> () in
+                        circle.removeFromSuperview()
+                    })
+                }
+            }
+        }
+    }
     
     func pointDidChanging(view: CircleView) {
         UIView.animateWithDuration(0.15, animations: { () -> Void in
@@ -192,6 +228,14 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     
     func playSound() {
         if let soundURL = NSBundle.mainBundle().URLForResource("bubble_pop_sound", withExtension: "m4a") {
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundURL, &mySound)
+            AudioServicesPlaySystemSound(mySound);
+        }
+    }
+    
+    func playBombSound() {
+        if let soundURL = NSBundle.mainBundle().URLForResource("bomb_explosion", withExtension: "m4a") {
             var mySound: SystemSoundID = 0
             AudioServicesCreateSystemSoundID(soundURL, &mySound)
             AudioServicesPlaySystemSound(mySound);
