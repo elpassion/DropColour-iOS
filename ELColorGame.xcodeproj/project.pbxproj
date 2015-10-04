@@ -392,6 +392,7 @@
 				TargetAttributes = {
 					4E4BB56E1BB410240043C80C = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = H5QFB36W2F;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 1;
