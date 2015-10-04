@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import AVFoundation
+import GameKit
 
 class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewControllerDelegate {
     
@@ -243,8 +244,25 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     
     func finishGame() {
         myTimer?.invalidate()
+        synchronizeHighestScore()
         let gameOverViewController = GameOverViewController(score: scoreNumber)
         presentViewController(gameOverViewController, animated: true, completion: nil)
+    }
+    
+    //Synchronize highest score
+    
+    func synchronizeHighestScore() {
+        if GKLocalPlayer.localPlayer().authenticated {
+            let scoreReporter = GKScore(leaderboardIdentifier: "drag_and_drop_color_leaderboard")
+            scoreReporter.value = Int64(scoreNumber)
+            let scoreArray: [GKScore] = [scoreReporter]
+            
+            GKScore.reportScores(scoreArray, withCompletionHandler: { (error) -> Void in
+                if error != nil {
+                    print("error")
+                }
+            })
+        }
     }
     
     //Layout
