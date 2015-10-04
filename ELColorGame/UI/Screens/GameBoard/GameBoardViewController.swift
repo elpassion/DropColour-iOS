@@ -253,7 +253,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     
     func synchronizeHighestScore() {
         if GKLocalPlayer.localPlayer().authenticated {
-            let scoreReporter = GKScore(leaderboardIdentifier: "drag_and_drop_color_leaderboard")
+            let scoreReporter = GKScore(leaderboardIdentifier: "drag_and_drop_color_leaderboard_01")
             scoreReporter.value = Int64(scoreNumber)
             let scoreArray: [GKScore] = [scoreReporter]
             
