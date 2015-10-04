@@ -8,12 +8,14 @@
 
 import UIKit
 import SnapKit
+import GameKit
 
 class StartViewController: UIViewController {
     
     let backgroundImage:UIImageView = UIImageView()
     let newGameButton:Button = Button(title: "NEW GAME", color: UIColor(red:0.42, green:0.88, blue:0.1, alpha:1))
     let topPlayersButton = Button(title: "TOP PLAYERS", color: UIColor(red:0.33, green:0.78, blue:0.78, alpha:1))
+    let localPlayer = GKLocalPlayer.localPlayer()
     
     override func loadView() {
         self.view = UIView()
@@ -21,6 +23,23 @@ class StartViewController: UIViewController {
         configureBackgroundImageView()
         configureNewGameButton()
         configureTopPlayersButtons()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        authenticatePlayer()
+    }
+    
+    func authenticatePlayer() {
+        localPlayer.authenticateHandler = {(viewController, error) -> Void in
+            if let viewController = viewController {
+                self.presentViewController(viewController, animated: true, completion: nil)
+            }
+            else {
+                print("Local players\(GKLocalPlayer.localPlayer().authenticated)")
+            }
+        }
     }
     
     //Subviews
