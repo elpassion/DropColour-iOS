@@ -10,8 +10,9 @@ import UIKit
 import Spring
 
 protocol CircleViewDelegate {
-    func pointDidChanged(initialPoint:CGPoint, view:CircleView)
+    func circleDidTouched(view: CircleView)
     func pointDidChanging(view: CircleView)
+    func pointDidChanged(initialPoint:CGPoint, view:CircleView)
 }
 
 class CircleView: SpringView {
@@ -46,6 +47,7 @@ class CircleView: SpringView {
         let translation = recognizer.translationInView(self.superview)
         self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
         if recognizer.state == .Began {
+            delegate?.circleDidTouched(self)
         } else if recognizer.state == .Changed {
             delegate?.pointDidChanging(self)
             self.superview?.bringSubviewToFront(self)
