@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import GameKit
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController, GKGameCenterControllerDelegate {
     
     let backgroundImage:UIImageView = UIImageView()
     let newGameButton:Button = Button(title: "NEW GAME", color: UIColor(red:0.42, green:0.88, blue:0.1, alpha:1))
@@ -58,7 +58,7 @@ class StartViewController: UIViewController {
     
     func configureTopPlayersButtons() {
         topPlayersButton.buttonActionClosure = { [weak self] in
-            print("Top players button tapped")
+            self?.showLeaders()
         }
         setupTopPlayersButtonLayout()
     }
@@ -97,5 +97,17 @@ class StartViewController: UIViewController {
             make.height.equalTo(55)
             make.centerX.equalTo(0)
         }
+    }
+    
+    //Game Center
+    
+    func showLeaders() {
+        let gc = GKGameCenterViewController()
+        gc.gameCenterDelegate = self
+        presentViewController(gc, animated: true, completion: nil)
+    }
+    
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
     }
 }
