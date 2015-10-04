@@ -23,7 +23,6 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     var boardView:UIView = UIView()
     var backgroundBoardView = UIView()
     var circleViewsArray:[CircleView] = []
-    var circlePointsArray: [CGPoint] = []
     var circleView:CircleView = CircleView()
     let pauseButton = UIButton(frame: CGRectZero)
     let restartButton = UIButton(frame: CGRectZero)
@@ -114,9 +113,9 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         circleView = CircleView(frame: CGRectMake(CGFloat(x * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(y * (diameterSingleCircle + 10)) + spacing * 2, CGFloat(diameterSingleCircle), CGFloat(diameterSingleCircle)))
         circleView.delegate = self
         circleView.layer.cornerRadius = CGFloat(diameterSingleCircle / 2)
-
-        if let point = contains(circlePointsArray, element: circleView.center) {
-            print("Circle view with point: \(point) is in array, generate other point")
+        
+        if let circle = circleArrayContainElement(circleViewsArray, element: circleView) {
+            print("Circle view with point: \(circle.center) is in array, generate other point")
         }
         else {
             print("This element is first time in array")
@@ -125,7 +124,6 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
                 self.boardView.addSubview(self.circleView)
             })
             circleViewsArray.append(circleView)
-            circlePointsArray.append(circleView.center)
         }
     }
     
@@ -141,11 +139,9 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         let possibleView = circleViewWith(view.center, overView: view)
         if let possibleView = possibleView {
             if let index = circleViewsArray.indexOf(possibleView) {
-                circlePointsArray.removeAtIndex(index)
                 circleViewsArray.removeAtIndex(index)
             }
             if let index = circleViewsArray.indexOf(view) {
-                circlePointsArray.removeAtIndex(index)
                 circleViewsArray.removeAtIndex(index)
             }
             possibleView.animation = "zoomOut"
@@ -222,11 +218,11 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
         generateCircleView()
     }
     
-    //Helper for points array
+    //Helper for checking circle in CircleArray
     
-    func contains(values: [CGPoint], element: CGPoint) -> CGPoint? {
-        for value in values {
-            if value == element {
+    func circleArrayContainElement(circleArray: [CircleView], element: CircleView) -> CircleView? {
+        for circle in circleArray {
+            if circle.center == element.center {
                 return element
             }
         }
