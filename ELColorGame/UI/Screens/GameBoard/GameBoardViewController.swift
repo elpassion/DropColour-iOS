@@ -244,7 +244,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     
     //MenuViewControllerDelegate method
     
-    func resumeButtonPressed(menuViewController: MenuViewController) {
+    func menuViewControllerDidResumeGame(menuViewController: MenuViewController) {
         startTimer()
     }
     
