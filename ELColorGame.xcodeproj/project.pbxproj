@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		077E3DC81BB70BEF00DE5F3B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E3DC71BB70BEF00DE5F3B /* Button.swift */; settings = {ASSET_TAGS = (); }; };
 		07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */; settings = {ASSET_TAGS = (); }; };
+		316690381BC5C47600DFD40D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316690371BC5C47600DFD40D /* MenuView.swift */; settings = {ASSET_TAGS = (); }; };
 		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; settings = {ASSET_TAGS = (); }; };
 		4E4BB5881BB410240043C80C /* ELColorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5871BB410240043C80C /* ELColorGameTests.swift */; };
@@ -48,6 +49,7 @@
 		077E3DC71BB70BEF00DE5F3B /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CAAnimation.swift"; sourceTree = "<group>"; };
 		1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.release.xcconfig"; sourceTree = "<group>"; };
+		316690371BC5C47600DFD40D /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubble_pop_sound.m4a; sourceTree = "<group>"; };
 		4E4BB56F1BB410240043C80C /* ELColorGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELColorGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4BB5831BB410240043C80C /* ELColorGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELColorGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +220,7 @@
 		9A6805048E044E1DE06E684F /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				316690371BC5C47600DFD40D /* MenuView.swift */,
 				9A6C1BAF80412C73F3938C3E /* MenuViewController.swift */,
 			);
 			path = Menu;
@@ -534,6 +537,7 @@
 				9A691889E2944596D7AC15AF /* StartViewController.swift in Sources */,
 				077E3DC81BB70BEF00DE5F3B /* Button.swift in Sources */,
 				9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */,
+				316690381BC5C47600DFD40D /* MenuView.swift in Sources */,
 				9A627CEB0EFC2BF211E2DB93 /* GameBoardViewController.swift in Sources */,
 				9A66EE950DDBEA218650392C /* GameOverViewController.swift in Sources */,
 				9A6E3EA7C2B0AB008BF3D7AD /* CircleView.swift in Sources */,
