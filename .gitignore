@@ -1,21 +1,54 @@
+################################
+# OS X
+
+*.DS_Store
+*.swp
+.Trashes
+*.lock
+
+################################
 # Xcode
-#
-build/
+
 *.pbxuser
 !default.pbxuser
 *.mode1v3
 !default.mode1v3
 *.mode2v3
 !default.mode2v3
+*.perspective
+!default.perspective
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
-*.xccheckout
-*.moved-aside
-DerivedData
-*.hmap
-*.ipa
 *.xcuserstate
+project.xcworkspace/
+xcuserdata/
+build/
+dist/
+DerivedData/
+*.moved-aside
+*.xccheckout
 
+################################
+# AppCode
+
+.idea
+
+################################
+# Backup files
+
+*~
+*~.nib
+*~.xib
+\#*#
+.#*
+
+################################
 # CocoaPods
+
 Pods/
+!Podfile.lock
+
+################################
+# Fastlane
+
+.fastlane/report.xml
