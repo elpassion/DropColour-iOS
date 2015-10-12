@@ -18,6 +18,7 @@
 		4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAD1BB4B11A001104C7 /* Fonts.swift */; settings = {ASSET_TAGS = (); }; };
 		4E835C101BC091C600AA9293 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E835C0F1BC091C600AA9293 /* GameKit.framework */; };
 		4EBAF1011BC16ED0000E201E /* bomb_explosion.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4EBAF1001BC16ED0000E201E /* bomb_explosion.m4a */; settings = {ASSET_TAGS = (); }; };
+		4EC38C461BCC1F13005E7F1F /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC38C451BCC1F13005E7F1F /* GameBoardView.swift */; settings = {ASSET_TAGS = (); }; };
 		4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */; settings = {ASSET_TAGS = (); }; };
 		9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C1BAF80412C73F3938C3E /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A627CEB0EFC2BF211E2DB93 /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A610DC4B4C122AA2A501745 /* GameBoardViewController.swift */; };
@@ -64,6 +65,7 @@
 		4E4D9EAD1BB4B11A001104C7 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4E835C0F1BC091C600AA9293 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		4EBAF1001BC16ED0000E201E /* bomb_explosion.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bomb_explosion.m4a; sourceTree = "<group>"; };
+		4EC38C451BCC1F13005E7F1F /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		9A603B96F16924EAF14D8E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A610DC4B4C122AA2A501745 /* GameBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardViewController.swift; sourceTree = "<group>"; };
 		9A641A8E6FFBC061A7ADF863 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				9A610DC4B4C122AA2A501745 /* GameBoardViewController.swift */,
+				4EC38C451BCC1F13005E7F1F /* GameBoardView.swift */,
 			);
 			path = GameBoard;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 			files = (
 				4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */,
 				3107929E1BCC120F00D7D680 /* StartView.swift in Sources */,
+				4EC38C461BCC1F13005E7F1F /* GameBoardView.swift in Sources */,
 				9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */,
 				07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */,
 				9A691889E2944596D7AC15AF /* StartViewController.swift in Sources */,

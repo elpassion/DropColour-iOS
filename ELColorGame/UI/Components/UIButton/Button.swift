@@ -15,13 +15,20 @@ class Button: UIButton {
     init(title: String, color: UIColor) {
         super.init(frame: CGRectZero)
         
-        self.setTitle(title, forState: UIControlState.Normal)
-        self.titleLabel!.font = UIFont(name: BebasNeueBold, size: 22)
-        self.contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
-        self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        self.layer.cornerRadius = 27.5
-        self.backgroundColor = color
-        self.addTarget(self, action: Selector("didTapOnButton:"), forControlEvents: UIControlEvents.TouchUpInside)
+        setTitle(title, forState: UIControlState.Normal)
+        titleLabel!.font = UIFont(name: BebasNeueBold, size: 22)
+        contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
+        setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        layer.cornerRadius = 27.5
+        backgroundColor = color
+        addTarget(self, action: Selector("didTapOnButton:"), forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    init(image: UIImage?) {
+        super.init(frame: CGRectZero)
+        
+        setImage(image, forState: .Normal)
+        addTarget(self, action: Selector("didTapOnButton:"), forControlEvents: UIControlEvents.TouchUpInside)
     }
 
     required init?(coder aDecoder: NSCoder) {
