@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		077E3DC81BB70BEF00DE5F3B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E3DC71BB70BEF00DE5F3B /* Button.swift */; settings = {ASSET_TAGS = (); }; };
 		07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */; settings = {ASSET_TAGS = (); }; };
+		3107929E1BCC120F00D7D680 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107929D1BCC120F00D7D680 /* StartView.swift */; settings = {ASSET_TAGS = (); }; };
 		316690381BC5C47600DFD40D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316690371BC5C47600DFD40D /* MenuView.swift */; settings = {ASSET_TAGS = (); }; };
 		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; settings = {ASSET_TAGS = (); }; };
@@ -49,6 +50,7 @@
 		077E3DC71BB70BEF00DE5F3B /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CAAnimation.swift"; sourceTree = "<group>"; };
 		1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.release.xcconfig"; sourceTree = "<group>"; };
+		3107929D1BCC120F00D7D680 /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		316690371BC5C47600DFD40D /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubble_pop_sound.m4a; sourceTree = "<group>"; };
 		4E4BB56F1BB410240043C80C /* ELColorGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELColorGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				9A645F14AE48ACC3A5DCE70E /* StartViewController.swift */,
+				3107929D1BCC120F00D7D680 /* StartView.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */,
+				3107929E1BCC120F00D7D680 /* StartView.swift in Sources */,
 				9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */,
 				07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */,
 				9A691889E2944596D7AC15AF /* StartViewController.swift in Sources */,
