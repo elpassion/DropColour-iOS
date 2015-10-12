@@ -12,8 +12,9 @@ class GameView: UIView {
     
     let delegate: GameViewDelegate?
     
-    init(delegate: GameViewDelegate?) {
+    init(boardView: GameBoardView, delegate: GameViewDelegate?) {
         self.delegate = delegate
+        self.boardView = boardView
         super.init(frame: CGRectZero)
         backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
         loadSubviews()
@@ -38,6 +39,7 @@ class GameView: UIView {
         addSubview(restartButton)
         addSubview(scoreTextLabel)
         addSubview(scoreNumberLabel)
+        addSubview(boardView)
     }
     
     private let topView = UIView()
@@ -61,6 +63,8 @@ class GameView: UIView {
         label.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
         return label
     }()
+    
+    let boardView: GameBoardView
     
     // MARK: Layout
 
@@ -86,6 +90,10 @@ class GameView: UIView {
         restartButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(40)
             make.right.equalTo(-40)
+        }
+        boardView.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(topView.snp_bottom)
+            make.left.right.bottom.equalTo(0)
         }
     }
 }
