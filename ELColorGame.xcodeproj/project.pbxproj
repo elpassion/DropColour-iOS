@@ -11,6 +11,7 @@
 		07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */; settings = {ASSET_TAGS = (); }; };
 		3107929E1BCC120F00D7D680 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107929D1BCC120F00D7D680 /* StartView.swift */; settings = {ASSET_TAGS = (); }; };
 		310792A01BCC35DD00D7D680 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107929F1BCC35DD00D7D680 /* GameBoardView.swift */; settings = {ASSET_TAGS = (); }; };
+		3126F23D1BCC5DC10052AD46 /* GameBoardSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F23C1BCC5DC10052AD46 /* GameBoardSlotView.swift */; settings = {ASSET_TAGS = (); }; };
 		316690381BC5C47600DFD40D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316690371BC5C47600DFD40D /* MenuView.swift */; settings = {ASSET_TAGS = (); }; };
 		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; settings = {ASSET_TAGS = (); }; };
@@ -54,6 +55,7 @@
 		1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.release.xcconfig"; sourceTree = "<group>"; };
 		3107929D1BCC120F00D7D680 /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		3107929F1BCC35DD00D7D680 /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
+		3126F23C1BCC5DC10052AD46 /* GameBoardSlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardSlotView.swift; sourceTree = "<group>"; };
 		316690371BC5C47600DFD40D /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubble_pop_sound.m4a; sourceTree = "<group>"; };
 		4E4BB56F1BB410240043C80C /* ELColorGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELColorGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +216,7 @@
 				9A610DC4B4C122AA2A501745 /* GameViewController.swift */,
 				4EC38C451BCC1F13005E7F1F /* GameView.swift */,
 				3107929F1BCC35DD00D7D680 /* GameBoardView.swift */,
+				3126F23C1BCC5DC10052AD46 /* GameBoardSlotView.swift */,
 			);
 			path = GameBoard;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				9A627CEB0EFC2BF211E2DB93 /* GameViewController.swift in Sources */,
 				9A66EE950DDBEA218650392C /* GameOverViewController.swift in Sources */,
 				9A6E3EA7C2B0AB008BF3D7AD /* CircleView.swift in Sources */,
+				3126F23D1BCC5DC10052AD46 /* GameBoardSlotView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

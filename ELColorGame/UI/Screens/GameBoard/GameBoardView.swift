@@ -10,8 +10,6 @@ import UIKit
 
 class GameBoardView: UIView {
     
-    typealias SlotView = UIView
-    
     let rows: Int
     let columns: Int
     
@@ -32,9 +30,6 @@ class GameBoardView: UIView {
     private func loadSubviews() {
         enumerateSlotViewsUsingBlock({ (slotView, _, _) in
             self.addSubview(slotView)
-            
-            slotView.backgroundColor = UIColor.redColor()
-            
         })
     }
     
@@ -52,21 +47,21 @@ class GameBoardView: UIView {
     
     // MARK: Slots
     
-    private let slotViews: [[SlotView]]
+    private let slotViews: [[GameBoardSlotView]]
     
-    class private func createSlotViews(rows: Int, columns: Int) -> [[UIView]] {
-        var slotViews: [[SlotView]] = []
+    class private func createSlotViews(rows: Int, columns: Int) -> [[GameBoardSlotView]] {
+        var slotViews: [[GameBoardSlotView]] = []
         for _ in 0...rows {
-            var column: [SlotView] = []
+            var column: [GameBoardSlotView] = []
             for _ in 0...columns {
-                column.append(UIView(frame: CGRectZero))
+                column.append(GameBoardSlotView())
             }
             slotViews.append(column)
         }
         return slotViews
     }
     
-    func enumerateSlotViewsUsingBlock(block: (slotView: SlotView, x: Int, y: Int) -> Void) {
+    func enumerateSlotViewsUsingBlock(block: (slotView: GameBoardSlotView, x: Int, y: Int) -> Void) {
         for x in 0...(rows-1) {
             for y in 0...(columns-1) {
                 block(slotView: slotViews[x][y], x: x, y: y)
@@ -74,7 +69,7 @@ class GameBoardView: UIView {
         }
     }
     
-    func slotViewAtPosition(x: Int, y: Int) -> SlotView {
+    func slotViewAtPosition(x: Int, y: Int) -> GameBoardSlotView {
         return slotViews[x][y]
     }
     
