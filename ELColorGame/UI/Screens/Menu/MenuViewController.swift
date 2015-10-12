@@ -36,7 +36,7 @@ class MenuViewController: UIViewController, MenuViewDelegate {
     }
     
     func menuViewDidTapNewGame(menuView: MenuView) {
-        self.presentViewController(GameBoardViewController(), animated: true, completion: nil)
+        self.presentViewController(GameViewController(), animated: true, completion: nil)
     }
     
     func menuViewDidTapQuit(menuView: MenuView) {

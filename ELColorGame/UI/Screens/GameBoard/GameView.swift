@@ -1,5 +1,5 @@
 //
-//  GameBoardView.swift
+//  GameView.swift
 //  ELColorGame
 //
 //  Created by Mateusz Szklarek on 12/10/15.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class GameBoardView: UIView {
+class GameView: UIView {
     
-    let delegate: GameBoardViewDelegate?
+    let delegate: GameViewDelegate?
     
-    init(delegate: GameBoardViewDelegate?) {
+    init(delegate: GameViewDelegate?) {
         self.delegate = delegate
         super.init(frame: CGRectZero)
         backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
@@ -92,11 +92,11 @@ class GameBoardView: UIView {
 
 // MARK: - Delegate
 
-protocol GameBoardViewDelegate: class {
+protocol GameViewDelegate: class {
     
-    func gameBoardViewDidTapPause(gameBoardView: GameBoardView)
+    func gameBoardViewDidTapPause(gameBoardView: GameView)
     
-    func gameBoardViewDidTapRestart(gameBoardView: GameBoardView)
+    func gameBoardViewDidTapRestart(gameBoardView: GameView)
     
 }
 

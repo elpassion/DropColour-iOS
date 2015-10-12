@@ -102,7 +102,7 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
     }
     
     func didTapOnTryAgainButton() {
-        let gameBoardViewController = GameBoardViewController()
+        let gameBoardViewController = GameViewController()
         presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
     

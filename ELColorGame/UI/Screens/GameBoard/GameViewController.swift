@@ -1,5 +1,5 @@
 //
-//  GameBoardViewController.swift
+//  GameViewController.swift
 //  ELColorGame
 //
 //  Created by Mateusz Szklarek on 24/09/15.
@@ -11,7 +11,7 @@ import SnapKit
 import AVFoundation
 import GameKit
 
-class GameBoardViewController: UIViewController, GameBoardViewDelegate {
+class GameViewController: UIViewController, GameViewDelegate {
     
     var scoreNumber = 0
     
@@ -24,7 +24,7 @@ class GameBoardViewController: UIViewController, GameBoardViewDelegate {
     }
     
     override func loadView() {
-        self.view = GameBoardView(delegate: self)
+        self.view = GameView(delegate: self)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
     }
     
@@ -60,13 +60,13 @@ class GameBoardViewController: UIViewController, GameBoardViewDelegate {
         }
     }
 
-    // MARK: GameBoardViewDelegate
+    // MARK: GameViewDelegate
 
-    func gameBoardViewDidTapPause(gameBoardView: GameBoardView) {
+    func gameBoardViewDidTapPause(gameBoardView: GameView) {
 
     }
 
-    func gameBoardViewDidTapRestart(gameBoardView: GameBoardView) {
+    func gameBoardViewDidTapRestart(gameBoardView: GameView) {
         
     }
 
