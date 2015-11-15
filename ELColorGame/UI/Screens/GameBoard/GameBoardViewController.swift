@@ -17,7 +17,6 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     var gridY:Int = Int()
     var spacing:CGFloat = CGFloat()
     
-    let menuViewController = MenuViewController()
     let diameterSingleCircle = 50
     var topView:UIView = UIView()
     var boardView:UIView = UIView()
@@ -206,8 +205,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     
     func didTapOnPauseButton() {
         myTimer?.invalidate()
-        menuViewController.delegate = self
-        presentViewController(menuViewController, animated: true, completion: nil)
+        presentViewController(MenuViewController(delegate: self), animated: true, completion: nil)
     }
     
     //Logic
@@ -244,7 +242,7 @@ class GameBoardViewController: UIViewController, CircleViewDelegate, MenuViewCon
     
     //MenuViewControllerDelegate method
     
-    func resumeButtonPressed(menuViewController: MenuViewController) {
+    func menuViewControllerDidResumeGame(menuViewController: MenuViewController) {
         startTimer()
     }
     
