@@ -30,8 +30,8 @@ class MenuViewController: UIViewController, MenuViewDelegate {
     // MARK: MenuViewDelegate
     
     func menuViewDidTapResume(menuView: MenuView) {
-        self.dismissViewControllerAnimated(true, completion: {
-            delegate?.menuViewControllerDidResumeGame(self)
+        self.dismissViewControllerAnimated(true, completion: { [unowned self] in
+            self.delegate?.menuViewControllerDidResumeGame(self)
         })
     }
     
