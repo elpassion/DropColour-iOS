@@ -24,11 +24,19 @@ class GameViewController: UIViewController, GameViewDelegate {
     }
     
     override func loadView() {
-        let slotSize = CGSize(width: 44, height: 44)
-        let (rows, columns) = GameBoardView.boardSize(viewSize: CGSize(width: 0, height: 0), slotSize: slotSize)
-        let boardView = GameBoardView(slotSize: slotSize, rows: rows, columns: columns)
-        self.view = GameView(boardView: boardView, delegate: self)
+        self.view = GameView(delegate: self)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if let gameView = view as? GameView {
+            if gameView.boardView == nil {
+                let slotSize = CGSize(width: 44, height: 44)
+                let (rows, columns) = GameBoardView.boardSize(viewSize: CGSize(width: 0, height: 0), slotSize: slotSize)
+                gameView.boardView = GameBoardView(slotSize: slotSize, rows: rows, columns: columns)
+            }
+        }
     }
     
     // MARK: Sound
