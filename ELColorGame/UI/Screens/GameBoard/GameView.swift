@@ -111,7 +111,9 @@ class GameView: UIView {
         restartButton.setContentCompressionResistancePriority(UILayoutPriorityRequired, forAxis: .Horizontal)
         boardView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(topView.snp_bottom)
-            make.left.right.bottom.equalTo(0)
+            make.left.equalTo(16)
+            make.right.equalTo(-16)
+            make.bottom.equalTo(-16)
         }
     }
 }
