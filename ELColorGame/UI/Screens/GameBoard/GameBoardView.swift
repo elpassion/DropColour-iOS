@@ -35,7 +35,7 @@ class GameBoardView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let slotSize = CGSizeMake(frame.size.width / CGFloat(rows), frame.size.height / CGFloat(columns))
+        let slotSize = CGSizeMake(frame.size.width / CGFloat(columns), frame.size.height / CGFloat(rows))
         enumerateSlotViewsUsingBlock({ (slotView, x, y) in
             var frame = CGRectZero
             frame.size = slotSize
@@ -51,9 +51,9 @@ class GameBoardView: UIView {
     
     class private func createSlotViews(rows: Int, columns: Int) -> [[GameBoardSlotView]] {
         var slotViews: [[GameBoardSlotView]] = []
-        for _ in 0...rows {
+        for _ in 0...(rows-1) {
             var column: [GameBoardSlotView] = []
-            for _ in 0...columns {
+            for _ in 0...(columns-1) {
                 column.append(GameBoardSlotView())
             }
             slotViews.append(column)
@@ -64,15 +64,15 @@ class GameBoardView: UIView {
     typealias EnumerateSlotViewsBlock = (slotView: GameBoardSlotView, x: Int, y: Int) -> Void
     
     func enumerateSlotViewsUsingBlock(block: EnumerateSlotViewsBlock) {
-        for x in 0...(rows-1) {
-            for y in 0...(columns-1) {
-                block(slotView: slotViews[x][y], x: x, y: y)
+        for y in 0...(rows-1) {
+            for x in 0...(columns-1) {
+                block(slotView: slotViews[y][x], x: x, y: y)
             }
         }
     }
     
     func slotViewAtPosition(x: Int, y: Int) -> GameBoardSlotView {
-        return slotViews[x][y]
+        return slotViews[y][x]
     }
     
 }
