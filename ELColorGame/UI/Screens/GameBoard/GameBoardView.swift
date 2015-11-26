@@ -36,11 +36,11 @@ class GameBoardView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let horizontalSpacing = (bounds.size.width - (slotSize.width * CGFloat(columns))) / (CGFloat(columns) - 1)
-        let verticalSpacing = (bounds.size.height - (slotSize.height * CGFloat(rows))) / (CGFloat(rows) - 1)
-        let spacing = min(horizontalSpacing, verticalSpacing)
-        let horizontalMargin = (frame.size.width - CGFloat(columns) * slotSize.width) / 2.0
-        let verticalMargin = (frame.size.height - CGFloat(rows) * slotSize.height) / 2.0
+        let horizontalSpacing = columns > 1 ? (bounds.size.width - (slotSize.width * CGFloat(columns))) / (CGFloat(columns) - 1) : CGFloat(0)
+        let verticalSpacing = rows > 1 ? (bounds.size.height - (slotSize.height * CGFloat(rows))) / (CGFloat(rows) - 1) : CGFloat(0)
+        let spacing = max(min(horizontalSpacing, verticalSpacing), 16.0)
+        let horizontalMargin = (frame.size.width - (self.slotSize.width * CGFloat(columns)) - (spacing * CGFloat(columns - 1))) / 2
+        let verticalMargin = (frame.size.height - (self.slotSize.height * CGFloat(rows)) - (spacing * CGFloat(rows - 1))) / 2
         enumerateSlotViewsUsingBlock({ (slotView, x, y) in
             var frame = CGRectZero
             frame.size = self.slotSize
