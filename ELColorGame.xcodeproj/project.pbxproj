@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		077E3DC81BB70BEF00DE5F3B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E3DC71BB70BEF00DE5F3B /* Button.swift */; settings = {ASSET_TAGS = (); }; };
-		07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */; settings = {ASSET_TAGS = (); }; };
-		3107929E1BCC120F00D7D680 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107929D1BCC120F00D7D680 /* StartView.swift */; settings = {ASSET_TAGS = (); }; };
-		310792A01BCC35DD00D7D680 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107929F1BCC35DD00D7D680 /* GameBoardView.swift */; settings = {ASSET_TAGS = (); }; };
-		3126F23D1BCC5DC10052AD46 /* GameBoardSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F23C1BCC5DC10052AD46 /* GameBoardSlotView.swift */; settings = {ASSET_TAGS = (); }; };
-		316690381BC5C47600DFD40D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316690371BC5C47600DFD40D /* MenuView.swift */; settings = {ASSET_TAGS = (); }; };
-		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; settings = {ASSET_TAGS = (); }; };
+		077E3DC81BB70BEF00DE5F3B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E3DC71BB70BEF00DE5F3B /* Button.swift */; };
+		07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */; };
+		3107929E1BCC120F00D7D680 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107929D1BCC120F00D7D680 /* StartView.swift */; };
+		310792A01BCC35DD00D7D680 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107929F1BCC35DD00D7D680 /* GameBoardView.swift */; };
+		3126F23D1BCC5DC10052AD46 /* GameBoardSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F23C1BCC5DC10052AD46 /* GameBoardSlotView.swift */; };
+		316690381BC5C47600DFD40D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316690371BC5C47600DFD40D /* MenuView.swift */; };
+		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; };
+		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; };
 		4E4BB5881BB410240043C80C /* ELColorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5871BB410240043C80C /* ELColorGameTests.swift */; };
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
 		4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAD1BB4B11A001104C7 /* Fonts.swift */; };
 		4E835C101BC091C600AA9293 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E835C0F1BC091C600AA9293 /* GameKit.framework */; };
-		4EBAF1011BC16ED0000E201E /* bomb_explosion.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4EBAF1001BC16ED0000E201E /* bomb_explosion.m4a */; settings = {ASSET_TAGS = (); }; };
-		4EC38C461BCC1F13005E7F1F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC38C451BCC1F13005E7F1F /* GameView.swift */; settings = {ASSET_TAGS = (); }; };
-		4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */; settings = {ASSET_TAGS = (); }; };
-		9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C1BAF80412C73F3938C3E /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4EBAF1011BC16ED0000E201E /* bomb_explosion.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4EBAF1001BC16ED0000E201E /* bomb_explosion.m4a */; };
+		4EC38C461BCC1F13005E7F1F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC38C451BCC1F13005E7F1F /* GameView.swift */; };
+		4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */; };
+		9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C1BAF80412C73F3938C3E /* MenuViewController.swift */; };
 		9A627CEB0EFC2BF211E2DB93 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A610DC4B4C122AA2A501745 /* GameViewController.swift */; };
-		9A66EE950DDBEA218650392C /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A641F25C769378951E44D57 /* GameOverViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9A66EE950DDBEA218650392C /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A641F25C769378951E44D57 /* GameOverViewController.swift */; };
 		9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */; };
 		9A691889E2944596D7AC15AF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A645F14AE48ACC3A5DCE70E /* StartViewController.swift */; };
 		9A6996BD7D6701CD3B528077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A603B96F16924EAF14D8E07 /* Assets.xcassets */; };
