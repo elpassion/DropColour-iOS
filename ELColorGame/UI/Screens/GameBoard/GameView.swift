@@ -12,9 +12,8 @@ class GameView: UIView {
     
     let delegate: GameViewDelegate?
     
-    init(boardView: GameBoardView, delegate: GameViewDelegate?) {
+    init(delegate: GameViewDelegate?) {
         self.delegate = delegate
-        self.boardView = boardView
         super.init(frame: CGRectZero)
         backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
         loadSubviews()
@@ -40,7 +39,7 @@ class GameView: UIView {
         topView.addSubview(scoreView)
         scoreView.addSubview(scoreTextLabel)
         scoreView.addSubview(scoreNumberLabel)
-        addSubview(boardView)
+        addSubview(boardContainerView)
     }
     
     private let topView = UIView()
@@ -69,7 +68,25 @@ class GameView: UIView {
         return label
     }()
     
-    let boardView: GameBoardView
+    let boardContainerView: UIView = {
+        let view = UIView(frame: CGRectZero)
+        view.backgroundColor = UIColor.clearColor()
+        return view
+    }()
+    
+    var boardView: GameBoardView? {
+        didSet {
+            if let oldValue = oldValue {
+                oldValue.removeFromSuperview()
+            }
+            if let boardView = boardView {
+                boardContainerView.addSubview(boardView)
+                boardView.snp_makeConstraints(closure: { (make) -> Void in
+                    make.edges.equalTo(0)
+                })
+            }
+        }
+    }
     
     // MARK: Layout
 
@@ -109,7 +126,7 @@ class GameView: UIView {
             make.centerY.equalTo(0)
         }
         restartButton.setContentCompressionResistancePriority(UILayoutPriorityRequired, forAxis: .Horizontal)
-        boardView.snp_makeConstraints { (make) -> Void in
+        boardContainerView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(topView.snp_bottom)
             make.left.equalTo(16)
             make.right.equalTo(-16)
