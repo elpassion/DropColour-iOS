@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 class StartView: UIView {
 
@@ -32,17 +33,34 @@ class StartView: UIView {
     // MARK: Subviews
 
     private func loadSubviews() {
+        addSubview(backgroundView)
+        addGradientForView(backgroundView)
         addSubview(backgroundImageView)
+        addSubview(logoImageView)
         addSubview(newGameButton)
         addSubview(topPlayersButton)
     }
+    
+    private let backgroundView: UIView = {
+        let backgroundView = UIView(frame: CGRectZero)
+        backgroundView.backgroundColor = UIColor(hex: "#202B39")
+        return backgroundView
+    }()
 
     private let backgroundImageView: UIImageView = {
         let view = UIImageView(frame: CGRectZero)
-        view.image = UIImage(named: "background")
+        view.image = UIImage(named: "background-circles")
+        view.contentMode = .ScaleAspectFill
         return view
     }()
 
+    private let logoImageView: UIImageView = {
+        let view = UIImageView(frame: CGRectZero)
+        view.image = UIImage(named: "logo")
+        view.contentMode = .ScaleAspectFit
+        return view
+    }()
+    
     private let newGameButton = Button(title: "NEW GAME", color: UIColor(red:0.42, green:0.88, blue:0.1, alpha:1))
 
     private let topPlayersButton = Button(title: "TOP PLAYERS", color: UIColor(red:0.33, green:0.78, blue:0.78, alpha:1))
@@ -50,21 +68,40 @@ class StartView: UIView {
     // MARK: Layout
 
     private func setupLayout() {
+        backgroundView.snp_makeConstraints { (make) -> Void in
+            make.edges.equalTo(0)
+        }
+        
         backgroundImageView.snp_makeConstraints { (make) -> Void in
             make.edges.equalTo(0)
         }
-        newGameButton.snp_makeConstraints { (make) -> Void in
-            make.width.equalTo(170)
-            make.height.equalTo(55)
+        
+        logoImageView.snp_makeConstraints { (make) -> Void in
+            make.centerY.equalTo(0).offset(-80)
             make.centerX.equalTo(0)
-            make.centerY.equalTo(80)
+        }
+        
+        newGameButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(logoImageView.snp_bottom).offset(50)
+            make.width.equalTo(200)
+            make.height.equalTo(50)
+            make.centerX.equalTo(0)
         }
         topPlayersButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(newGameButton.snp_bottom).offset(15)
-            make.width.equalTo(170)
-            make.height.equalTo(55)
+            make.width.equalTo(200)
+            make.height.equalTo(50)
             make.centerX.equalTo(0)
         }
+    }
+    
+    private func addGradientForView(view: UIView) {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = UIScreen.mainScreen().bounds
+        let topColor = UIColor(hex: "#C86DD7")
+        let bottomColor = UIColor(hex: "#3023AE")
+        gradient.colors = [CGColorCreateCopyWithAlpha(topColor.CGColor, 0.2)!, CGColorCreateCopyWithAlpha(bottomColor.CGColor, 0.2)!]
+        view.layer.insertSublayer(gradient, atIndex: 0)
     }
 
 }

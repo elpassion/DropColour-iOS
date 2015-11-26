@@ -1,8 +1,7 @@
 PODS:
-  - Crashlytics (3.3.4)
-  - Fabric (1.5.5):
-    - Fabric/Base (= 1.5.5)
-  - Fabric/Base (1.5.5)
+  - Crashlytics (3.4.1):
+    - Fabric (~> 1.6.0)
+  - Fabric (1.6.1)
   - SnapKit (0.15.0)
   - Spring (1.0.3)
 
@@ -23,9 +22,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
-  Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
-  Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
+  Crashlytics: 41574a245bc6ae10c55d57f385ebd2004e5bee05
+  Fabric: bf0ceb04e7c924090efc5f8c55e4fbcca189e0a0
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
