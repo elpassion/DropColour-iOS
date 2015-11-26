@@ -31,7 +31,7 @@ class MenuViewController: UIViewController, MenuViewDelegate {
     
     func menuViewDidTapResume(menuView: MenuView) {
         self.dismissViewControllerAnimated(true, completion: {
-            delegate?.menuViewControllerDidResumeGame(self)
+            self.delegate?.menuViewControllerDidResumeGame(self)
         })
     }
     
