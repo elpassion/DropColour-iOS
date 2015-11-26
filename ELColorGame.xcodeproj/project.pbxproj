@@ -11,7 +11,7 @@
 		07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */; };
 		3107929E1BCC120F00D7D680 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107929D1BCC120F00D7D680 /* StartView.swift */; };
 		316690381BC5C47600DFD40D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316690371BC5C47600DFD40D /* MenuView.swift */; };
-		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; };
 		4E4BB5881BB410240043C80C /* ELColorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5871BB410240043C80C /* ELColorGameTests.swift */; };
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
