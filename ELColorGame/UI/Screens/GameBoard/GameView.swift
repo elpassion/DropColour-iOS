@@ -35,10 +35,11 @@ class GameView: UIView {
     
     private func loadSubviews() {
         addSubview(topView)
-        addSubview(pauseButton)
-        addSubview(restartButton)
-        addSubview(scoreTextLabel)
-        addSubview(scoreNumberLabel)
+        topView.addSubview(pauseButton)
+        topView.addSubview(restartButton)
+        topView.addSubview(scoreView)
+        scoreView.addSubview(scoreTextLabel)
+        scoreView.addSubview(scoreNumberLabel)
         addSubview(boardView)
     }
     
@@ -47,6 +48,8 @@ class GameView: UIView {
     private let pauseButton = Button(image: UIImage(named: "pause"))
     
     private let restartButton = Button(image: UIImage(named: "restart"))
+    
+    private let scoreView = UIView()
     
     private let scoreTextLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
@@ -60,6 +63,8 @@ class GameView: UIView {
         let label = UILabel(frame: CGRectZero)
         label.text = "0"
         label.font = UIFont(name: BebasNeueBold, size: 46)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         label.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
         return label
     }()
@@ -73,24 +78,37 @@ class GameView: UIView {
             make.top.equalTo(0)
             make.left.equalTo(0)
             make.right.equalTo(0)
-            make.height.equalTo(self).multipliedBy(0.12)
+            make.height.greaterThanOrEqualTo(100)
+            make.height.equalTo(topView.superview!).multipliedBy(0.12).priorityLow()
         }
         pauseButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(40)
             make.left.equalTo(40)
+            make.centerY.equalTo(0)
+        }
+        pauseButton.setContentCompressionResistancePriority(UILayoutPriorityRequired, forAxis: .Horizontal)
+        scoreView.snp_makeConstraints { (make) -> Void in
+            make.center.equalTo(0)
+            make.left.greaterThanOrEqualTo(pauseButton.snp_right).offset(16)
+            make.right.lessThanOrEqualTo(restartButton.snp_left).offset(-16)
+        }
+        scoreNumberLabel.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(0)
+            make.centerX.equalTo(0)
+            make.left.greaterThanOrEqualTo(0)
+            make.right.lessThanOrEqualTo(0)
         }
         scoreTextLabel.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(scoreNumberLabel.snp_bottom)
             make.centerX.equalTo(0)
-        }
-        scoreNumberLabel.snp_makeConstraints { (make) -> Void in
-            make.centerX.equalTo(0)
-            make.top.equalTo(30)
+            make.left.greaterThanOrEqualTo(0)
+            make.right.lessThanOrEqualTo(0)
+            make.bottom.equalTo(0)
         }
         restartButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(40)
             make.right.equalTo(-40)
+            make.centerY.equalTo(0)
         }
+        restartButton.setContentCompressionResistancePriority(UILayoutPriorityRequired, forAxis: .Horizontal)
         boardView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(topView.snp_bottom)
             make.left.right.bottom.equalTo(0)
