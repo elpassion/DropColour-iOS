@@ -75,14 +75,14 @@ class GameView: UIView {
 
     private func setupLayout() {
         topView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(0)
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.height.greaterThanOrEqualTo(100)
-            make.height.equalTo(topView.superview!).multipliedBy(0.12).priorityLow()
+            make.top.equalTo(20)
+            make.left.equalTo(16)
+            make.right.equalTo(-16)
+            make.height.greaterThanOrEqualTo(72)
+            make.height.equalTo(topView.superview!).multipliedBy(0.15).priorityLow()
         }
         pauseButton.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(40)
+            make.left.equalTo(0)
             make.centerY.equalTo(0)
         }
         pauseButton.setContentCompressionResistancePriority(UILayoutPriorityRequired, forAxis: .Horizontal)
@@ -105,7 +105,7 @@ class GameView: UIView {
             make.bottom.equalTo(0)
         }
         restartButton.snp_makeConstraints { (make) -> Void in
-            make.right.equalTo(-40)
+            make.right.equalTo(0)
             make.centerY.equalTo(0)
         }
         restartButton.setContentCompressionResistancePriority(UILayoutPriorityRequired, forAxis: .Horizontal)
