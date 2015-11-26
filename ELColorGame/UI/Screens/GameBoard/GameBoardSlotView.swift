@@ -22,14 +22,8 @@ class GameBoardSlotView: UIView {
     // MARK: UIView
     
     override func layoutSubviews() {
-        let backgroundViewSpacing = CGFloat(10)
-        var backgroundViewFrame = CGRectZero
-        let backgroundViewWidthHeight = min(frame.size.width, frame.size.height) - (2 * backgroundViewSpacing)
-        backgroundViewFrame.size = CGSizeMake(backgroundViewWidthHeight, backgroundViewWidthHeight)
-        backgroundViewFrame.origin.x = (frame.size.width - backgroundViewFrame.size.width) / 2
-        backgroundViewFrame.origin.y = (frame.size.height - backgroundViewFrame.size.height) / 2
-        backgroundView.frame = backgroundViewFrame
-        backgroundView.layer.cornerRadius = CGFloat(backgroundViewFrame.size.width / 2)
+        backgroundView.frame = bounds
+        backgroundView.layer.cornerRadius = CGFloat(backgroundView.frame.width / 2)
     }
     
     // MARK: Subviews
