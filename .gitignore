@@ -29,6 +29,12 @@ DerivedData/
 *.xccheckout
 
 ################################
+# AppCode
+
+.idea
+
+################################
+
 # Backup files
 
 *~
