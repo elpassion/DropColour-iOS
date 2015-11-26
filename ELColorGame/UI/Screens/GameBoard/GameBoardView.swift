@@ -61,7 +61,9 @@ class GameBoardView: UIView {
         return slotViews
     }
     
-    func enumerateSlotViewsUsingBlock(block: (slotView: GameBoardSlotView, x: Int, y: Int) -> Void) {
+    typealias EnumerateSlotViewsBlock = (slotView: GameBoardSlotView, x: Int, y: Int) -> Void
+    
+    func enumerateSlotViewsUsingBlock(block: EnumerateSlotViewsBlock) {
         for x in 0...(rows-1) {
             for y in 0...(columns-1) {
                 block(slotView: slotViews[x][y], x: x, y: y)
