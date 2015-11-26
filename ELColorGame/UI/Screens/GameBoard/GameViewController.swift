@@ -24,7 +24,7 @@ class GameViewController: UIViewController, GameViewDelegate {
     }
     
     override func loadView() {
-        let boardView = GameBoardView(rows: 8, columns: 5)
+        let boardView = GameBoardView(rows: 6, columns: 5)
         self.view = GameView(boardView: boardView, delegate: self)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
     }
