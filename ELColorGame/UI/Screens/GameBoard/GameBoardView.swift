@@ -12,18 +12,23 @@ class GameBoardView: UIView {
     
     let rows: Int
     let columns: Int
-    let slotSize = CGSize(width: 44, height: 44)
+    let slotSize: CGSize
     
-    init(rows: Int, columns: Int) {
-        slotViews = GameBoardView.createSlotViews(rows, columns: columns)
+    init(slotSize: CGSize, rows: Int, columns: Int) {
+        self.slotSize = slotSize
         self.rows = rows
         self.columns = columns
+        slotViews = GameBoardView.createSlotViews(rows, columns: columns)
         super.init(frame: CGRectZero)
         loadSubviews()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    class func boardSize(viewSize viewSize: CGSize, slotSize: CGSize) -> (rows: Int, columns: Int) {
+        return (6, 5)
     }
     
     // MARK: View
