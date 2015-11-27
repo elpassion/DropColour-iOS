@@ -38,4 +38,17 @@ class GameBoardSlotView: UIView {
         return view
     }()
     
+    var circleView: CircleView? {
+        didSet {
+            if let oldValue = oldValue {
+                oldValue.removeFromSuperview()
+            }
+            if let circleView = circleView {
+                addSubview(circleView)
+                circleView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+                circleView.frame = bounds
+            }
+        }
+    }
+    
 }
