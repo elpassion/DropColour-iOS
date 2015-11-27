@@ -114,12 +114,7 @@ class GameBoardView: UIView {
     }
     
     func slotViewForCircleView(circleView: CircleView) -> GameBoardSlotView? {
-        for slotView in allSlotViews {
-            if slotView.circleView == circleView {
-                return slotView
-            }
-        }
-        return nil
+        return allSlotViews.filter({ $0.circleView == circleView }).first
     }
     
     // MARK: Touch handling
