@@ -15,6 +15,12 @@ class GameBoardView: UIView {
     let slotSize: CGSize
     let spacing: CGFloat
     
+    class func maxBoardSize(forViewSize viewSize: CGSize, slotSize: CGSize, spacing: CGFloat) -> (rows: Int, columns: Int) {
+        let rows = Int(floor((viewSize.height + spacing) / (slotSize.height + spacing)))
+        let columns = Int(floor((viewSize.width + spacing) / (slotSize.width + spacing)))
+        return (rows, columns)
+    }
+    
     init(slotSize: CGSize, rows: Int, columns: Int, spacing: CGFloat) {
         self.slotSize = slotSize
         self.rows = rows
@@ -29,19 +35,15 @@ class GameBoardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    class func boardSize(viewSize viewSize: CGSize, slotSize: CGSize, spacing: CGFloat) -> (rows: Int, columns: Int) {
-        let rows = Int(floor((viewSize.height + spacing) / (slotSize.height + spacing)))
-        let columns = Int(floor((viewSize.width + spacing) / (slotSize.width + spacing)))
-        return (rows, columns)
-    }
-    
-    // MARK: View
+    // MARK: Subviews
     
     private func loadSubviews() {
         enumerateSlotViewsUsingBlock({ (slotView, _, _) in
             self.addSubview(slotView)
         })
     }
+    
+    // MARK: Layout
     
     override func layoutSubviews() {
         super.layoutSubviews()
