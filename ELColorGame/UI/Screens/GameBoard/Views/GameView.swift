@@ -140,7 +140,6 @@ class GameView: UIView {
 protocol GameViewDelegate: class {
     
     func gameBoardViewDidTapPause(gameBoardView: GameView)
-    
     func gameBoardViewDidTapRestart(gameBoardView: GameView)
     
 }
