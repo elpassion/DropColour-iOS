@@ -92,6 +92,17 @@ class GameBoardView: UIView {
         return slotViews[y][x]
     }
     
+    func circleViewAtPoint(point: CGPoint) -> CircleView? {
+        let circleViews = allSlotViews.nonEmptySlotViews.map { $0.circleView! }
+        for circleView in circleViews {
+            let frame = circleView.convertRect(circleView.bounds, toView: self)
+            if CGRectContainsPoint(frame, point) {
+                return circleView
+            }
+        }
+        return nil
+    }
+    
     var allSlotViews: GameBoardSlotViewsArray {
         var array: GameBoardSlotViewsArray = []
         for column in slotViews {
