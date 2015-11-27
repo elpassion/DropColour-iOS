@@ -11,7 +11,7 @@ import SnapKit
 import AVFoundation
 import GameKit
 
-class GameViewController: UIViewController, GameViewDelegate {
+class GameViewController: UIViewController, GameViewDelegate, MenuViewControllerDelegate {
     
     var scoreNumber = 0
     var gameBoardController: GameBoardController?
@@ -91,17 +91,27 @@ class GameViewController: UIViewController, GameViewDelegate {
             })
         }
     }
+    
+    private func presentMenuViewController() {
+        let menuViewController = MenuViewController(delegate: self)
+        presentViewController(menuViewController, animated: true, completion: nil)
+    }
 
     // MARK: GameViewDelegate
 
     func gameBoardViewDidTapPause(gameBoardView: GameView) {
-        if let controller = gameBoardController {
-            controller.isInserting ? controller.stopInserting() : controller.startInserting()
-        }
+        gameBoardController?.stopInserting()
+        self.presentMenuViewController()
     }
 
     func gameBoardViewDidTapRestart(gameBoardView: GameView) {
         
+    }
+    
+    // MARK: MenuViewControllerDelegate
+    
+    func menuViewControllerDidResumeGame(menuViewController: MenuViewController) {
+        gameBoardController?.startInserting()
     }
 
 }
