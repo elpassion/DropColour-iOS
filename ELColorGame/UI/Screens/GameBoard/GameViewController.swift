@@ -14,6 +14,7 @@ import GameKit
 class GameViewController: UIViewController, GameViewDelegate {
     
     var scoreNumber = 0
+    var gameBoardController: GameBoardController?
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -49,6 +50,16 @@ class GameViewController: UIViewController, GameViewDelegate {
         let (rows, columns) = GameBoardView.boardSize(viewSize: gameView.boardContainerView.frame.size, slotSize: slotSize, spacing: spacing)
         return GameBoardView(slotSize: slotSize, rows: rows, columns: columns, spacing: spacing)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        gameBoardController?.startInserting()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        gameBoardController?.stopInserting()
+    }
+    
     // MARK: Sound
     
     func playSound() {
@@ -84,7 +95,9 @@ class GameViewController: UIViewController, GameViewDelegate {
     // MARK: GameViewDelegate
 
     func gameBoardViewDidTapPause(gameBoardView: GameView) {
-
+        if let controller = gameBoardController {
+            controller.isInserting ? controller.stopInserting() : controller.startInserting()
+        }
     }
 
     func gameBoardViewDidTapRestart(gameBoardView: GameView) {
