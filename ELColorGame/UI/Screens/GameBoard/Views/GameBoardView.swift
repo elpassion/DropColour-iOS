@@ -113,4 +113,13 @@ class GameBoardView: UIView {
         return array
     }
     
+    func slotViewForCircleView(circleView: CircleView) -> GameBoardSlotView? {
+        for slotView in allSlotViews {
+            if slotView.circleView == circleView {
+                return slotView
+            }
+        }
+        return nil
+    }
+    
 }
