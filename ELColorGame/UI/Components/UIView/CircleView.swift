@@ -26,8 +26,8 @@ class CircleView: SpringView {
     init(type: CircleType) {
         self.type = type
         super.init(frame: CGRectZero)
-        backgroundColor = self.type.color
-        addGradientForView(self)
+        clipsToBounds = true
+        backgroundColor = UIColor.clearColor()
         addGestureRecognizer(UIPanGestureRecognizer(target: self, action: "detectTouch:"))
     }
     
@@ -38,6 +38,7 @@ class CircleView: SpringView {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = bounds.width / 2
+        gradientLayer = createGradientLayer([self.type.topColor, self.type.bottomColor])
     }
     
     func detectTouch(recognizer:UIPanGestureRecognizer) {
@@ -57,12 +58,21 @@ class CircleView: SpringView {
         lastLocation = self.center
     }
     
-    func addGradientForView(view: UIView) {
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.frame = self.bounds
-        gradient.colors = [CGColorCreateCopyWithAlpha(UIColor.whiteColor().CGColor, 0.15)!, CGColorCreateCopyWithAlpha(UIColor.blackColor().CGColor, 0.15)!]
-        self.layer.insertSublayer(gradient, atIndex: 0)
-        self.layer.cornerRadius = 20
-        self.clipsToBounds = true
+    var gradientLayer: CAGradientLayer? {
+        didSet {
+            if let oldValue = oldValue {
+                oldValue.removeFromSuperlayer()
+            }
+            if let newValue = gradientLayer {
+                layer.insertSublayer(newValue, atIndex: 0)
+            }
+        }
+    }
+    
+    func createGradientLayer(colors: [UIColor]) -> CAGradientLayer {
+        let layer = CAGradientLayer()
+        layer.frame = bounds
+        layer.colors = colors.map { $0.CGColor }
+        return layer
     }
 }
