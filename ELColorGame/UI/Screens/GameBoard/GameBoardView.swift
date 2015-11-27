@@ -13,11 +13,13 @@ class GameBoardView: UIView {
     let rows: Int
     let columns: Int
     let slotSize: CGSize
+    let spacing: CGFloat
     
-    init(slotSize: CGSize, rows: Int, columns: Int) {
+    init(slotSize: CGSize, rows: Int, columns: Int, spacing: CGFloat) {
         self.slotSize = slotSize
         self.rows = rows
         self.columns = columns
+        self.spacing = spacing
         slotViews = GameBoardView.createSlotViews(rows, columns: columns)
         super.init(frame: CGRectZero)
         loadSubviews()
@@ -27,8 +29,10 @@ class GameBoardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    class func boardSize(viewSize viewSize: CGSize, slotSize: CGSize) -> (rows: Int, columns: Int) {
-        return (6, 5)
+    class func boardSize(viewSize viewSize: CGSize, slotSize: CGSize, spacing: CGFloat) -> (rows: Int, columns: Int) {
+        let rows = Int(floor((viewSize.height + spacing) / (slotSize.height + spacing)))
+        let columns = Int(floor((viewSize.width + spacing) / (slotSize.width + spacing)))
+        return (rows, columns)
     }
     
     // MARK: View
@@ -41,18 +45,21 @@ class GameBoardView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let horizontalSpacing = columns > 1 ? (bounds.size.width - (slotSize.width * CGFloat(columns))) / (CGFloat(columns) - 1) : CGFloat(0)
-        let verticalSpacing = rows > 1 ? (bounds.size.height - (slotSize.height * CGFloat(rows))) / (CGFloat(rows) - 1) : CGFloat(0)
-        let spacing = max(min(horizontalSpacing, verticalSpacing), 16.0)
-        let horizontalMargin = (frame.size.width - (self.slotSize.width * CGFloat(columns)) - (spacing * CGFloat(columns - 1))) / 2
-        let verticalMargin = (frame.size.height - (self.slotSize.height * CGFloat(rows)) - (spacing * CGFloat(rows - 1))) / 2
         enumerateSlotViewsUsingBlock({ (slotView, x, y) in
             var frame = CGRectZero
             frame.size = self.slotSize
-            frame.origin.x = CGFloat(x) * (self.slotSize.width + spacing) + horizontalMargin
-            frame.origin.y = CGFloat(y) * (self.slotSize.height + spacing) + verticalMargin
+            frame.origin.x = CGFloat(x) * (self.slotSize.width + self.spacing) + self.boardHorizontalMargin()
+            frame.origin.y = CGFloat(y) * (self.slotSize.height + self.spacing) + self.boardVerticalMargin()
             slotView.frame = frame
         })
+    }
+    
+    private func boardHorizontalMargin() -> CGFloat {
+        return (frame.size.width - (self.slotSize.width * CGFloat(columns)) - (spacing * CGFloat(columns - 1))) / 2
+    }
+    
+    private func boardVerticalMargin() -> CGFloat {
+        return (frame.size.height - (self.slotSize.height * CGFloat(rows)) - (spacing * CGFloat(rows - 1))) / 2
     }
     
     // MARK: Slots

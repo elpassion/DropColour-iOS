@@ -33,8 +33,9 @@ class GameViewController: UIViewController, GameViewDelegate {
         if let gameView = view as? GameView {
             if gameView.boardView == nil {
                 let slotSize = CGSize(width: 44, height: 44)
-                let (rows, columns) = GameBoardView.boardSize(viewSize: gameView.boardContainerView.frame.size, slotSize: slotSize)
-                gameView.boardView = GameBoardView(slotSize: slotSize, rows: rows, columns: columns)
+                let spacing = CGFloat(15.5)
+                let (rows, columns) = GameBoardView.boardSize(viewSize: gameView.boardContainerView.frame.size, slotSize: slotSize, spacing: spacing)
+                gameView.boardView = GameBoardView(slotSize: slotSize, rows: rows, columns: columns, spacing: spacing)
             }
         }
     }
