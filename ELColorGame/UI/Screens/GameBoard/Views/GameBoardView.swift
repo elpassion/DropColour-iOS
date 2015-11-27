@@ -126,14 +126,14 @@ class GameBoardView: UIView {
         let dragger = CircleViewDragger(view: circleView, touch: touch)
         draggers.append(dragger)
         dragger.view.moveToSuperview(self)
-        dragger.view.center = convertPoint(location, toView: dragger.view.superview!)
+        dragger.view.center = location
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
         guard let dragger = draggerForTouch(touch) else { return }
         let location = touch.locationInView(self)
-        dragger.view.center = convertPoint(location, toView: dragger.view.superview!)
+        dragger.view.center = location
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -141,10 +141,11 @@ class GameBoardView: UIView {
         guard let dragger = draggerForTouch(touch) else { return }
         draggers = draggers.filter { $0.view != dragger.view }
         guard let slotView = slotViewForCircleView(dragger.view) else { return }
-        let destinationPoint = convertPoint(slotView.center, toView: dragger.view.superview!)
+        guard let slotSuperview = slotView.superview else { return }
+        let targetCenter = slotSuperview.convertPoint(slotView.center, toView: self)
         UIView.animateWithDuration(0.2,
             animations: {
-                dragger.view.center = destinationPoint
+                dragger.view.center = targetCenter
                 dragger.view.addBounceAnimation()
             },
             completion: { finished in
