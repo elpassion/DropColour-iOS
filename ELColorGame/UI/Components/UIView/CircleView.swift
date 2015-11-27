@@ -43,6 +43,11 @@ class CircleView: SpringView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.width / 2
+    }
+    
     func detectTouch(recognizer:UIPanGestureRecognizer) {
         let translation = recognizer.translationInView(self.superview)
         self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
