@@ -92,4 +92,14 @@ class GameBoardView: UIView {
         return slotViews[y][x]
     }
     
+    var allSlotViews: [GameBoardSlotView] {
+        var array = Array<GameBoardSlotView>()
+        for column in slotViews {
+            for slotView in column {
+                array.append(slotView)
+            }
+        }
+        return array
+    }
+    
 }
