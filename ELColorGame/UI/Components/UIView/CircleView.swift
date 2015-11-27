@@ -17,26 +17,18 @@ protocol CircleViewDelegate {
 
 class CircleView: SpringView {
     
+    let type: CircleType
     var delegate:CircleViewDelegate? = nil
-    var lastLocation:CGPoint = CGPointMake(0, 0)
-    var colorsArray:[UIColor] = []
-    var initialPosition:CGPoint = CGPoint()
+    var lastLocation = CGPointZero
+    var colorsArray = [UIColor]()
+    var initialPosition = CGPointZero
     
-    init() {
+    init(type: CircleType) {
+        self.type = type
         super.init(frame: CGRectZero)
-        
-        let touchRecognizer = UIPanGestureRecognizer(target: self, action: "detectTouch:")
-        self.gestureRecognizers = [touchRecognizer]
-        colorsArray = [
-            UIColor(red:0.31, green:0.84, blue:0.84, alpha:1),
-            UIColor(red:0.34, green:0.85, blue:0.09, alpha:1),
-            UIColor(red:0.69, green:0.43, blue:0.84, alpha:1),
-            UIColor(red:0.91, green:0.14, blue:0.37, alpha:1),
-            UIColor(red:0.29, green:0.56, blue:0.89, alpha:1),
-        ]
-        self.backgroundColor = colorsArray[Int(arc4random() % 4)]
+        backgroundColor = self.type.color
         addGradientForView(self)
-        initialPosition = self.center
+        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: "detectTouch:"))
     }
     
     required init?(coder aDecoder: NSCoder) {
