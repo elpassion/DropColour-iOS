@@ -31,11 +31,11 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
     
     override func loadView() {
         self.view = UIView()
-//        configureBlurEffectView()
-//        configureScoreTextLabel()
-//        configureTryAgainButton()
-//        configureCancelButton()
-//        configureTopPlayersButtons()
+        configureBlurEffectView()
+        configureScoreTextLabel()
+        configureTryAgainButton()
+        configureCancelButton()
+        configureTopPlayersButtons()
     }
     
     override func viewDidAppear(animated: Bool) {

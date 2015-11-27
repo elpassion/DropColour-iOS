@@ -30,17 +30,21 @@ class MenuViewController: UIViewController, MenuViewDelegate {
     // MARK: MenuViewDelegate
     
     func menuViewDidTapResume(menuView: MenuView) {
-        self.dismissViewControllerAnimated(true, completion: { [unowned self] in
+        self.dismissViewControllerAnimated(true) {
             self.delegate?.menuViewControllerDidResumeGame(self)
-        })
+        }
     }
     
     func menuViewDidTapNewGame(menuView: MenuView) {
-        self.presentViewController(GameViewController(), animated: true, completion: nil)
+        self.dismissViewControllerAnimated(true) {
+            self.delegate?.menuViewControllerDidTapNewGame(self)
+        }
     }
     
     func menuViewDidTapQuit(menuView: MenuView) {
-        self.presentViewController(StartViewController(), animated: true, completion: nil)
+        self.dismissViewControllerAnimated(true) {
+            self.delegate?.menuViewControllerDidTapQuit(self)
+        }
     }
     
 }
@@ -50,5 +54,7 @@ class MenuViewController: UIViewController, MenuViewDelegate {
 protocol MenuViewControllerDelegate: class {
     
     func menuViewControllerDidResumeGame(menuViewController: MenuViewController)
+    func menuViewControllerDidTapNewGame(menuViewController: MenuViewController)
+    func menuViewControllerDidTapQuit(menuViewController: MenuViewController)
     
 }
