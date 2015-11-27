@@ -73,22 +73,22 @@ class MenuView: UIView {
             make.edges.equalTo(0)
         }
         resumeButton.snp_makeConstraints { (make) -> Void in
-            make.width.equalTo(170)
-            make.height.equalTo(55)
+            make.width.equalTo(200)
+            make.height.equalTo(50)
             make.centerX.equalTo(0)
             make.centerY.equalTo(0)
         }
         newGameButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(resumeButton.snp_bottom).offset(15)
-            make.width.equalTo(170)
-            make.height.equalTo(55)
+            make.width.equalTo(200)
+            make.height.equalTo(50)
             make.centerX.equalTo(0)
         }
         quitButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(newGameButton.snp_bottom).offset(15)
-            make.width.equalTo(170)
-            make.height.equalTo(55)
+            make.width.equalTo(200)
+            make.height.equalTo(50)
             make.centerX.equalTo(0)
+            make.bottom.equalTo(-40)
         }
         pauseLabelText.snp_makeConstraints { (make) -> Void in
             make.centerX.equalTo(0)
@@ -107,9 +107,7 @@ class MenuView: UIView {
 protocol MenuViewDelegate: class {
     
     func menuViewDidTapResume(menuView: MenuView)
-    
     func menuViewDidTapNewGame(menuView: MenuView)
-    
     func menuViewDidTapQuit(menuView: MenuView)
     
 }
