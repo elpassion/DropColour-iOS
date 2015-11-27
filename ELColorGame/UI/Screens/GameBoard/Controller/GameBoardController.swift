@@ -47,7 +47,7 @@ class GameBoardController: NSObject {
     
     private func insertCircle() {
         guard let slot = view.allSlotViews.emptySlotViews.randomSlotView else { return }
-        slot.circleView = CircleView(type: CircleTypes.randomType!)
+        slot.circleView = CircleView(type: CircleViewTypes.randomType!)
     }
     
     private func slotForCircleView(circleView: CircleView) -> GameBoardSlotView? {

@@ -11,10 +11,10 @@ import Spring
 
 class CircleView: SpringView {
     
-    let type: CircleType
+    let type: CircleViewType
     var colorsArray = [UIColor]()
     
-    init(type: CircleType) {
+    init(type: CircleViewType) {
         self.type = type
         super.init(frame: CGRectZero)
         clipsToBounds = true
