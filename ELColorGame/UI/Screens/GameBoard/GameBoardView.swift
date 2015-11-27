@@ -64,12 +64,12 @@ class GameBoardView: UIView {
     
     // MARK: Slots
     
-    private let slotViews: [[GameBoardSlotView]]
+    private let slotViews: [GameBoardSlotViewsArray]
     
-    class private func createSlotViews(rows: Int, columns: Int) -> [[GameBoardSlotView]] {
-        var slotViews: [[GameBoardSlotView]] = []
+    class private func createSlotViews(rows: Int, columns: Int) -> [GameBoardSlotViewsArray] {
+        var slotViews: [GameBoardSlotViewsArray] = []
         for _ in 0...(rows-1) {
-            var column: [GameBoardSlotView] = []
+            var column: GameBoardSlotViewsArray = []
             for _ in 0...(columns-1) {
                 column.append(GameBoardSlotView())
             }
@@ -92,8 +92,8 @@ class GameBoardView: UIView {
         return slotViews[y][x]
     }
     
-    var allSlotViews: [GameBoardSlotView] {
-        var array = Array<GameBoardSlotView>()
+    var allSlotViews: GameBoardSlotViewsArray {
+        var array: GameBoardSlotViewsArray = []
         for column in slotViews {
             for slotView in column {
                 array.append(slotView)
