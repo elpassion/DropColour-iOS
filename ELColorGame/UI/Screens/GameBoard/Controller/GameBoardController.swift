@@ -34,14 +34,11 @@ class GameBoardController: NSObject {
     }
     
     func restartGame() {
-        let wasInserting = isInserting
         stopInserting()
         view.enumerateSlotViewsUsingBlock { (slotView, x, y) -> Void in
             slotView.circleView = nil
         }
-        if wasInserting {
-            startInserting()
-        }
+        startInserting()
     }
     
     func timerTick(timer: NSTimer) {

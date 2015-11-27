@@ -115,11 +115,11 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     }
     
     func menuViewControllerDidTapNewGame(menuViewController: MenuViewController) {
-        print("Did tap new game button")
+        gameBoardController?.restartGame()
     }
     
     func menuViewControllerDidTapQuit(menuViewController: MenuViewController) {
-        print("Did tap quit")
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }
