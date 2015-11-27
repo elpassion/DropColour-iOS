@@ -35,7 +35,9 @@ class GameViewController: UIViewController, GameViewDelegate {
                 let slotSize = CGSize(width: 44, height: 44)
                 let spacing = CGFloat(15.5)
                 let (rows, columns) = GameBoardView.boardSize(viewSize: gameView.boardContainerView.frame.size, slotSize: slotSize, spacing: spacing)
-                gameView.boardView = GameBoardView(slotSize: slotSize, rows: rows, columns: columns, spacing: spacing)
+                let gameBoardView = GameBoardView(slotSize: slotSize, rows: rows, columns: columns, spacing: spacing)
+                gameBoardController = GameBoardController(view: gameBoardView)
+                gameView.boardView = gameBoardView
             }
         }
     }
@@ -81,5 +83,9 @@ class GameViewController: UIViewController, GameViewDelegate {
     func gameBoardViewDidTapRestart(gameBoardView: GameView) {
         
     }
+    
+    // MARK: GameBoardController
+    
+    var gameBoardController: GameBoardController?
 
 }
