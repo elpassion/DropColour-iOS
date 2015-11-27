@@ -113,5 +113,13 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     func menuViewControllerDidResumeGame(menuViewController: MenuViewController) {
         gameBoardController?.startInserting()
     }
+    
+    func menuViewControllerDidTapNewGame(menuViewController: MenuViewController) {
+        print("Did tap new game button")
+    }
+    
+    func menuViewControllerDidTapQuit(menuViewController: MenuViewController) {
+        print("Did tap quit")
+    }
 
 }
