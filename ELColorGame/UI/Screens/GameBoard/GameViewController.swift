@@ -105,7 +105,7 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     }
 
     func gameBoardViewDidTapRestart(gameBoardView: GameView) {
-        
+        gameBoardController?.restartGame()
     }
     
     // MARK: MenuViewControllerDelegate
