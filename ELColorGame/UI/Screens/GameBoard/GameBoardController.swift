@@ -16,4 +16,9 @@ class GameBoardController {
         self.view = view
     }
     
+    func insertCircle() {
+        guard let slot = view.allSlotViews.emptySlotViews.randomSlotView else { return }
+        slot.circleView = CircleView()
+    }
+    
 }
