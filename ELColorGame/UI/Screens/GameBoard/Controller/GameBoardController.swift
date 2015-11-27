@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import CoreGraphics
 
-class GameBoardController: NSObject, CircleViewDelegate {
+class GameBoardController: NSObject {
     
     let view: GameBoardView
     var myTimer: NSTimer?
@@ -48,15 +47,16 @@ class GameBoardController: NSObject, CircleViewDelegate {
     
     private func insertCircle() {
         guard let slot = view.allSlotViews.emptySlotViews.randomSlotView else { return }
-        let circleView = CircleView(type: CircleTypes.randomType!)
-        circleView.delegate = self
-        slot.circleView = circleView
+        slot.circleView = CircleView(type: CircleTypes.randomType!)
     }
     
-    // MARK: CircleViewDelegate
-    
-    func circleViewDidMove(view: CircleView, from: CGPoint, to: CGPoint) {
-        print("did move from \(from) to \(to)")
+    private func slotForCircleView(circleView: CircleView) -> GameBoardSlotView? {
+        for slot in view.allSlotViews {
+            if slot.circleView == circleView {
+                return slot
+            }
+        }
+        return nil
     }
     
 }
