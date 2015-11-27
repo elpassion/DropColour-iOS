@@ -22,8 +22,8 @@ class CircleView: SpringView {
     var colorsArray:[UIColor] = []
     var initialPosition:CGPoint = CGPoint()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        super.init(frame: CGRectZero)
         
         let touchRecognizer = UIPanGestureRecognizer(target: self, action: "detectTouch:")
         self.gestureRecognizers = [touchRecognizer]
