@@ -161,20 +161,3 @@ class GameBoardView: UIView {
     }
     
 }
-
-extension UIView {
-    
-    func moveToSuperview(newSuperview: UIView) {
-        guard let currentSuperview = self.superview else {
-            newSuperview.addSubview(self)
-            return
-        }
-        guard currentSuperview != newSuperview else { return }
-        removeFromSuperview()
-        center = currentSuperview.convertPoint(center, toView: newSuperview)
-        newSuperview.addSubview(self)
-    }
-    
-}
-
-

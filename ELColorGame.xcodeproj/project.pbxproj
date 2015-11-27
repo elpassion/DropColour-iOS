@@ -13,6 +13,7 @@
 		311589AD1C08873E001C7977 /* CircleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311589AC1C08873E001C7977 /* CircleType.swift */; };
 		311589AF1C08A6CC001C7977 /* CircleViewDragger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311589AE1C08A6CC001C7977 /* CircleViewDragger.swift */; };
 		316690381BC5C47600DFD40D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316690371BC5C47600DFD40D /* MenuView.swift */; };
+		31A9F9921C0905BC004DFC10 /* UIView+MoveToSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9911C0905BC004DFC10 /* UIView+MoveToSuperview.swift */; };
 		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; };
 		4E4BB5881BB410240043C80C /* ELColorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5871BB410240043C80C /* ELColorGameTests.swift */; };
@@ -61,6 +62,7 @@
 		311589AC1C08873E001C7977 /* CircleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleType.swift; sourceTree = "<group>"; };
 		311589AE1C08A6CC001C7977 /* CircleViewDragger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewDragger.swift; sourceTree = "<group>"; };
 		316690371BC5C47600DFD40D /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		31A9F9911C0905BC004DFC10 /* UIView+MoveToSuperview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+MoveToSuperview.swift"; sourceTree = "<group>"; };
 		4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubble_pop_sound.m4a; sourceTree = "<group>"; };
 		4E4BB56F1BB410240043C80C /* ELColorGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELColorGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4BB5831BB410240043C80C /* ELColorGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELColorGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -363,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				D1C16FA6AD2217149E1B9D9A /* UIView+CAAnimation */,
+				31A9F9911C0905BC004DFC10 /* UIView+MoveToSuperview.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 			files = (
 				4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */,
 				3107929E1BCC120F00D7D680 /* StartView.swift in Sources */,
+				31A9F9921C0905BC004DFC10 /* UIView+MoveToSuperview.swift in Sources */,
 				9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */,
 				311589AD1C08873E001C7977 /* CircleType.swift in Sources */,
 				07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */,
