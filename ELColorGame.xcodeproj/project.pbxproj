@@ -731,6 +731,7 @@
 			baseConfigurationReference = EB25787C5D17C5AD4E56455B /* Pods-ELColorGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -741,7 +742,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.ELColorGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "bb620574-1140-4d91-9860-80024a8237cc";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -750,6 +751,7 @@
 			baseConfigurationReference = 1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -760,7 +762,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.ELColorGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7bada5f3-38bf-419e-a022-19b7463441b0";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
