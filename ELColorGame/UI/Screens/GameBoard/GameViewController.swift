@@ -101,7 +101,7 @@ class GameViewController: UIViewController, GameViewDelegate {
     }
 
     func gameBoardViewDidTapRestart(gameBoardView: GameView) {
-        
+        gameBoardController?.restartGame()
     }
 
 }
