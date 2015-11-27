@@ -12,6 +12,7 @@
 		3107929E1BCC120F00D7D680 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107929D1BCC120F00D7D680 /* StartView.swift */; };
 		310792A01BCC35DD00D7D680 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107929F1BCC35DD00D7D680 /* GameBoardView.swift */; };
 		311589A91C086479001C7977 /* GameBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311589A81C086479001C7977 /* GameBoardController.swift */; };
+		311589AB1C0871C7001C7977 /* GameBoardSlotViewsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311589AA1C0871C7001C7977 /* GameBoardSlotViewsArray.swift */; };
 		3126F23D1BCC5DC10052AD46 /* GameBoardSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F23C1BCC5DC10052AD46 /* GameBoardSlotView.swift */; };
 		316690381BC5C47600DFD40D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316690371BC5C47600DFD40D /* MenuView.swift */; };
 		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; };
@@ -57,6 +58,7 @@
 		3107929D1BCC120F00D7D680 /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		3107929F1BCC35DD00D7D680 /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		311589A81C086479001C7977 /* GameBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardController.swift; sourceTree = "<group>"; };
+		311589AA1C0871C7001C7977 /* GameBoardSlotViewsArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardSlotViewsArray.swift; sourceTree = "<group>"; };
 		3126F23C1BCC5DC10052AD46 /* GameBoardSlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardSlotView.swift; sourceTree = "<group>"; };
 		316690371BC5C47600DFD40D /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubble_pop_sound.m4a; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				3107929F1BCC35DD00D7D680 /* GameBoardView.swift */,
 				3126F23C1BCC5DC10052AD46 /* GameBoardSlotView.swift */,
 				311589A81C086479001C7977 /* GameBoardController.swift */,
+				311589AA1C0871C7001C7977 /* GameBoardSlotViewsArray.swift */,
 			);
 			path = GameBoard;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				9A691889E2944596D7AC15AF /* StartViewController.swift in Sources */,
 				077E3DC81BB70BEF00DE5F3B /* Button.swift in Sources */,
 				9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */,
+				311589AB1C0871C7001C7977 /* GameBoardSlotViewsArray.swift in Sources */,
 				311589A91C086479001C7977 /* GameBoardController.swift in Sources */,
 				316690381BC5C47600DFD40D /* MenuView.swift in Sources */,
 				9A627CEB0EFC2BF211E2DB93 /* GameViewController.swift in Sources */,
