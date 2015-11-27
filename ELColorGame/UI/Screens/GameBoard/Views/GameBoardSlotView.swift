@@ -12,6 +12,7 @@ class GameBoardSlotView: UIView {
     
     init() {
         super.init(frame: CGRectZero)
+        userInteractionEnabled = false
         loadSubviews()
     }
 

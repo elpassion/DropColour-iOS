@@ -13,9 +13,11 @@ typealias GameBoardSlotViewsArray = [GameBoardSlotView]
 extension Array where Element: GameBoardSlotView {
 
     var emptySlotViews: GameBoardSlotViewsArray {
-        return filter { (slotView) -> Bool in
-            return slotView.circleView == nil
-        }
+        return filter { $0.circleView == nil }
+    }
+    
+    var nonEmptySlotViews: GameBoardSlotViewsArray {
+        return filter { $0.circleView != nil }
     }
     
     var randomSlotView: Element? {
