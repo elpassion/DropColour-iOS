@@ -30,18 +30,25 @@ class GameViewController: UIViewController, GameViewDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        setupGameIfNeeded()
+    }
+    
+    private func setupGameIfNeeded() {
         if let gameView = view as? GameView {
             if gameView.boardView == nil {
-                let slotSize = CGSize(width: 44, height: 44)
-                let spacing = CGFloat(15.5)
-                let (rows, columns) = GameBoardView.boardSize(viewSize: gameView.boardContainerView.frame.size, slotSize: slotSize, spacing: spacing)
-                let gameBoardView = GameBoardView(slotSize: slotSize, rows: rows, columns: columns, spacing: spacing)
-                gameBoardController = GameBoardController(view: gameBoardView)
-                gameView.boardView = gameBoardView
+                let boardView = createGameBoardView(gameView: gameView)
+                gameView.boardView = boardView
+                gameBoardController = GameBoardController(view: boardView)
             }
         }
     }
     
+    private func createGameBoardView(gameView gameView: GameView) -> GameBoardView {
+        let slotSize = CGSize(width: 44, height: 44)
+        let spacing = CGFloat(15.5)
+        let (rows, columns) = GameBoardView.boardSize(viewSize: gameView.boardContainerView.frame.size, slotSize: slotSize, spacing: spacing)
+        return GameBoardView(slotSize: slotSize, rows: rows, columns: columns, spacing: spacing)
+    }
     // MARK: Sound
     
     func playSound() {
@@ -83,9 +90,5 @@ class GameViewController: UIViewController, GameViewDelegate {
     func gameBoardViewDidTapRestart(gameBoardView: GameView) {
         
     }
-    
-    // MARK: GameBoardController
-    
-    var gameBoardController: GameBoardController?
 
 }
