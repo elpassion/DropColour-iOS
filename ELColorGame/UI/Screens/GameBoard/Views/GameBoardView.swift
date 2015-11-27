@@ -124,41 +124,31 @@ class GameBoardView: UIView {
         let location = touch.locationInView(self)
         guard let circleView = circleViewAtPoint(location) else { return }
         let dragger = CircleViewDragger(view: circleView, touch: touch)
-        dragger.view.removeFromSuperview()
-        var frame = dragger.view.frame
-        frame.origin = CGPoint(x: location.x - frame.width / 2, y: location.y - frame.height / 2)
-        dragger.view.frame = frame
-        addSubview(dragger.view)
         draggers.append(dragger)
+        dragger.view.moveToSuperview(self)
+        dragger.view.center = convertPoint(location, toView: dragger.view.superview!)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
         guard let dragger = draggerForTouch(touch) else { return }
         let location = touch.locationInView(self)
-        var frame = dragger.view.frame
-        frame.origin = CGPoint(x: location.x - frame.width / 2, y: location.y - frame.height / 2)
-        dragger.view.frame = frame
+        dragger.view.center = convertPoint(location, toView: dragger.view.superview!)
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
         guard let dragger = draggerForTouch(touch) else { return }
+        draggers = draggers.filter { $0.view != dragger.view }
         guard let slotView = slotViewForCircleView(dragger.view) else { return }
+        let destinationPoint = convertPoint(slotView.center, toView: dragger.view.superview!)
         UIView.animateWithDuration(0.2,
-            animations: { () -> Void in
-                var frame = dragger.view.frame
-                frame.origin = CGPoint(x: slotView.center.x - frame.width / 2, y: slotView.center.y - frame.height / 2)
-                dragger.view.frame = frame
+            animations: {
+                dragger.view.center = destinationPoint
                 dragger.view.addBounceAnimation()
             },
-            completion: { (finished) -> Void in
-                dragger.view.removeFromSuperview()
-                var frame = dragger.view.frame
-                frame.origin = CGPoint(x: (slotView.frame.width - frame.width) / 2, y: (slotView.frame.height - frame.height) / 2)
-                dragger.view.frame = frame
-                slotView.addSubview(dragger.view)
-                self.draggers = self.draggers.filter { $0.touch != dragger.touch }
+            completion: { finished in
+                dragger.view.moveToSuperview(slotView)
             }
         )
     }
@@ -170,3 +160,20 @@ class GameBoardView: UIView {
     }
     
 }
+
+extension UIView {
+    
+    func moveToSuperview(newSuperview: UIView) {
+        guard let currentSuperview = self.superview else {
+            newSuperview.addSubview(self)
+            return
+        }
+        guard currentSuperview != newSuperview else { return }
+        removeFromSuperview()
+        center = currentSuperview.convertPoint(center, toView: newSuperview)
+        newSuperview.addSubview(self)
+    }
+    
+}
+
+
