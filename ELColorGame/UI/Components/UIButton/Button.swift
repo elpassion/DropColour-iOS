@@ -19,7 +19,7 @@ class Button: UIButton {
         titleLabel!.font = UIFont(name: BebasNeueBold, size: 22)
         contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
         setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        layer.cornerRadius = 27.5
+        layer.cornerRadius = 25.0
         backgroundColor = color
         addTarget(self, action: Selector("didTapOnButton:"), forControlEvents: UIControlEvents.TouchUpInside)
     }
