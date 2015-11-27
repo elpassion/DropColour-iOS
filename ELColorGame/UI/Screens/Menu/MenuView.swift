@@ -44,11 +44,8 @@ class MenuView: UIView {
     }
     
     private let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-    
     private let resumeButton = Button(title: "RESUME", color: UIColor(red:0, green:0.57, blue:0.99, alpha:1))
-    
     private let newGameButton = Button(title: "NEW GAME", color: UIColor(red:0.38, green:0.87, blue:0.1, alpha:1))
-    
     private let quitButton = Button(title: "QUIT", color: UIColor(red:0.91, green:0.15, blue:0.33, alpha:1))
     
     private let pauseImageView: UIImageView = {
