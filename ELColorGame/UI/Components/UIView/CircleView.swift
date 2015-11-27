@@ -10,9 +10,9 @@ import UIKit
 import Spring
 
 protocol CircleViewDelegate {
-    func circleDidTouched(view: CircleView)
-    func pointDidChanging(view: CircleView)
-    func pointDidChanged(initialPoint:CGPoint, view:CircleView)
+
+    func circleViewDidMove(view: CircleView, from: CGPoint, to: CGPoint)
+    
 }
 
 class CircleView: SpringView {
@@ -21,14 +21,12 @@ class CircleView: SpringView {
     var delegate:CircleViewDelegate? = nil
     var lastLocation = CGPointZero
     var colorsArray = [UIColor]()
-    var initialPosition = CGPointZero
     
     init(type: CircleType) {
         self.type = type
         super.init(frame: CGRectZero)
         clipsToBounds = true
         backgroundColor = UIColor.clearColor()
-        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: "detectTouch:"))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,22 +39,22 @@ class CircleView: SpringView {
         gradientLayer = createGradientLayer([self.type.topColor, self.type.bottomColor])
     }
     
-    func detectTouch(recognizer:UIPanGestureRecognizer) {
-        let translation = recognizer.translationInView(self.superview)
-        self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
-        if recognizer.state == .Began {
-            delegate?.circleDidTouched(self)
-        } else if recognizer.state == .Changed {
-            delegate?.pointDidChanging(self)
-            self.superview?.bringSubviewToFront(self)
-        } else if recognizer.state == .Ended {
-            delegate?.pointDidChanged(initialPosition, view: self)
-            print("ended")
-        }
-    }
+    // MARK: Touch handling
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        lastLocation = self.center
+        lastLocation = center
     }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        guard let location = touches.first?.locationInView(superview!) else { return }
+        center = location
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        delegate?.circleViewDidMove(self, from: lastLocation, to: center)
+    }
+    
+    // MARK: Gradient backgorund
     
     var gradientLayer: CAGradientLayer? {
         didSet {
