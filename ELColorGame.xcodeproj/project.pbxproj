@@ -14,6 +14,19 @@
 		311589AF1C08A6CC001C7977 /* CircleViewDragger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311589AE1C08A6CC001C7977 /* CircleViewDragger.swift */; };
 		316690381BC5C47600DFD40D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316690371BC5C47600DFD40D /* MenuView.swift */; };
 		31A9F9921C0905BC004DFC10 /* UIView+MoveToSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9911C0905BC004DFC10 /* UIView+MoveToSuperview.swift */; };
+		31A9F9951C090BC5004DFC10 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9941C090BC5004DFC10 /* Game.swift */; };
+		31A9F9971C090C64004DFC10 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9961C090C64004DFC10 /* Slot.swift */; };
+		31A9F9991C091314004DFC10 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9981C091314004DFC10 /* Circle.swift */; };
+		31A9F99B1C09195B004DFC10 /* BoardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F99A1C09195B004DFC10 /* BoardSize.swift */; };
+		31A9F99D1C091981004DFC10 /* Array+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F99C1C091981004DFC10 /* Array+Random.swift */; };
+		31A9F99F1C0919A9004DFC10 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F99E1C0919A9004DFC10 /* Board.swift */; };
+		31A9F9A11C091D12004DFC10 /* SlotLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A01C091D12004DFC10 /* SlotLocation.swift */; };
+		31A9F9A31C091D74004DFC10 /* CircleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A21C091D74004DFC10 /* CircleType.swift */; };
+		31A9F9A51C0934DE004DFC10 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A41C0934DE004DFC10 /* Timer.swift */; };
+		31A9F9A71C0941D4004DFC10 /* SlotDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A61C0941D4004DFC10 /* SlotDelegate.swift */; };
+		31A9F9A91C0941F7004DFC10 /* BoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A81C0941F7004DFC10 /* BoardDelegate.swift */; };
+		31A9F9AB1C094468004DFC10 /* Board+SlotDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9AA1C094468004DFC10 /* Board+SlotDelegate.swift */; };
+		31A9F9AD1C0944BC004DFC10 /* Game+BoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9AC1C0944BC004DFC10 /* Game+BoardDelegate.swift */; };
 		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; };
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
@@ -63,6 +76,19 @@
 		311589AE1C08A6CC001C7977 /* CircleViewDragger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewDragger.swift; sourceTree = "<group>"; };
 		316690371BC5C47600DFD40D /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		31A9F9911C0905BC004DFC10 /* UIView+MoveToSuperview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+MoveToSuperview.swift"; sourceTree = "<group>"; };
+		31A9F9941C090BC5004DFC10 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		31A9F9961C090C64004DFC10 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
+		31A9F9981C091314004DFC10 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		31A9F99A1C09195B004DFC10 /* BoardSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSize.swift; sourceTree = "<group>"; };
+		31A9F99C1C091981004DFC10 /* Array+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Random.swift"; sourceTree = "<group>"; };
+		31A9F99E1C0919A9004DFC10 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		31A9F9A01C091D12004DFC10 /* SlotLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotLocation.swift; sourceTree = "<group>"; };
+		31A9F9A21C091D74004DFC10 /* CircleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleType.swift; sourceTree = "<group>"; };
+		31A9F9A41C0934DE004DFC10 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		31A9F9A61C0941D4004DFC10 /* SlotDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotDelegate.swift; sourceTree = "<group>"; };
+		31A9F9A81C0941F7004DFC10 /* BoardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDelegate.swift; sourceTree = "<group>"; };
+		31A9F9AA1C094468004DFC10 /* Board+SlotDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Board+SlotDelegate.swift"; sourceTree = "<group>"; };
+		31A9F9AC1C0944BC004DFC10 /* Game+BoardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Game+BoardDelegate.swift"; sourceTree = "<group>"; };
 		4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubble_pop_sound.m4a; sourceTree = "<group>"; };
 		4E4BB56F1BB410240043C80C /* ELColorGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELColorGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4BB5831BB410240043C80C /* ELColorGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELColorGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +153,24 @@
 				1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		31A9F9931C090B9B004DFC10 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				31A9F99E1C0919A9004DFC10 /* Board.swift */,
+				31A9F9AA1C094468004DFC10 /* Board+SlotDelegate.swift */,
+				31A9F9A81C0941F7004DFC10 /* BoardDelegate.swift */,
+				31A9F99A1C09195B004DFC10 /* BoardSize.swift */,
+				31A9F9981C091314004DFC10 /* Circle.swift */,
+				31A9F9A21C091D74004DFC10 /* CircleType.swift */,
+				31A9F9941C090BC5004DFC10 /* Game.swift */,
+				31A9F9AC1C0944BC004DFC10 /* Game+BoardDelegate.swift */,
+				31A9F9961C090C64004DFC10 /* Slot.swift */,
+				31A9F9A61C0941D4004DFC10 /* SlotDelegate.swift */,
+				31A9F9A01C091D12004DFC10 /* SlotLocation.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		4E4BB5661BB410240043C80C = {
@@ -250,7 +294,9 @@
 		9A67E335396F17EF76E29551 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				31A9F99C1C091981004DFC10 /* Array+Random.swift */,
 				9A626FF127B52599D55ED20B /* Fonts */,
+				31A9F9A41C0934DE004DFC10 /* Timer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -302,6 +348,7 @@
 				9A6178CD868CFEC84CFB11A4 /* Supporting Files */,
 				9A620445F29B8D4640417471 /* Resources */,
 				9A6838F502088CA9E0C0FEA1 /* UI */,
+				31A9F9931C090B9B004DFC10 /* Game */,
 				9A67E335396F17EF76E29551 /* Helpers */,
 			);
 			path = ELColorGame;
@@ -584,21 +631,34 @@
 			files = (
 				4E4D9EAE1BB4B11A001104C7 /* Fonts.swift in Sources */,
 				3107929E1BCC120F00D7D680 /* StartView.swift in Sources */,
+				31A9F99B1C09195B004DFC10 /* BoardSize.swift in Sources */,
 				31A9F9921C0905BC004DFC10 /* UIView+MoveToSuperview.swift in Sources */,
 				9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */,
 				311589AD1C08873E001C7977 /* CircleViewType.swift in Sources */,
 				07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */,
 				9A691889E2944596D7AC15AF /* StartViewController.swift in Sources */,
+				31A9F99D1C091981004DFC10 /* Array+Random.swift in Sources */,
 				077E3DC81BB70BEF00DE5F3B /* Button.swift in Sources */,
 				9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */,
+				31A9F9971C090C64004DFC10 /* Slot.swift in Sources */,
+				31A9F9AB1C094468004DFC10 /* Board+SlotDelegate.swift in Sources */,
 				316690381BC5C47600DFD40D /* MenuView.swift in Sources */,
 				9A627CEB0EFC2BF211E2DB93 /* GameViewController.swift in Sources */,
+				31A9F99F1C0919A9004DFC10 /* Board.swift in Sources */,
 				9A66EE950DDBEA218650392C /* GameOverViewController.swift in Sources */,
+				31A9F9951C090BC5004DFC10 /* Game.swift in Sources */,
 				9A6E3EA7C2B0AB008BF3D7AD /* CircleView.swift in Sources */,
+				31A9F9A11C091D12004DFC10 /* SlotLocation.swift in Sources */,
 				9A6AD635BAF4D724DD487BA9 /* GameBoardController.swift in Sources */,
+				31A9F9A71C0941D4004DFC10 /* SlotDelegate.swift in Sources */,
+				31A9F9A31C091D74004DFC10 /* CircleType.swift in Sources */,
 				9A657E756388E95866782E11 /* GameView.swift in Sources */,
+				31A9F9991C091314004DFC10 /* Circle.swift in Sources */,
+				31A9F9A51C0934DE004DFC10 /* Timer.swift in Sources */,
 				9A69C6EC912A517216D30ABA /* GameBoardView.swift in Sources */,
+				31A9F9AD1C0944BC004DFC10 /* Game+BoardDelegate.swift in Sources */,
 				9A6B9946EE05DE14ACDF7C0B /* GameBoardSlotView.swift in Sources */,
+				31A9F9A91C0941F7004DFC10 /* BoardDelegate.swift in Sources */,
 				9A631F2ECA9D3B72EB930F93 /* GameBoardSlotViewsArray.swift in Sources */,
 				311589AF1C08A6CC001C7977 /* CircleViewDragger.swift in Sources */,
 			);
