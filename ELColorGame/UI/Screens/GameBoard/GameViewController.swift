@@ -35,15 +35,6 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
         setupGameIfNeeded()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        game?.start()
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        game?.pause()
-    }
-    
     // MARK: Game
     
     var game: Game?
@@ -56,6 +47,7 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
         let game = Game(boardSize: BoardSize(columns: boardView.columns, rows: boardView.rows))
         game.delegate = self
         self.game = game
+        game.start()
     }
     
     private func createGameBoardView(gameView gameView: GameView) -> GameBoardView {
@@ -100,12 +92,13 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     // MARK: GameViewDelegate
     
     func gameViewDidTapPause(gameView: GameView) {
+        game?.pause()
         let menuViewController = MenuViewController(delegate: self)
         presentViewController(menuViewController, animated: true, completion: nil)
     }
 
     func gameViewDidTapRestart(gameView: GameView) {
-        game?.reset()
+        game?.restart()
     }
     
     // MARK: MenuViewControllerDelegate
@@ -115,7 +108,7 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     }
     
     func menuViewControllerDidTapNewGame(menuViewController: MenuViewController) {
-        game?.reset()
+        game?.restart()
     }
     
     func menuViewControllerDidTapQuit(menuViewController: MenuViewController) {
