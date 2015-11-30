@@ -16,7 +16,8 @@ extension GameViewController: GameDelegate {
     }
     
     func gameOver(game: Game) {
-        print("game over")
+        let viewController = GameOverViewController(score: 0) // TODO: set score
+        presentViewController(viewController, animated: true, completion: nil)
     }
     
     // MARK: Helpers
