@@ -14,7 +14,6 @@ import GameKit
 class GameViewController: UIViewController, GameViewDelegate, MenuViewControllerDelegate {
     
     var scoreNumber = 0
-    var gameBoardController: GameBoardController?
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -41,7 +40,7 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
             if gameView.boardView == nil {
                 let boardView = createGameBoardView(gameView: gameView)
                 gameView.boardView = boardView
-                gameBoardController = GameBoardController(view: boardView)
+                // TODO: create game
             }
         }
     }
@@ -55,11 +54,11 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        gameBoardController?.startInserting()
+        // TODO: resume game
     }
     
     override func viewWillDisappear(animated: Bool) {
-        gameBoardController?.stopInserting()
+        // TODO: pause game
     }
     
     // MARK: Sound
@@ -102,22 +101,21 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     // MARK: GameViewDelegate
     
     func gameViewDidTapPause(gameView: GameView) {
-        gameBoardController?.stopInserting()
         self.presentMenuViewController()
     }
 
     func gameViewDidTapRestart(gameView: GameView) {
-        gameBoardController?.restartGame()
+        // TODO: restart game
     }
     
     // MARK: MenuViewControllerDelegate
     
     func menuViewControllerDidResumeGame(menuViewController: MenuViewController) {
-        gameBoardController?.startInserting()
+        // TODO: no action needed, delete method
     }
     
     func menuViewControllerDidTapNewGame(menuViewController: MenuViewController) {
-        gameBoardController?.restartGame()
+        // TODO: restart game
     }
     
     func menuViewControllerDidTapQuit(menuViewController: MenuViewController) {
