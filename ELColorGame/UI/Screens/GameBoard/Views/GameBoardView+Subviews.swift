@@ -36,4 +36,14 @@ extension GameBoardView {
         return slotViews.filter({ $0.circleView == circleView }).first
     }
     
+    func slotViewAtPoint(point: CGPoint) -> GameBoardSlotView? {
+        for slotView in slotViews {
+            let frame = slotView.convertRect(slotView.bounds, toView: self)
+            if CGRectContainsPoint(frame, point) {
+                return slotView
+            }
+        }
+        return nil
+    }
+    
 }
