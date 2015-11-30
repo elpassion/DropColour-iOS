@@ -19,6 +19,7 @@
 		3170451C1C0CF46900D80BD6 /* GameViewController+MenuViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3170451B1C0CF46900D80BD6 /* GameViewController+MenuViewControllerDelegate.swift */; };
 		3170451E1C0CF4AE00D80BD6 /* GameViewController+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3170451D1C0CF4AE00D80BD6 /* GameViewController+Audio.swift */; };
 		317045201C0CF4E500D80BD6 /* GameViewController+GameKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3170451F1C0CF4E500D80BD6 /* GameViewController+GameKit.swift */; };
+		317045261C0CFD4100D80BD6 /* CircleView+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317045251C0CFD4100D80BD6 /* CircleView+Circle.swift */; };
 		31A9F9921C0905BC004DFC10 /* UIView+MoveToSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9911C0905BC004DFC10 /* UIView+MoveToSuperview.swift */; };
 		31A9F9951C090BC5004DFC10 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9941C090BC5004DFC10 /* Game.swift */; };
 		31A9F9971C090C64004DFC10 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9961C090C64004DFC10 /* Slot.swift */; };
@@ -86,6 +87,7 @@
 		3170451B1C0CF46900D80BD6 /* GameViewController+MenuViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+MenuViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		3170451D1C0CF4AE00D80BD6 /* GameViewController+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+Audio.swift"; sourceTree = "<group>"; };
 		3170451F1C0CF4E500D80BD6 /* GameViewController+GameKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameKit.swift"; sourceTree = "<group>"; };
+		317045251C0CFD4100D80BD6 /* CircleView+Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CircleView+Circle.swift"; sourceTree = "<group>"; };
 		31A9F9911C0905BC004DFC10 /* UIView+MoveToSuperview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+MoveToSuperview.swift"; sourceTree = "<group>"; };
 		31A9F9941C090BC5004DFC10 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		31A9F9961C090C64004DFC10 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 			children = (
 				9A641A8E6FFBC061A7ADF863 /* CircleView.swift */,
 				311589AE1C08A6CC001C7977 /* CircleViewDragger.swift */,
+				317045251C0CFD4100D80BD6 /* CircleView+Circle.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -668,6 +671,7 @@
 				3170451A1C0CF42300D80BD6 /* GameViewController+GameViewDelegate.swift in Sources */,
 				9A69C6EC912A517216D30ABA /* GameBoardView.swift in Sources */,
 				31A9F9AD1C0944BC004DFC10 /* Game+BoardDelegate.swift in Sources */,
+				317045261C0CFD4100D80BD6 /* CircleView+Circle.swift in Sources */,
 				9A6B9946EE05DE14ACDF7C0B /* GameBoardSlotView.swift in Sources */,
 				31A9F9A91C0941F7004DFC10 /* BoardDelegate.swift in Sources */,
 				9A631F2ECA9D3B72EB930F93 /* GameBoardSlotViewsArray.swift in Sources */,
