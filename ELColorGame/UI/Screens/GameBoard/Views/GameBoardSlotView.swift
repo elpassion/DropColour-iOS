@@ -10,7 +10,12 @@ import UIKit
 
 class GameBoardSlotView: UIView {
     
-    init() {
+    let column: Int
+    let row: Int
+    
+    init(column: Int, row: Int) {
+        self.column = column
+        self.row = row
         super.init(frame: CGRectZero)
         userInteractionEnabled = false
         loadSubviews()

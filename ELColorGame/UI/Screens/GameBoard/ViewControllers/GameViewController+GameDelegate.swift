@@ -24,7 +24,7 @@ extension GameViewController: GameDelegate {
     private func slotView(forSlot slot: Slot) -> GameBoardSlotView? {
         guard let view = view as? GameView else { return nil }
         guard let boardView = view.boardView else { return nil }
-        return boardView.slotViewAtPosition(row: slot.location.row, column: slot.location.column)
+        return boardView.slotViewAtLocation(column: slot.location.column, row: slot.location.row)
     }
     
 }
