@@ -8,6 +8,7 @@ import Foundation
 class Game {
     
     private let board: Board
+    weak var delegate: GameDelegate?
     
     init(boardSize: BoardSize) {
         self.board = Board(size: boardSize)
