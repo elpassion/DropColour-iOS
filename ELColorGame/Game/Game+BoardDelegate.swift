@@ -8,15 +8,16 @@ import Foundation
 extension Game: BoardDelegate {
     
     func board(board: Board, didInsertCircle circle: Circle, intoSlot slot: Slot) {
-        print("circle inserted into \(slot.location.column)x\(slot.location.row)")
+        delegate?.game(self, didInsertCircle: circle, intoSlot: slot)
     }
     
     func board(board: Board, didRemoveCircle ciecle: Circle, fromSlot slot: Slot) {
-        print("circle removed from \(slot.location.column)x\(slot.location.row)")
+        delegate?.game(self, didRemoveCircle: ciecle, fromSlot: slot)
     }
     
     func boardBecameFull(board: Board) {
-        print("board became full")
+        self.pause()
+        delegate?.gameOver(self)
     }
     
 }
