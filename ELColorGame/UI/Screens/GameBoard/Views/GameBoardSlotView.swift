@@ -42,7 +42,7 @@ class GameBoardSlotView: UIView {
     var circleView: CircleView? {
         didSet {
             if let oldValue = oldValue {
-                oldValue.removeFromSuperview()
+                removeCircleViewWithAnimation(oldValue)
             }
             if let circleView = circleView {
                 addCircleViewWithAnimation(circleView)
@@ -51,12 +51,15 @@ class GameBoardSlotView: UIView {
     }
     
     private func addCircleViewWithAnimation(circleView: CircleView) {
-        UIView.animateWithDuration(0.2) { [weak self] () -> Void in
-            circleView.addAppearAnimation()
-            circleView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-            circleView.frame = self?.bounds ?? CGRectZero
-            self?.addSubview(circleView)
-        }
+        circleView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        circleView.frame = bounds
+        addSubview(circleView)
+        // TODO: animate
+    }
+    
+    private func removeCircleViewWithAnimation(circleView: CircleView) {
+        // TODO: animate
+        circleView.removeFromSuperview()
     }
     
 }
