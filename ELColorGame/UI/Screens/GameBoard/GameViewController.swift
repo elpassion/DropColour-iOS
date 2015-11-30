@@ -26,7 +26,9 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     }
     
     override func loadView() {
-        self.view = GameView()
+        let view = GameView()
+        view.delegate = self
+        self.view = view
     }
     
     override func viewDidLayoutSubviews() {
