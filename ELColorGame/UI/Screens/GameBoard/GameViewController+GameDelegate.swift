@@ -8,15 +8,23 @@ import Foundation
 extension GameViewController: GameDelegate {
     
     func game(game: Game, didInsertCircle circle: Circle, intoSlot slot: Slot) {
-        print("circle inserted into \(slot.location.column)x\(slot.location.row)")
+        slotView(forSlot: slot)?.circleView = CircleView(circle: circle)
     }
     
     func game(game: Game, didRemoveCircle circle: Circle, fromSlot slot: Slot) {
-        print("circle removed from \(slot.location.column)x\(slot.location.row)")
+        slotView(forSlot: slot)?.circleView = nil
     }
     
     func gameOver(game: Game) {
         print("game over")
+    }
+    
+    // MARK: Helpers
+    
+    private func slotView(forSlot slot: Slot) -> GameBoardSlotView? {
+        guard let view = view as? GameView else { return nil }
+        guard let boardView = view.boardView else { return nil }
+        return boardView.slotViewAtPosition(row: slot.location.row, column: slot.location.column)
     }
     
 }
