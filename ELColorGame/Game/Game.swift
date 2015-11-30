@@ -18,24 +18,56 @@ class Game {
         stopInsertingCircles()
     }
     
+    func start() {
+        startInsertingCircles()
+    }
+    
+    func pause() {
+        stopInsertingCircles()
+    }
+    
+    var isPaused: Bool {
+        return !isInsertingCircles
+    }
+    
+    func restart() {
+        pause()
+        reset()
+        start()
+    }
+    
+    func reset() {
+        removeAllCircles()
+    }
+    
     // MARK: Inserting Circles
     
     private var insertingTimer: Timer?
     
-    var isInsertingCircles: Bool {
+    var insertingInterval = NSTimeInterval(0.5) {
+        didSet {
+            guard oldValue != insertingInterval else { return }
+            if isInsertingCircles {
+                stopInsertingCircles()
+                startInsertingCircles()
+            }
+        }
+    }
+    
+    private var isInsertingCircles: Bool {
         return insertingTimer != nil
     }
     
-    func startInsertingCircles(interval interval: NSTimeInterval) {
+    private func startInsertingCircles() {
         if let _ = insertingTimer {
             stopInsertingCircles()
         }
-        insertingTimer = Timer(interval: interval) { [weak self] in
+        insertingTimer = Timer(interval: insertingInterval) { [weak self] in
             self?.insertRandomCircle()
         }
     }
     
-    func stopInsertingCircles() {
+    private func stopInsertingCircles() {
         guard let timer = insertingTimer else { return }
         timer.invalidate()
         insertingTimer = nil
@@ -49,7 +81,7 @@ class Game {
     
     // MARK: Removing Circles
     
-    func removeAllCircles() {
+    private func removeAllCircles() {
         for slot in board.nonEmptySlots {
             slot.circle = nil
         }
