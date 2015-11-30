@@ -45,7 +45,6 @@
 		9A691889E2944596D7AC15AF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A645F14AE48ACC3A5DCE70E /* StartViewController.swift */; };
 		9A6996BD7D6701CD3B528077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A603B96F16924EAF14D8E07 /* Assets.xcassets */; };
 		9A69C6EC912A517216D30ABA /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B6CD8684FE7D42386830B /* GameBoardView.swift */; };
-		9A6AD635BAF4D724DD487BA9 /* GameBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67BA61A72417826E857FB8 /* GameBoardController.swift */; };
 		9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66DDEC747665108D8A2ACD /* AppDelegate.swift */; };
 		9A6B9946EE05DE14ACDF7C0B /* GameBoardSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A68FA3016EE2B2536A7B8E9 /* GameBoardSlotView.swift */; };
 		9A6E3EA7C2B0AB008BF3D7AD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A641A8E6FFBC061A7ADF863 /* CircleView.swift */; };
@@ -112,7 +111,6 @@
 		9A650A8C4C3305EB21B9D1D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		9A66DDEC747665108D8A2ACD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A67096A98AF85E62A342136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ELColorGame/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		9A67BA61A72417826E857FB8 /* GameBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardController.swift; sourceTree = "<group>"; };
 		9A68FA3016EE2B2536A7B8E9 /* GameBoardSlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardSlotView.swift; sourceTree = "<group>"; };
 		9A6B6CD8684FE7D42386830B /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		9A6C1BAF80412C73F3938C3E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -266,14 +264,6 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
-		9A6696F5CBB471E99ED391E9 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				9A67BA61A72417826E857FB8 /* GameBoardController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		9A67B30A97BB292EC48615D9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,7 +277,6 @@
 			children = (
 				9A610DC4B4C122AA2A501745 /* GameViewController.swift */,
 				9A6E4C6A407164F11ED12CAE /* Views */,
-				9A6696F5CBB471E99ED391E9 /* Controller */,
 				9A61FA4F72C42A50C5E35D5B /* Extension */,
 			);
 			path = GameBoard;
@@ -652,7 +641,6 @@
 				31A9F9951C090BC5004DFC10 /* Game.swift in Sources */,
 				9A6E3EA7C2B0AB008BF3D7AD /* CircleView.swift in Sources */,
 				31A9F9A11C091D12004DFC10 /* SlotLocation.swift in Sources */,
-				9A6AD635BAF4D724DD487BA9 /* GameBoardController.swift in Sources */,
 				31A9F9A71C0941D4004DFC10 /* SlotDelegate.swift in Sources */,
 				31A9F9A31C091D74004DFC10 /* CircleType.swift in Sources */,
 				9A657E756388E95866782E11 /* GameView.swift in Sources */,
