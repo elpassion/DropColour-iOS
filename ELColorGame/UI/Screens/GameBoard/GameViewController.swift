@@ -13,8 +13,6 @@ import GameKit
 
 class GameViewController: UIViewController, GameViewDelegate, MenuViewControllerDelegate {
     
-    var scoreNumber = 0
-    
     init() {
         super.init(nibName: nil, bundle: nil)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
@@ -84,7 +82,7 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     func synchronizeHighestScore() {
         if GKLocalPlayer.localPlayer().authenticated {
             let score = GKScore(leaderboardIdentifier: "drag_and_drop_color_leaderboard_01")
-            score.value = Int64(scoreNumber)
+            score.value = Int64(0) // TODO: set score
             GKScore.reportScores([score], withCompletionHandler: { (error) -> Void in
                 if error != nil {
                     print("error")
