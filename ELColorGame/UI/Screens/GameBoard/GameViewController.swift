@@ -25,7 +25,7 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     }
     
     override func loadView() {
-        self.view = GameView(delegate: self)
+        self.view = GameView()
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
     }
     
@@ -98,13 +98,13 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     }
 
     // MARK: GameViewDelegate
-
-    func gameBoardViewDidTapPause(gameBoardView: GameView) {
+    
+    func gameViewDidTapPause(gameView: GameView) {
         gameBoardController?.stopInserting()
         self.presentMenuViewController()
     }
 
-    func gameBoardViewDidTapRestart(gameBoardView: GameView) {
+    func gameViewDidTapRestart(gameView: GameView) {
         gameBoardController?.restartGame()
     }
     
