@@ -66,12 +66,12 @@ class GameBoardView: UIView {
     
     // MARK: Slots
     
-    private let slotViews: [GameBoardSlotViewsArray]
+    private let slotViews: [[GameBoardSlotView]]
     
-    private class func createSlotViews(rows rows: Int, columns: Int) -> [GameBoardSlotViewsArray] {
-        var slotViews: [GameBoardSlotViewsArray] = []
+    private class func createSlotViews(rows rows: Int, columns: Int) -> [[GameBoardSlotView]] {
+        var slotViews: [[GameBoardSlotView]] = []
         for _ in 0...(rows-1) {
-            var column: GameBoardSlotViewsArray = []
+            var column: [GameBoardSlotView] = []
             for _ in 0...(columns-1) {
                 column.append(GameBoardSlotView())
             }
@@ -95,7 +95,7 @@ class GameBoardView: UIView {
     }
     
     private func circleViewAtPoint(point: CGPoint) -> CircleView? {
-        let circleViews = allSlotViews.nonEmptySlotViews.map { $0.circleView! }
+        let circleViews = nonEmptySlotViews.map { $0.circleView! }
         for circleView in circleViews {
             let frame = circleView.convertRect(circleView.bounds, toView: self)
             if CGRectContainsPoint(frame, point) {
@@ -105,14 +105,22 @@ class GameBoardView: UIView {
         return nil
     }
     
-    private var allSlotViews: GameBoardSlotViewsArray {
-        var array: GameBoardSlotViewsArray = []
+    private var allSlotViews: [GameBoardSlotView] {
+        var array = [GameBoardSlotView]()
         for column in slotViews {
             for slotView in column {
                 array.append(slotView)
             }
         }
         return array
+    }
+    
+    private var emptySlotViews: [GameBoardSlotView] {
+        return allSlotViews.filter { $0.circleView == nil }
+    }
+    
+    private var nonEmptySlotViews: [GameBoardSlotView] {
+        return allSlotViews.filter { $0.circleView != nil }
     }
     
     private func slotViewForCircleView(circleView: CircleView) -> GameBoardSlotView? {
