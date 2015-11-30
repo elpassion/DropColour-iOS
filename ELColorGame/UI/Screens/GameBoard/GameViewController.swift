@@ -22,6 +22,8 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: View
+    
     override func loadView() {
         let view = GameView()
         view.delegate = self
@@ -32,6 +34,17 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
         super.viewDidLayoutSubviews()
         setupGameIfNeeded()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        // TODO: resume game
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        // TODO: pause game
+    }
+    
+    // MARK: Game
     
     private func setupGameIfNeeded() {
         if let gameView = view as? GameView {
@@ -48,15 +61,6 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
         let spacing = CGFloat(15.5)
         let (rows, columns) = GameBoardView.maxBoardSize(forViewSize: gameView.boardContainerView.frame.size, slotSize: slotSize, spacing: spacing)
         return GameBoardView(slotSize: slotSize, rows: rows, columns: columns, spacing: spacing)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        // TODO: resume game
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        // TODO: pause game
     }
     
     // MARK: Sound
@@ -90,16 +94,12 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
             })
         }
     }
-    
-    private func presentMenuViewController() {
-        let menuViewController = MenuViewController(delegate: self)
-        presentViewController(menuViewController, animated: true, completion: nil)
-    }
 
     // MARK: GameViewDelegate
     
     func gameViewDidTapPause(gameView: GameView) {
-        self.presentMenuViewController()
+        let menuViewController = MenuViewController(delegate: self)
+        presentViewController(menuViewController, animated: true, completion: nil)
     }
 
     func gameViewDidTapRestart(gameView: GameView) {
