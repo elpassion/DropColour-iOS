@@ -18,6 +18,7 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -26,7 +27,6 @@ class GameViewController: UIViewController, GameViewDelegate, MenuViewController
     
     override func loadView() {
         self.view = GameView()
-        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
     }
     
     override func viewDidLayoutSubviews() {
