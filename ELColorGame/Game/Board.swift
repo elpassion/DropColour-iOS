@@ -57,6 +57,12 @@ class Board {
         return slots.filter({ $0.location == location }).first
     }
     
+    func slot(forCircle circle: Circle) -> Slot? {
+        return slots.filter({ $0.circle === circle }).first
+    }
+    
+    // MARK: Circles
+    
     func circle(atLocation location: SlotLocation) -> Circle? {
         return slot(atLocation: location)?.circle
     }
