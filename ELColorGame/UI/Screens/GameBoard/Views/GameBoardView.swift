@@ -26,7 +26,7 @@ class GameBoardView: UIView {
         self.rows = rows
         self.columns = columns
         self.spacing = spacing
-        slotViews = GameBoardView.createSlotViews(rows, columns: columns)
+        slotViews = GameBoardView.createSlotViews(rows: rows, columns: columns)
         super.init(frame: CGRectZero)
         loadSubviews()
     }
@@ -47,11 +47,11 @@ class GameBoardView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        enumerateSlotViewsUsingBlock({ (slotView, x, y) in
+        enumerateSlotViewsUsingBlock({ (slotView, row, column) in
             var frame = CGRectZero
             frame.size = self.slotSize
-            frame.origin.x = CGFloat(x) * (self.slotSize.width + self.spacing) + self.boardHorizontalMargin()
-            frame.origin.y = CGFloat(y) * (self.slotSize.height + self.spacing) + self.boardVerticalMargin()
+            frame.origin.x = CGFloat(column) * (self.slotSize.width + self.spacing) + self.boardHorizontalMargin()
+            frame.origin.y = CGFloat(row) * (self.slotSize.height + self.spacing) + self.boardVerticalMargin()
             slotView.frame = frame
         })
     }
@@ -68,7 +68,7 @@ class GameBoardView: UIView {
     
     private let slotViews: [GameBoardSlotViewsArray]
     
-    class private func createSlotViews(rows: Int, columns: Int) -> [GameBoardSlotViewsArray] {
+    private class func createSlotViews(rows rows: Int, columns: Int) -> [GameBoardSlotViewsArray] {
         var slotViews: [GameBoardSlotViewsArray] = []
         for _ in 0...(rows-1) {
             var column: GameBoardSlotViewsArray = []
@@ -80,21 +80,21 @@ class GameBoardView: UIView {
         return slotViews
     }
     
-    typealias EnumerateSlotViewsBlock = (slotView: GameBoardSlotView, x: Int, y: Int) -> Void
+    private typealias EnumerateSlotViewsBlock = (slotView: GameBoardSlotView, row: Int, column: Int) -> Void
     
-    func enumerateSlotViewsUsingBlock(block: EnumerateSlotViewsBlock) {
-        for y in 0...(rows-1) {
-            for x in 0...(columns-1) {
-                block(slotView: slotViews[y][x], x: x, y: y)
+    private func enumerateSlotViewsUsingBlock(block: EnumerateSlotViewsBlock) {
+        for row in 0...(rows-1) {
+            for column in 0...(columns-1) {
+                block(slotView: slotViews[row][column], row: row, column: column)
             }
         }
     }
     
-    func slotViewAtPosition(x: Int, y: Int) -> GameBoardSlotView {
-        return slotViews[y][x]
+    func slotViewAtPosition(row row: Int, column: Int) -> GameBoardSlotView {
+        return slotViews[row][column]
     }
     
-    func circleViewAtPoint(point: CGPoint) -> CircleView? {
+    private func circleViewAtPoint(point: CGPoint) -> CircleView? {
         let circleViews = allSlotViews.nonEmptySlotViews.map { $0.circleView! }
         for circleView in circleViews {
             let frame = circleView.convertRect(circleView.bounds, toView: self)
@@ -105,7 +105,7 @@ class GameBoardView: UIView {
         return nil
     }
     
-    var allSlotViews: GameBoardSlotViewsArray {
+    private var allSlotViews: GameBoardSlotViewsArray {
         var array: GameBoardSlotViewsArray = []
         for column in slotViews {
             for slotView in column {
@@ -115,7 +115,7 @@ class GameBoardView: UIView {
         return array
     }
     
-    func slotViewForCircleView(circleView: CircleView) -> GameBoardSlotView? {
+    private func slotViewForCircleView(circleView: CircleView) -> GameBoardSlotView? {
         return allSlotViews.filter({ $0.circleView == circleView }).first
     }
     
