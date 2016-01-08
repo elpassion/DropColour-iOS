@@ -10,34 +10,36 @@ import UIKit
 
 class Button: UIButton {
     
-    var buttonActionClosure: (() -> ())?
+    typealias ButtonActionClosure = () -> ()
+    var buttonActionClosure: ButtonActionClosure?
     
     init(title: String, color: UIColor) {
         super.init(frame: CGRectZero)
         
         setTitle(title, forState: UIControlState.Normal)
-        titleLabel!.font = UIFont(name: BebasNeueBold, size: 22)
+        titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
         contentEdgeInsets = UIEdgeInsetsMake(4.5, 0, 0, 0)
         setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         layer.cornerRadius = 25.0
         backgroundColor = color
-        addTarget(self, action: Selector("didTapOnButton:"), forControlEvents: UIControlEvents.TouchUpInside)
+        configureButtonAction()
     }
     
     init(image: UIImage?) {
         super.init(frame: CGRectZero)
         
         setImage(image, forState: .Normal)
-        addTarget(self, action: Selector("didTapOnButton:"), forControlEvents: UIControlEvents.TouchUpInside)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        configureButtonAction()
     }
     
-    func didTapOnButton(button: UIButton) {
-        if let buttonActionClosure = buttonActionClosure {
-            buttonActionClosure()
-        }
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    private func configureButtonAction() {
+        addTarget(self, action: Selector("didTapOnButton:"), forControlEvents: UIControlEvents.TouchUpInside)
     }
+    
+    func didTapOnButton(sender: UIButton) {
+        buttonActionClosure?()
+    }
+    
 }
