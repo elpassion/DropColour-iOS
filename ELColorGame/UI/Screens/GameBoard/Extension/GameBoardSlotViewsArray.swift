@@ -26,4 +26,13 @@ extension Array where Element: GameBoardSlotView {
         return self[randomIndex]
     }
     
+    func findFirstMatching<included: BooleanType>(predicate: Element -> included) -> Element? {
+        for item in self {
+            if predicate(item) {
+                return item
+            }
+        }
+        return nil
+    }
+    
 }

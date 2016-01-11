@@ -51,12 +51,7 @@ class GameBoardController: NSObject {
     }
     
     private func slotForCircleView(circleView: CircleView) -> GameBoardSlotView? {
-        for slot in view.allSlotViews {
-            if slot.circleView == circleView {
-                return slot
-            }
-        }
-        return nil
+        return view.allSlotViews.findFirstMatching({ $0.circleView == circleView })
     }
     
 }
