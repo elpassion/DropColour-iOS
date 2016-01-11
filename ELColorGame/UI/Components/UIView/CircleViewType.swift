@@ -9,13 +9,18 @@
 import Foundation
 import UIKit
 
-protocol _CircleViewType {}
+protocol _CircleViewType {
+    
+    var topColor: UIColor { get }
+    var bottomColor: UIColor { get }
+    
+}
 
 struct CircleViewType: _CircleViewType {
-    
-    let topColor: UIColor
+
+    let topColor: UIColor 
     let bottomColor: UIColor
-    
+
 }
 
 let CircleViewTypePurple = CircleViewType(topColor: UIColor(hex: "#C86DD7"), bottomColor: UIColor(hex: "#906DD7"))
@@ -36,7 +41,7 @@ let CircleViewTypes = [
 
 extension Array where Element: _CircleViewType {
 
-    var randomType: Element? {
+    var randomType: Element {
         let randomIndex = Int(arc4random_uniform(UInt32(count)))
         return self[randomIndex]
     }
