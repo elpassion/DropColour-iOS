@@ -7,7 +7,7 @@ import Foundation
 
 class Timer: NSObject {
     
-    typealias Action = () -> Void
+    typealias Action = () -> ()
     let action: Action
     
     init(interval: NSTimeInterval, action: Action) {
