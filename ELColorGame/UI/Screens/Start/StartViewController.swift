@@ -38,7 +38,7 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
     // MARK: StartViewDelegate
 
     func startViewDidTapNewGame(startView: StartView) {
-        let gameBoardViewController = GameBoardViewController()
+        let gameBoardViewController = GameViewController()
         presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
 

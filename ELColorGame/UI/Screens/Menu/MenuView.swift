@@ -44,11 +44,8 @@ class MenuView: UIView {
     }
     
     private let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-    
     private let resumeButton = Button(title: "RESUME", color: UIColor(red:0, green:0.57, blue:0.99, alpha:1))
-    
     private let newGameButton = Button(title: "NEW GAME", color: UIColor(red:0.38, green:0.87, blue:0.1, alpha:1))
-    
     private let quitButton = Button(title: "QUIT", color: UIColor(red:0.91, green:0.15, blue:0.33, alpha:1))
     
     private let pauseImageView: UIImageView = {
@@ -73,22 +70,22 @@ class MenuView: UIView {
             make.edges.equalTo(0)
         }
         resumeButton.snp_makeConstraints { (make) -> Void in
-            make.width.equalTo(170)
-            make.height.equalTo(55)
+            make.width.equalTo(200)
+            make.height.equalTo(50)
             make.centerX.equalTo(0)
             make.centerY.equalTo(0)
         }
         newGameButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(resumeButton.snp_bottom).offset(15)
-            make.width.equalTo(170)
-            make.height.equalTo(55)
+            make.width.equalTo(200)
+            make.height.equalTo(50)
             make.centerX.equalTo(0)
         }
         quitButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(newGameButton.snp_bottom).offset(15)
-            make.width.equalTo(170)
-            make.height.equalTo(55)
+            make.width.equalTo(200)
+            make.height.equalTo(50)
             make.centerX.equalTo(0)
+            make.bottom.equalTo(-40)
         }
         pauseLabelText.snp_makeConstraints { (make) -> Void in
             make.centerX.equalTo(0)
@@ -107,9 +104,7 @@ class MenuView: UIView {
 protocol MenuViewDelegate: class {
     
     func menuViewDidTapResume(menuView: MenuView)
-    
     func menuViewDidTapNewGame(menuView: MenuView)
-    
     func menuViewDidTapQuit(menuView: MenuView)
     
 }

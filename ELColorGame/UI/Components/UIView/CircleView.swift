@@ -9,63 +9,45 @@
 import UIKit
 import Spring
 
-protocol CircleViewDelegate {
-    func circleDidTouched(view: CircleView)
-    func pointDidChanging(view: CircleView)
-    func pointDidChanged(initialPoint:CGPoint, view:CircleView)
-}
-
 class CircleView: SpringView {
     
-    var delegate:CircleViewDelegate? = nil
-    var lastLocation:CGPoint = CGPointMake(0, 0)
-    var colorsArray:[UIColor] = []
-    var initialPosition:CGPoint = CGPoint()
+    let type: CircleViewType
+    var colorsArray = [UIColor]()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        let touchRecognizer = UIPanGestureRecognizer(target: self, action: "detectTouch:")
-        self.gestureRecognizers = [touchRecognizer]
-        colorsArray = [
-            UIColor(red:0.31, green:0.84, blue:0.84, alpha:1),
-            UIColor(red:0.34, green:0.85, blue:0.09, alpha:1),
-            UIColor(red:0.69, green:0.43, blue:0.84, alpha:1),
-            UIColor(red:0.91, green:0.14, blue:0.37, alpha:1),
-            UIColor(red:0.29, green:0.56, blue:0.89, alpha:1),
-        ]
-        self.backgroundColor = colorsArray[Int(arc4random() % 4)]
-        addGradientForView(self)
-        initialPosition = self.center
+    init(type: CircleViewType) {
+        self.type = type
+        super.init(frame: CGRectZero)
+        clipsToBounds = true
+        backgroundColor = UIColor.clearColor()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func detectTouch(recognizer:UIPanGestureRecognizer) {
-        let translation = recognizer.translationInView(self.superview)
-        self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
-        if recognizer.state == .Began {
-            delegate?.circleDidTouched(self)
-        } else if recognizer.state == .Changed {
-            delegate?.pointDidChanging(self)
-            self.superview?.bringSubviewToFront(self)
-        } else if recognizer.state == .Ended {
-            delegate?.pointDidChanged(initialPosition, view: self)
-            print("ended")
-        }
-    }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        lastLocation = self.center
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.width / 2
+        gradientLayer = createGradientLayer([self.type.topColor, self.type.bottomColor])
     }
     
-    func addGradientForView(view: UIView) {
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.frame = self.bounds
-        gradient.colors = [CGColorCreateCopyWithAlpha(UIColor.whiteColor().CGColor, 0.15)!, CGColorCreateCopyWithAlpha(UIColor.blackColor().CGColor, 0.15)!]
-        self.layer.insertSublayer(gradient, atIndex: 0)
-        self.layer.cornerRadius = 20
-        self.clipsToBounds = true
+    // MARK: Gradient backgorund
+    
+    var gradientLayer: CAGradientLayer? {
+        didSet {
+            if let oldValue = oldValue {
+                oldValue.removeFromSuperlayer()
+            }
+            if let newValue = gradientLayer {
+                layer.insertSublayer(newValue, atIndex: 0)
+            }
+        }
+    }
+    
+    func createGradientLayer(colors: [UIColor]) -> CAGradientLayer {
+        let layer = CAGradientLayer()
+        layer.frame = bounds
+        layer.colors = colors.map { $0.CGColor }
+        return layer
     }
 }

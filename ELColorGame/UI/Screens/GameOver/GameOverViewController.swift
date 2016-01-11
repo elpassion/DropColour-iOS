@@ -12,11 +12,11 @@ import GameKit
 class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
 
     var blurEffectView: UIVisualEffectView = UIVisualEffectView(frame: CGRectZero)
-    let scoreTextLabel = UILabel(frame: CGRectZero)
     var scoreNumber: Int = Int()
-    let cancelButton = Button(title: "CANCEL", color: UIColor(red:0.91, green:0.15, blue:0.33, alpha:1))
-    let tryAgainButton = Button(title: "TRY AGAIN", color: UIColor(red:0.38, green:0.87, blue:0.1, alpha:1))
+    let scoreView = UIView(frame: CGRectZero)
+    let retryButton = Button(title: "RETRY", color: UIColor(red:0.38, green:0.87, blue:0.1, alpha:1))
     let topPlayersButton = Button(title: "TOP PLAYERS", color: UIColor(red:0.33, green:0.78, blue:0.78, alpha:1))
+    let quitButton = Button(title: "QUIT", color: UIColor(red:0.91, green:0.15, blue:0.33, alpha:1))
     
     init(score: Int) {
         super.init(nibName: nil, bundle: nil)
@@ -32,10 +32,10 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
     override func loadView() {
         self.view = UIView()
         configureBlurEffectView()
-        configureScoreTextLabel()
-        configureTryAgainButton()
-        configureCancelButton()
+        configureScoreViewLayout()
+        configureRetryButton()
         configureTopPlayersButtons()
+        configureQuitButton()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -43,8 +43,17 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
         configureGestureRecognizer(self.view)
     }
     
-    //Subviews
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateScore()
+    }
     
+    func updateScore() {
+        scoreNumberLabel.text = "\(scoreNumber)"
+    }
+
+    // MARK: Subviews
+
     func configureBlurEffectView () {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -52,28 +61,35 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
         setupBlurEffectViewLayout()
     }
     
-    func configureScoreTextLabel() {
-        scoreTextLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
-        scoreTextLabel.numberOfLines = 2
-        scoreTextLabel.textAlignment = NSTextAlignment.Center
-        scoreTextLabel.text = "YOUR SCORE\n\(scoreNumber)"
-        scoreTextLabel.font = UIFont(name: BebasNeueBold, size: 30)
-        scoreTextLabel.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
-        setupScoreTextLabelLayout()
-    }
+    private let scoreNumberLabel: UILabel = {
+        let label = UILabel(frame: CGRectZero)
+        label.font = UIFont(name: BebasNeueBold, size: 60)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        label.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
+        return label
+    }()
+
+    private let scoreTextLabel: UILabel = {
+        let label = UILabel(frame: CGRectZero)
+        label.text = "YOUR SCORE"
+        label.font = UIFont(name: BebasNeueBold, size: 20)
+        label.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
+        return label
+    }()
     
-    func configureCancelButton() {
-        cancelButton.buttonActionClosure = { [weak self] in
+    func configureQuitButton() {
+        quitButton.buttonActionClosure = { [weak self] in
             self?.dismissGameOverViewController()
         }
-        setupCancelButtonLayout()
+        setupQuitButtonLayout()
     }
     
-    func configureTryAgainButton() {
-        tryAgainButton.buttonActionClosure = { [weak self] in
-            self?.didTapOnTryAgainButton()
+    func configureRetryButton() {
+        retryButton.buttonActionClosure = { [weak self] in
+            self?.didTapOnRetryButton()
         }
-        setupTryAgainButtonLayout()
+        setupRetryButtonLayout()
     }
     
     func configureTopPlayersButtons() {
@@ -83,7 +99,7 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
         setupTopPlayersButtonLayout()
     }
     
-    //GameCenter
+    // MARK: GameCenter
     
     func showLeaders() {
         let gc = GKGameCenterViewController()
@@ -95,14 +111,14 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
         gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
     }
 
-    //Action methods
+    // MARK: Action methods
     
     func dismissGameOverViewController() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func didTapOnTryAgainButton() {
-        let gameBoardViewController = GameBoardViewController()
+    func didTapOnRetryButton() {
+        let gameBoardViewController = GameViewController()
         presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
     
@@ -111,7 +127,7 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
         myView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("dismissGameOverViewController")))
     }
     
-    //Layout
+    // MARK: Layout
     
     func setupBlurEffectViewLayout() {
         self.view.addSubview(blurEffectView)
@@ -119,30 +135,36 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
             make.edges.equalTo(0)
         }
     }
-    
-    func setupScoreTextLabelLayout() {
-        self.view.addSubview(scoreTextLabel)
-        scoreTextLabel.snp_makeConstraints { (make) -> Void in
-            make.center.equalTo(0)
-        }
-    }
-    
-    func setupTryAgainButtonLayout() {
-        self.view.addSubview(tryAgainButton)
-        tryAgainButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(scoreTextLabel.snp_bottom).offset(30)
-            make.width.equalTo(170)
-            make.height.equalTo(55)
+
+    func configureScoreViewLayout() {
+        view.addSubview(scoreView)
+        scoreView.snp_makeConstraints { (make) -> Void in
+            make.centerY.equalTo(0).offset(-110)
             make.centerX.equalTo(0)
         }
+        scoreView.addSubview(scoreNumberLabel)
+        scoreNumberLabel.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(0)
+            make.centerX.equalTo(0)
+            make.left.greaterThanOrEqualTo(0)
+            make.right.lessThanOrEqualTo(0)
+        }
+        scoreView.addSubview(scoreTextLabel)
+        scoreTextLabel.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(scoreNumberLabel.snp_bottom)
+            make.centerX.equalTo(0)
+            make.left.greaterThanOrEqualTo(0)
+            make.right.lessThanOrEqualTo(0)
+            make.bottom.equalTo(0)
+        }
     }
     
-    func setupCancelButtonLayout() {
-        self.view.addSubview(cancelButton)
-        cancelButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(tryAgainButton.snp_bottom).offset(15)
-            make.width.equalTo(170)
-            make.height.equalTo(55)
+    func setupRetryButtonLayout() {
+        self.view.addSubview(retryButton)
+        retryButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(scoreTextLabel.snp_bottom).offset(40)
+            make.width.equalTo(200)
+            make.height.equalTo(50)
             make.centerX.equalTo(0)
         }
     }
@@ -150,10 +172,21 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
     func setupTopPlayersButtonLayout() {
         self.view.addSubview(topPlayersButton)
         topPlayersButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(cancelButton.snp_bottom).offset(15)
-            make.width.equalTo(170)
-            make.height.equalTo(55)
+            make.top.equalTo(retryButton.snp_bottom).offset(15)
+            make.width.equalTo(200)
+            make.height.equalTo(50)
             make.centerX.equalTo(0)
         }
     }
+
+    func setupQuitButtonLayout() {
+        self.view.addSubview(quitButton)
+        quitButton.snp_makeConstraints { (make) -> Void in
+            make.width.equalTo(200)
+            make.height.equalTo(50)
+            make.centerX.equalTo(0)
+            make.bottom.equalTo(-40)
+        }
+    }
+
 }
