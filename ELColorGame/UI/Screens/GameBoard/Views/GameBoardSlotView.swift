@@ -58,8 +58,8 @@ class GameBoardSlotView: UIView {
     private func addCircleViewWithAnimation(circleView: CircleView) {
         circleView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         circleView.frame = bounds
+        circleView.addAppearAnimation()
         addSubview(circleView)
-        // TODO: animate
     }
     
     private func removeCircleViewWithAnimation(circleView: CircleView) {
