@@ -13,7 +13,7 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
 
     var blurEffectView: UIVisualEffectView = UIVisualEffectView(frame: CGRectZero)
     var scoreNumber: Int = Int()
-    let scoreView = UIView()
+    let scoreView = UIView(frame: CGRectZero)
     let retryButton = Button(title: "RETRY", color: UIColor(red:0.38, green:0.87, blue:0.1, alpha:1))
     let topPlayersButton = Button(title: "TOP PLAYERS", color: UIColor(red:0.33, green:0.78, blue:0.78, alpha:1))
     let quitButton = Button(title: "QUIT", color: UIColor(red:0.91, green:0.15, blue:0.33, alpha:1))
