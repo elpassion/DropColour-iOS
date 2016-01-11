@@ -77,10 +77,7 @@ class GameView: UIView {
                 oldValue.removeFromSuperview()
             }
             if let boardView = boardView {
-                boardContainerView.addSubview(boardView)
-                boardView.snp_makeConstraints(closure: { (make) -> Void in
-                    make.edges.equalTo(0)
-                })
+                configureBoardView(boardView)
             }
         }
     }
@@ -129,6 +126,13 @@ class GameView: UIView {
             make.right.equalTo(-16)
             make.bottom.equalTo(-16)
         }
+    }
+    
+    private func configureBoardView(boardView: GameBoardView) {
+        boardContainerView.addSubview(boardView)
+        boardView.snp_makeConstraints(closure: { (make) -> Void in
+            make.edges.equalTo(0)
+        })
     }
 }
 
