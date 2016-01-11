@@ -42,13 +42,10 @@ class GameView: UIView {
         addSubview(boardContainerView)
     }
     
-    private let topView = UIView()
-    
+    private let topView = UIView(frame: CGRectZero)
     private let pauseButton = Button(image: UIImage(named: "pause"))
-    
     private let restartButton = Button(image: UIImage(named: "restart"))
-    
-    private let scoreView = UIView()
+    private let scoreView = UIView(frame: CGRectZero)
     
     private let scoreTextLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
