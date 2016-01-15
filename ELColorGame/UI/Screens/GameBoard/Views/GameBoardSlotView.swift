@@ -63,8 +63,10 @@ class GameBoardSlotView: UIView {
     }
     
     private func removeCircleViewWithAnimation(circleView: CircleView) {
-        // TODO: animate
-        circleView.removeFromSuperview()
+        circleView.animation = "zoomOut"
+        circleView.animateNext({ () -> () in
+            circleView.removeFromSuperview()
+        })
     }
     
 }
