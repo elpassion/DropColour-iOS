@@ -1,0 +1,13 @@
+language: objective-c
+sudo: false
+osx_image: xcode7
+
+before_install:
+  - gem update cocoapods
+
+script:
+ - xctool -workspace ELColorGame.xcworkspace -scheme ELColorGame -sdk iphoneos
+          
+notifications:
+  slack: elpassion:rotzCblkkgDbH8aLQOklhtnA
+
