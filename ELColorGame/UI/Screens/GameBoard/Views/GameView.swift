@@ -140,9 +140,23 @@ class GameView: UIView {
     }
     
     private func configureBoardView(boardView: GameBoardView) {
+        boardView.delegate = self
         boardContainerView.addSubview(boardView)
         boardView.snp_makeConstraints(closure: { (make) -> Void in
             make.edges.equalTo(0)
         })
     }
+}
+
+extension GameView: GameBoardViewDelegate {
+    
+    func gameBoardViewCanMoveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) -> Bool {
+        guard let delegate = delegate else { return false }
+        return delegate.gameViewCanMoveCircle(fromLocation: from, toLocation: toLocation)
+    }
+    
+    func gameBoardViewMoveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) {
+        delegate?.gameViewMoveCircle(fromLocation: from, toLocation: toLocation)
+    }
+    
 }

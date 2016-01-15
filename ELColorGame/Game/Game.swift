@@ -41,6 +41,14 @@ class Game {
         removeAllCircles()
     }
     
+    func moveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) {
+        board.moveCircle(fromLocation: from, toLocation: toLocation)
+    }
+    
+    func canMoveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) -> Bool {
+        return board.canMoveCircle(fromLocation: from, toLocation: toLocation)
+    }
+    
     // MARK: Inserting Circles
     
     private var insertingTimer: Timer?

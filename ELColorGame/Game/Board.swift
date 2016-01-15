@@ -67,17 +67,17 @@ class Board {
         return slot(atLocation: location)?.circle
     }
     
-    func canMoveCircle(from from: SlotLocation, to: SlotLocation) -> Bool {
-        guard from != to else { return false }
-        guard let movingCircle = circle(atLocation: from) else { return false }
-        guard let targetCircle = circle(atLocation: to) else { return false }
+    func canMoveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) -> Bool {
+        guard fromLocation != toLocation else { return false }
+        guard let movingCircle = circle(atLocation: fromLocation) else { return false }
+        guard let targetCircle = circle(atLocation: toLocation) else { return false }
         return movingCircle.type == targetCircle.type
     }
     
-    func moveCircle(from from: SlotLocation, to: SlotLocation) {
-        guard canMoveCircle(from: from, to: to) else { return }
-        slot(atLocation: from)?.circle = nil
-        slot(atLocation: to)?.circle = nil
+    func moveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) {
+        guard canMoveCircle(fromLocation: fromLocation, toLocation: toLocation) else { return }
+        slot(atLocation: fromLocation)?.circle = nil
+        slot(atLocation: toLocation)?.circle = nil
     }
     
 }

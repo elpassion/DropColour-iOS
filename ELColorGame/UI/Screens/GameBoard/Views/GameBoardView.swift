@@ -9,6 +9,8 @@
 import UIKit
 
 class GameBoardView: UIView {
+
+    weak var delegate: GameBoardViewDelegate?
     
     let rows: Int
     let columns: Int

@@ -30,20 +30,39 @@ extension GameBoardView {
         draggers = draggers.filter { $0.view != dragger.view }
         guard let slotView = slotViewForCircleView(dragger.view) else { return }
         guard let slotSuperview = slotView.superview else { return }
+        let slotLocationFrom = SlotLocation(column: slotView.column, row: slotView.row)
+        let targetLocation = touch.locationInView(self)
+        
+        guard let targetSlotView = slotViewAtPoint(targetLocation) else {
+            restoreCircleDraggerViewToInitialPosition(dragger, slotSuperview: slotSuperview, slotView: slotView)
+            return
+        }
+        let slotLocationTo = SlotLocation(column: targetSlotView.column, row: targetSlotView.row)
+        
+        guard let delegate = delegate else { return }
+        if delegate.gameBoardViewCanMoveCircle(fromLocation: slotLocationFrom, toLocation: slotLocationTo) {
+            delegate.gameBoardViewMoveCircle(fromLocation: slotLocationFrom, toLocation: slotLocationTo)
+        } else {
+            restoreCircleDraggerViewToInitialPosition(dragger, slotSuperview: slotSuperview, slotView: slotView)
+        }
+        
+    }
+
+    private func draggerForTouch(touch: UITouch) -> CircleViewDragger? {
+        return draggers.filter({ $0.touch == touch }).first
+    }
+    
+    private func restoreCircleDraggerViewToInitialPosition(circleViewDragger: CircleViewDragger, slotSuperview: UIView, slotView: GameBoardSlotView) {
         let targetCenter = slotSuperview.convertPoint(slotView.center, toView: self)
         UIView.animateWithDuration(0.2,
             animations: {
-                dragger.view.center = targetCenter
-                dragger.view.addBounceAnimation()
+                circleViewDragger.view.center = targetCenter
+                circleViewDragger.view.addBounceAnimation()
             },
             completion: { finished in
-                dragger.view.moveToSuperview(slotView)
+                circleViewDragger.view.moveToSuperview(slotView)
             }
         )
-    }
-    
-    private func draggerForTouch(touch: UITouch) -> CircleViewDragger? {
-        return draggers.filter({ $0.touch == touch }).first
     }
     
 }
