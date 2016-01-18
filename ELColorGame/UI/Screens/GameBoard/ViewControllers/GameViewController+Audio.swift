@@ -6,7 +6,7 @@
 import Foundation
 import AVFoundation
 
-extension GameViewController {
+extension GameBoardSlotView {
     
     func playSound() {
         if let soundURL = NSBundle.mainBundle().URLForResource("bubble_pop_sound", withExtension: "m4a") {
