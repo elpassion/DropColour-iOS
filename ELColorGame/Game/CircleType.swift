@@ -28,7 +28,6 @@ extension CircleType {
     
 }
 
-
 private func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
     var i = 0
     return anyGenerator {
