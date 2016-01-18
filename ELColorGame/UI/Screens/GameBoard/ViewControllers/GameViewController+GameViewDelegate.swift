@@ -14,7 +14,9 @@ extension GameViewController: GameViewDelegate {
     }
     
     func gameViewDidTapRestart(gameView: GameView) {
-        game?.restart()
+        guard let game = game else { return }
+        game.restart()
+        gameView.updateScore(game.scoreNumber)
     }
     
     func gameViewCanMoveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) -> Bool {
@@ -24,6 +26,11 @@ extension GameViewController: GameViewDelegate {
     
     func gameViewMoveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) {
         game?.moveCircle(fromLocation: fromLocation, toLocation: toLocation)
+    }
+
+    func gameViewUpdateScore(gameView: GameView) {
+        guard let game = game else { return }
+        gameView.updateScore(game.scoreNumber)
     }
 
 }

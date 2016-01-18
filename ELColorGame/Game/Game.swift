@@ -8,6 +8,7 @@ import Foundation
 class Game {
     
     private let board: Board
+    private var score: Int = 0
     weak var delegate: GameDelegate?
     
     init(boardSize: BoardSize) {
@@ -39,14 +40,30 @@ class Game {
     
     func reset() {
         removeAllCircles()
+        resetScore()
     }
     
     func moveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) {
         board.moveCircle(fromLocation: from, toLocation: toLocation)
+        increaseScore()
     }
     
     func canMoveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) -> Bool {
         return board.canMoveCircle(fromLocation: from, toLocation: toLocation)
+    }
+    
+    // MARK: Score
+    
+    var scoreNumber: Int {
+        return score
+    }
+    
+    private func resetScore() {
+        score = 0
+    }
+    
+    private func increaseScore() {
+        score += 4
     }
     
     // MARK: Inserting Circles

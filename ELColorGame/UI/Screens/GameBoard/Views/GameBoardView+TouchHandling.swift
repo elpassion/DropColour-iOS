@@ -42,6 +42,7 @@ extension GameBoardView {
         guard let delegate = delegate else { return }
         if delegate.gameBoardViewCanMoveCircle(fromLocation: slotLocationFrom, toLocation: slotLocationTo) {
             delegate.gameBoardViewMoveCircle(fromLocation: slotLocationFrom, toLocation: slotLocationTo)
+            delegate.gameBoardViewUpdateScore() 
             playSound()
         } else {
             restoreCircleDraggerViewToInitialPosition(dragger, slotSuperview: slotSuperview, slotView: slotView)

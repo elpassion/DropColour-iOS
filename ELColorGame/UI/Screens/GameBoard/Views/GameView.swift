@@ -31,6 +31,10 @@ class GameView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateScore(score: Int) {
+        scoreNumberLabel.text = "\(score)"
+    }
+    
     // MARK: Subviews
     
     private func loadSubviews() {
