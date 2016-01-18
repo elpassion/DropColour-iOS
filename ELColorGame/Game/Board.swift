@@ -75,7 +75,6 @@ class Board {
     }
     
     func moveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) {
-        guard canMoveCircle(fromLocation: fromLocation, toLocation: toLocation) else { return }
         slot(atLocation: fromLocation)?.circle = nil
         slot(atLocation: toLocation)?.circle = nil
     }
