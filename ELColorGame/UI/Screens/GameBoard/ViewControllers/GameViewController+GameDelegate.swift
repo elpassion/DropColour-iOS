@@ -21,6 +21,11 @@ extension GameViewController: GameDelegate {
         presentViewController(viewController, animated: true, completion: nil)
     }
     
+    func gameDidUpdateScore(score: Int) {
+        guard let gameView = view as? GameView else { return }
+        gameView.updateScore(score)
+    }
+    
     // MARK: Helpers
     
     private func slotView(forSlot slot: Slot) -> GameBoardSlotView? {

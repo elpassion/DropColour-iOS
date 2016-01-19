@@ -28,9 +28,4 @@ extension GameViewController: GameViewDelegate {
         game?.moveCircle(fromLocation: fromLocation, toLocation: toLocation)
     }
 
-    func gameViewUpdateScore(gameView: GameView) {
-        guard let game = game else { return }
-        gameView.updateScore(game.scoreNumber)
-    }
-
 }

@@ -8,7 +8,12 @@ import Foundation
 class Game {
     
     private let board: Board
-    private var score: Int = 0
+    private var score: Int = 0 {
+        didSet {
+            delegate?.gameDidUpdateScore(score)
+        }
+    }
+    
     weak var delegate: GameDelegate?
     
     init(boardSize: BoardSize) {

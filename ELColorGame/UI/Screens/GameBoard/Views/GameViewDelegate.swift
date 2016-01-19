@@ -14,6 +14,5 @@ protocol GameViewDelegate: class {
     func gameViewDidTapRestart(gameView: GameView)
     func gameViewCanMoveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) -> Bool
     func gameViewMoveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation)
-    func gameViewUpdateScore(gameView: GameView)
     
 }

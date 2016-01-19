@@ -14,8 +14,4 @@ extension GameView: GameBoardViewDelegate {
         delegate?.gameViewMoveCircle(fromLocation: from, toLocation: toLocation)
     }
     
-    func gameBoardViewUpdateScore() {
-        delegate?.gameViewUpdateScore(self)
-    }
-
 }
