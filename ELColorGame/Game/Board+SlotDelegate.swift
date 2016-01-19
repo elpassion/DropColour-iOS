@@ -9,7 +9,7 @@ extension Board: SlotDelegate {
     
     func slot(slot: Slot, didInsertCircle circle: Circle) {
         delegate?.board(self, didInsertCircle: circle, intoSlot: slot)
-        if emptySlots.count == 0 {
+        if slots.emptySlots.count == 0 {
             delegate?.boardBecameFull(self)
         }
     }

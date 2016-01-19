@@ -105,7 +105,7 @@ class Game {
     }
     
     private func insertRandomCircle() {
-        guard let randomEmptySlot = board.emptySlots.random else { return }
+        guard let randomEmptySlot = board.slots.emptySlots.random else { return }
         guard let randomCircleType = CircleType.allTypes.random else { return }
         randomEmptySlot.circle = Circle(type: randomCircleType)
     }
@@ -113,7 +113,7 @@ class Game {
     // MARK: Removing Circles
     
     private func removeAllCircles() {
-        for slot in board.nonEmptySlots {
+        for slot in board.slots.nonEmptySlots {
             slot.circle = nil
         }
     }

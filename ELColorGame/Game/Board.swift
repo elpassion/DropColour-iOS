@@ -34,22 +34,6 @@ class Board {
     var slots: [Slot] {
         return _slots ?? []
     }
-
-    var emptySlots: [Slot] {
-        return slots.filter { $0.isEmpty }
-    }
-    
-    var nonEmptySlots: [Slot] {
-        return slots.filter { !$0.isEmpty }
-    }
-    
-    var emptyLocations: [SlotLocation] {
-        return emptySlots.map { $0.location }
-    }
-    
-    var nonEmptyLocations: [SlotLocation] {
-        return nonEmptySlots.map { $0.location }
-    }
     
     func slot(atLocation location: SlotLocation) -> Slot? {
         guard location.column < size.columns else { return nil }
