@@ -5,6 +5,10 @@
 
 import Foundation
 
+enum SlotError: ErrorType {
+    case NoCircleAtLocation(location: SlotLocation)
+}
+
 class Board {
     
     let size: BoardSize
@@ -58,7 +62,9 @@ class Board {
         return movingCircle.type == targetCircle.type
     }
     
-    func moveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) {
+    func moveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) throws {
+        guard let _ = circle(atLocation: fromLocation) else { throw SlotError.NoCircleAtLocation(location: fromLocation) }
+        guard let _ = circle(atLocation: toLocation) else { throw SlotError.NoCircleAtLocation(location: toLocation) }
         slot(atLocation: fromLocation)?.circle = nil
         slot(atLocation: toLocation)?.circle = nil
     }
