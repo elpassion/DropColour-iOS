@@ -15,16 +15,10 @@ class GameView: UIView {
     init() {
         super.init(frame: CGRectZero)
         backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
-        loadSubviews()
+        addSubviews()
         setupLayout()
-        pauseButton.buttonActionClosure = { [weak self] in
-            guard let sself = self else { return }
-            sself.delegate?.gameViewDidTapPause(sself)
-        }
-        restartButton.buttonActionClosure = { [weak self] in
-            guard let sself = self else { return }
-            sself.delegate?.gameViewDidTapRestart(sself)
-        }
+        configurePauseButtonAction()
+        configureRestartButtonAction()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -34,10 +28,26 @@ class GameView: UIView {
     func updateScore(score: Int) {
         scoreNumberLabel.text = "\(score)"
     }
+
+    // MARK: Actions
+
+    func configurePauseButtonAction() {
+        pauseButton.buttonActionClosure = { [weak self] in
+            guard let sself = self else { return }
+            sself.delegate?.gameViewDidTapPause(sself)
+        }
+    }
+
+    func configureRestartButtonAction() {
+        restartButton.buttonActionClosure = { [weak self] in
+            guard let sself = self else { return }
+            sself.delegate?.gameViewDidTapRestart(sself)
+        }
+    }
     
     // MARK: Subviews
     
-    private func loadSubviews() {
+    private func addSubviews() {
         addSubview(topView)
         topView.addSubview(pauseButton)
         topView.addSubview(restartButton)
