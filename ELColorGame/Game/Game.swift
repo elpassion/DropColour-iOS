@@ -48,17 +48,9 @@ class Game {
         resetScore()
     }
     
-    func moveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) {
-        do {
-            try board.moveCircle(fromLocation: from, toLocation: toLocation)
-            increaseScore()
-        } catch SlotError.NoCircleAtLocation(location: let location) {
-            print("No circle at location: \(location)")
-            fatalError()
-        } catch let unknownError {
-            print("\(unknownError) is an unknown error.")
-            fatalError()
-        }
+    func moveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) throws {
+        board.moveCircle(fromLocation: from, toLocation: toLocation)
+        increaseScore()
     }
     
     func canMoveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) -> Bool {
