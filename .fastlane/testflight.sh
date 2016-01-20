@@ -1,6 +1,5 @@
 #!/bin/sh
 
-fastlane unittests
 if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
 echo "This is a pull request. No deployment will be done."
 exit 0
@@ -10,3 +9,5 @@ echo "Testing on a branch other than master. No deployment will be done."
 exit 0
 fi
 
+# TESTFLIGHT
+fastlane testflight
