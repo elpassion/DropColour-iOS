@@ -11,11 +11,12 @@ import Spring
 
 class CircleView: SpringView {
     
-    let type: CircleViewType
-    var colorsArray = [UIColor]()
+    private let topColor: UIColor
+    private let bottomColor: UIColor
     
-    init(type: CircleViewType) {
-        self.type = type
+    init(topColor: UIColor, bottomColor: UIColor) {
+        self.topColor = topColor
+        self.bottomColor = bottomColor
         super.init(frame: CGRectZero)
         clipsToBounds = true
         backgroundColor = UIColor.clearColor()
@@ -28,12 +29,12 @@ class CircleView: SpringView {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = bounds.width / 2
-        gradientLayer = createGradientLayer([self.type.topColor, self.type.bottomColor])
+        gradientLayer = createGradientLayer([topColor, bottomColor])
     }
     
     // MARK: Gradient backgorund
     
-    var gradientLayer: CAGradientLayer? {
+    private var gradientLayer: CAGradientLayer? {
         didSet {
             if let oldValue = oldValue {
                 oldValue.removeFromSuperlayer()
@@ -44,7 +45,7 @@ class CircleView: SpringView {
         }
     }
     
-    func createGradientLayer(colors: [UIColor]) -> CAGradientLayer {
+    private func createGradientLayer(colors: [UIColor]) -> CAGradientLayer {
         let layer = CAGradientLayer()
         layer.frame = bounds
         layer.colors = colors.map { $0.CGColor }

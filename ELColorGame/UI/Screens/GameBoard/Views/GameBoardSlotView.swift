@@ -10,7 +10,12 @@ import UIKit
 
 class GameBoardSlotView: UIView {
     
-    init() {
+    let column: Int
+    let row: Int
+    
+    init(column: Int, row: Int) {
+        self.column = column
+        self.row = row
         super.init(frame: CGRectZero)
         userInteractionEnabled = false
         loadSubviews()
@@ -42,7 +47,7 @@ class GameBoardSlotView: UIView {
     var circleView: CircleView? {
         didSet {
             if let oldValue = oldValue {
-                oldValue.removeFromSuperview()
+                removeCircleViewWithAnimation(oldValue)
             }
             if let circleView = circleView {
                 addCircleViewWithAnimation(circleView)
@@ -51,12 +56,17 @@ class GameBoardSlotView: UIView {
     }
     
     private func addCircleViewWithAnimation(circleView: CircleView) {
-        UIView.animateWithDuration(0.2) { [weak self] () -> Void in
-            circleView.addAppearAnimation()
-            circleView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-            circleView.frame = self?.bounds ?? CGRectZero
-            self?.addSubview(circleView)
-        }
+        circleView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        circleView.frame = bounds
+        circleView.addAppearAnimation()
+        addSubview(circleView)
+    }
+    
+    private func removeCircleViewWithAnimation(circleView: CircleView) {
+        circleView.animation = "zoomOut"
+        circleView.animateNext({ () -> () in
+            circleView.removeFromSuperview()
+        })
     }
     
 }

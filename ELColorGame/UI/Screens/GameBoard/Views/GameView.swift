@@ -10,29 +10,44 @@ import UIKit
 
 class GameView: UIView {
     
-    let delegate: GameViewDelegate?
+    weak var delegate: GameViewDelegate?
     
-    init(delegate: GameViewDelegate?) {
-        self.delegate = delegate
+    init() {
         super.init(frame: CGRectZero)
         backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
-        loadSubviews()
+        addSubviews()
         setupLayout()
-        pauseButton.buttonActionClosure = { [unowned self] in
-            delegate?.gameBoardViewDidTapPause(self)
-        }
-        restartButton.buttonActionClosure = { [unowned self] in
-            delegate?.gameBoardViewDidTapRestart(self)
-        }
+        configurePauseButtonAction()
+        configureRestartButtonAction()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateScore(score: Int) {
+        scoreNumberLabel.text = "\(score)"
+    }
+
+    // MARK: Actions
+
+    func configurePauseButtonAction() {
+        pauseButton.buttonActionClosure = { [weak self] in
+            guard let sself = self else { return }
+            sself.delegate?.gameViewDidTapPause(sself)
+        }
+    }
+
+    func configureRestartButtonAction() {
+        restartButton.buttonActionClosure = { [weak self] in
+            guard let sself = self else { return }
+            sself.delegate?.gameViewDidTapRestart(sself)
+        }
+    }
+    
     // MARK: Subviews
     
-    private func loadSubviews() {
+    private func addSubviews() {
         addSubview(topView)
         topView.addSubview(pauseButton)
         topView.addSubview(restartButton)
@@ -42,10 +57,20 @@ class GameView: UIView {
         addSubview(boardContainerView)
     }
     
-    private let topView = UIView(frame: CGRectZero)
+    private let topView: UIView = {
+        let view = UIView(frame: CGRectZero)
+        view.backgroundColor = UIColor.clearColor()
+        return view
+    }()
+    
     private let pauseButton = Button(image: UIImage(named: "pause"))
     private let restartButton = Button(image: UIImage(named: "restart"))
-    private let scoreView = UIView(frame: CGRectZero)
+    
+    private let scoreView: UIView = {
+        let view = UIView(frame: CGRectZero)
+        view.backgroundColor = UIColor.clearColor()
+        return view
+    }()
     
     private let scoreTextLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
@@ -129,19 +154,10 @@ class GameView: UIView {
     }
     
     private func configureBoardView(boardView: GameBoardView) {
+        boardView.delegate = self
         boardContainerView.addSubview(boardView)
         boardView.snp_makeConstraints(closure: { (make) -> Void in
             make.edges.equalTo(0)
         })
     }
 }
-
-// MARK: - Delegate
-
-protocol GameViewDelegate: class {
-    
-    func gameBoardViewDidTapPause(gameBoardView: GameView)
-    func gameBoardViewDidTapRestart(gameBoardView: GameView)
-    
-}
-
