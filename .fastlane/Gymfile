@@ -1,0 +1,8 @@
+workspace "./ELColorGame.xcworkspace"
+scheme "ELColorGame"
+configuration "Release"
+sdk "iphoneos"
+output_directory "./build"
+output_name "DropColour"
+include_symbols true
+include_bitcode true

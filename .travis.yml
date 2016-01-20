@@ -1,13 +1,13 @@
 language: objective-c
+osx_image: xcode7.2
 sudo: false
-osx_image: xcode7
 
-before_install:
-  - gem update cocoapods
+script: 
+- ./.fastlane/travis.sh
 
-script:
- - xctool -workspace ELColorGame.xcworkspace -scheme ELColorGame -sdk iphoneos
-          
 notifications:
   slack: elpassion:rotzCblkkgDbH8aLQOklhtnA
 
+env:
+  global:
+    secure: gQILHGdQKHCSfPiBtclAnrxRoiDmYGVrHy45A+t4G4NarOAd2dkccIqF3Hgnq915CMCEJ8oilLoAibsNeUAkZdfQv5/CYdEIFzhHbKLfaPkr5kDH47EPCIDMu+MaLADcoXyxCA9ZGM3Rz5jOrwbi8DsRDNdz8guLUH1DYk6GotrwSlq23GeUW631Ft8P8u0T2PdMMdS31m1SYr6jgcAI0hlX9+EOz+koDgozeEI5y/2AArqU0HMeXmor+cqjAx5/xIVu26+4voSKtFS1+QHAN+HqUyCs+v4FAUp1UCddY6hsQj+hYs59ADy43s7bhdvlIbfD7aEvfaVbqJZzBqzNmkXbfT0qAtUzQivZbmWF9YeYGNnx9L1n18rY80hIi3jtH0COGj1AgoFhdyQtwQpzWZBSrUf0cUh/kVdh+fTGfnXIZj1bc2w6YS3r/i1uwc+eCTGL6Ks1HMP+TQzLHGIlMdzpzD7FZG9EPXEyhMp9ckQ6OPAX2xeTmLlVkplLlbNRVwMspjV7P2BAJblPJl+/OL1GNWQqNsQDP4ZgHnYEKk0vca8q+mV96K0yTqvnQ7bbBxYhFstJrjr/uOCdg0rJKk5Xl0dEPCttKjoMRXyy4xjA3c0G+Z4bLGekzS6pM7xcYUUIryTHFxBp0fJ+4ylJYlLAd/M+zyJvY7WwdBRQjNg=
