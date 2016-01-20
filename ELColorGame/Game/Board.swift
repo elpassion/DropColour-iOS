@@ -58,9 +58,17 @@ class Board {
         return movingCircle.type == targetCircle.type
     }
     
-    func moveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) {
+    func moveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) throws {
+        guard let _ = circle(atLocation: fromLocation) else { throw Error.NoCircleAtLocation(location: fromLocation) }
+        guard let _ = circle(atLocation: toLocation) else { throw Error.NoCircleAtLocation(location: toLocation) }
         slot(atLocation: fromLocation)?.circle = nil
         slot(atLocation: toLocation)?.circle = nil
     }
     
+}
+
+extension Board {
+    enum Error: ErrorType {
+        case NoCircleAtLocation(location: SlotLocation)
+    }
 }

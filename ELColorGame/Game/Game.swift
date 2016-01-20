@@ -49,7 +49,7 @@ class Game {
     }
     
     func moveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) throws {
-        board.moveCircle(fromLocation: from, toLocation: toLocation)
+        try! board.moveCircle(fromLocation: from, toLocation: toLocation)
         increaseScore()
     }
     
