@@ -1,5 +1,7 @@
 workspace "./ELColorGame.xcworkspace"
 scheme "ELColorGame"
+provisioning_profile_path "./.fastlane/provisioning_profiles/DropColour_AppStore.mobileprovision"
+codesigning_identity 'iPhone Distribution: EL Passion Next Sp. z o.o. (H5QFB36W2F)'
 configuration "Release"
 sdk "iphoneos"
 output_directory "./build"
