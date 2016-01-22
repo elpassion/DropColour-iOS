@@ -6,7 +6,8 @@
 import Foundation
 
 class Game {
-    
+
+    private let difficultyLevel = DifficultyLevel()
     private let board: Board
     private var score: Int = 0 {
         didSet {
@@ -46,11 +47,13 @@ class Game {
     func reset() {
         removeAllCircles()
         resetScore()
+        difficultyLevel.reset()
     }
     
     func moveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) throws {
         try board.moveCircle(fromLocation: from, toLocation: toLocation)
         increaseScore()
+        difficultyLevel.enableTimeIntervalChanged()
     }
     
     func canMoveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) -> Bool {
@@ -68,21 +71,15 @@ class Game {
     }
     
     private func increaseScore() {
-        score += 4
+        score += difficultyLevel.calculatedSingleActionPoints
     }
     
     // MARK: Inserting Circles
     
     private var insertingTimer: Timer?
     
-    var insertingInterval = NSTimeInterval(0.5) {
-        didSet {
-            guard oldValue != insertingInterval else { return }
-            if isInsertingCircles {
-                stopInsertingCircles()
-                startInsertingCircles()
-            }
-        }
+    var timeInterval: NSTimeInterval {
+        return difficultyLevel.calculatedIntervalTime(score)
     }
     
     private var isInsertingCircles: Bool {
@@ -93,7 +90,8 @@ class Game {
         if let _ = insertingTimer {
             stopInsertingCircles()
         }
-        insertingTimer = Timer(interval: insertingInterval) { [weak self] in
+        insertingTimer = Timer(interval: timeInterval) { [weak self] in
+            self?.insertingTimer?.interval = self?.timeInterval
             self?.insertRandomCircle()
         }
     }

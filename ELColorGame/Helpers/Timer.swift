@@ -10,8 +10,17 @@ class Timer: NSObject {
     typealias Action = () -> ()
     let action: Action
     
+    var interval: NSTimeInterval? {
+        didSet {
+            if let interval = interval {
+                updateTimeInterval(interval)
+            }
+        }
+    }
+    
     init(interval: NSTimeInterval, action: Action) {
         self.action = action
+        self.interval = interval
         super.init()
         timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: "timerTick", userInfo: nil, repeats: true)
     }
@@ -29,6 +38,11 @@ class Timer: NSObject {
     
     func timerTick() {
         action()
+    }
+    
+    private func updateTimeInterval(timeInterval: NSTimeInterval) {
+        guard let timer = timer else { return }
+        timer.fireDate = timer.fireDate.dateByAddingTimeInterval(timeInterval)
     }
     
 }
