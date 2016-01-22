@@ -7,7 +7,7 @@ before_script:
 - ./.fastlane/add-key.sh  
 script:
 - ./.fastlane/unittests.sh
-- ruby ./.fastlane/testflight.rb
+- ./.fastlane/testflight.sh
 notifications:
   slack: elpassion:rotzCblkkgDbH8aLQOklhtnA
 env:
