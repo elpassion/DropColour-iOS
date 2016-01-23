@@ -18,17 +18,10 @@ class StartView: UIView {
         super.init(frame: CGRectZero)
         loadSubviews()
         setupLayout()
-        newGameButton.buttonActionClosure = { [unowned self] in
-            delegate?.startViewDidTapNewGame(self)
-        }
-        topPlayersButton.buttonActionClosure = { [unowned self] in
-            delegate?.startViewDidTapTopPlayers(self)
-        }
+        configureButtonActions()
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     // MARK: Subviews
 
@@ -62,7 +55,6 @@ class StartView: UIView {
     }()
     
     private let newGameButton = Button(title: "NEW GAME", color: UIColor(red:0.42, green:0.88, blue:0.1, alpha:1))
-
     private let topPlayersButton = Button(title: "TOP PLAYERS", color: UIColor(red:0.33, green:0.78, blue:0.78, alpha:1))
 
     // MARK: Layout
@@ -103,6 +95,17 @@ class StartView: UIView {
         gradient.colors = [CGColorCreateCopyWithAlpha(topColor.CGColor, 0.2)!, CGColorCreateCopyWithAlpha(bottomColor.CGColor, 0.2)!]
         view.layer.insertSublayer(gradient, atIndex: 0)
     }
+    
+    // MARK: Button actions
+    
+    private func configureButtonActions() {
+        newGameButton.buttonActionClosure = { [unowned self] in
+            self.delegate?.startViewDidTapNewGame(self)
+        }
+        topPlayersButton.buttonActionClosure = { [unowned self] in
+            self.delegate?.startViewDidTapTopPlayers(self)
+        }
+    }
 
 }
 
@@ -111,7 +114,6 @@ class StartView: UIView {
 protocol StartViewDelegate: class {
     
     func startViewDidTapNewGame(startView: StartView)
-
     func startViewDidTapTopPlayers(startView: StartView)
 
 }
