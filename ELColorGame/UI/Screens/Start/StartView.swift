@@ -42,14 +42,14 @@ class StartView: UIView {
 
     private let backgroundImageView: UIImageView = {
         let view = UIImageView(frame: CGRectZero)
-        view.image = UIImage(named: "background-circles")
+        view.image = UIImage(asset: .CircleBackground)
         view.contentMode = .ScaleAspectFill
         return view
     }()
 
     private let logoImageView: UIImageView = {
         let view = UIImageView(frame: CGRectZero)
-        view.image = UIImage(named: "logo")
+        view.image = UIImage(asset: .DropColourLogo)
         view.contentMode = .ScaleAspectFit
         return view
     }()

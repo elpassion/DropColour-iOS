@@ -48,7 +48,7 @@ class MenuView: UIView {
     
     private let pauseImageView: UIImageView = {
         let view = UIImageView(frame: CGRectZero)
-        view.image = UIImage(named: "pause_icon")
+        view.image = UIImage(asset: .PauseIcon)
         view.contentMode = UIViewContentMode.ScaleAspectFit
         return view
     }()

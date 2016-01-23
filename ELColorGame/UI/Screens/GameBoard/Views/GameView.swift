@@ -63,8 +63,8 @@ class GameView: UIView {
         return view
     }()
     
-    private let pauseButton = Button(image: UIImage(named: "pause"))
-    private let restartButton = Button(image: UIImage(named: "restart"))
+    private let pauseButton = Button(image: UIImage(asset: .Pause))
+    private let restartButton = Button(image: UIImage(asset: .RestartIcon))
     
     private let scoreView: UIView = {
         let view = UIView(frame: CGRectZero)
