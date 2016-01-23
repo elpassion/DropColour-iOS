@@ -17,7 +17,7 @@ extension GameViewController: GameDelegate {
     
     func gameOver(game: Game) {
         synchronizeHighestScore()
-        let viewController = GameOverViewController(score: game.scoreNumber)
+        let viewController = GameOverViewController(score: game.scoreNumber, delegate: self)
         presentViewController(viewController, animated: true, completion: nil)
     }
     

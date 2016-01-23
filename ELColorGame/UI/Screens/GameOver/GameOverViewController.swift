@@ -11,10 +11,13 @@ import GameKit
 
 class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, GameOverViewDelegate {
 
+    private weak var delegate: GameOverViewControllerDelegate?
 
     private let scoreNumber: Int
 
+    init(score: Int, delegate: GameOverViewControllerDelegate?) {
         self.scoreNumber = score
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.modalPresentationStyle = UIModalPresentationStyle.Custom
@@ -29,6 +32,8 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
     // MARK: GameOverViewDelegate
 
     func gameOverViewDidTapRetry(gameOverView: GameOverView) {
+        self.dismissViewControllerAnimated(true) {
+            self.delegate?.gameOverViewControllerDidTapRetry(self)
         }
     }
 
@@ -37,6 +42,8 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
     }
 
     func gameOverViewDidTapQuit(gameOverView: GameOverView) {
+        self.dismissViewControllerAnimated(true) {
+            self.delegate?.gameOverViewControllerDidTapQuit(self)
         }
     }
     
@@ -54,6 +61,11 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
     
 }
 
+// MARK: - Delegate
 
+protocol GameOverViewControllerDelegate: class {
+
+    func gameOverViewControllerDidTapRetry(gameOverViewController: GameOverViewController)
+    func gameOverViewControllerDidTapQuit(gameOverViewController: GameOverViewController)
 
 }
