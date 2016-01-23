@@ -74,7 +74,7 @@ class GameView: UIView {
     
     private let scoreTextLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
-        label.text = "SCORE"
+        label.text = kScore
         label.font = UIFont(name: BebasNeueBold, size: 17)
         label.textColor = UIColor(red:0.49, green:0.46, blue:0.78, alpha:1)
         return label

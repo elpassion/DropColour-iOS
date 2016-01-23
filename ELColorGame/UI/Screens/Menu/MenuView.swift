@@ -28,9 +28,7 @@ class MenuView: UIView {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     // MARK: Subviews
     
@@ -44,9 +42,9 @@ class MenuView: UIView {
     }
     
     private let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-    private let resumeButton = Button(title: "RESUME", color: UIColor(red:0, green:0.57, blue:0.99, alpha:1))
-    private let newGameButton = Button(title: "NEW GAME", color: UIColor(red:0.38, green:0.87, blue:0.1, alpha:1))
-    private let quitButton = Button(title: "QUIT", color: UIColor(red:0.91, green:0.15, blue:0.33, alpha:1))
+    private let resumeButton = Button(title: kResume, color: UIColor(red:0, green:0.57, blue:0.99, alpha:1))
+    private let newGameButton = Button(title: kNewGame, color: UIColor(red:0.38, green:0.87, blue:0.1, alpha:1))
+    private let quitButton = Button(title: kQuit, color: UIColor(red:0.91, green:0.15, blue:0.33, alpha:1))
     
     private let pauseImageView: UIImageView = {
         let view = UIImageView(frame: CGRectZero)
@@ -57,7 +55,7 @@ class MenuView: UIView {
     
     private let pauseLabelText: UILabel = {
         let label = UILabel(frame: CGRectZero)
-        label.text = "PAUSE"
+        label.text = kPause
         label.font = UIFont(name: BebasNeueBold, size: 30)
         label.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
         return label
