@@ -20,12 +20,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="nYb-Gd-YbV">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Rfv-ol-xFO">
+                                <rect key="frame" x="220" y="175" width="161" height="90"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nYb-Gd-YbV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="C5J-28-6la"/>
+                            <constraint firstItem="Rfv-ol-xFO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-80" id="QuX-JQ-u6o"/>
                             <constraint firstItem="nYb-Gd-YbV" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="eNY-m5-Dar"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="nYb-Gd-YbV" secondAttribute="bottom" id="hlt-Pv-ELK"/>
+                            <constraint firstItem="Rfv-ol-xFO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jNS-1s-SJR"/>
                             <constraint firstAttribute="trailing" secondItem="nYb-Gd-YbV" secondAttribute="trailing" id="ovQ-Jb-tXq"/>
                         </constraints>
                     </view>
@@ -37,5 +42,6 @@
     </scenes>
     <resources>
         <image name="background" width="375" height="667"/>
+        <image name="logo" width="161" height="90"/>
     </resources>
 </document>
