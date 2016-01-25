@@ -90,9 +90,11 @@ class StartView: UIView {
     private func addGradientForView(view: UIView) {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = UIScreen.mainScreen().bounds
-        let topColor = UIColor(color: .PurpleC86DD7)
-        let bottomColor = UIColor(color: .Blue3023AE)
-        gradient.colors = [CGColorCreateCopyWithAlpha(topColor.CGColor, 0.2)!, CGColorCreateCopyWithAlpha(bottomColor.CGColor, 0.2)!]
+        let topColor = UIColor(color: .PurpleC86DD7).CGColor
+        let bottomColor = UIColor(color: .Blue3023AE).CGColor
+        guard let topColorWithAlpha = CGColorCreateCopyWithAlpha(topColor, 0.2) else { return }
+        guard let bottomColorWithAlpha = CGColorCreateCopyWithAlpha(bottomColor, 0.2) else { return }
+        gradient.colors = [topColorWithAlpha, bottomColorWithAlpha]
         view.layer.insertSublayer(gradient, atIndex: 0)
     }
     
