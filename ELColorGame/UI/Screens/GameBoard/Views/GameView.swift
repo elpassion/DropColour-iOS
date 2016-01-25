@@ -14,7 +14,7 @@ class GameView: UIView {
     
     init() {
         super.init(frame: CGRectZero)
-        backgroundColor = UIColor(red:0.22, green:0.2, blue:0.34, alpha:1)
+        backgroundColor = UIColor(color: .DarkPurple383357)
         addSubviews()
         setupLayout()
         configurePauseButtonAction()
@@ -76,7 +76,7 @@ class GameView: UIView {
         let label = UILabel(frame: CGRectZero)
         label.text = kScore
         label.font = UIFont(name: BebasNeueBold, size: 17)
-        label.textColor = UIColor(red:0.49, green:0.46, blue:0.78, alpha:1)
+        label.textColor = UIColor(color: .LightPurple7D75C7)
         return label
     }()
     
@@ -86,7 +86,7 @@ class GameView: UIView {
         label.font = UIFont(name: BebasNeueBold, size: 46)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
-        label.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
+        label.textColor = UIColor(color: .White)
         return label
     }()
     

@@ -15,17 +15,17 @@ extension CircleView {
     private class func colorsForCircle(circle: Circle) -> (top: UIColor, bottom: UIColor) {
         switch circle.type {
         case .Purple:
-            return (UIColor(hex: "#C86DD7"), UIColor(hex: "#906DD7"))
+            return (UIColor(color: .PurpleC86DD7), UIColor(color: .Purple906DD7))
         case .Blue:
-            return (UIColor(hex: "#00C7FF"), UIColor(hex: "#0076FF"))
+            return (UIColor(color: .Blue00C7FF), UIColor(color: .Blue0076FF))
         case .Orange:
-            return (UIColor(hex: "#FAD961"), UIColor(hex: "#F7821C"))
+            return (UIColor(color: .OrangeFAD961), UIColor(color: .OrangeF7821C))
         case .Red:
-            return (UIColor(hex: "#E92578"), UIColor(hex: "#E9253D"))
+            return (UIColor(color: .RedE92578), UIColor(color: .RedE9253D))
         case .Turquoise:
-            return (UIColor(hex: "#3CFFB7"), UIColor(hex: "#50CFE3"))
+            return (UIColor(color: .Turquoise3CFFB7), UIColor(color: .Turquoise50CFE3))
         case .Green:
-            return (UIColor(hex: "#A5E01A"), UIColor(hex: "#32E01A"))
+            return (UIColor(color: .GreenA5E01A), UIColor(color: .Green32E01A))
         }
     }
     

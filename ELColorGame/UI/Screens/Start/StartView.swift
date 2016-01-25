@@ -36,7 +36,7 @@ class StartView: UIView {
     
     private let backgroundView: UIView = {
         let backgroundView = UIView(frame: CGRectZero)
-        backgroundView.backgroundColor = UIColor(hex: "#202B39")
+        backgroundView.backgroundColor = UIColor(color: .Gray202B39)
         return backgroundView
     }()
 
@@ -54,8 +54,8 @@ class StartView: UIView {
         return view
     }()
     
-    private let newGameButton = Button(title: kNewGame, color: UIColor(red:0.42, green:0.88, blue:0.1, alpha:1))
-    private let topPlayersButton = Button(title: kTopPlayers, color: UIColor(red:0.33, green:0.78, blue:0.78, alpha:1))
+    private let newGameButton = Button(title: kNewGame, color: UIColor(color: .Green6BE01A))
+    private let topPlayersButton = Button(title: kTopPlayers, color: UIColor(color: .Turquoise54C7C7))
 
     // MARK: Layout
 
@@ -90,8 +90,8 @@ class StartView: UIView {
     private func addGradientForView(view: UIView) {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = UIScreen.mainScreen().bounds
-        let topColor = UIColor(hex: "#C86DD7")
-        let bottomColor = UIColor(hex: "#3023AE")
+        let topColor = UIColor(color: .PurpleC86DD7)
+        let bottomColor = UIColor(color: .Blue3023AE)
         gradient.colors = [CGColorCreateCopyWithAlpha(topColor.CGColor, 0.2)!, CGColorCreateCopyWithAlpha(bottomColor.CGColor, 0.2)!]
         view.layer.insertSublayer(gradient, atIndex: 0)
     }

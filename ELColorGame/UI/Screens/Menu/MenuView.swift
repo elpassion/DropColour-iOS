@@ -42,9 +42,9 @@ class MenuView: UIView {
     }
     
     private let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-    private let resumeButton = Button(title: kResume, color: UIColor(red:0, green:0.57, blue:0.99, alpha:1))
-    private let newGameButton = Button(title: kNewGame, color: UIColor(red:0.38, green:0.87, blue:0.1, alpha:1))
-    private let quitButton = Button(title: kQuit, color: UIColor(red:0.91, green:0.15, blue:0.33, alpha:1))
+    private let resumeButton = Button(title: kResume, color: UIColor(color: .Blue0091FC))
+    private let newGameButton = Button(title: kNewGame, color: UIColor(color: .Green6BE01A))
+    private let quitButton = Button(title: kQuit, color: UIColor(color: .RedE82654))
     
     private let pauseImageView: UIImageView = {
         let view = UIImageView(frame: CGRectZero)
@@ -57,7 +57,7 @@ class MenuView: UIView {
         let label = UILabel(frame: CGRectZero)
         label.text = kPause
         label.font = UIFont(name: BebasNeueBold, size: 30)
-        label.textColor = UIColor(red:1, green:1, blue:1, alpha:1)
+        label.textColor = UIColor(color: .White)
         return label
     }()
     
