@@ -7,7 +7,7 @@ import Foundation
 
 class Game {
 
-    private let difficultyLevel = DifficultyLevel()
+    private var difficultyLevel = DifficultyLevel()
     private let board: Board
     private var score: Int = 0 {
         didSet {
@@ -47,13 +47,12 @@ class Game {
     func reset() {
         removeAllCircles()
         resetScore()
-        difficultyLevel.reset()
+        difficultyLevel = DifficultyLevel()
     }
     
     func moveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) throws {
         try board.moveCircle(fromLocation: from, toLocation: toLocation)
         increaseScore()
-        difficultyLevel.enableTimeIntervalChanged()
     }
     
     func canMoveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) -> Bool {
@@ -72,6 +71,9 @@ class Game {
     
     private func increaseScore() {
         score += difficultyLevel.calculatedSingleActionPoints
+        difficultyLevel.scoreDidChange = {
+            return self.scoreNumber
+        }
     }
     
     // MARK: Inserting Circles
