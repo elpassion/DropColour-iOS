@@ -8,7 +8,7 @@ class DifficultyLevel {
     typealias ScoreDidChange = () -> (Int)
     var scoreDidChange: ScoreDidChange?
     
-    private let extraTime = 0.25
+    private let extraTime = 0.2
     private(set) var calculatedSingleActionPoints = 10
 
     private var numberOfLevel = 0
