@@ -18,8 +18,11 @@ class Game {
     weak var delegate: GameDelegate?
     
     init(boardSize: BoardSize) {
-        self.board = Board(size: boardSize)
-        self.board.delegate = self
+        board = Board(size: boardSize)
+        board.delegate = self
+        difficultyLevel.scoreClosure = { [weak self] in
+            self?.score ?? 0
+        }
     }
     
     deinit {
@@ -48,6 +51,9 @@ class Game {
         removeAllCircles()
         resetScore()
         difficultyLevel = DifficultyLevel()
+        difficultyLevel.scoreClosure = { [weak self] in
+            self?.score ?? 0
+        }
     }
     
     func moveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) throws {
@@ -70,10 +76,7 @@ class Game {
     }
     
     private func increaseScore() {
-        score += difficultyLevel.calculatedSingleActionPoints
-        difficultyLevel.scoreDidChange = {
-            return self.scoreNumber
-        }
+        score += difficultyLevel.actionPoints()
     }
     
     // MARK: Inserting Circles
@@ -81,7 +84,7 @@ class Game {
     private var insertingTimer: Timer?
     
     var timeInterval: NSTimeInterval {
-        return difficultyLevel.calculatedIntervalTime(score)
+        return difficultyLevel.intervalTime()
     }
     
     private var isInsertingCircles: Bool {

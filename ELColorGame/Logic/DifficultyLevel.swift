@@ -3,40 +3,25 @@
 // Copyright (c) 2016 EL Passion. All rights reserved.
 //
 
+import Foundation
+
 class DifficultyLevel {
     
-    typealias ScoreDidChange = () -> (Int)
-    var scoreDidChange: ScoreDidChange?
+    typealias ScoreClosure = () -> Int
     
-    private let extraTime = 0.2
-    private(set) var calculatedSingleActionPoints = 10
-
-    private var numberOfLevel = 0
-    private var intervalTime = 0.75
-    private var scoreNumber: Int = 0
-
-    func calculatedIntervalTime(score: Int) -> Double {
-        guard let gameScore = scoreDidChange?() else { return intervalTime }
-        guard scoreNumber != gameScore else { return intervalTime }
-        scoreNumber = gameScore
-        guard scoreNumber % 100 == 0 && scoreNumber != 0 else { return intervalTime }
-        intervalTime = intervalTime * 0.85
-        calculatedSingleActionPoints = calculatedSingleActionPoints * 2
-        addExtraTimeAfterEveryThousandPoints(scoreNumber)
-        return intervalTime
-    }
-
-    // MARK: Helpers
+    var scoreClosure: ScoreClosure?
     
-    private func addExtraTimeAfterEveryThousandPoints(score: Int) {
-        guard score / 1000 > numberOfLevel else { return }
-        intervalTime += extraTime
-        numberOfLevel++
-        resetSingleActionPoints()
+    func intervalTime() -> NSTimeInterval {
+        return 0.75 / (1 + (Double(score) / 3600))
     }
-
-    private func resetSingleActionPoints() {
-        calculatedSingleActionPoints = 10
+    
+    func actionPoints() -> Int {
+        return 10
+    }
+    
+    private var score: Int {
+        guard let score = scoreClosure?() else { return 0 }
+        return score
     }
 
 }
