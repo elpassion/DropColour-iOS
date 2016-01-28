@@ -22,7 +22,7 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     // MARK: InfoViewDelegate
 
     func infoViewDidTapQuit(infoView: InfoView) {
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }
