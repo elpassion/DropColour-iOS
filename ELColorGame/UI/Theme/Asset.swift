@@ -13,6 +13,7 @@ enum Asset: String {
     case RestartIcon      = "restart"
     case Info             = "info"
     case Close            = "close"
+    case Elpassion        = "elpassion"
 }
 
 extension UIImage {
