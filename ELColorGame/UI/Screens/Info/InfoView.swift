@@ -23,10 +23,12 @@ class InfoView: UIView {
 
     private let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
     private let closeButton = Button(image: UIImage(asset: .Close))
+    private let logoDescriptionView = LogoDescriptionView()
 
     func addSubviews() {
         addSubview(blurEffectView)
         addSubview(closeButton)
+        addSubview(logoDescriptionView)
     }
 
     // MARK: Layout
@@ -38,6 +40,10 @@ class InfoView: UIView {
         closeButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(30)
             make.right.equalTo(-15)
+        }
+        logoDescriptionView.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(closeButton.snp_bottom).offset(30)
+            make.left.right.equalTo(0)
         }
     }
     
