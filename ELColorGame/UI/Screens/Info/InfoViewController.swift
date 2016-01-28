@@ -5,7 +5,7 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+class InfoViewController: UIViewController, InfoViewDelegate {
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -15,13 +15,14 @@ class InfoViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
-    private let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
+    override func loadView() {
+        self.view = InfoView(delegate: self)
+    }
+    
+    // MARK: InfoViewDelegate
 
-    override func viewDidLoad() {
-        view.addSubview(blurEffectView)
-        blurEffectView.snp_makeConstraints { (make) -> Void in
-            make.edges.equalTo(0)
-        }
+    func infoViewDidTapQuit(infoView: InfoView) {
+        
     }
 
 }
