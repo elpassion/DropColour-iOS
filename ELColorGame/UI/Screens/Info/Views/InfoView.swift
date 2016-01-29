@@ -5,6 +5,13 @@
 
 import UIKit
 
+protocol InfoViewDelegate: class {
+    
+    func infoViewDidTapQuit(infoView: InfoView)
+    func infoViewDidTapAuthor(author: Author)
+    
+}
+
 class InfoView: UIView, UIGestureRecognizerDelegate {
 
     private weak var delegate: InfoViewDelegate?
@@ -112,12 +119,5 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
     func tapThirdAuthor(sender: UITapGestureRecognizer) {
         delegate?.infoViewDidTapAuthor(thirdAuthorView.author)
     }
-
-}
-
-protocol InfoViewDelegate: class {
-
-    func infoViewDidTapQuit(infoView: InfoView)
-    func infoViewDidTapAuthor(author: Author)
 
 }
