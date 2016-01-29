@@ -39,6 +39,7 @@
 		4E835C101BC091C600AA9293 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E835C0F1BC091C600AA9293 /* GameKit.framework */; };
 		4EBAF1011BC16ED0000E201E /* bomb_explosion.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4EBAF1001BC16ED0000E201E /* bomb_explosion.m4a */; };
 		4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */; };
+		88823B92DC70E0F5B9D1A296 /* Pods_ELColorGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB47B88709444D7F26F9704 /* Pods_ELColorGameTests.framework */; };
 		9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C1BAF80412C73F3938C3E /* MenuViewController.swift */; };
 		9A615737A7C4A66EC37D8820 /* LineViewAuthors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A634C8B5C8CE0854A85729D /* LineViewAuthors.swift */; };
 		9A62572207790ABC8D95240B /* GameView+GameBoardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6CE30A1FEA1F04B3D613FB /* GameView+GameBoardViewDelegate.swift */; };
@@ -94,7 +95,9 @@
 /* Begin PBXFileReference section */
 		077E3DC71BB70BEF00DE5F3B /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CAAnimation.swift"; sourceTree = "<group>"; };
+		16977F46865EC2462BA3AC10 /* Pods-ELColorGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGameTests/Pods-ELColorGameTests.release.xcconfig"; sourceTree = "<group>"; };
 		1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.release.xcconfig"; sourceTree = "<group>"; };
+		2AB47B88709444D7F26F9704 /* Pods_ELColorGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELColorGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3107929D1BCC120F00D7D680 /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		311589AE1C08A6CC001C7977 /* CircleViewDragger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewDragger.swift; sourceTree = "<group>"; };
 		316690371BC5C47600DFD40D /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 		9DA8A5CFC4D28B0AF0803529 /* GameViewController+MenuViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+MenuViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		9DA8A825B31CC9D6C12B1DF3 /* GameViewController+GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameDelegate.swift"; sourceTree = "<group>"; };
 		9DA8AEB72C4E45DC8FA37553 /* GameViewController+GameViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameViewDelegate.swift"; sourceTree = "<group>"; };
+		B2AE70DF6B5CCE19628901D0 /* Pods-ELColorGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGameTests/Pods-ELColorGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EB25787C5D17C5AD4E56455B /* Pods-ELColorGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.debug.xcconfig"; sourceTree = "<group>"; };
 		EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELColorGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -181,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88823B92DC70E0F5B9D1A296 /* Pods_ELColorGameTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +204,8 @@
 			children = (
 				EB25787C5D17C5AD4E56455B /* Pods-ELColorGame.debug.xcconfig */,
 				1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */,
+				B2AE70DF6B5CCE19628901D0 /* Pods-ELColorGameTests.debug.xcconfig */,
+				16977F46865EC2462BA3AC10 /* Pods-ELColorGameTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -501,6 +508,7 @@
 			children = (
 				4E835C0F1BC091C600AA9293 /* GameKit.framework */,
 				EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */,
+				2AB47B88709444D7F26F9704 /* Pods_ELColorGameTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -558,9 +566,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E4BB59A1BB410240043C80C /* Build configuration list for PBXNativeTarget "ELColorGameTests" */;
 			buildPhases = (
+				6B15601C0F0236875FA54A51 /* Check Pods Manifest.lock */,
 				4E4BB57F1BB410240043C80C /* Sources */,
 				4E4BB5801BB410240043C80C /* Frameworks */,
 				4E4BB5811BB410240043C80C /* Resources */,
+				29FADCD61454A9149C816B2C /* Embed Pods Frameworks */,
+				5C30BD6CBC3F89549F5A6D3B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -682,6 +693,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		29FADCD61454A9149C816B2C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELColorGameTests/Pods-ELColorGameTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4E6B6E681BB59CAA0033EF7C /* Run Script - Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -695,6 +721,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 4fb6504551d9582cf1d2a1b3cd181e74a6b932fd a548a049d3e5ca6c1cea1bec687fa3d529d6e8189235c6b20e8b0d89f5910489";
+		};
+		5C30BD6CBC3F89549F5A6D3B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELColorGameTests/Pods-ELColorGameTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B15601C0F0236875FA54A51 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 		B743410976E404A8A0A43A3A /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -957,6 +1013,7 @@
 		};
 		4E4BB59B1BB410240043C80C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2AE70DF6B5CCE19628901D0 /* Pods-ELColorGameTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ELColorGameTests/Info.plist;
@@ -969,6 +1026,7 @@
 		};
 		4E4BB59C1BB410240043C80C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16977F46865EC2462BA3AC10 /* Pods-ELColorGameTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ELColorGameTests/Info.plist;

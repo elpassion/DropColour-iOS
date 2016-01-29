@@ -2,12 +2,16 @@ PODS:
   - Crashlytics (3.6.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.4)
+  - Nimble (3.0.0)
+  - Quick (0.8.0)
   - SnapKit (0.15.0)
   - Spring (1.0.3)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
+  - Nimble (= 3.0.0)
+  - Quick (~> 0.8.0)
   - SnapKit
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
 
@@ -24,6 +28,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Crashlytics: e4e8d02914f2608fbc7bf42b1a7af838b0db67a2
   Fabric: ed41fd62173c6bdea24ab02c9d7707161eabb750
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
