@@ -32,9 +32,12 @@ class AuthorView: UIView {
         fullNameLabel.text = author.name + " " + author.surname
         authorTypeLabel.text = author.type.rawValue
         proffesionImageView.image = author.type.image
-        professionLabel.text = author.loginFromUrl(author.proffesionUrl)
-        twitterLabel.text = author.loginFromUrl(author.twitterUrl)
-        avatarImageView.image = UIImage(named: author.avatar.absoluteString)
+        guard let avatarUrl = author.avatar else { return }
+        avatarImageView.image = UIImage(named: avatarUrl.absoluteString)
+        guard let professionUrl = author.proffesionUrl else { return }
+        professionLabel.text = author.loginFromUrl(professionUrl)
+        guard let twitterUrl = author.twitterUrl else { return }
+        twitterLabel.text = author.loginFromUrl(twitterUrl)
     }
 
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
