@@ -14,6 +14,9 @@ enum Asset: String {
     case Info             = "info"
     case Close            = "close"
     case Elpassion        = "elpassion"
+    case Dribbble         = "dribbble"
+    case Github           = "github"
+    case Twitter          = "twitter"
 }
 
 extension UIImage {
