@@ -5,7 +5,7 @@
 
 import UIKit
 
-class InfoView: UIView {
+class InfoView: UIView, UIGestureRecognizerDelegate {
 
     private weak var delegate: InfoViewDelegate?
 
@@ -15,6 +15,7 @@ class InfoView: UIView {
         addSubviews()
         setupLayout()
         configureButtonActions()
+        configureTapGesturesRecognizer()
     }
 
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -78,12 +79,38 @@ class InfoView: UIView {
     }
     
     // MARK: Button actions
-    
+
     private func configureButtonActions() {
         closeButton.buttonActionClosure = { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.delegate?.infoViewDidTapQuit(weakSelf)
         }
+    }
+    
+    // MARK: Tap gestures
+    
+    private func configureTapGesturesRecognizer() {
+        let tapGestureFirstAuthor = UITapGestureRecognizer(target: self, action: "tapFirstAuthor:")
+        let tapGestureSecondAuthor = UITapGestureRecognizer(target: self, action: "tapSecondAuthor:")
+        let tapGestureThirdAuthor = UITapGestureRecognizer(target: self, action: "tapThirdAuthor:")
+        tapGestureFirstAuthor.delegate = self
+        tapGestureSecondAuthor.delegate = self
+        tapGestureThirdAuthor.delegate = self
+        firstAuthorView.addGestureRecognizer(tapGestureFirstAuthor)
+        secondAuthorView.addGestureRecognizer(tapGestureSecondAuthor)
+        thirdAuthorView.addGestureRecognizer(tapGestureThirdAuthor)
+    }
+    
+    func tapFirstAuthor(sender: UITapGestureRecognizer) {
+        delegate?.infoViewDidTapAuthor(firstAuthorView.author)
+    }
+    
+    func tapSecondAuthor(sender: UITapGestureRecognizer) {
+        delegate?.infoViewDidTapAuthor(secondAuthorView.author)
+    }
+
+    func tapThirdAuthor(sender: UITapGestureRecognizer) {
+        delegate?.infoViewDidTapAuthor(thirdAuthorView.author)
     }
 
 }
@@ -91,5 +118,6 @@ class InfoView: UIView {
 protocol InfoViewDelegate: class {
 
     func infoViewDidTapQuit(infoView: InfoView)
+    func infoViewDidTapAuthor(author: Author)
 
 }

@@ -24,5 +24,9 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     func infoViewDidTapQuit(infoView: InfoView) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    func infoViewDidTapAuthor(author: Author) {
+        print("Author: \(author)")
+    }
 
 }
