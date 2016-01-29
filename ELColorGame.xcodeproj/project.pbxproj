@@ -40,6 +40,7 @@
 		4EBAF1011BC16ED0000E201E /* bomb_explosion.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4EBAF1001BC16ED0000E201E /* bomb_explosion.m4a */; };
 		4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */; };
 		9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C1BAF80412C73F3938C3E /* MenuViewController.swift */; };
+		9A609795BA32264E02DDA574 /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6443830D68287EAD381E4B /* AuthorView.swift */; };
 		9A62572207790ABC8D95240B /* GameView+GameBoardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6CE30A1FEA1F04B3D613FB /* GameView+GameBoardViewDelegate.swift */; };
 		9A625DFA9B5789C80049AB0D /* GameViewController+GameOverViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A61D3A865E03B61307E7D83 /* GameViewController+GameOverViewControllerDelegate.swift */; };
 		9A63AFE27F3B29CFC55D4715 /* LogoDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6AE5B21070708267FAC4CD /* LogoDescriptionView.swift */; };
@@ -133,6 +134,7 @@
 		9A62BF89ACEBCB72D4BA3870 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9A641A8E6FFBC061A7ADF863 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		9A641F25C769378951E44D57 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		9A6443830D68287EAD381E4B /* AuthorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
 		9A645F14AE48ACC3A5DCE70E /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		9A64748A176ED27A67120167 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		9A650A8C4C3305EB21B9D1D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				9A64748A176ED27A67120167 /* InfoView.swift */,
 				9A6AE5B21070708267FAC4CD /* LogoDescriptionView.swift */,
 				9A6E3732369E5A7DBF0BDB40 /* LineViewAuthors.swift */,
+				9A6443830D68287EAD381E4B /* AuthorView.swift */,
 				9A698DADF64454064647DBBC /* Author.swift */,
 			);
 			path = Info;
@@ -756,6 +759,7 @@
 				9A66135D538CE3261B153728 /* InfoView.swift in Sources */,
 				9A63AFE27F3B29CFC55D4715 /* LogoDescriptionView.swift in Sources */,
 				9A6E430DEDB00F684B28ABE3 /* LineViewAuthors.swift in Sources */,
+				9A609795BA32264E02DDA574 /* AuthorView.swift in Sources */,
 				9A6FA1A60D55C58BF497DC18 /* Author.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
