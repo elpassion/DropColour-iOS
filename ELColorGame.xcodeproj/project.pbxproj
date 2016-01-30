@@ -54,6 +54,7 @@
 		9A6794FA38D9FBF10D1BE8C2 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A609573181FF1411DF13209 /* InfoView.swift */; };
 		9A679E877EAD8E787958955E /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B4CC7F57E1121D46A2F3A /* DifficultyLevel.swift */; };
 		9A67AAC29FDB23AD33E7366F /* AuthorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6A6D0C537CB7DAC8449DAF /* AuthorRepository.swift */; };
+		9A67EEB3DAE2F02BC996431D /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A631331617524ABD963A9F4 /* ViewControllerPresenter.swift */; };
 		9A691889E2944596D7AC15AF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A645F14AE48ACC3A5DCE70E /* StartViewController.swift */; };
 		9A6996BD7D6701CD3B528077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A603B96F16924EAF14D8E07 /* Assets.xcassets */; };
 		9A69AAC1EEBF43140B1B2165 /* KeyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B9F47D60E10B58A30B081 /* KeyConstants.swift */; };
@@ -140,6 +141,7 @@
 		9A61D3A865E03B61307E7D83 /* GameViewController+GameOverViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameOverViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		9A62043CAA01F90BF21D0BA1 /* AlertControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertControllerFactory.swift; sourceTree = "<group>"; };
 		9A62BF89ACEBCB72D4BA3870 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9A631331617524ABD963A9F4 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		9A634C8B5C8CE0854A85729D /* LineViewAuthors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineViewAuthors.swift; sourceTree = "<group>"; };
 		9A6387E71CDA548730BE5821 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		9A641A8E6FFBC061A7ADF863 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -344,6 +346,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		9A659A98D1D9CF09F88B3A2B /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				9A631331617524ABD963A9F4 /* ViewControllerPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+			sourceTree = "<group>";
+		};
 		9A67B30A97BB292EC48615D9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +401,7 @@
 				D1C164280D3B137458185903 /* Extensions */,
 				9A6C4ADEC2FEBE5C5857F1D5 /* Theme */,
 				9A620D682C7C1528614BF3C0 /* Factory */,
+				9A659A98D1D9CF09F88B3A2B /* Presenters */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -861,6 +874,7 @@
 				9A67AAC29FDB23AD33E7366F /* AuthorRepository.swift in Sources */,
 				9A60507C6A2FC43278B4C20E /* AlertActionFactory.swift in Sources */,
 				9A6D4BE8953E665B305D5FAD /* AlertControllerFactory.swift in Sources */,
+				9A67EEB3DAE2F02BC996431D /* ViewControllerPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
