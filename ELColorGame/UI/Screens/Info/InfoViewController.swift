@@ -16,7 +16,7 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     override func loadView() {
-        self.view = InfoView(delegate: self)
+        view = InfoView(delegate: self)
     }
     
     // MARK: InfoViewDelegate
