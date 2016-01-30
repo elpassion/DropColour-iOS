@@ -65,6 +65,7 @@
 		9A6B9946EE05DE14ACDF7C0B /* GameBoardSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A68FA3016EE2B2536A7B8E9 /* GameBoardSlotView.swift */; };
 		9A6C497E5C23F58B1BA9A76A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66592DD1F983A0AAF76679 /* Fonts.swift */; };
 		9A6CFBCE2437B4EF35CEAF3E /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A681470AEEB857177142DB7 /* GameOverView.swift */; };
+		9A6D4BE8953E665B305D5FAD /* AlertControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62043CAA01F90BF21D0BA1 /* AlertControllerFactory.swift */; };
 		9A6DA966B56B70B4D36DC684 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62BF89ACEBCB72D4BA3870 /* Color.swift */; };
 		9A6E0075F5F96FF5F3B47AA8 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67B5CC3552ECC03503A754 /* InfoViewController.swift */; };
 		9A6E3EA7C2B0AB008BF3D7AD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A641A8E6FFBC061A7ADF863 /* CircleView.swift */; };
@@ -137,6 +138,7 @@
 		9A609573181FF1411DF13209 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		9A60D78DC3E088D6FC065F26 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		9A61D3A865E03B61307E7D83 /* GameViewController+GameOverViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameOverViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		9A62043CAA01F90BF21D0BA1 /* AlertControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertControllerFactory.swift; sourceTree = "<group>"; };
 		9A62BF89ACEBCB72D4BA3870 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9A634C8B5C8CE0854A85729D /* LineViewAuthors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineViewAuthors.swift; sourceTree = "<group>"; };
 		9A6387E71CDA548730BE5821 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				9A6EEBF4F62377BFD81EEC79 /* AlertActionFactory.swift */,
+				9A62043CAA01F90BF21D0BA1 /* AlertControllerFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -857,6 +860,7 @@
 				9A6FBB4DBC15448ABB165097 /* AuthorView.swift in Sources */,
 				9A67AAC29FDB23AD33E7366F /* AuthorRepository.swift in Sources */,
 				9A60507C6A2FC43278B4C20E /* AlertActionFactory.swift in Sources */,
+				9A6D4BE8953E665B305D5FAD /* AlertControllerFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
