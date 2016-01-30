@@ -65,6 +65,7 @@
 		9A6AF59F1380FCDE2CFC58B9 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69283DEE7459D5B366C0C9 /* Asset.swift */; };
 		9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66DDEC747665108D8A2ACD /* AppDelegate.swift */; };
 		9A6B9946EE05DE14ACDF7C0B /* GameBoardSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A68FA3016EE2B2536A7B8E9 /* GameBoardSlotView.swift */; };
+		9A6BC732B6A85ACE0F558CA9 /* ViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6321107D251F46D2ECD229 /* ViewControllerPresenterSpy.swift */; };
 		9A6C497E5C23F58B1BA9A76A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66592DD1F983A0AAF76679 /* Fonts.swift */; };
 		9A6CFBCE2437B4EF35CEAF3E /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A681470AEEB857177142DB7 /* GameOverView.swift */; };
 		9A6D4BE8953E665B305D5FAD /* AlertControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62043CAA01F90BF21D0BA1 /* AlertControllerFactory.swift */; };
@@ -143,6 +144,7 @@
 		9A62043CAA01F90BF21D0BA1 /* AlertControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertControllerFactory.swift; sourceTree = "<group>"; };
 		9A62BF89ACEBCB72D4BA3870 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9A631331617524ABD963A9F4 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
+		9A6321107D251F46D2ECD229 /* ViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
 		9A634C8B5C8CE0854A85729D /* LineViewAuthors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineViewAuthors.swift; sourceTree = "<group>"; };
 		9A6387E71CDA548730BE5821 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		9A641A8E6FFBC061A7ADF863 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				4E4BB5891BB410240043C80C /* Info.plist */,
+				9A6A2C6FB10CEA82FA67EAF7 /* Spy */,
 				9A6BF9E7765A559EC77FBA90 /* FakeRepository */,
 			);
 			path = ELColorGameTests;
@@ -448,6 +451,14 @@
 				9A65E20786EF9FDFEA8B9F6D /* AuthorView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9A6A2C6FB10CEA82FA67EAF7 /* Spy */ = {
+			isa = PBXGroup;
+			children = (
+				9A6321107D251F46D2ECD229 /* ViewControllerPresenterSpy.swift */,
+			);
+			path = Spy;
 			sourceTree = "<group>";
 		};
 		9A6AAEA3D9B549575A831B3F /* ELColorGame */ = {
@@ -894,6 +905,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A6BC732B6A85ACE0F558CA9 /* ViewControllerPresenterSpy.swift in Sources */,
 				9A65DE2C12AFC8EDD09F3EE4 /* FakeAuthorRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
