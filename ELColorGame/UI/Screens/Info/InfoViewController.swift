@@ -6,11 +6,20 @@
 import UIKit
 
 class InfoViewController: UIViewController, InfoViewDelegate {
+
+    var alertActionFactory: AlertActionCreating
+    var alertControllerFactory: AlertControllerCreating
+    var viewControllerPresenter: ViewControllerPresenting
     
+
     init() {
+        alertActionFactory = AlertActionFactory()
+        alertControllerFactory = AlertControllerFactory()
+        viewControllerPresenter = ViewControllerPresenter()
         super.init(nibName: nil, bundle: nil)
-        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        self.modalPresentationStyle = UIModalPresentationStyle.Custom
+        modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        modalPresentationStyle = UIModalPresentationStyle.Custom
+        viewControllerPresenter.viewController = self
     }
 
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -18,15 +27,15 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     override func loadView() {
         view = InfoView(delegate: self)
     }
-    
+
     // MARK: InfoViewDelegate
 
     func infoViewDidTapQuit(infoView: InfoView) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        viewControllerPresenter.dismissViewController(self)
     }
-    
+
     func infoViewDidTapAuthor(author: Author) {
-        print("Author: \(author)")
+        presentAlertControllerWithAuthor(author)
     }
 
 }

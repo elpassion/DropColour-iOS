@@ -42,6 +42,7 @@
 		88823B92DC70E0F5B9D1A296 /* Pods_ELColorGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB47B88709444D7F26F9704 /* Pods_ELColorGameTests.framework */; };
 		9A60507C6A2FC43278B4C20E /* AlertActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6EEBF4F62377BFD81EEC79 /* AlertActionFactory.swift */; };
 		9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C1BAF80412C73F3938C3E /* MenuViewController.swift */; };
+		9A60B1948ADB1E3EAC2C4601 /* InfoViewController+AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A645998DA524FCC2AB8DCFE /* InfoViewController+AlertController.swift */; };
 		9A615737A7C4A66EC37D8820 /* LineViewAuthors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A634C8B5C8CE0854A85729D /* LineViewAuthors.swift */; };
 		9A62572207790ABC8D95240B /* GameView+GameBoardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6CE30A1FEA1F04B3D613FB /* GameView+GameBoardViewDelegate.swift */; };
 		9A625DFA9B5789C80049AB0D /* GameViewController+GameOverViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A61D3A865E03B61307E7D83 /* GameViewController+GameOverViewControllerDelegate.swift */; };
@@ -146,6 +147,7 @@
 		9A6387E71CDA548730BE5821 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		9A641A8E6FFBC061A7ADF863 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		9A641F25C769378951E44D57 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		9A645998DA524FCC2AB8DCFE /* InfoViewController+AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfoViewController+AlertController.swift"; sourceTree = "<group>"; };
 		9A645F14AE48ACC3A5DCE70E /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		9A650A8C4C3305EB21B9D1D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		9A65599E2ABDAB7F47FEB8A4 /* LogoDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoDescriptionView.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 			children = (
 				9A67B5CC3552ECC03503A754 /* InfoViewController.swift */,
 				9A6A11065F69F28256571A91 /* Views */,
+				9A645998DA524FCC2AB8DCFE /* InfoViewController+AlertController.swift */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -872,6 +875,7 @@
 				9A615737A7C4A66EC37D8820 /* LineViewAuthors.swift in Sources */,
 				9A6FBB4DBC15448ABB165097 /* AuthorView.swift in Sources */,
 				9A67AAC29FDB23AD33E7366F /* AuthorRepository.swift in Sources */,
+				9A60B1948ADB1E3EAC2C4601 /* InfoViewController+AlertController.swift in Sources */,
 				9A60507C6A2FC43278B4C20E /* AlertActionFactory.swift in Sources */,
 				9A6D4BE8953E665B305D5FAD /* AlertControllerFactory.swift in Sources */,
 				9A67EEB3DAE2F02BC996431D /* ViewControllerPresenter.swift in Sources */,
