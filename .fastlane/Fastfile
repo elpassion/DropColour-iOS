@@ -5,18 +5,28 @@ default_platform :ios
 platform :ios do
 
   before_all do
+    ENV["SLACK_URL"] ||= "https://hooks.slack.com/services/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"
     cocoapods
   end
 
   desc "Run all tests"
   lane :unittests do
     scan(scheme: "ELColorGame", device: "iPhone 6s (9.2)")
+    slack(
+        message: nil,
+        success: true,
+        default_payloads: [:test_result, :git_branch, :git_author]
+    )
   end
 
   desc "Create a new Beta Build and upload to Apple TestFlight"
   lane :testflight do
     gym
     pilot(skip_submission: true)
+    slack(
+        message: "New build version pushed to TestFlight.",
+        default_payloads: [:git_branch, :git_author]
+    )
   end
 
 end
