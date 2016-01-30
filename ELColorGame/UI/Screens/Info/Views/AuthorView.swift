@@ -105,12 +105,13 @@ class AuthorView: UIView {
 
     private func setupLayout() {
         avatarImageView.snp_makeConstraints { (make) -> Void in
-            make.size.equalTo(CGSize(width: 60, height: 60))
+            make.top.equalTo(0)
+            make.bottom.lessThanOrEqualTo(0)
+            make.size.equalTo(CGSize(width: 80, height: 80))
             make.left.equalTo(45)
-            make.centerY.equalTo(0)
         }
         fullNameLabel.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(0)
+            make.top.equalTo(avatarImageView.snp_top)
             make.left.equalTo(avatarImageView.snp_right).offset(15)
             make.right.equalTo(-16)
         }
@@ -134,7 +135,7 @@ class AuthorView: UIView {
         twitterLabel.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(twitterImageView.snp_right).offset(5)
             make.centerY.equalTo(twitterImageView.snp_centerY)
-            make.bottom.equalTo(0)
+            make.bottom.lessThanOrEqualTo(0)
         }
     }
 
