@@ -29,7 +29,7 @@ class AuthorView: UIView {
     }
 
     private func applyType() {
-        fullNameLabel.text = author.name + " " + author.surname
+        fullNameLabel.text = author.fullName
         authorTypeLabel.text = author.type.rawValue
         proffesionImageView.image = author.type.image
         guard let avatarUrl = author.avatar else { return }

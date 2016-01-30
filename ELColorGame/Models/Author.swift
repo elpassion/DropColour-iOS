@@ -22,6 +22,10 @@ struct Author {
 }
 
 extension Author {
+    var fullName: String {
+        return "\(name) \(surname)"
+    }
+    
     func loginFromUrl(url: NSURL) -> String {
         let urlString = url.absoluteString
         let login = urlString.componentsSeparatedByString("/").last
