@@ -11,7 +11,6 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     var alertControllerFactory: AlertControllerCreating
     var viewControllerPresenter: ViewControllerPresenting
     
-
     init() {
         alertActionFactory = AlertActionFactory()
         alertControllerFactory = AlertControllerFactory()
