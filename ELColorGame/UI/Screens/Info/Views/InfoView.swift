@@ -51,7 +51,7 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
 
     // MARK: Layout
 
-    func setupLayout() {
+    private func setupLayout() {
         blurEffectView.snp_makeConstraints { (make) -> Void in
             make.edges.equalTo(0)
         }
