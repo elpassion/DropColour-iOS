@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum AuthorType: String {
+enum AuthorType: String {
     case Developer = "Developer"
     case Designer = "Designer"
 }
