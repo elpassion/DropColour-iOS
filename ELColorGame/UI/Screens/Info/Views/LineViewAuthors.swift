@@ -59,7 +59,7 @@ class LineViewAuthors: UIView {
         }
         rightLineView.snp_makeConstraints { (make) -> Void in
             make.right.equalTo(-30)
-            make.height.equalTo(1)
+            make.height.equalTo(leftLineView.snp_height)
             make.left.equalTo(titleLabel.snp_right).offset(10)
             make.centerY.equalTo(titleLabel.snp_centerY)
         }
