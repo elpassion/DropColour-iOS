@@ -38,7 +38,7 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
     private let secondAuthorView = AuthorView(author: AuthorRepository.secondAuthor())
     private let thirdAuthorView = AuthorView(author: AuthorRepository.thirdAuthor())
     
-    func addSubviews() {
+    private func addSubviews() {
         addSubview(blurEffectView)
         addSubview(closeButton)
         addSubview(scrollView)
