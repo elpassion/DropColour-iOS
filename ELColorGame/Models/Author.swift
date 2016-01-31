@@ -28,7 +28,8 @@ extension Author {
     
     func loginFromUrl(url: NSURL) -> String {
         let urlString = url.absoluteString
-        let login = urlString.componentsSeparatedByString("/").last
-        return login ?? ""
+        let strings = urlString.componentsSeparatedByString("/")
+        guard strings.count > 1 else { return "" }
+        return strings.last ?? ""
     }
 }

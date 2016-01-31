@@ -45,4 +45,16 @@ extension Author {
                 twitterUrl: nil
         )
     }
+
+    func copyWithProffessionUrl(url: NSURL) -> Author {
+        return Author(
+                name: self.name,
+                surname: self.surname,
+                type: self.type,
+                avatarUrl: nil,
+                proffesionUrl: url,
+                twitterUrl: nil
+        )
+    }
+
 }
