@@ -32,7 +32,7 @@ class AuthorView: UIView {
         fullNameLabel.text = author.fullName
         authorTypeLabel.text = author.type.rawValue
         proffesionImageView.image = author.type.image
-        guard let avatarUrl = author.avatar else { return }
+        guard let avatarUrl = author.avatarUrl else { return }
         avatarImageView.image = UIImage(named: avatarUrl.absoluteString)
         guard let professionUrl = author.proffesionUrl else { return }
         professionLabel.text = author.loginFromUrl(professionUrl)

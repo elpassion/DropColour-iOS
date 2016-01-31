@@ -12,7 +12,7 @@ class AuthorRepository {
             name: "Mateusz",
             surname: "Szklarek",
             type: AuthorType.Developer,
-            avatar: NSURL(string: "ms"),
+            avatarUrl: NSURL(string: "ms"),
             proffesionUrl: NSURL(string: "https://github.com/mateuszszklarek"),
             twitterUrl: NSURL(string: "https://twitter.com/SzklarekMateusz")
         )
@@ -23,7 +23,7 @@ class AuthorRepository {
             name: "Dariusz",
             surname: "Rybicki",
             type: AuthorType.Developer,
-            avatar: NSURL(string: "dr"),
+            avatarUrl: NSURL(string: "dr"),
             proffesionUrl: NSURL(string: "https://github.com/darrarski"),
             twitterUrl: NSURL(string: "https://twitter.com/darrarski")
         )
@@ -34,7 +34,7 @@ class AuthorRepository {
             name: "Dawid",
             surname: "Dapszus",
             type: AuthorType.Designer,
-            avatar: NSURL(string: "dd"),
+            avatarUrl: NSURL(string: "dd"),
             proffesionUrl: NSURL(string: "https://dribbble.com/dashoo"),
             twitterUrl: NSURL(string: "https://twitter.com/dapszus")
         )

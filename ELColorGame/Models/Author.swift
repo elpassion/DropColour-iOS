@@ -15,7 +15,7 @@ struct Author {
     let name: String
     let surname: String
     let type: AuthorType
-    let avatar: NSURL?
+    let avatarUrl: NSURL?
     let proffesionUrl: NSURL?
     let twitterUrl: NSURL?
 
