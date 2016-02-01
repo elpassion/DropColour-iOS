@@ -31,10 +31,10 @@ class AuthorView: UIView {
     private func applyType() {
         fullNameLabel.text = author.fullName
         authorTypeLabel.text = author.type.rawValue
-        proffesionImageView.image = author.type.image
+        professionImageView.image = author.type.image
         guard let avatarUrl = author.avatarUrl else { return }
         avatarImageView.image = UIImage(named: avatarUrl.absoluteString)
-        guard let professionUrl = author.proffesionUrl else { return }
+        guard let professionUrl = author.professionUrl else { return }
         professionLabel.text = author.loginFromUrl(professionUrl)
         guard let twitterUrl = author.twitterUrl else { return }
         twitterLabel.text = author.loginFromUrl(twitterUrl)
@@ -65,7 +65,7 @@ class AuthorView: UIView {
 
     private let authorTypeLabel: UILabel = AuthorView.createLabel()
 
-    private let proffesionImageView: UIImageView = {
+    private let professionImageView: UIImageView = {
         let view = UIImageView(frame: CGRectZero)
         view.layer.cornerRadius = view.frame.size.width / 2
         view.clipsToBounds = true
@@ -95,7 +95,7 @@ class AuthorView: UIView {
         addSubview(avatarImageView)
         addSubview(authorTypeLabel)
         addSubview(fullNameLabel)
-        addSubview(proffesionImageView)
+        addSubview(professionImageView)
         addSubview(professionLabel)
         addSubview(twitterImageView)
         addSubview(twitterLabel)
@@ -120,17 +120,17 @@ class AuthorView: UIView {
             make.left.equalTo(fullNameLabel.snp_left)
             make.right.equalTo(-16)
         }
-        proffesionImageView.snp_makeConstraints { (make) -> Void in
+        professionImageView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(authorTypeLabel.snp_bottom).offset(5)
             make.left.equalTo(authorTypeLabel.snp_left)
         }
         professionLabel.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(proffesionImageView.snp_right).offset(5)
-            make.centerY.equalTo(proffesionImageView.snp_centerY)
+            make.left.equalTo(professionImageView.snp_right).offset(5)
+            make.centerY.equalTo(professionImageView.snp_centerY)
         }
         twitterImageView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(proffesionImageView.snp_bottom).offset(5)
-            make.left.equalTo(proffesionImageView.snp_left)
+            make.top.equalTo(professionImageView.snp_bottom).offset(5)
+            make.left.equalTo(professionImageView.snp_left)
         }
         twitterLabel.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(twitterImageView.snp_right).offset(5)

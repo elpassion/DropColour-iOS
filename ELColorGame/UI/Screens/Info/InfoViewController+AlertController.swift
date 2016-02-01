@@ -8,10 +8,10 @@ import UIKit
 extension InfoViewController {
 
     func presentAlertControllerWithAuthor(author: Author) {
-        guard let proffesionUrl = author.proffesionUrl else { return }
+        guard let professionUrl = author.professionUrl else { return }
         guard let twitterUrl = author.twitterUrl else { return }
         let alertController = alertControllerFactory.createAlertControllerWithTitle("\(author.fullName) \(kShowProfile)", message: nil, preferredStyle: .ActionSheet)
-        let proffesionAction = openUrlAlertActionWithTitle(author.type == AuthorType.Developer ? kGithub : kDribbble, url: proffesionUrl)
+        let proffesionAction = openUrlAlertActionWithTitle(author.type == AuthorType.Developer ? kGithub : kDribbble, url: professionUrl)
         let twitterAction = openUrlAlertActionWithTitle(kTwitter, url: twitterUrl)
         let cancelAction = cancelAlertAction()
         alertController.addAction(proffesionAction)

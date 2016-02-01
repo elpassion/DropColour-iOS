@@ -24,7 +24,7 @@ class AuthorLoginFromUrlSpec: QuickSpec {
 
             it("should get login from url") {
 
-                expect(sut.loginFromUrl(sut.proffesionUrl!)).to(equal("LoginName"))
+                expect(sut.loginFromUrl(sut.professionUrl!)).to(equal("LoginName"))
             }
         }
 
@@ -40,7 +40,7 @@ class AuthorLoginFromUrlSpec: QuickSpec {
             }
 
             it("should get empty string from url") {
-                expect(sut.loginFromUrl(sut.proffesionUrl!)).to(equal(""))
+                expect(sut.loginFromUrl(sut.professionUrl!)).to(equal(""))
             }
         }
 

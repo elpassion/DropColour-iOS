@@ -16,7 +16,7 @@ class FakeAuthorRepository {
                 surname: "Apple",
                 type: .Developer,
                 avatarUrl: NSURL(string: "www.google.pl/avatar"),
-                proffesionUrl: NSURL(string: "www.github.com/johnapple"),
+                professionUrl: NSURL(string: "www.github.com/johnapple"),
                 twitterUrl: NSURL(string: "www.twitter.com/johnapple")
         )
     }
@@ -30,7 +30,7 @@ extension Author {
                 surname: self.surname,
                 type: type,
                 avatarUrl: self.avatarUrl,
-                proffesionUrl: self.proffesionUrl,
+                professionUrl: self.professionUrl,
                 twitterUrl: self.twitterUrl
         )
     }
@@ -41,7 +41,7 @@ extension Author {
                 surname: self.surname,
                 type: type,
                 avatarUrl: nil,
-                proffesionUrl: nil,
+                professionUrl: nil,
                 twitterUrl: nil
         )
     }
@@ -52,7 +52,7 @@ extension Author {
                 surname: self.surname,
                 type: self.type,
                 avatarUrl: nil,
-                proffesionUrl: url,
+                professionUrl: url,
                 twitterUrl: nil
         )
     }
