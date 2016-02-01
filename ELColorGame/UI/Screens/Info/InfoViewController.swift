@@ -29,7 +29,7 @@ class InfoViewController: UIViewController, InfoViewDelegate {
 
     // MARK: InfoViewDelegate
 
-    func infoViewDidTapQuit(infoView: InfoView) {
+    func infoViewDidTapQuit() {
         viewControllerPresenter.dismissViewController(self)
     }
 

@@ -7,12 +7,12 @@ import UIKit
 
 protocol InfoViewDelegate: class {
     
-    func infoViewDidTapQuit(infoView: InfoView)
+    func infoViewDidTapQuit()
     func infoViewDidTapAuthor(author: Author)
     
 }
 
-class InfoView: UIView, UIGestureRecognizerDelegate {
+class InfoView: UIView {
 
     private weak var delegate: InfoViewDelegate?
 
@@ -53,18 +53,18 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
     private let closeButton = Button(image: UIImage(asset: .Close))
     private let logoDescriptionView = LogoDescriptionView()
     private let lineViewAuthors = LineViewAuthors()
-    private let firstAuthorView = AuthorView(author: AuthorRepository.firstAuthor())
-    private let secondAuthorView = AuthorView(author: AuthorRepository.secondAuthor())
-    private let thirdAuthorView = AuthorView(author: AuthorRepository.thirdAuthor())
+    private let authorsViews = [
+        AuthorView(author: AuthorRepository.firstAuthor()),
+        AuthorView(author: AuthorRepository.secondAuthor()),
+        AuthorView(author: AuthorRepository.thirdAuthor())
+    ]
     
     private func addSubviews() {
         addSubview(blurEffectView)
         addSubview(scrollView)
         scrollView.addSubview(logoDescriptionView)
         scrollView.addSubview(lineViewAuthors)
-        scrollView.addSubview(firstAuthorView)
-        scrollView.addSubview(secondAuthorView)
-        scrollView.addSubview(thirdAuthorView)
+        for authorView in authorsViews { scrollView.addSubview(authorView) }
         addSubview(closeButtonBlur)
         addSubview(closeButton)
     }
@@ -85,17 +85,19 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
             make.top.equalTo(logoDescriptionView.snp_bottom).offset(30)
             make.left.right.equalTo(0)
         }
-        firstAuthorView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(lineViewAuthors.snp_bottom).offset(20)
-            make.left.right.equalTo(0)
-        }
-        secondAuthorView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(firstAuthorView.snp_bottom).offset(20)
-            make.left.right.equalTo(0)
-        }
-        thirdAuthorView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(secondAuthorView.snp_bottom).offset(20)
-            make.left.right.bottom.equalTo(0)
+        for (idx, authorView) in authorsViews.enumerate() {
+            authorView.snp_makeConstraints {
+                $0.left.right.equalTo(0)
+                if authorView == authorsViews.first {
+                    $0.top.equalTo(lineViewAuthors.snp_bottom).offset(20)
+                } else {
+                    let previous = authorsViews[idx - 1]
+                    $0.top.equalTo(previous.snp_bottom).offset(20)
+                }
+                if authorView == authorsViews.last {
+                    $0.bottom.equalTo(0)
+                }
+            }
         }
         closeButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(30)
@@ -111,35 +113,21 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
 
     private func configureButtonActions() {
         closeButton.buttonActionClosure = { [weak self] in
-            guard let _self = self else { return }
-            _self.delegate?.infoViewDidTapQuit(_self)
+            self?.delegate?.infoViewDidTapQuit()
         }
     }
     
     // MARK: Tap gestures
     
     private func configureTapGesturesRecognizer() {
-        let tapGestureFirstAuthor = UITapGestureRecognizer(target: self, action: "tapFirstAuthor:")
-        let tapGestureSecondAuthor = UITapGestureRecognizer(target: self, action: "tapSecondAuthor:")
-        let tapGestureThirdAuthor = UITapGestureRecognizer(target: self, action: "tapThirdAuthor:")
-        tapGestureFirstAuthor.delegate = self
-        tapGestureSecondAuthor.delegate = self
-        tapGestureThirdAuthor.delegate = self
-        firstAuthorView.addGestureRecognizer(tapGestureFirstAuthor)
-        secondAuthorView.addGestureRecognizer(tapGestureSecondAuthor)
-        thirdAuthorView.addGestureRecognizer(tapGestureThirdAuthor)
+        for authorView in authorsViews {
+            authorView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapAuthor:"))
+        }
     }
     
-    func tapFirstAuthor(sender: UITapGestureRecognizer) {
-        delegate?.infoViewDidTapAuthor(firstAuthorView.author)
-    }
-    
-    func tapSecondAuthor(sender: UITapGestureRecognizer) {
-        delegate?.infoViewDidTapAuthor(secondAuthorView.author)
-    }
-
-    func tapThirdAuthor(sender: UITapGestureRecognizer) {
-        delegate?.infoViewDidTapAuthor(thirdAuthorView.author)
+    func tapAuthor(sender: UITapGestureRecognizer) {
+        guard let view = sender.view as? AuthorView else { return }
+        delegate?.infoViewDidTapAuthor(view.author)
     }
 
 }
