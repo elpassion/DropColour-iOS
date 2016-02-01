@@ -89,8 +89,8 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
 
     private func configureButtonActions() {
         closeButton.buttonActionClosure = { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.delegate?.infoViewDidTapQuit(weakSelf)
+            guard let _self = self else { return }
+            _self.delegate?.infoViewDidTapQuit(_self)
         }
     }
     
