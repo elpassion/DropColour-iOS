@@ -27,24 +27,38 @@ class AuthorView: UIView {
         setupLayout()
         applyType()
     }
-
-    private func applyType() {
-        fullNameLabel.text = author.fullName
-        authorTypeLabel.text = author.type.rawValue
-        professionImageView.image = author.type.image
-        guard let avatarUrl = author.avatarUrl else { return }
-        avatarImageView.image = UIImage(named: avatarUrl.absoluteString)
-        guard let professionUrl = author.professionUrl else { return }
-        professionLabel.text = author.loginFromUrl(professionUrl)
-        guard let twitterUrl = author.twitterUrl else { return }
-        twitterLabel.text = author.loginFromUrl(twitterUrl)
-    }
-
+    
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
+    }
+
+    private func applyType() {
+        fullNameLabel.text = author.fullName
+        authorTypeLabel.text = author.type.rawValue
+        professionImageView.image = author.type.image
+        configureImageForAvatarImageView()
+        configureProfessionLoginLabel()
+        configureTwitterLoginLabel()
+    }
+    
+    // MARK: Configure subviews with data
+    
+    private func configureImageForAvatarImageView() {
+        guard let avatarUrl = author.avatarUrl else { return }
+        avatarImageView.image = UIImage(named: avatarUrl.absoluteString)
+    }
+    
+    private func configureProfessionLoginLabel() {
+        guard let professionUrl = author.professionUrl else { return }
+        professionLoginLabel.text = author.loginFromUrl(professionUrl)
+    }
+    
+    private func configureTwitterLoginLabel() {
+        guard let twitterUrl = author.twitterUrl else { return }
+        twitterLoginLabel.text = author.loginFromUrl(twitterUrl)
     }
 
     // MARK: Subviews
@@ -73,7 +87,7 @@ class AuthorView: UIView {
         return view
     }()
 
-    private let professionLabel = AuthorView.createLabel()
+    private let professionLoginLabel = AuthorView.createLabel()
 
     private let twitterImageView: UIImageView = {
         let view = UIImageView(frame: CGRectZero)
@@ -82,7 +96,7 @@ class AuthorView: UIView {
         return view
     }()
     
-    private let twitterLabel = AuthorView.createLabel()
+    private let twitterLoginLabel = AuthorView.createLabel()
     
     private class func createLabel() -> UILabel {
         let label = UILabel(frame: CGRectZero)
@@ -96,9 +110,9 @@ class AuthorView: UIView {
         addSubview(authorTypeLabel)
         addSubview(fullNameLabel)
         addSubview(professionImageView)
-        addSubview(professionLabel)
+        addSubview(professionLoginLabel)
         addSubview(twitterImageView)
-        addSubview(twitterLabel)
+        addSubview(twitterLoginLabel)
     }
 
     // MARK: Layout
@@ -124,7 +138,7 @@ class AuthorView: UIView {
             make.top.equalTo(authorTypeLabel.snp_bottom).offset(5)
             make.left.equalTo(authorTypeLabel.snp_left)
         }
-        professionLabel.snp_makeConstraints { (make) -> Void in
+        professionLoginLabel.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(professionImageView.snp_right).offset(5)
             make.centerY.equalTo(professionImageView.snp_centerY)
         }
@@ -132,7 +146,7 @@ class AuthorView: UIView {
             make.top.equalTo(professionImageView.snp_bottom).offset(5)
             make.left.equalTo(professionImageView.snp_left)
         }
-        twitterLabel.snp_makeConstraints { (make) -> Void in
+        twitterLoginLabel.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(twitterImageView.snp_right).offset(5)
             make.centerY.equalTo(twitterImageView.snp_centerY)
             make.bottom.lessThanOrEqualTo(0)
