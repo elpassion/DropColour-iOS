@@ -40,7 +40,7 @@ class InfoViewControllerSpec: QuickSpec {
             describe("tap on quit") {
 
                 it("should be dismissed") {
-                    sut.infoViewDidTapQuit(infoView)
+                    sut.infoViewDidTapQuit()
                     expect(spyPresenter.capturedDismissedViewController).to(beAKindOf(InfoViewController))
                 }
             }
