@@ -27,6 +27,11 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
 
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        closeButtonBlur.layer.cornerRadius = closeButtonBlur.frame.width / 2 
+    }
+    
     // MARK: Subviews
     
     private let scrollView: UIScrollView = {
@@ -34,8 +39,17 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
         view.contentInset = UIEdgeInsetsMake(80.0, 0.0, 20.0, 0.0);
         return view
     }()
-
-    private let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
+    
+    private let closeButtonBlur: UIView = {
+        let view = UIView(frame: CGRectZero)
+        view.clipsToBounds = true
+        let blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
+        view.addSubview(blur)
+        blur.snp_makeConstraints { $0.edges.equalTo(0) }
+        return view
+    }()
+    
+    private let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
     private let closeButton = Button(image: UIImage(asset: .Close))
     private let logoDescriptionView = LogoDescriptionView()
     private let lineViewAuthors = LineViewAuthors()
@@ -51,6 +65,7 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
         scrollView.addSubview(firstAuthorView)
         scrollView.addSubview(secondAuthorView)
         scrollView.addSubview(thirdAuthorView)
+        addSubview(closeButtonBlur)
         addSubview(closeButton)
     }
 
@@ -85,6 +100,10 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
         closeButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(30)
             make.right.equalTo(-15)
+        }
+        closeButtonBlur.snp_makeConstraints { (make) -> Void in
+            make.center.equalTo(closeButton.snp_center)
+            make.size.equalTo(closeButton.snp_size)
         }
     }
     
