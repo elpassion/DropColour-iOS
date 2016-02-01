@@ -19,7 +19,7 @@ class InfoView: UIView {
 
     init(delegate: InfoViewDelegate?, authors: [Author]) {
         self.delegate = delegate
-        self.authorViews = authors.map({ AuthorView(author: $0) })
+        self.authorViews = authors.map{ AuthorView(author: $0) }
         super.init(frame: CGRectZero)
         addSubviews()
         setupLayout()
