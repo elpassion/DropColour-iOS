@@ -28,9 +28,14 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     // MARK: Subviews
+    
+    private let scrollView: UIScrollView = {
+        let view = UIScrollView(frame: CGRectZero)
+        view.contentInset = UIEdgeInsetsMake(80.0, 0.0, 20.0, 0.0);
+        return view
+    }()
 
     private let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-    private let scrollView = UIScrollView(frame: CGRectZero)
     private let closeButton = Button(image: UIImage(asset: .Close))
     private let logoDescriptionView = LogoDescriptionView()
     private let lineViewAuthors = LineViewAuthors()
@@ -40,13 +45,13 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
     
     private func addSubviews() {
         addSubview(blurEffectView)
-        addSubview(closeButton)
         addSubview(scrollView)
         scrollView.addSubview(logoDescriptionView)
         scrollView.addSubview(lineViewAuthors)
         scrollView.addSubview(firstAuthorView)
         scrollView.addSubview(secondAuthorView)
         scrollView.addSubview(thirdAuthorView)
+        addSubview(closeButton)
     }
 
     // MARK: Layout
@@ -55,14 +60,8 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
         blurEffectView.snp_makeConstraints { (make) -> Void in
             make.edges.equalTo(0)
         }
-        closeButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(30)
-            make.right.equalTo(-15)
-        }
         scrollView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(closeButton.snp_bottom).offset(5)
-            make.left.right.equalTo(0)
-            make.bottom.equalTo(-20)
+            make.edges.equalTo(0)
         }
         logoDescriptionView.snp_makeConstraints { (make) -> Void in
             make.top.left.right.centerX.equalTo(0)
@@ -82,6 +81,10 @@ class InfoView: UIView, UIGestureRecognizerDelegate {
         thirdAuthorView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(secondAuthorView.snp_bottom).offset(20)
             make.left.right.bottom.equalTo(0)
+        }
+        closeButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(30)
+            make.right.equalTo(-15)
         }
     }
     
