@@ -48,8 +48,7 @@ class LineViewAuthors: UIView {
 
     private func setupLayout() {
         titleLabel.snp_makeConstraints { (make) -> Void in
-            make.top.bottom.equalTo(0)
-            make.centerX.equalTo(0)
+            make.top.bottom.centerX.equalTo(0)
         }
         leftLineView.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(30)
