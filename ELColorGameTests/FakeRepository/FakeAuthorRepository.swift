@@ -15,9 +15,9 @@ class FakeAuthorRepository {
                 name: "John",
                 surname: "Apple",
                 type: .Developer,
-                avatarUrl: NSURL(string: "www.google.pl/avatar"),
-                professionUrl: NSURL(string: "www.github.com/johnapple"),
-                twitterUrl: NSURL(string: "www.twitter.com/johnapple")
+                avatarUrl: NSURL(string: "https://google.pl/avatar"),
+                professionUrl: NSURL(string: "https://github.com/johnapple"),
+                twitterUrl: NSURL(string: "https://twitter.com/johnapple")
         )
     }
 
@@ -46,14 +46,14 @@ extension Author {
         )
     }
 
-    func copyWithProffessionUrl(url: NSURL) -> Author {
+    func copyWithProffessionUrl(url: NSURL?) -> Author {
         return Author(
                 name: self.name,
                 surname: self.surname,
                 type: self.type,
-                avatarUrl: nil,
+                avatarUrl: self.avatarUrl,
                 professionUrl: url,
-                twitterUrl: nil
+                twitterUrl: self.twitterUrl
         )
     }
 

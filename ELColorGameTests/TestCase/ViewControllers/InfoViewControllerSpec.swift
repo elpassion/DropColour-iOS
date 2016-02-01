@@ -49,25 +49,49 @@ class InfoViewControllerSpec: QuickSpec {
 
                 context("with type .Developer") {
 
-                    it("should present alert") {
-                        sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType)
-                        expect(spyPresenter.capturedPresentedViewController as? UIAlertController).notTo(beNil())
+                    context("with 1 correct url") {
+                        it("should present alert") {
+                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(nil))
+                            expect(spyPresenter.capturedPresentedViewController as? UIAlertController).notTo(beNil())
+                        }
+
+                        it("should show correct title for alert") {
+                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(nil))
+                            let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
+                            expect(alertController.title).to(equal("John Apple show profile on"))
+                        }
+
+                        it("should have alert with 2 actions") {
+                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(nil))
+                            let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
+                            expect(alertController.actions.count).to(equal(2))
+                            expect(alertController.actions[0].title).to(equal("Twitter"))
+                            expect(alertController.actions[1].title).to(equal("Cancel"))
+                        }
                     }
 
-                    it("should show correct title for alert") {
-                        sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType)
-                        let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
-                        expect(alertController.title).to(equal("John Apple show profile on"))
+                    context("with 2 correct urls") {
+                        it("should present alert") {
+                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType)
+                            expect(spyPresenter.capturedPresentedViewController as? UIAlertController).notTo(beNil())
+                        }
+
+                        it("should show correct title for alert") {
+                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType)
+                            let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
+                            expect(alertController.title).to(equal("John Apple show profile on"))
+                        }
+
+                        it("should have alert with 3 actions") {
+                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType)
+                            let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
+                            expect(alertController.actions.count).to(equal(3))
+                            expect(alertController.actions[0].title).to(equal("Github"))
+                            expect(alertController.actions[1].title).to(equal("Twitter"))
+                            expect(alertController.actions[2].title).to(equal("Cancel"))
+                        }
                     }
 
-                    it("should have alert with 3 actions") {
-                        sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType)
-                        let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
-                        expect(alertController.actions.count).to(equal(3))
-                        expect(alertController.actions[0].title).to(equal("Github"))
-                        expect(alertController.actions[1].title).to(equal("Twitter"))
-                        expect(alertController.actions[2].title).to(equal("Cancel"))
-                    }
                 }
                 
                 context("with type .Designer") {
