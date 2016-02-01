@@ -5,32 +5,30 @@
 
 import Foundation
 
-class AuthorRepository {
+protocol AuthorProviding {
+    var authors: [Author] { get }
+}
 
-    class func firstAuthor() -> Author {
-        return Author(
+class AuthorProvider: AuthorProviding {
+
+    let authors = [
+        Author(
             name: "Mateusz",
             surname: "Szklarek",
             type: AuthorType.Developer,
             avatarUrl: NSURL(string: "ms"),
             professionUrl: NSURL(string: "https://github.com/mateuszszklarek"),
             twitterUrl: NSURL(string: "https://twitter.com/SzklarekMateusz")
-        )
-    }
-    
-    class func secondAuthor() -> Author {
-        return Author(
+        ),
+        Author(
             name: "Dariusz",
             surname: "Rybicki",
             type: AuthorType.Developer,
             avatarUrl: NSURL(string: "dr"),
             professionUrl: NSURL(string: "https://github.com/darrarski"),
             twitterUrl: NSURL(string: "https://twitter.com/darrarski")
-        )
-    }
-    
-    class func thirdAuthor() -> Author {
-        return Author(
+        ),
+        Author(
             name: "Dawid",
             surname: "Dapszus",
             type: AuthorType.Designer,
@@ -38,6 +36,6 @@ class AuthorRepository {
             professionUrl: NSURL(string: "https://dribbble.com/dashoo"),
             twitterUrl: NSURL(string: "https://twitter.com/dapszus")
         )
-    }
+    ]
 
 }

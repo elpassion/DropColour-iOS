@@ -15,9 +15,11 @@ protocol InfoViewDelegate: class {
 class InfoView: UIView {
 
     private weak var delegate: InfoViewDelegate?
+    private var authorViews: [AuthorView]
 
-    init(delegate: InfoViewDelegate?) {
+    init(delegate: InfoViewDelegate?, authors: [Author]) {
         self.delegate = delegate
+        self.authorViews = authors.map({ AuthorView(author: $0) })
         super.init(frame: CGRectZero)
         addSubviews()
         setupLayout()
@@ -53,18 +55,13 @@ class InfoView: UIView {
     private let closeButton = Button(image: UIImage(asset: .Close))
     private let logoDescriptionView = LogoDescriptionView()
     private let lineViewAuthors = LineViewAuthors()
-    private let authorsViews = [
-        AuthorView(author: AuthorRepository.firstAuthor()),
-        AuthorView(author: AuthorRepository.secondAuthor()),
-        AuthorView(author: AuthorRepository.thirdAuthor())
-    ]
     
     private func addSubviews() {
         addSubview(blurEffectView)
         addSubview(scrollView)
         scrollView.addSubview(logoDescriptionView)
         scrollView.addSubview(lineViewAuthors)
-        for authorView in authorsViews { scrollView.addSubview(authorView) }
+        for authorView in authorViews { scrollView.addSubview(authorView) }
         addSubview(closeButtonBlur)
         addSubview(closeButton)
     }
@@ -85,16 +82,16 @@ class InfoView: UIView {
             make.top.equalTo(logoDescriptionView.snp_bottom).offset(30)
             make.left.right.equalTo(0)
         }
-        for (idx, authorView) in authorsViews.enumerate() {
+        for (idx, authorView) in authorViews.enumerate() {
             authorView.snp_makeConstraints {
                 $0.left.right.equalTo(0)
-                if authorView == authorsViews.first {
+                if authorView == authorViews.first {
                     $0.top.equalTo(lineViewAuthors.snp_bottom).offset(20)
                 } else {
-                    let previous = authorsViews[idx - 1]
+                    let previous = authorViews[idx - 1]
                     $0.top.equalTo(previous.snp_bottom).offset(20)
                 }
-                if authorView == authorsViews.last {
+                if authorView == authorViews.last {
                     $0.bottom.equalTo(0)
                 }
             }
@@ -120,7 +117,7 @@ class InfoView: UIView {
     // MARK: Tap gestures
     
     private func configureTapGesturesRecognizer() {
-        for authorView in authorsViews {
+        for authorView in authorViews {
             authorView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapAuthor:"))
         }
     }

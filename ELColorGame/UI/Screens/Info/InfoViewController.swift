@@ -10,11 +10,13 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     var alertActionFactory: AlertActionCreating
     var alertControllerFactory: AlertControllerCreating
     var viewControllerPresenter: ViewControllerPresenting
+    var authorProvider: AuthorProviding
     
     init() {
         alertActionFactory = AlertActionFactory()
         alertControllerFactory = AlertControllerFactory()
         viewControllerPresenter = ViewControllerPresenter()
+        authorProvider = AuthorProvider()
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         modalPresentationStyle = UIModalPresentationStyle.Custom
@@ -24,7 +26,7 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     override func loadView() {
-        view = InfoView(delegate: self)
+        view = InfoView(delegate: self, authors: authorProvider.authors)
     }
 
     // MARK: InfoViewDelegate
