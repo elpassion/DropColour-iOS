@@ -5,17 +5,6 @@
 
 import UIKit
 
-extension AuthorType {
-    var image: UIImage? {
-        switch self {
-        case .Developer:
-            return UIImage(asset: .Github)
-        case .Designer:
-            return UIImage(asset: .Dribbble)
-        }
-    }
-}
-
 class AuthorView: UIView {
 
     let author: Author
@@ -153,4 +142,15 @@ class AuthorView: UIView {
         }
     }
 
+}
+
+private extension AuthorType {
+    var image: UIImage? {
+        switch self {
+        case .Developer:
+            return UIImage(asset: .Github)
+        case .Designer:
+            return UIImage(asset: .Dribbble)
+        }
+    }
 }
