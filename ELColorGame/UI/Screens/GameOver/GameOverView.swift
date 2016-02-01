@@ -49,9 +49,9 @@ class GameOverView: UIView {
 
     private let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
     private let scoreView = UIView(frame: CGRectZero)
-    private let retryButton = Button(title: kRetry, color: UIColor(color: .Green6BE01A))
-    private let topPlayersButton = Button(title: kTopPlayers, color: UIColor(color: .Turquoise54C7C7))
-    private let quitButton = Button(title: kQuit, color: UIColor(color: .RedE82654))
+    private let retryButton = Button(title: kRetry.localized, color: UIColor(color: .Green6BE01A))
+    private let topPlayersButton = Button(title: kTopPlayers.localized, color: UIColor(color: .Turquoise54C7C7))
+    private let quitButton = Button(title: kQuit.localized, color: UIColor(color: .RedE82654))
 
     private let scoreNumberLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
@@ -64,7 +64,7 @@ class GameOverView: UIView {
 
     private let scoreTextLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
-        label.text = kYourScore
+        label.text = kYourScore.localized
         label.font = UIFont(name: BebasNeueBold, size: 20)
         label.textColor = UIColor(color: .White)
         return label

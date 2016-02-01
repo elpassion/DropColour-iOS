@@ -19,7 +19,7 @@ class LineViewAuthors: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
-        label.text = kAuthors
+        label.text = kAuthors.localized
         label.textAlignment = .Center
         label.font = UIFont(name: BebasNeueBold, size: 14)
         label.textColor = UIColor(color: .White)

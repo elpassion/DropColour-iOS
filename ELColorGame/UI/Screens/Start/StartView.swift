@@ -55,8 +55,8 @@ class StartView: UIView {
         return view
     }()
     
-    private let newGameButton = Button(title: kNewGame, color: UIColor(color: .Green6BE01A))
-    private let topPlayersButton = Button(title: kTopPlayers, color: UIColor(color: .Turquoise54C7C7))
+    private let newGameButton = Button(title: kNewGame.localized, color: UIColor(color: .Green6BE01A))
+    private let topPlayersButton = Button(title: kTopPlayers.localized, color: UIColor(color: .Turquoise54C7C7))
     private let infoButton = Button(image: UIImage(asset: .Info))
 
     // MARK: Layout

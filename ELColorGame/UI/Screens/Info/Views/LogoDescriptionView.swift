@@ -26,7 +26,7 @@ class LogoDescriptionView: UIView {
 
     private let descriptionLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
-        label.text = kInfoDescription
+        label.text = kInfoDescription.localized
         label.numberOfLines = 0
         label.textAlignment = .Center
         label.font = UIFont.systemFontOfSize(11)
