@@ -11,39 +11,39 @@ class AuthorLoginFromUrlSpec: QuickSpec {
 
         var sut: Author!
 
-        describe("when url is correct") {
+        describe("Login from url extension for Author") {
 
-            beforeEach {
-                let url = NSURL(string: "www.google.pl/LoginName")
-                sut = FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(url!)
+            describe("when url has login") {
+
+                beforeEach {
+                    let url = NSURL(string: "www.google.pl/LoginName")
+                    sut = FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(url!)
+                }
+
+                afterEach {
+                    sut = nil
+                }
+
+                it("should get login from url") {
+                    expect(sut.loginFromUrl(sut.professionUrl!)).to(equal("LoginName"))
+                }
             }
 
-            afterEach {
-                sut = nil
-            }
+            describe("when url has NOT login") {
 
-            it("should get login from url") {
+                beforeEach {
+                    let url = NSURL(string: "www.google.pl")
+                    sut = FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(url!)
+                }
 
-                expect(sut.loginFromUrl(sut.professionUrl!)).to(equal("LoginName"))
+                afterEach {
+                    sut = nil
+                }
+
+                it("should get nil") {
+                    expect(sut.loginFromUrl(sut.professionUrl!)).to(beNil())
+                }
             }
         }
-
-        describe("when url is incorrect") {
-
-            beforeEach {
-                let url = NSURL(string: "www.google.pl")
-                sut = FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(url!)
-            }
-
-            afterEach {
-                sut = nil
-            }
-
-            it("should get empty string from url") {
-                expect(sut.loginFromUrl(sut.professionUrl!)).to(equal(""))
-            }
-        }
-
     }
-
 }

@@ -26,10 +26,9 @@ extension Author {
         return "\(name) \(surname)"
     }
     
-    func loginFromUrl(url: NSURL) -> String {
+    func loginFromUrl(url: NSURL) -> String? {
         let urlString = url.absoluteString
-        let strings = urlString.componentsSeparatedByString("/")
-        guard strings.count > 1 else { return "" }
-        return strings.last ?? ""
+        guard urlString.containsString("/") else { return nil }
+        return urlString.componentsSeparatedByString("/").last
     }
 }
