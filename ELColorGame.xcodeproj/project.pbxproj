@@ -51,7 +51,7 @@
 		9A625DFA9B5789C80049AB0D /* GameViewController+GameOverViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A61D3A865E03B61307E7D83 /* GameViewController+GameOverViewControllerDelegate.swift */; };
 		9A62B4CC1C8A4681E750B9DA /* LogoDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A65599E2ABDAB7F47FEB8A4 /* LogoDescriptionView.swift */; };
 		9A657E756388E95866782E11 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A60D78DC3E088D6FC065F26 /* GameView.swift */; };
-		9A65DE2C12AFC8EDD09F3EE4 /* FakeAuthorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A61BF9F77B1958757E5D59E /* FakeAuthorRepository.swift */; };
+		9A65DE2C12AFC8EDD09F3EE4 /* FakeAuthorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A61BF9F77B1958757E5D59E /* FakeAuthorProvider.swift */; };
 		9A6609AC6FE2794C4DD5CA5B /* Array+Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69A535A439410E3369C7F4 /* Array+Slot.swift */; };
 		9A66EE950DDBEA218650392C /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A641F25C769378951E44D57 /* GameOverViewController.swift */; };
 		9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F7BF7AAFB92C5AFF48F86 /* LaunchScreen.storyboard */; };
@@ -146,7 +146,7 @@
 		9A603B96F16924EAF14D8E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A609573181FF1411DF13209 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		9A60D78DC3E088D6FC065F26 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		9A61BF9F77B1958757E5D59E /* FakeAuthorRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeAuthorRepository.swift; sourceTree = "<group>"; };
+		9A61BF9F77B1958757E5D59E /* FakeAuthorProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeAuthorProvider.swift; sourceTree = "<group>"; };
 		9A61D3A865E03B61307E7D83 /* GameViewController+GameOverViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameOverViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		9A62043CAA01F90BF21D0BA1 /* AlertControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertControllerFactory.swift; sourceTree = "<group>"; };
 		9A62BF89ACEBCB72D4BA3870 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -280,7 +280,7 @@
 				4E4BB5891BB410240043C80C /* Info.plist */,
 				9A661EE2BF129522405B8A32 /* TestCase */,
 				9A6A2C6FB10CEA82FA67EAF7 /* Spy */,
-				9A6BF9E7765A559EC77FBA90 /* FakeRepository */,
+				9A6BF9E7765A559EC77FBA90 /* FakeProvider */,
 			);
 			path = ELColorGameTests;
 			sourceTree = "<group>";
@@ -515,12 +515,12 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		9A6BF9E7765A559EC77FBA90 /* FakeRepository */ = {
+		9A6BF9E7765A559EC77FBA90 /* FakeProvider */ = {
 			isa = PBXGroup;
 			children = (
-				9A61BF9F77B1958757E5D59E /* FakeAuthorRepository.swift */,
+				9A61BF9F77B1958757E5D59E /* FakeAuthorProvider.swift */,
 			);
-			path = FakeRepository;
+			path = FakeProvider;
 			sourceTree = "<group>";
 		};
 		9A6C4ADEC2FEBE5C5857F1D5 /* Theme */ = {
@@ -948,7 +948,7 @@
 				4E74E3EA1C5CE76800D50FD8 /* InfoViewControllerSpec.swift in Sources */,
 				4E2332041C5F692C004E32B7 /* StringLocalizedSpec.swift in Sources */,
 				9A6BC732B6A85ACE0F558CA9 /* ViewControllerPresenterSpy.swift in Sources */,
-				9A65DE2C12AFC8EDD09F3EE4 /* FakeAuthorRepository.swift in Sources */,
+				9A65DE2C12AFC8EDD09F3EE4 /* FakeAuthorProvider.swift in Sources */,
 				9A60D58A7F85CB05E5AD3750 /* AuthorLoginFromUrlSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

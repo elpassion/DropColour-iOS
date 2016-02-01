@@ -17,7 +17,7 @@ class AuthorLoginFromUrlSpec: QuickSpec {
 
                 beforeEach {
                     let url = NSURL(string: "www.google.pl/LoginName")
-                    sut = FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(url!)
+                    sut = FakeAuthorProvider().authors.first!.copyWithProffessionUrl(url!)
                 }
 
                 afterEach {
@@ -33,7 +33,7 @@ class AuthorLoginFromUrlSpec: QuickSpec {
 
                 beforeEach {
                     let url = NSURL(string: "www.google.pl")
-                    sut = FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(url!)
+                    sut = FakeAuthorProvider().authors.first!.copyWithProffessionUrl(url!)
                 }
 
                 afterEach {

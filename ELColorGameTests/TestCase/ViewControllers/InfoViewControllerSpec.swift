@@ -51,18 +51,18 @@ class InfoViewControllerSpec: QuickSpec {
 
                     context("with 1 correct url") {
                         it("should present alert") {
-                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(nil))
+                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithProffessionUrl(nil))
                             expect(spyPresenter.capturedPresentedViewController as? UIAlertController).notTo(beNil())
                         }
 
                         it("should show correct title for alert") {
-                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(nil))
+                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithProffessionUrl(nil))
                             let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                             expect(alertController.title).to(equal("John Apple show profile on"))
                         }
 
                         it("should have alert with 2 actions") {
-                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType.copyWithProffessionUrl(nil))
+                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithProffessionUrl(nil))
                             let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                             expect(alertController.actions.count).to(equal(2))
                             expect(alertController.actions[0].title).to(equal("Twitter"))
@@ -72,18 +72,18 @@ class InfoViewControllerSpec: QuickSpec {
 
                     context("with 2 correct urls") {
                         it("should present alert") {
-                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType)
+                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Developer))
                             expect(spyPresenter.capturedPresentedViewController as? UIAlertController).notTo(beNil())
                         }
 
                         it("should show correct title for alert") {
-                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType)
+                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Developer))
                             let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                             expect(alertController.title).to(equal("John Apple show profile on"))
                         }
 
                         it("should have alert with 3 actions") {
-                            sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType)
+                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Developer))
                             let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                             expect(alertController.actions.count).to(equal(3))
                             expect(alertController.actions[0].title).to(equal("Github"))
@@ -97,18 +97,18 @@ class InfoViewControllerSpec: QuickSpec {
                 context("with type .Designer") {
 
                     it("should present alert") {
-                        sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType.copyWithType(.Designer))
+                        sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Designer))
                         expect(spyPresenter.capturedPresentedViewController as? UIAlertController).notTo(beNil())
                     }
 
                     it("should show correct title for alert") {
-                        sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType.copyWithType(.Designer))
+                        sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Designer))
                         let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                         expect(alertController.title).to(equal("John Apple show profile on"))
                     }
 
                     it("should have alert with 3 actions") {
-                        sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType.copyWithType(.Designer))
+                        sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Designer))
                         let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                         expect(alertController.actions.count).to(equal(3))
                         expect(alertController.actions[0].title).to(equal("Dribbble"))
@@ -120,7 +120,7 @@ class InfoViewControllerSpec: QuickSpec {
                 context("without urls") {
 
                     it("should NOT present alert") {
-                        sut.infoViewDidTapAuthor(FakeAuthorRepository().authorWithDeveloperType.copyWithoutUrls())
+                        sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithoutUrls())
                         expect(spyPresenter.capturedPresentedViewController as? UIAlertController).to(beNil())
                     }
                 }

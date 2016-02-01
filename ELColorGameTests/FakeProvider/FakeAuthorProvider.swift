@@ -8,22 +8,23 @@ import Foundation
 @testable
 import ELColorGame
 
-class FakeAuthorRepository {
+class FakeAuthorProvider: AuthorProviding {
 
-    var authorWithDeveloperType: Author {
-        return Author(
+    var authors = [
+            Author(
                 name: "John",
                 surname: "Apple",
                 type: .Developer,
                 avatarUrl: NSURL(string: "https://google.pl/avatar"),
                 professionUrl: NSURL(string: "https://github.com/johnapple"),
                 twitterUrl: NSURL(string: "https://twitter.com/johnapple")
-        )
-    }
+            )
+    ]
 
 }
 
 extension Author {
+        
     func copyWithType(type: AuthorType) -> Author {
         return Author(
                 name: self.name,
