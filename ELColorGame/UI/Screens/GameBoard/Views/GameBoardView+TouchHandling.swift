@@ -31,21 +31,18 @@ extension GameBoardView {
         guard let slotView = slotViewForCircleView(dragger.view) else { return }
         guard let slotSuperview = slotView.superview else { return }
         let slotLocationFrom = SlotLocation(column: slotView.column, row: slotView.row)
-        let targetLocation = touch.locationInView(self)
-        
-        guard let targetSlotView = slotViewAtPoint(targetLocation) else {
-            restoreCircleDraggerViewToInitialPosition(dragger, slotSuperview: slotSuperview, slotView: slotView)
-            return
-        }
-        let slotLocationTo = SlotLocation(column: targetSlotView.column, row: targetSlotView.row)
-        
+
         guard let delegate = delegate else { return }
-        if delegate.gameBoardViewCanMoveCircle(fromLocation: slotLocationFrom, toLocation: slotLocationTo) {
-            delegate.gameBoardViewMoveCircle(fromLocation: slotLocationFrom, toLocation: slotLocationTo)
-            playSound()
-        } else {
-            restoreCircleDraggerViewToInitialPosition(dragger, slotSuperview: slotSuperview, slotView: slotView)
+        let targetSlotViews = slotViewsAtRect(dragger.view.frame)
+        for targetSlotView in targetSlotViews {
+            let slotLocationTo = SlotLocation(column: targetSlotView.column, row: targetSlotView.row)
+            if delegate.gameBoardViewCanMoveCircle(fromLocation: slotLocationFrom, toLocation: slotLocationTo) {
+                delegate.gameBoardViewMoveCircle(fromLocation: slotLocationFrom, toLocation: slotLocationTo)
+                playSound()
+                return
+            }
         }
+        restoreCircleDraggerViewToInitialPosition(dragger, slotSuperview: slotSuperview, slotView: slotView)
     }
 
     private func draggerForTouch(touch: UITouch) -> CircleViewDragger? {

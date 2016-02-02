@@ -11,6 +11,12 @@ enum Asset: String {
     case PauseIcon        = "pause_icon"
     case Pause            = "pause"
     case RestartIcon      = "restart"
+    case Info             = "info"
+    case Close            = "close"
+    case Elpassion        = "elpassion"
+    case Dribbble         = "dribbble"
+    case Github           = "github"
+    case Twitter          = "twitter"
 }
 
 extension UIImage {
