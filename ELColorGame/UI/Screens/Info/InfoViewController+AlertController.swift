@@ -41,7 +41,7 @@ extension InfoViewController {
     }
     
     private func hasOneCorrectUrlAtLeast(author: Author) -> Bool {
-        return canOpenOptionalUrl(author.professionUrl) || canOpenOptionalUrl(author.twitterUrl)
+        return canOpenUrl(author.professionUrl) || canOpenUrl(author.twitterUrl)
     }
 
     // MARK: Alert Actions
@@ -58,17 +58,13 @@ extension InfoViewController {
 
     // MARK: Open url
     
-    private func canOpenOptionalUrl(url: NSURL?) -> Bool {
+    private func canOpenUrl(url: NSURL?) -> Bool {
         guard let url = url else { return false }
-        return canOpenUrl(url)
-    }
-    
-    private func canOpenUrl(url: NSURL) -> Bool {
         return UIApplication.sharedApplication().canOpenURL(url)
     }
 
     private func openUrl(url: NSURL) {
-        guard UIApplication.sharedApplication().canOpenURL(url) else { return }
+        guard canOpenUrl(url) else { return }
         UIApplication.sharedApplication().openURL(url)
     }
 
