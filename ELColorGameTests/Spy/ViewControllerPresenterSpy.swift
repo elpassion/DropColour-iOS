@@ -15,7 +15,7 @@ class ViewControllerPresenterSpy: ViewControllerPresenting {
 
     // MARK: ViewControllerPresenting
 
-    var viewController: UIViewController?
+    weak var viewController: UIViewController?
 
     func presentViewController(viewController: UIViewController) {
         capturedPresentedViewController = viewController

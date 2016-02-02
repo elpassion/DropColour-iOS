@@ -7,7 +7,7 @@ import UIKit
 
 protocol ViewControllerPresenting {
 
-    weak var viewController: UIViewController? { get set }
+    var viewController: UIViewController? { get set }
     
     func presentViewController(viewController: UIViewController)
     func dismissViewController(viewController: UIViewController)
@@ -16,7 +16,7 @@ protocol ViewControllerPresenting {
 
 class ViewControllerPresenter: ViewControllerPresenting {
 
-    var viewController: UIViewController?
+    weak var viewController: UIViewController?
     
     func presentViewController(viewController: UIViewController) {
         self.viewController?.presentViewController(viewController, animated: true, completion: nil)
