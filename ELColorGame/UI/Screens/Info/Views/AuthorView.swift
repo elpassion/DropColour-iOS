@@ -70,7 +70,6 @@ class AuthorView: UIView {
 
     private let professionImageView: UIImageView = {
         let view = UIImageView(frame: CGRectZero)
-        view.layer.cornerRadius = view.frame.size.width / 2
         view.clipsToBounds = true
         view.contentMode = UIViewContentMode.ScaleAspectFit
         return view
