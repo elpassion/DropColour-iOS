@@ -7,6 +7,7 @@ target 'ELColorGame' do
   pod 'Fabric'
   pod 'SnapKit'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
+  pod 'GA-SDK-IOS', '~> 2.1'
 end
 
 target 'ELColorGameTests' do

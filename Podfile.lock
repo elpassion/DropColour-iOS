@@ -2,6 +2,7 @@ PODS:
   - Crashlytics (3.6.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.4)
+  - GA-SDK-IOS (2.1.0)
   - Nimble (3.0.0)
   - Quick (0.8.0)
   - SnapKit (0.15.0)
@@ -10,6 +11,7 @@ PODS:
 DEPENDENCIES:
   - Crashlytics
   - Fabric
+  - GA-SDK-IOS (~> 2.1)
   - Nimble (= 3.0.0)
   - Quick (~> 0.8.0)
   - SnapKit
@@ -28,6 +30,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Crashlytics: e4e8d02914f2608fbc7bf42b1a7af838b0db67a2
   Fabric: ed41fd62173c6bdea24ab02c9d7707161eabb750
+  GA-SDK-IOS: 58781c569da2942d4d15e39443ee64889c9cb4b3
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
