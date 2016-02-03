@@ -11,8 +11,6 @@ import SnapKit
 import GameKit
 
 class StartViewController: UIViewController, StartViewDelegate, GKGameCenterControllerDelegate {
-    
-    let localPlayer = GKLocalPlayer.localPlayer()
 
     override func loadView() {
         self.view = StartView(delegate: self)
@@ -25,13 +23,9 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
     }
     
     func authenticatePlayer() {
-        localPlayer.authenticateHandler = {(viewController, error) -> Void in
-            if let viewController = viewController {
-                self.presentViewController(viewController, animated: true, completion: nil)
-            }
-            else {
-                print("Local players\(GKLocalPlayer.localPlayer().authenticated)")
-            }
+        GKLocalPlayer.localPlayer().authenticateHandler = {(viewController, error) -> Void in
+            guard let vc = viewController else { return }
+            self.presentViewController(vc, animated: true, completion: nil)
         }
     }
     
