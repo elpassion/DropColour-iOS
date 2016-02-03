@@ -27,6 +27,7 @@ class Game {
     }
     
     func start() {
+        delegate?.gameDidStart(self)
         startInsertingCircles()
     }
     

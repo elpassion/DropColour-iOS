@@ -4,8 +4,13 @@
 //
 
 import Foundation
+import GameAnalytics
 
 extension GameViewController: GameDelegate {
+    
+    func gameDidStart(game: Game) {
+        gameAnalyticsStartEvent()
+    }
     
     func game(game: Game, didInsertCircle circle: Circle, intoSlot slot: Slot) {
         slotView(forSlot: slot)?.circleView = CircleView(circle: circle)
@@ -16,6 +21,7 @@ extension GameViewController: GameDelegate {
     }
     
     func gameOver(game: Game) {
+        gameAnalyticsCompleteEventWithScore(game.scoreNumber)
         synchronizeHighestScore()
         let viewController = GameOverViewController(score: game.scoreNumber, delegate: self)
         presentViewController(viewController, animated: true, completion: nil)
