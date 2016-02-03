@@ -7,6 +7,7 @@ import Foundation
 
 protocol GameDelegate: class {
     
+    func gameDidStart(game: Game)
     func game(game: Game, didInsertCircle circle: Circle, intoSlot slot: Slot)
     func game(game: Game, didRemoveCircle circle: Circle, fromSlot slot: Slot)
     func gameOver(game: Game)
