@@ -11,10 +11,11 @@ target 'ELColorGame' do
   pod 'Crashlytics', '~> 3.6'
   pod 'Fabric', '~> 1.6'
   pod 'GA-SDK-IOS', '~> 2.1'
-  pod 'GoogleAnalytics', '~> 3.14'
+  pod 'Google/Analytics'
 end
 
 target 'ELColorGameTests' do
+  pod 'Google/Analytics'
   pod 'Nimble', '3.1.0'
   pod 'Quick', '~> 0.9.0'
 end
