@@ -35,5 +35,14 @@ class Tracker {
             value: score
         ).build() as [NSObject : AnyObject])
     }
+    
+    func trackGameScoredEvent(scoredValue value: Int) {
+        gaiTracker.send(GAIDictionaryBuilder.createEventWithCategory(
+            "event",
+            action: "dropcolour.event.game-scored",
+            label: nil,
+            value: value
+        ).build() as [NSObject : AnyObject])
+    }
 
 }
