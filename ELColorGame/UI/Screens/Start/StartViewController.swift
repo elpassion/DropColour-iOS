@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 import GameKit
 
 class StartViewController: UIViewController, StartViewDelegate, GKGameCenterControllerDelegate {
