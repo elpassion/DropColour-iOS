@@ -30,6 +30,11 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     override func loadView() {
         view = InfoView(delegate: self, authors: authorProvider.authors)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tracker.trackScreenWithName(screenName: "InfoViewController")
+    }
 
     // MARK: InfoViewDelegate
 
