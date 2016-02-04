@@ -32,6 +32,7 @@ extension GameViewController: GameDelegate {
     func gameDidUpdateScore(from from: Int, to: Int) {
         guard let gameView = view as? GameView else { return }
         gameView.updateScore(to)
+        tracker.trackGameScoredEvent(scoredValue: to - from)
     }
     
     // MARK: Helpers
