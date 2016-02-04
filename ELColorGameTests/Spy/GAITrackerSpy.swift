@@ -9,11 +9,13 @@ import Foundation
 import ELColorGame
 
 class GAITrackerSpy: NSObject, GAITracker {
+
+    private(set)var dataWasSend = false
     
     // MARK: GAITracker
     
     var name = ""
-    
+
     var allowIDFACollection = false
     
     func set(parameterName: String!, value: String!) {
@@ -24,6 +26,7 @@ class GAITrackerSpy: NSObject, GAITracker {
     }
     
     func send(parameters: [NSObject : AnyObject]!) {
+        dataWasSend = true
     }
 
 }
