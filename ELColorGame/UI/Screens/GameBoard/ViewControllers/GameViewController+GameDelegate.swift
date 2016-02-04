@@ -9,7 +9,7 @@ import GameAnalytics
 extension GameViewController: GameDelegate {
     
     func gameDidStart(game: Game) {
-        trackGameStartEvent()
+        gameAnalyticsStartEvent()
     }
     
     func game(game: Game, didInsertCircle circle: Circle, intoSlot slot: Slot) {
@@ -21,7 +21,7 @@ extension GameViewController: GameDelegate {
     }
     
     func gameOver(game: Game) {
-        trackGameCompleteEvent(score: game.scoreNumber)
+        gameAnalyticsCompleteEventWithScore(game.scoreNumber)
         synchronizeHighestScore()
         let viewController = GameOverViewController(score: game.scoreNumber, delegate: self, tracker: tracker)
         presentViewController(viewController, animated: true, completion: nil)

@@ -8,11 +8,11 @@ import GameAnalytics
 
 extension GameViewController {
 
-    func trackGameStartEvent() {
+    func gameAnalyticsStartEvent() {
         GameAnalytics.addProgressionEventWithProgressionStatus(GAProgressionStatusStart, progression01: "New game", progression02: nil, progression03: nil)
     }
     
-    func trackGameCompleteEvent(score score: Int) {
+    func gameAnalyticsCompleteEventWithScore(score: Int) {
         GameAnalytics.addProgressionEventWithProgressionStatus(GAProgressionStatusComplete, progression01: "Complete game", progression02: nil, progression03: nil, score: score)
     }
     
