@@ -89,6 +89,7 @@
 		9DA8A553D5B89F2F05FD6DCB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A5441AB1BCFAF5E3E5A2 /* GameViewController.swift */; };
 		9DA8A5A1CC7E0C45F37934B6 /* GameViewController+GameKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A11306F0463F906C8B6C /* GameViewController+GameKit.swift */; };
 		9DA8AFC9C127729893824BD3 /* GameViewController+GameViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8AEB72C4E45DC8FA37553 /* GameViewController+GameViewDelegate.swift */; };
+		D1C16A4BD18417C45898D8FD /* GAIDictionaryFactoryFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1646CE359B10190015F61 /* GAIDictionaryFactoryFake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +202,7 @@
 		9DA8A825B31CC9D6C12B1DF3 /* GameViewController+GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameDelegate.swift"; sourceTree = "<group>"; };
 		9DA8AEB72C4E45DC8FA37553 /* GameViewController+GameViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameViewDelegate.swift"; sourceTree = "<group>"; };
 		B2AE70DF6B5CCE19628901D0 /* Pods-ELColorGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGameTests/Pods-ELColorGameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1C1646CE359B10190015F61 /* GAIDictionaryFactoryFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAIDictionaryFactoryFake.swift; sourceTree = "<group>"; };
 		EB25787C5D17C5AD4E56455B /* Pods-ELColorGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.debug.xcconfig"; sourceTree = "<group>"; };
 		EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELColorGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -538,6 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				9A61BF9F77B1958757E5D59E /* FakeAuthorProvider.swift */,
+				D1C1646CE359B10190015F61 /* GAIDictionaryFactoryFake.swift */,
 			);
 			path = FakeProvider;
 			sourceTree = "<group>";
@@ -984,6 +987,7 @@
 				9A60D58A7F85CB05E5AD3750 /* AuthorLoginFromUrlSpec.swift in Sources */,
 				9A68BEBA7ED636C1C0ED0551 /* GAITrackerSpy.swift in Sources */,
 				9A612909D7CA657C5A528E27 /* TrackerSpec.swift in Sources */,
+				D1C16A4BD18417C45898D8FD /* GAIDictionaryFactoryFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
