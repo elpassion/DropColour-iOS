@@ -8,6 +8,7 @@ import Foundation
 protocol TrackerProtocol {
 
     var gaiTracker: GAITracker { get }
+    var gaiDictionaryFactory: GAIDictionaryCreating { get set }
     func trackScreenWithName(screenName name: String)
     func trackGameStartEvent()
     func trackGameEndEvent(score score: Int)
@@ -18,9 +19,11 @@ protocol TrackerProtocol {
 class Tracker: TrackerProtocol {
 
     let gaiTracker: GAITracker
+    var gaiDictionaryFactory: GAIDictionaryCreating
     
     init(gaiTracker: GAITracker) {
         self.gaiTracker = gaiTracker
+        self.gaiDictionaryFactory = GAIDictionaryFactory()
     }
     
     func trackScreenWithName(screenName name: String) {
@@ -29,30 +32,15 @@ class Tracker: TrackerProtocol {
     }
     
     func trackGameStartEvent() {
-        gaiTracker.send(GAIDictionaryBuilder.createEventWithCategory(
-            "event",
-            action: "dropcolour.event.game-start",
-            label: nil,
-            value: nil
-        ).build() as [NSObject : AnyObject])
+        gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-start", value: nil))
     }
     
     func trackGameEndEvent(score score: Int) {
-        gaiTracker.send(GAIDictionaryBuilder.createEventWithCategory(
-            "event",
-            action: "dropcolour.event.game-end",
-            label: nil,
-            value: score
-        ).build() as [NSObject : AnyObject])
+        gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-end", value: score))
     }
     
     func trackGameScoredEvent(scoredValue value: Int) {
-        gaiTracker.send(GAIDictionaryBuilder.createEventWithCategory(
-            "event",
-            action: "dropcolour.event.game-scored",
-            label: nil,
-            value: value
-        ).build() as [NSObject : AnyObject])
+        gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-scored", value: value))
     }
 
 }
