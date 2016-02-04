@@ -29,6 +29,11 @@ class MenuViewController: UIViewController, MenuViewDelegate {
         self.view = MenuView(delegate: self)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tracker.trackScreenWithName(screenName: "MenuViewController")
+    }
+    
     // MARK: MenuViewDelegate
     
     func menuViewDidTapResume(menuView: MenuView) {
