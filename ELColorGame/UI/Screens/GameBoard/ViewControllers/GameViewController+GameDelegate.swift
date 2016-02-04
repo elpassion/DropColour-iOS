@@ -29,9 +29,9 @@ extension GameViewController: GameDelegate {
         presentViewController(viewController, animated: true, completion: nil)
     }
     
-    func gameDidUpdateScore(score: Int) {
+    func gameDidUpdateScore(from from: Int, to: Int) {
         guard let gameView = view as? GameView else { return }
-        gameView.updateScore(score)
+        gameView.updateScore(to)
     }
     
     // MARK: Helpers
