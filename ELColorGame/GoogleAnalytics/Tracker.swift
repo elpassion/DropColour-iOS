@@ -5,7 +5,17 @@
 
 import Foundation
 
-class Tracker {
+protocol TrackerProtocol {
+
+    var gaiTracker: GAITracker { get }
+    func trackScreenWithName(screenName name: String)
+    func trackGameStartEvent()
+    func trackGameEndEvent(score score: Int)
+    func trackGameScoredEvent(scoredValue value: Int)
+
+}
+
+class Tracker: TrackerProtocol {
 
     let gaiTracker: GAITracker
     

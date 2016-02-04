@@ -8,7 +8,7 @@ import ELColorGame
 class TrackerSpec: QuickSpec {
 
     override func spec() {
-        describe("InfoViewController") {
+        describe("Tracker") {
 
             var sut: Tracker!
 
@@ -24,7 +24,37 @@ class TrackerSpec: QuickSpec {
                 expect(sut).notTo(beNil())
             }
 
+            describe("initially") {
+
+                it("data shouldn't be sent") {
+                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
+                    expect(gaiTrackerSpy.dataWasSend).to(beFalse())
+                }
+
+                it("parameter shouldn't be sent") {
+                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
+                    expect(gaiTrackerSpy.parameterNameWasSet).to(beFalse())
+                }
+
+            }
+
+            describe("track screen") {
+
+                beforeEach {
+                    sut.trackScreenWithName(screenName: "screen-name")
+                }
+
+                it("should send data") {
+                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
+                    expect(gaiTrackerSpy.dataWasSend).to(beTrue())
+                }
+
+                it("should set parameter") {
+                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
+                    expect(gaiTrackerSpy.parameterNameWasSet).to(beTrue())
+                }
+
+            }
         }
     }
-
 }
