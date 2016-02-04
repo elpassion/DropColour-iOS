@@ -295,7 +295,7 @@
 				4E4BB5891BB410240043C80C /* Info.plist */,
 				9A661EE2BF129522405B8A32 /* TestCase */,
 				9A6A2C6FB10CEA82FA67EAF7 /* Spy */,
-				9A6BF9E7765A559EC77FBA90 /* FakeProvider */,
+				9A6BF9E7765A559EC77FBA90 /* Fake */,
 			);
 			path = ELColorGameTests;
 			sourceTree = "<group>";
@@ -536,13 +536,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		9A6BF9E7765A559EC77FBA90 /* FakeProvider */ = {
+		9A6BF9E7765A559EC77FBA90 /* Fake */ = {
 			isa = PBXGroup;
 			children = (
 				9A61BF9F77B1958757E5D59E /* FakeAuthorProvider.swift */,
 				D1C1646CE359B10190015F61 /* GAIDictionaryFactoryFake.swift */,
 			);
-			path = FakeProvider;
+			path = Fake;
 			sourceTree = "<group>";
 		};
 		9A6C4ADEC2FEBE5C5857F1D5 /* Theme */ = {
