@@ -23,7 +23,6 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         tracker.trackScreenWithName(screenName: "StartViewController")
     }
     
