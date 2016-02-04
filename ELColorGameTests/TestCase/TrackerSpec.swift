@@ -55,6 +55,18 @@ class TrackerSpec: QuickSpec {
                 }
 
             }
+
+            describe("track start event") {
+
+                beforeEach {
+                    sut.trackGameStartEvent()
+                }
+
+                it("should send data") {
+                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
+                    expect(gaiTrackerSpy.dataWasSend).to(beTrue())
+                }
+            }
         }
     }
 }
