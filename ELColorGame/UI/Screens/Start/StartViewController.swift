@@ -12,6 +12,21 @@ import GameKit
 
 class StartViewController: UIViewController, StartViewDelegate, GKGameCenterControllerDelegate {
 
+    let tracker: Tracker
+    
+    init(tracker: Tracker) {
+        self.tracker = tracker
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tracker.trackScreenWithName(screenName: "StartViewController")
+    }
+    
     override func loadView() {
         self.view = StartView(delegate: self)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
