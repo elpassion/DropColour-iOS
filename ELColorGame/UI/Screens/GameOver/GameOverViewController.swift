@@ -29,6 +29,11 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
     override func loadView() {
         self.view = GameOverView(score: scoreNumber, delegate: self)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tracker.trackScreenWithName(screenName: "GameOverViewController")
+    }
 
     // MARK: GameOverViewDelegate
 
