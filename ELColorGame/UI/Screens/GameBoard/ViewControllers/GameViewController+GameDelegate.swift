@@ -23,7 +23,7 @@ extension GameViewController: GameDelegate {
     func gameOver(game: Game) {
         gameAnalyticsCompleteEventWithScore(game.scoreNumber)
         synchronizeHighestScore()
-        let viewController = GameOverViewController(score: game.scoreNumber, delegate: self)
+        let viewController = GameOverViewController(score: game.scoreNumber, delegate: self, tracker: tracker)
         presentViewController(viewController, animated: true, completion: nil)
     }
     

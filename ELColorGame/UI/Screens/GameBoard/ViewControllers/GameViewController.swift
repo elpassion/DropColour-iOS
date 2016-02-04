@@ -7,7 +7,10 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    init() {
+    let tracker: Tracker
+    
+    init(tracker: Tracker) {
+        self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
     }

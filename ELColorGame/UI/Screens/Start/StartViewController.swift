@@ -46,7 +46,7 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
     // MARK: StartViewDelegate
 
     func startViewDidTapNewGame(startView: StartView) {
-        let gameBoardViewController = GameViewController()
+        let gameBoardViewController = GameViewController(tracker: tracker)
         presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
 
@@ -57,7 +57,7 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
     }
     
     func startViewDidTapInfo(startView: StartView) {
-        presentViewController(InfoViewController(), animated: true, completion: nil)
+        presentViewController(InfoViewController(tracker: tracker), animated: true, completion: nil)
     }
 
     // MARK: GKGameCenterControllerDelegate

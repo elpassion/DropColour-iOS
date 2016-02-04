@@ -11,9 +11,11 @@ import UIKit
 class MenuViewController: UIViewController, MenuViewDelegate {
     
     private weak var delegate: MenuViewControllerDelegate?
+    let tracker: Tracker
     
-    init(delegate: MenuViewControllerDelegate?) {
+    init(delegate: MenuViewControllerDelegate?, tracker: Tracker) {
         self.delegate = delegate
+        self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.modalPresentationStyle = UIModalPresentationStyle.Custom

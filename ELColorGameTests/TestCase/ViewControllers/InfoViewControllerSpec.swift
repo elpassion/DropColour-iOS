@@ -17,7 +17,7 @@ class InfoViewControllerSpec: QuickSpec {
             var infoView: InfoView!
 
             beforeEach {
-                sut = InfoViewController()
+                sut = InfoViewController(tracker: Tracker(gaiTracker: GAITrackerSpy()))
                 spyPresenter = ViewControllerPresenterSpy()
                 sut.viewControllerPresenter = spyPresenter
                 infoView = sut.view as! InfoView

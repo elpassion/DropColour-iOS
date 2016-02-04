@@ -12,12 +12,13 @@ import GameKit
 class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, GameOverViewDelegate {
 
     private weak var delegate: GameOverViewControllerDelegate?
-
     private let scoreNumber: Int
+    let tracker: Tracker
 
-    init(score: Int, delegate: GameOverViewControllerDelegate?) {
+    init(score: Int, delegate: GameOverViewControllerDelegate?, tracker: Tracker) {
         self.scoreNumber = score
         self.delegate = delegate
+        self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.modalPresentationStyle = UIModalPresentationStyle.Custom
