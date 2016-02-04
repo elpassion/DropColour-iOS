@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import SnapKit
 
 class StartView: UIView {
 
