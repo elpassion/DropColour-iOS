@@ -38,6 +38,7 @@
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; };
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
 		4E74E3EA1C5CE76800D50FD8 /* InfoViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6BBC2329D6DDB8E4B4666E /* InfoViewControllerSpec.swift */; };
+		4E7903B71C635FED00767BE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E7903B61C635FED00767BE4 /* GoogleService-Info.plist */; };
 		4E835C101BC091C600AA9293 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E835C0F1BC091C600AA9293 /* GameKit.framework */; };
 		4EBAF1011BC16ED0000E201E /* bomb_explosion.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4EBAF1001BC16ED0000E201E /* bomb_explosion.m4a */; };
 		4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */; };
@@ -143,6 +144,7 @@
 		4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELColorGameUITests.swift; sourceTree = "<group>"; };
 		4E4BB5941BB410240043C80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeueBold.otf; sourceTree = "<group>"; };
+		4E7903B61C635FED00767BE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E835C0F1BC091C600AA9293 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		4EBAF1001BC16ED0000E201E /* bomb_explosion.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bomb_explosion.m4a; sourceTree = "<group>"; };
 		9A603B96F16924EAF14D8E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 		9A6178CD868CFEC84CFB11A4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E7903B61C635FED00767BE4 /* GoogleService-Info.plist */,
 				9A650A8C4C3305EB21B9D1D9 /* Info.plist */,
 				4E465F1E1C62230300719A3F /* ELColorGame-Bridging-Header.h */,
 			);
@@ -751,6 +754,7 @@
 				4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */,
 				4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */,
 				9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */,
+				4E7903B71C635FED00767BE4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
