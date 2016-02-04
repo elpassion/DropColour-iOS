@@ -27,6 +27,11 @@ class GameViewController: UIViewController {
         self.view = view
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tracker.trackScreenWithName(screenName: "GameViewController")
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupGameIfNeeded()
