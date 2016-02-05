@@ -7,11 +7,24 @@
 //
 
 import UIKit
-import SnapKit
 import GameKit
 
 class StartViewController: UIViewController, StartViewDelegate, GKGameCenterControllerDelegate {
 
+    let tracker: TrackerProtocol
+    
+    init(tracker: TrackerProtocol) {
+        self.tracker = tracker
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tracker.trackScreenWithName(screenName: "StartViewController")
+    }
+    
     override func loadView() {
         self.view = StartView(delegate: self)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
@@ -32,7 +45,7 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
     // MARK: StartViewDelegate
 
     func startViewDidTapNewGame(startView: StartView) {
-        let gameBoardViewController = GameViewController()
+        let gameBoardViewController = GameViewController(tracker: tracker)
         presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
 
@@ -43,7 +56,7 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
     }
     
     func startViewDidTapInfo(startView: StartView) {
-        presentViewController(InfoViewController(), animated: true, completion: nil)
+        presentViewController(InfoViewController(tracker: tracker), animated: true, completion: nil)
     }
 
     // MARK: GKGameCenterControllerDelegate

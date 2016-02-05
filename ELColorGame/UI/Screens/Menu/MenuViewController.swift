@@ -11,9 +11,11 @@ import UIKit
 class MenuViewController: UIViewController, MenuViewDelegate {
     
     private weak var delegate: MenuViewControllerDelegate?
+    let tracker: TrackerProtocol
     
-    init(delegate: MenuViewControllerDelegate?) {
+    init(delegate: MenuViewControllerDelegate?, tracker: TrackerProtocol) {
         self.delegate = delegate
+        self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.modalPresentationStyle = UIModalPresentationStyle.Custom
@@ -25,6 +27,11 @@ class MenuViewController: UIViewController, MenuViewDelegate {
     
     override func loadView() {
         self.view = MenuView(delegate: self)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tracker.trackScreenWithName(screenName: "MenuViewController")
     }
     
     // MARK: MenuViewDelegate

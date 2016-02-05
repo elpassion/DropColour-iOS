@@ -12,12 +12,13 @@ import GameKit
 class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, GameOverViewDelegate {
 
     private weak var delegate: GameOverViewControllerDelegate?
-
     private let scoreNumber: Int
+    let tracker: TrackerProtocol
 
-    init(score: Int, delegate: GameOverViewControllerDelegate?) {
+    init(score: Int, delegate: GameOverViewControllerDelegate?, tracker: TrackerProtocol) {
         self.scoreNumber = score
         self.delegate = delegate
+        self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.modalPresentationStyle = UIModalPresentationStyle.Custom
@@ -27,6 +28,11 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
     
     override func loadView() {
         self.view = GameOverView(score: scoreNumber, delegate: self)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tracker.trackScreenWithName(screenName: "GameOverViewController")
     }
 
     // MARK: GameOverViewDelegate

@@ -47,3 +47,8 @@ DerivedData/
 
 Pods/
 !Podfile.lock
+
+################################
+# Fastlane
+
+test_output
