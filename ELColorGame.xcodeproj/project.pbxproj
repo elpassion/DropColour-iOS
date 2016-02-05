@@ -51,6 +51,7 @@
 		9A60D58A7F85CB05E5AD3750 /* AuthorLoginFromUrlSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A660ABBDBF0B88A78FF6190 /* AuthorLoginFromUrlSpec.swift */; };
 		9A612909D7CA657C5A528E27 /* TrackerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A68F3010033B9D94CE6A875 /* TrackerSpec.swift */; };
 		9A615737A7C4A66EC37D8820 /* LineViewAuthors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A634C8B5C8CE0854A85729D /* LineViewAuthors.swift */; };
+		9A6196D2172EA220DE8F1DC1 /* StartViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6465D656ACE66A95B98F13 /* StartViewControllerSpec.swift */; };
 		9A625266267A191236E9BDC3 /* TrackerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6AFC7E028816F2DC320F58 /* TrackerSpy.swift */; };
 		9A62572207790ABC8D95240B /* GameView+GameBoardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6CE30A1FEA1F04B3D613FB /* GameView+GameBoardViewDelegate.swift */; };
 		9A625DFA9B5789C80049AB0D /* GameViewController+GameOverViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A61D3A865E03B61307E7D83 /* GameViewController+GameOverViewControllerDelegate.swift */; };
@@ -169,6 +170,7 @@
 		9A641F25C769378951E44D57 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		9A645998DA524FCC2AB8DCFE /* InfoViewController+AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfoViewController+AlertController.swift"; sourceTree = "<group>"; };
 		9A645F14AE48ACC3A5DCE70E /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		9A6465D656ACE66A95B98F13 /* StartViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewControllerSpec.swift; sourceTree = "<group>"; };
 		9A650A8C4C3305EB21B9D1D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		9A65599E2ABDAB7F47FEB8A4 /* LogoDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoDescriptionView.swift; sourceTree = "<group>"; };
 		9A65E20786EF9FDFEA8B9F6D /* AuthorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				9A6BBC2329D6DDB8E4B4666E /* InfoViewControllerSpec.swift */,
+				9A6465D656ACE66A95B98F13 /* StartViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -992,6 +995,7 @@
 				9A612909D7CA657C5A528E27 /* TrackerSpec.swift in Sources */,
 				D1C16A4BD18417C45898D8FD /* GAIDictionaryFactoryFake.swift in Sources */,
 				9A625266267A191236E9BDC3 /* TrackerSpy.swift in Sources */,
+				9A6196D2172EA220DE8F1DC1 /* StartViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
