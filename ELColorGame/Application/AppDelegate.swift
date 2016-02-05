@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let gai: GAI = {
         let gai = GAI.sharedInstance()
         gai.trackUncaughtExceptions = true
-        gai.logger.logLevel = GAILogLevel.Verbose  // TODO: remove before app release
         gai.dispatchInterval = 20
         return gai
     }()
