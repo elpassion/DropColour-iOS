@@ -4,8 +4,14 @@
 //
 
 import Foundation
+import GameAnalytics
 
 extension GameViewController: GameDelegate {
+    
+    func gameDidStart(game: Game) {
+        gameAnalyticsStartEvent()
+        tracker.trackGameStartEvent()
+    }
     
     func game(game: Game, didInsertCircle circle: Circle, intoSlot slot: Slot) {
         slotView(forSlot: slot)?.circleView = CircleView(circle: circle)
@@ -16,14 +22,17 @@ extension GameViewController: GameDelegate {
     }
     
     func gameOver(game: Game) {
+        gameAnalyticsCompleteEventWithScore(game.scoreNumber)
+        tracker.trackGameEndEvent(score: game.scoreNumber)
         synchronizeHighestScore()
-        let viewController = GameOverViewController(score: game.scoreNumber, delegate: self)
+        let viewController = GameOverViewController(score: game.scoreNumber, delegate: self, tracker: tracker)
         presentViewController(viewController, animated: true, completion: nil)
     }
     
-    func gameDidUpdateScore(score: Int) {
+    func gameDidUpdateScore(from from: Int, to: Int) {
         guard let gameView = view as? GameView else { return }
-        gameView.updateScore(score)
+        gameView.updateScore(to)
+        tracker.trackGameScoredEvent(scoredValue: to - from)
     }
     
     // MARK: Helpers

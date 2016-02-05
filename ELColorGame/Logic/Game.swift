@@ -11,7 +11,7 @@ class Game {
     private let board: Board
     private var score: Int = 0 {
         didSet {
-            delegate?.gameDidUpdateScore(score)
+            delegate?.gameDidUpdateScore(from: oldValue, to: score)
         }
     }
     
@@ -30,6 +30,7 @@ class Game {
     }
     
     func start() {
+        delegate?.gameDidStart(self)
         startInsertingCircles()
     }
     

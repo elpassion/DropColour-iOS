@@ -7,7 +7,10 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    init() {
+    let tracker: TrackerProtocol
+    
+    init(tracker: TrackerProtocol) {
+        self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
     }
@@ -22,6 +25,11 @@ class GameViewController: UIViewController {
         let view = GameView()
         view.delegate = self
         self.view = view
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tracker.trackScreenWithName(screenName: "GameViewController")
     }
     
     override func viewDidLayoutSubviews() {
