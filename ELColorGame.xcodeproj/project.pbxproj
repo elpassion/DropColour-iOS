@@ -51,6 +51,7 @@
 		9A60D58A7F85CB05E5AD3750 /* AuthorLoginFromUrlSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A660ABBDBF0B88A78FF6190 /* AuthorLoginFromUrlSpec.swift */; };
 		9A612909D7CA657C5A528E27 /* TrackerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A68F3010033B9D94CE6A875 /* TrackerSpec.swift */; };
 		9A615737A7C4A66EC37D8820 /* LineViewAuthors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A634C8B5C8CE0854A85729D /* LineViewAuthors.swift */; };
+		9A625266267A191236E9BDC3 /* TrackerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6AFC7E028816F2DC320F58 /* TrackerSpy.swift */; };
 		9A62572207790ABC8D95240B /* GameView+GameBoardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6CE30A1FEA1F04B3D613FB /* GameView+GameBoardViewDelegate.swift */; };
 		9A625DFA9B5789C80049AB0D /* GameViewController+GameOverViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A61D3A865E03B61307E7D83 /* GameViewController+GameOverViewControllerDelegate.swift */; };
 		9A62B4CC1C8A4681E750B9DA /* LogoDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A65599E2ABDAB7F47FEB8A4 /* LogoDescriptionView.swift */; };
@@ -184,6 +185,7 @@
 		9A69A535A439410E3369C7F4 /* Array+Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Slot.swift"; sourceTree = "<group>"; };
 		9A6A6D0C537CB7DAC8449DAF /* AuthorProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorProvider.swift; sourceTree = "<group>"; };
 		9A6AF1F56A0D2219616A3D13 /* GameBoardView+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameBoardView+Audio.swift"; sourceTree = "<group>"; };
+		9A6AFC7E028816F2DC320F58 /* TrackerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerSpy.swift; sourceTree = "<group>"; };
 		9A6B0808AFFA0173F43BB02C /* StringLocalizedSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringLocalizedSpec.swift; sourceTree = "<group>"; };
 		9A6B4CC7F57E1121D46A2F3A /* DifficultyLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
 		9A6B6CD8684FE7D42386830B /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 			children = (
 				9A6321107D251F46D2ECD229 /* ViewControllerPresenterSpy.swift */,
 				9A6E2605FD606F429053CD25 /* GAITrackerSpy.swift */,
+				9A6AFC7E028816F2DC320F58 /* TrackerSpy.swift */,
 			);
 			path = Spy;
 			sourceTree = "<group>";
@@ -988,6 +991,7 @@
 				9A68BEBA7ED636C1C0ED0551 /* GAITrackerSpy.swift in Sources */,
 				9A612909D7CA657C5A528E27 /* TrackerSpec.swift in Sources */,
 				D1C16A4BD18417C45898D8FD /* GAIDictionaryFactoryFake.swift in Sources */,
+				9A625266267A191236E9BDC3 /* TrackerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

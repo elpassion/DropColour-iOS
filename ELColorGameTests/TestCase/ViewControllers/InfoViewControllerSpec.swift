@@ -16,29 +16,40 @@ class InfoViewControllerSpec: QuickSpec {
             var spyPresenter: ViewControllerPresenterSpy!
             var infoView: InfoView!
 
+            var trackerSpy: TrackerSpy!
+
             beforeEach {
-                sut = InfoViewController(tracker: Tracker(gaiTracker: GAITrackerSpy()))
+                trackerSpy = TrackerSpy(gaiTracker: GAITrackerSpy())
                 spyPresenter = ViewControllerPresenterSpy()
+                sut = InfoViewController(tracker: trackerSpy)
                 sut.viewControllerPresenter = spyPresenter
                 infoView = sut.view as! InfoView
             }
 
             afterEach {
-                sut = nil
+                trackerSpy = nil
                 spyPresenter = nil
+                sut = nil
                 infoView = nil
             }
 
             it("should be initialized") {
                 expect(sut).notTo(beNil())
+                expect(trackerSpy.screenWasTracked).to(beFalse())
             }
 
             it("should have InfoView") {
                 expect(infoView).notTo(beNil())
             }
 
-            describe("tap on quit") {
+            describe("viewWillAppear") {
+                it("should send data") {
+                    sut.viewWillAppear(false)
+                    expect(trackerSpy.screenWasTracked).to(beTrue())
+                }
+            }
 
+            describe("tap on quit") {
                 it("should be dismissed") {
                     sut.infoViewDidTapQuit()
                     expect(spyPresenter.capturedDismissedViewController).to(beAKindOf(InfoViewController))

@@ -11,9 +11,9 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     var alertControllerFactory: AlertControllerCreating
     var viewControllerPresenter: ViewControllerPresenting
     var authorProvider: AuthorProviding
-    let tracker: Tracker
+    let tracker: TrackerProtocol
     
-    init(tracker: Tracker) {
+    init(tracker: TrackerProtocol) {
         self.tracker = tracker
         alertActionFactory = AlertActionFactory()
         alertControllerFactory = AlertControllerFactory()
