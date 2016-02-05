@@ -11,11 +11,9 @@ class DifficultyLevel {
     private let pointsTimeChanges: Double = 200
     private let minTimeIntervalRatio: Double = 200
     private let maxTimeIntervalRatio: Double = 800
-    
-    typealias ScoreClosure = () -> Int
-    
-    var scoreClosure: ScoreClosure?
-    
+
+    var scoreClosure: (() -> Int)?
+
     func intervalTime() -> NSTimeInterval {
         let minInterval = initialTimeInterval / (1 + (score / minTimeIntervalRatio))
         let maxInterval = initialTimeInterval / (1 + (score / maxTimeIntervalRatio))
