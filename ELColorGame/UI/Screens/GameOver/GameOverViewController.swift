@@ -13,9 +13,9 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
 
     private weak var delegate: GameOverViewControllerDelegate?
     private let scoreNumber: Int
-    let tracker: Tracker
+    let tracker: TrackerProtocol
 
-    init(score: Int, delegate: GameOverViewControllerDelegate?, tracker: Tracker) {
+    init(score: Int, delegate: GameOverViewControllerDelegate?, tracker: TrackerProtocol) {
         self.scoreNumber = score
         self.delegate = delegate
         self.tracker = tracker

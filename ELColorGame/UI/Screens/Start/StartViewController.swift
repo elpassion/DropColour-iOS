@@ -11,9 +11,9 @@ import GameKit
 
 class StartViewController: UIViewController, StartViewDelegate, GKGameCenterControllerDelegate {
 
-    let tracker: Tracker
+    let tracker: TrackerProtocol
     
-    init(tracker: Tracker) {
+    init(tracker: TrackerProtocol) {
         self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
     }

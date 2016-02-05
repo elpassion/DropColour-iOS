@@ -11,9 +11,9 @@ import UIKit
 class MenuViewController: UIViewController, MenuViewDelegate {
     
     private weak var delegate: MenuViewControllerDelegate?
-    let tracker: Tracker
+    let tracker: TrackerProtocol
     
-    init(delegate: MenuViewControllerDelegate?, tracker: Tracker) {
+    init(delegate: MenuViewControllerDelegate?, tracker: TrackerProtocol) {
         self.delegate = delegate
         self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
