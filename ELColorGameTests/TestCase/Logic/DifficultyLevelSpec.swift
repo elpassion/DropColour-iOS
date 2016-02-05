@@ -8,8 +8,13 @@ class DifficultyLevelSpec: QuickSpec {
 
     override func spec() {
         describe("DifficultyLevel") {
-
+            
             var sut: DifficultyLevel!
+            
+            let interval: (forScore: Int) -> Double = { score in
+                sut.scoreClosure = { score }
+                return sut.intervalTime()
+            }
 
             beforeEach {
                 sut = DifficultyLevel()
@@ -25,19 +30,15 @@ class DifficultyLevelSpec: QuickSpec {
 
             it("should decrease interval when score increasing on the same level") {
                 let scoreArray = [20, 50, 60, 90, 100, 130, 150, 190]
-                for score in scoreArray {
-                    let oldIntervalTime = sut.intervalTime()
-                    sut.scoreClosure = { score }
-                    expect(sut.intervalTime()).to(beLessThan(oldIntervalTime))
+                for idx in 0..<(scoreArray.count-1) {
+                    let previousInterval = interval(forScore: scoreArray[idx])
+                    let nextInterval = interval(forScore: scoreArray[idx+1])
+                    expect(previousInterval).to(beGreaterThan(nextInterval))
                 }
             }
 
             it("should increase interval when level changes after 200 points") {
-                let interval: (score:Int) -> Double = { score in
-                    sut.scoreClosure = { score }
-                    return sut.intervalTime()
-                }
-                expect(interval(score: 200)).to(beGreaterThan(interval(score: 190)))
+                expect(interval(forScore: 200)).to(beGreaterThan(interval(forScore: 190)))
             }
         }
     }
