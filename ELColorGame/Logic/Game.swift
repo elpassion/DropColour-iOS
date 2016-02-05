@@ -7,7 +7,7 @@ import Foundation
 
 class Game {
 
-    private let difficultyLevel = DifficultyLevel()
+    private var difficultyLevel = DifficultyLevel()
     private let board: Board
     private var score: Int = 0 {
         didSet {
@@ -18,8 +18,11 @@ class Game {
     weak var delegate: GameDelegate?
     
     init(boardSize: BoardSize) {
-        self.board = Board(size: boardSize)
-        self.board.delegate = self
+        board = Board(size: boardSize)
+        board.delegate = self
+        difficultyLevel.scoreClosure = { [weak self] in
+            self?.score ?? 0
+        }
     }
     
     deinit {
@@ -48,13 +51,15 @@ class Game {
     func reset() {
         removeAllCircles()
         resetScore()
-        difficultyLevel.reset()
+        difficultyLevel = DifficultyLevel()
+        difficultyLevel.scoreClosure = { [weak self] in
+            self?.score ?? 0
+        }
     }
     
     func moveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) throws {
         try board.moveCircle(fromLocation: from, toLocation: toLocation)
         increaseScore()
-        difficultyLevel.enableTimeIntervalChanged()
     }
     
     func canMoveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) -> Bool {
@@ -72,7 +77,7 @@ class Game {
     }
     
     private func increaseScore() {
-        score += difficultyLevel.calculatedSingleActionPoints
+        score += difficultyLevel.actionPoints()
     }
     
     // MARK: Inserting Circles
@@ -80,7 +85,7 @@ class Game {
     private var insertingTimer: Timer?
     
     var timeInterval: NSTimeInterval {
-        return difficultyLevel.calculatedIntervalTime(score)
+        return difficultyLevel.intervalTime()
     }
     
     private var isInsertingCircles: Bool {
