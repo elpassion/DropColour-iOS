@@ -6,7 +6,7 @@
 import Foundation
 import GameKit
 
-let leaderboardIdentifier = "drag_and_drop_color_leaderboard_01"
+let leaderboardIdentifier = "drop_colour_leaderboard"
 
 extension GameViewController {
 
