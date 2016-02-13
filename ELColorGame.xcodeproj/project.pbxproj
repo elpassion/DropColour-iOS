@@ -34,8 +34,8 @@
 		31A9F9AB1C094468004DFC10 /* Board+SlotDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9AA1C094468004DFC10 /* Board+SlotDelegate.swift */; };
 		31A9F9AD1C0944BC004DFC10 /* Game+BoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9AC1C0944BC004DFC10 /* Game+BoardDelegate.swift */; };
 		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; };
-		4E2332001C5F64ED004E32B7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E2332021C5F64ED004E32B7 /* Localizable.strings */; };
 		4E2332041C5F692C004E32B7 /* StringLocalizedSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B0808AFFA0173F43BB02C /* StringLocalizedSpec.swift */; };
+		4E2494271C6F748600EA3875 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E2494251C6F748600EA3875 /* Localizable.strings */; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; };
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
 		4E74E3EA1C5CE76800D50FD8 /* InfoViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6BBC2329D6DDB8E4B4666E /* InfoViewControllerSpec.swift */; };
@@ -145,8 +145,9 @@
 		31A9F9A81C0941F7004DFC10 /* BoardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDelegate.swift; sourceTree = "<group>"; };
 		31A9F9AA1C094468004DFC10 /* Board+SlotDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Board+SlotDelegate.swift"; sourceTree = "<group>"; };
 		31A9F9AC1C0944BC004DFC10 /* Game+BoardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Game+BoardDelegate.swift"; sourceTree = "<group>"; };
-		4E2332011C5F64ED004E32B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4E2332031C5F64EF004E32B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E2494261C6F748600EA3875 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E2494281C6F749400EA3875 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E2494291C6F749A00EA3875 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubble_pop_sound.m4a; sourceTree = "<group>"; };
 		4E465F1E1C62230300719A3F /* ELColorGame-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ELColorGame-Bridging-Header.h"; sourceTree = "<group>"; };
 		4E4BB56F1BB410240043C80C /* ELColorGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELColorGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -363,7 +364,6 @@
 				9A603B96F16924EAF14D8E07 /* Assets.xcassets */,
 				9A6DDE6BEB95CEFD8F23BD71 /* Fonts */,
 				9A68EEF2CA4ECB8515CEF2DE /* Sounds */,
-				4E2332021C5F64ED004E32B7 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -545,6 +545,7 @@
 				9A634A145943CD41BDE02C75 /* Models */,
 				9A60288282D178C7F8913971 /* Provider */,
 				9A6FB8D1A3E035824CEB9487 /* GoogleAnalytics */,
+				9A6C27B6B1EE51298FE60652 /* Translations */,
 			);
 			path = ELColorGame;
 			sourceTree = "<group>";
@@ -565,6 +566,14 @@
 				D1C1646CE359B10190015F61 /* GAIDictionaryFactoryFake.swift */,
 			);
 			path = Fake;
+			sourceTree = "<group>";
+		};
+		9A6C27B6B1EE51298FE60652 /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				4E2494251C6F748600EA3875 /* Localizable.strings */,
+			);
+			path = Translations;
 			sourceTree = "<group>";
 		};
 		9A6C4ADEC2FEBE5C5857F1D5 /* Theme */ = {
@@ -779,6 +788,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = 4E4BB5661BB410240043C80C;
 			productRefGroup = 4E4BB5701BB410240043C80C /* Products */;
@@ -798,9 +808,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A6996BD7D6701CD3B528077 /* Assets.xcassets in Resources */,
-				4E2332001C5F64ED004E32B7 /* Localizable.strings in Resources */,
 				4EBAF1011BC16ED0000E201E /* bomb_explosion.m4a in Resources */,
 				4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */,
+				4E2494271C6F748600EA3875 /* Localizable.strings in Resources */,
 				4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */,
 				9A67218EFCC354E860949D2A /* LaunchScreen.storyboard in Resources */,
 				4E7903B71C635FED00767BE4 /* GoogleService-Info.plist in Resources */,
@@ -1047,11 +1057,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4E2332021C5F64ED004E32B7 /* Localizable.strings */ = {
+		4E2494251C6F748600EA3875 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4E2332011C5F64ED004E32B7 /* Base */,
-				4E2332031C5F64EF004E32B7 /* en */,
+				4E2494261C6F748600EA3875 /* pl */,
+				4E2494281C6F749400EA3875 /* en */,
+				4E2494291C6F749A00EA3875 /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
