@@ -36,8 +36,10 @@ extension GameViewController: GameDelegate {
     }
     
     func gameDidPause() {
-        guard let gameView = view as? GameView else { return }
-        gameViewDidTapPause(gameView)
+        guard presentedViewController == nil else { return }
+        game?.pause()
+        let menuViewController = MenuViewController(delegate: self, tracker: tracker)
+        presentViewController(menuViewController, animated: true, completion: nil)
     }
     
     // MARK: Helpers

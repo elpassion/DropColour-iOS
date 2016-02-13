@@ -12,7 +12,6 @@ import GameKit
 class StartViewController: UIViewController, StartViewDelegate, GKGameCenterControllerDelegate {
 
     let tracker: TrackerProtocol
-    var pauseGameClosure: (() -> ())? = nil
     
     init(tracker: TrackerProtocol) {
         self.tracker = tracker
@@ -47,9 +46,6 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
 
     func startViewDidTapNewGame(startView: StartView) {
         let gameViewController = GameViewController(tracker: tracker)
-        pauseGameClosure = { [weak gameViewController] in
-            gameViewController?.gameDidPause()
-        }
         presentViewController(gameViewController, animated: true, completion: nil)
     }
 

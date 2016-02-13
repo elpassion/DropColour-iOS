@@ -27,7 +27,7 @@ class GameViewController: UIViewController {
     // MARK: Application state
     
     func applicationWillResignActive() {
-        // TODO: pause game
+        gameDidPause()
     }
     
     // MARK: View
