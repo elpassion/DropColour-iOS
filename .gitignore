@@ -52,3 +52,8 @@ Pods/
 # Fastlane
 
 test_output
+
+###############################
+# Babelish
+.babelish.token
+translations_Sheet1.csv
