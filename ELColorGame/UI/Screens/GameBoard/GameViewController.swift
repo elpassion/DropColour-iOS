@@ -12,7 +12,7 @@ class GameViewController: UIViewController {
     init(tracker: TrackerProtocol) {
         self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
-        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillResignActive", name: UIApplicationWillResignActiveNotification, object: nil)
     }
 
