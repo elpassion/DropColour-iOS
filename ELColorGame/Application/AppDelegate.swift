@@ -33,9 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationWillResignActive(application: UIApplication) {
+        guard let startViewController = window?.rootViewController as? StartViewController else { return }
+        startViewController.pauseGameClosure?()
+    }
+    
     func setupGoogleAnalytics() {
         var configureError:NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
     }
+    
 }

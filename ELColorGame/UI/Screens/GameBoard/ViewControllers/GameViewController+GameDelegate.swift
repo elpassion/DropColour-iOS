@@ -35,6 +35,11 @@ extension GameViewController: GameDelegate {
         tracker.trackGameScoredEvent(scoredValue: to - from)
     }
     
+    func gameDidPause() {
+        guard let gameView = view as? GameView else { return }
+        gameViewDidTapPause(gameView)
+    }
+    
     // MARK: Helpers
     
     private func slotView(forSlot slot: Slot) -> GameBoardSlotView? {

@@ -8,6 +8,11 @@ import Foundation
 extension GameViewController: GameViewDelegate {
     
     func gameViewDidTapPause(gameView: GameView) {
+        presentMenuViewControllerIfNeeded()
+    }
+    
+    func presentMenuViewControllerIfNeeded() {
+        guard presentedViewController == nil else { return }
         game?.pause()
         let menuViewController = MenuViewController(delegate: self, tracker: tracker)
         presentViewController(menuViewController, animated: true, completion: nil)
