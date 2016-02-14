@@ -44,7 +44,7 @@ class Game {
     }
     
     func restart() {
-        pause()
+        stopInsertingCircles()
         reset()
         start()
     }
