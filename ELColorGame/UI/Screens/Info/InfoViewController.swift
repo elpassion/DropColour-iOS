@@ -7,11 +7,12 @@ import UIKit
 
 class InfoViewController: UIViewController, InfoViewDelegate {
 
+    let tracker: TrackerProtocol
     var alertActionFactory: AlertActionCreating
     var alertControllerFactory: AlertControllerCreating
     var viewControllerPresenter: ViewControllerPresenting
     var authorProvider: AuthorProviding
-    let tracker: TrackerProtocol
+    var urlOpener: UrlOpening
     
     init(tracker: TrackerProtocol) {
         self.tracker = tracker
@@ -19,6 +20,7 @@ class InfoViewController: UIViewController, InfoViewDelegate {
         alertControllerFactory = AlertControllerFactory()
         viewControllerPresenter = ViewControllerPresenter()
         authorProvider = AuthorProvider()
+        urlOpener = UrlOpener()
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         modalPresentationStyle = UIModalPresentationStyle.Custom
