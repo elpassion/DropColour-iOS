@@ -43,14 +43,14 @@ class GameOverView: UIView {
         scoreView.addSubview(scoreNumberLabel)
         scoreView.addSubview(scoreTextLabel)
         addSubview(retryButton)
-        addSubview(topPlayersButton)
+        addSubview(rankingButton)
         addSubview(quitButton)
     }
 
     private let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
     private let scoreView = UIView(frame: CGRectZero)
     private let retryButton = Button(title: kRetry.localized, color: UIColor(color: .Green6BE01A))
-    private let topPlayersButton = Button(title: kTopPlayers.localized, color: UIColor(color: .Turquoise54C7C7))
+    private let rankingButton = Button(title: kRanking.localized, color: UIColor(color: .Turquoise54C7C7))
     private let quitButton = Button(title: kQuit.localized, color: UIColor(color: .RedE82654))
 
     private let scoreNumberLabel: UILabel = {
@@ -99,7 +99,7 @@ class GameOverView: UIView {
             make.height.equalTo(50)
             make.centerX.equalTo(0)
         }
-        topPlayersButton.snp_makeConstraints { (make) -> Void in
+        rankingButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(retryButton.snp_bottom).offset(15)
             make.width.equalTo(200)
             make.height.equalTo(50)
@@ -120,7 +120,7 @@ class GameOverView: UIView {
             guard let _self = self else { return }
             _self.delegate?.gameOverViewDidTapRetry(_self)
         }
-        topPlayersButton.buttonActionClosure = { [weak self] in
+        rankingButton.buttonActionClosure = { [weak self] in
             guard let _self = self else { return }
             _self.delegate?.gameOverViewDidTapShowLeaders(_self)
         }

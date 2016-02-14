@@ -1,7 +1,15 @@
 PODS:
+  - Bolts (1.6.0):
+    - Bolts/AppLinks (= 1.6.0)
+    - Bolts/Tasks (= 1.6.0)
+  - Bolts/AppLinks (1.6.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.6.0)
   - Crashlytics (3.6.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.4)
+  - FBSDKCoreKit (4.10.0):
+    - Bolts (~> 1.5)
   - GA-SDK-IOS (2.1.0)
   - Google/Analytics (1.3.2):
     - Google/Core
@@ -27,6 +35,7 @@ PODS:
 DEPENDENCIES:
   - Crashlytics (~> 3.6)
   - Fabric (~> 1.6)
+  - FBSDKCoreKit (~> 4.10)
   - GA-SDK-IOS (~> 2.1)
   - Google/Analytics
   - Nimble (= 3.1.0)
@@ -45,8 +54,10 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
+  Bolts: f52a250053bb517ca874523c3913776359ab3def
   Crashlytics: e4e8d02914f2608fbc7bf42b1a7af838b0db67a2
   Fabric: ed41fd62173c6bdea24ab02c9d7707161eabb750
+  FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
   GA-SDK-IOS: 58781c569da2942d4d15e39443ee64889c9cb4b3
   Google: 97618e118111b998cce1d8dd1bd98b82301d72db
   GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc

@@ -4,7 +4,7 @@
 //
 
 let kNewGame = "new_game"
-let kTopPlayers = "top_players"
+let kRanking = "ranking"
 let kScore = "score"
 let kResume = "resume"
 let kQuit = "quit"

@@ -1,0 +1,14 @@
+# This is a sample configuration file
+
+###################################### Base2CSV ######################################
+
+filenames: ["ELColorGame/Translations/Localizable.strings"]
+csv_filename: "DropColour Translations"
+
+filename: "DropColour Translations"
+langs:
+  EN: "en"
+  PL: "pl"
+
+fetch: true
+output_dir: "ELColorGame/Translations/"

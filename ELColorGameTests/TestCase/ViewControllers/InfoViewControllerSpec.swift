@@ -17,17 +17,21 @@ class InfoViewControllerSpec: QuickSpec {
             var infoView: InfoView!
 
             var trackerSpy: TrackerSpy!
+            var urlOpenerSpy: UrlOpenerSpy!
 
             beforeEach {
                 trackerSpy = TrackerSpy(gaiTracker: GAITrackerSpy())
+                urlOpenerSpy = UrlOpenerSpy()
                 spyPresenter = ViewControllerPresenterSpy()
                 sut = InfoViewController(tracker: trackerSpy)
                 sut.viewControllerPresenter = spyPresenter
+                sut.urlOpener = urlOpenerSpy
                 infoView = sut.view as! InfoView
             }
 
             afterEach {
                 trackerSpy = nil
+                urlOpenerSpy = nil
                 spyPresenter = nil
                 sut = nil
                 infoView = nil
@@ -53,6 +57,14 @@ class InfoViewControllerSpec: QuickSpec {
                 it("should be dismissed") {
                     sut.infoViewDidTapQuit()
                     expect(spyPresenter.capturedDismissedViewController).to(beAKindOf(InfoViewController))
+                }
+            }
+
+            describe("tap on company logo") {
+                it("should open open url") {
+                    expect(urlOpenerSpy.urlWasOpened).to(beFalse())
+                    sut.infoViewDidTapCompanyLogo()
+                    expect(urlOpenerSpy.urlWasOpened).to(beTrue())
                 }
             }
 

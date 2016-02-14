@@ -9,6 +9,7 @@ protocol InfoViewDelegate: class {
     
     func infoViewDidTapQuit()
     func infoViewDidTapAuthor(author: Author)
+    func infoViewDidTapCompanyLogo()
     
 }
 
@@ -117,14 +118,19 @@ class InfoView: UIView {
     // MARK: Tap gestures
     
     private func configureTapGesturesRecognizer() {
+        logoDescriptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapLogoDescriptionView:"))
         for authorView in authorViews {
             authorView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapAuthor:"))
         }
+    }
+    
+    func tapLogoDescriptionView(sender: UITapGestureRecognizer) {
+        delegate?.infoViewDidTapCompanyLogo()
     }
     
     func tapAuthor(sender: UITapGestureRecognizer) {
         guard let view = sender.view as? AuthorView else { return }
         delegate?.infoViewDidTapAuthor(view.author)
     }
-
+    
 }

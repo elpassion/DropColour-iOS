@@ -10,6 +10,7 @@ target 'ELColorGame' do
   # External analytic services
   pod 'Crashlytics', '~> 3.6'
   pod 'Fabric', '~> 1.6'
+  pod 'FBSDKCoreKit', '~> 4.10'
   pod 'GA-SDK-IOS', '~> 2.1'
   pod 'Google/Analytics'
 end

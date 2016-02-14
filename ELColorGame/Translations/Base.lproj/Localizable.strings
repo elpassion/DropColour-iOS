@@ -1,0 +1,15 @@
+"new_game"         = "NEW GAME";
+"top_players"      = "TOP PLAYERS";
+"score"            = "SCORE";
+"resume"           = "RESUME";
+"quit"             = "QUIT";
+"pause"            = "PAUSE";
+"retry"            = "RETRY";
+"your_score"       = "YOUR SCORE";
+"info_description" = "DropColour is a simple but very addictive game written in Swift during hackathons at EL Passion. If you need to kill some time this game is a perfect choice. Be careful though, you might get so into it that you’ll miss your plans! Big thanks to the creators listed below!";
+"github"           = "Github";
+"dribbble"         = "Dribbble";
+"twitter"          = "Twitter";
+"authors"          = "AUTHORS";
+"show_profile"     = "show profile on";
+"cancel"           = "Cancel";
