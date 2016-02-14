@@ -29,7 +29,7 @@ class StringLocalizedSpec: QuickSpec {
 
             context("key exist for localized string") {
                 beforeEach {
-                    sut = "new_game".localized
+                    sut = kNewGame.localized
                 }
 
                 afterEach {
@@ -37,7 +37,7 @@ class StringLocalizedSpec: QuickSpec {
                 }
 
                 it("should have proper value for key") {
-                    expect(sut).to(equal("NEW GAME"))
+                    expect(sut).to(equal(kNewGame.localized))
                 }
             }
         }

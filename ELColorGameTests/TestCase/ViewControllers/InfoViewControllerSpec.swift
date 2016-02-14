@@ -81,15 +81,15 @@ class InfoViewControllerSpec: QuickSpec {
                         it("should show correct title for alert") {
                             sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithProffessionUrl(nil))
                             let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
-                            expect(alertController.title).to(equal("John Apple show profile on"))
+                            expect(alertController.title).to(equal("John Apple \(kShowProfile.localized)"))
                         }
 
                         it("should have alert with 2 actions") {
                             sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithProffessionUrl(nil))
                             let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                             expect(alertController.actions.count).to(equal(2))
-                            expect(alertController.actions[0].title).to(equal("Twitter"))
-                            expect(alertController.actions[1].title).to(equal("Cancel"))
+                            expect(alertController.actions[0].title).to(equal(kTwitter.localized))
+                            expect(alertController.actions[1].title).to(equal(kCancel.localized))
                         }
                     }
 
@@ -102,16 +102,16 @@ class InfoViewControllerSpec: QuickSpec {
                         it("should show correct title for alert") {
                             sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Developer))
                             let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
-                            expect(alertController.title).to(equal("John Apple show profile on"))
+                            expect(alertController.title).to(equal("John Apple \(kShowProfile.localized)"))
                         }
 
                         it("should have alert with 3 actions") {
                             sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Developer))
                             let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                             expect(alertController.actions.count).to(equal(3))
-                            expect(alertController.actions[0].title).to(equal("Github"))
-                            expect(alertController.actions[1].title).to(equal("Twitter"))
-                            expect(alertController.actions[2].title).to(equal("Cancel"))
+                            expect(alertController.actions[0].title).to(equal(kGithub.localized))
+                            expect(alertController.actions[1].title).to(equal(kTwitter.localized))
+                            expect(alertController.actions[2].title).to(equal(kCancel.localized))
                         }
                     }
 
@@ -127,16 +127,16 @@ class InfoViewControllerSpec: QuickSpec {
                     it("should show correct title for alert") {
                         sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Designer))
                         let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
-                        expect(alertController.title).to(equal("John Apple show profile on"))
+                        expect(alertController.title).to(equal("John Apple \(kShowProfile.localized)"))
                     }
 
                     it("should have alert with 3 actions") {
                         sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Designer))
                         let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                         expect(alertController.actions.count).to(equal(3))
-                        expect(alertController.actions[0].title).to(equal("Dribbble"))
-                        expect(alertController.actions[1].title).to(equal("Twitter"))
-                        expect(alertController.actions[2].title).to(equal("Cancel"))
+                        expect(alertController.actions[0].title).to(equal(kDribbble.localized))
+                        expect(alertController.actions[1].title).to(equal(kTwitter.localized))
+                        expect(alertController.actions[2].title).to(equal(kCancel.localized))
                     }
                 }
                 
