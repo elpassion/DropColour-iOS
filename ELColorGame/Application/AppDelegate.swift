@@ -27,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self, GameAnalytics.self])
         GameAnalytics.initializeWithConfiguredGameKeyAndGameSecret()
         setupGoogleAnalytics()
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = StartViewController(tracker: Tracker(gaiTracker: gai.defaultTracker))
-        self.window?.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = StartViewController(tracker: Tracker(gaiTracker: gai.defaultTracker))
+        window?.makeKeyAndVisible()
         return true
     }
     
