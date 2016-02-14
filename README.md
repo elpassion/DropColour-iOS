@@ -9,3 +9,15 @@ Simple iOS game written in Swift 2.1 during hackathon.
 
 <img src = "Images/start.png" width = "40%" height = "40%"/>
 <img src="Images/game.png" width = "40%" height = "40%"/>
+
+--
+babelish documentation
+================
+# Installation
+```
+sudo gem install babelish
+```
+# Update translations
+```
+babelish csv2strings
+```
