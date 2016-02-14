@@ -47,5 +47,9 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     func infoViewDidTapAuthor(author: Author) {
         presentAlertControllerWithAuthor(author)
     }
+    
+    func infoViewDidTapCompanyLogo() {
+        openCompanyWebsite()
+    }
 
 }

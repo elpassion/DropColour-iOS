@@ -15,6 +15,12 @@ extension InfoViewController {
         presentAlertControllerIfNeeded(author, alertController: alertController)
     }
     
+    func openCompanyWebsite() {
+        let companyUrl = NSURL(string: "https://www.elpassion.com")
+        guard let url = companyUrl else { return }
+        urlOpener.openURL(url)
+    }
+    
     private func configureProfessionActionIfNeeded(author: Author, alertController: UIAlertController) {
         guard let professionUrl = author.professionUrl else { return }
         guard urlOpener.canOpenURL(professionUrl) else { return }
