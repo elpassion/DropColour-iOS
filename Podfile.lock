@@ -35,7 +35,7 @@ PODS:
 DEPENDENCIES:
   - Crashlytics (~> 3.6)
   - Fabric (~> 1.6)
-  - FBSDKCoreKit
+  - FBSDKCoreKit (~> 4.10)
   - GA-SDK-IOS (~> 2.1)
   - Google/Analytics
   - Nimble (= 3.1.0)
