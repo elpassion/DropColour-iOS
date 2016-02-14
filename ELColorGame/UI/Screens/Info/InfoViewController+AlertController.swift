@@ -15,16 +15,22 @@ extension InfoViewController {
         presentAlertControllerIfNeeded(author, alertController: alertController)
     }
     
+    func openCompanyWebsite() {
+        let companyUrl = NSURL(string: "https://www.elpassion.com")
+        guard let url = companyUrl else { return }
+        urlOpener.openURL(url)
+    }
+    
     private func configureProfessionActionIfNeeded(author: Author, alertController: UIAlertController) {
         guard let professionUrl = author.professionUrl else { return }
-        guard canOpenUrl(professionUrl) else { return }
+        guard urlOpener.canOpenURL(professionUrl) else { return }
         let proffesionAction = openUrlAlertActionWithTitle(author.type == AuthorType.Developer ? kGithub.localized : kDribbble.localized, url: professionUrl)
         alertController.addAction(proffesionAction)
     }
     
     private func configureTwitterActionIfNeeded(author: Author, alertController: UIAlertController) {
         guard let twitterUrl = author.twitterUrl else { return }
-        guard canOpenUrl(twitterUrl) else { return }
+        guard urlOpener.canOpenURL(twitterUrl) else { return }
         let twitterAction = openUrlAlertActionWithTitle(kTwitter.localized, url: twitterUrl)
         alertController.addAction(twitterAction)
     }
@@ -41,31 +47,19 @@ extension InfoViewController {
     }
     
     private func hasOneCorrectUrlAtLeast(author: Author) -> Bool {
-        return canOpenUrl(author.professionUrl) || canOpenUrl(author.twitterUrl)
+        return urlOpener.canOpenURL(author.professionUrl) || urlOpener.canOpenURL(author.twitterUrl)
     }
 
     // MARK: Alert Actions
 
     private func openUrlAlertActionWithTitle(title: String, url: NSURL) -> UIAlertAction {
         return self.alertActionFactory.createActionWithTitle(title, style: .Default) { [weak self] (action) -> () in
-            self?.openUrl(url)
+            self?.urlOpener.openURL(url)
         }
     }
 
     private func cancelAlertAction() -> UIAlertAction {
         return self.alertActionFactory.createActionWithTitle(kCancel.localized, style: .Cancel, handler: nil)
-    }
-
-    // MARK: Open url
-    
-    private func canOpenUrl(url: NSURL?) -> Bool {
-        guard let url = url else { return false }
-        return UIApplication.sharedApplication().canOpenURL(url)
-    }
-
-    private func openUrl(url: NSURL) {
-        guard canOpenUrl(url) else { return }
-        UIApplication.sharedApplication().openURL(url)
     }
 
 }
