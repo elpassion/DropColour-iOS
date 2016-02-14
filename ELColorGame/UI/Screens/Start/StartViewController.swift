@@ -49,7 +49,7 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
         presentViewController(gameBoardViewController, animated: true, completion: nil)
     }
 
-    func startViewDidTapTopPlayers(startView: StartView) {
+    func startViewDidTapRanking(startView: StartView) {
         let gc = GKGameCenterViewController()
         gc.gameCenterDelegate = self
         presentViewController(gc, animated: true, completion: nil)

@@ -1,5 +1,5 @@
 "new_game"         = "NOWA GRA";
-"top_players"      = "RANKING";
+"ranking"          = "RANKING";
 "score"            = "WYNIK";
 "resume"           = "WZNÓW";
 "quit"             = "WYJŚCIE";

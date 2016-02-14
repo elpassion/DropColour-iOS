@@ -32,7 +32,7 @@ class StartView: UIView {
         addSubview(backgroundImageView)
         addSubview(logoImageView)
         addSubview(newGameButton)
-        addSubview(topPlayersButton)
+        addSubview(rankingButton)
         addSubview(infoButton)
     }
     
@@ -57,7 +57,7 @@ class StartView: UIView {
     }()
     
     private let newGameButton = Button(title: kNewGame.localized, color: UIColor(color: .Green6BE01A))
-    private let topPlayersButton = Button(title: kTopPlayers.localized, color: UIColor(color: .Turquoise54C7C7))
+    private let rankingButton = Button(title: kRanking.localized, color: UIColor(color: .Turquoise54C7C7))
     private let infoButton = Button(image: UIImage(asset: .Info))
 
     // MARK: Layout
@@ -82,7 +82,7 @@ class StartView: UIView {
             make.height.equalTo(50)
             make.centerX.equalTo(0)
         }
-        topPlayersButton.snp_makeConstraints { (make) -> Void in
+        rankingButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(newGameButton.snp_bottom).offset(15)
             make.width.equalTo(200)
             make.height.equalTo(50)
@@ -111,8 +111,8 @@ class StartView: UIView {
         newGameButton.buttonActionClosure = { [unowned self] in
             self.delegate?.startViewDidTapNewGame(self)
         }
-        topPlayersButton.buttonActionClosure = { [unowned self] in
-            self.delegate?.startViewDidTapTopPlayers(self)
+        rankingButton.buttonActionClosure = { [unowned self] in
+            self.delegate?.startViewDidTapRanking(self)
         }
         infoButton.buttonActionClosure = { [unowned self] in
             self.delegate?.startViewDidTapInfo(self)
@@ -126,7 +126,7 @@ class StartView: UIView {
 protocol StartViewDelegate: class {
     
     func startViewDidTapNewGame(startView: StartView)
-    func startViewDidTapTopPlayers(startView: StartView)
+    func startViewDidTapRanking(startView: StartView)
     func startViewDidTapInfo(startView: StartView)
 
 }
