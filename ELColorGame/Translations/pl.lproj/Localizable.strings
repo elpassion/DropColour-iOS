@@ -6,7 +6,7 @@
 "pause"            = "PAUZA";
 "retry"            = "SPRÓBUJ PONOWNIE";
 "your_score"       = "TWÓJ WYNIK";
-"info_description" = "DropColour to prosta, ale bardzo wciągająca gra napisana w Swifcie podczas kilku hackathonów w EL Passion. Jeśli chcesz zabić trochę czasu ta gra będzie świetnym wyborem. Bądź jednak ostrożny, możesz się w niej zatracić bez końca! Wielkie podziękowania dla twórców wymienionych poniżej!";
+"info_description" = "DropColour to prosta, ale bardzo wciągająca gra napisana w Swifcie podczas kilku hackathonów w EL Passion. Jest ona idealnym wyborem jeśli chcesz zabić trochę czasu. Musisz jednak uważać, bo możesz się w niej zatracić bez końca! Wielkie podziękowania dla twórców wymienionych poniżej!";
 "github"           = "Githubie";
 "dribbble"         = "Dribbble";
 "twitter"          = "Twitterze";
