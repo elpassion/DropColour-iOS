@@ -45,8 +45,8 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
     // MARK: StartViewDelegate
 
     func startViewDidTapNewGame(startView: StartView) {
-        let gameBoardViewController = GameViewController(tracker: tracker)
-        presentViewController(gameBoardViewController, animated: true, completion: nil)
+        let gameViewController = GameViewController(tracker: tracker)
+        presentViewController(gameViewController, animated: true, completion: nil)
     }
 
     func startViewDidTapRanking(startView: StartView) {

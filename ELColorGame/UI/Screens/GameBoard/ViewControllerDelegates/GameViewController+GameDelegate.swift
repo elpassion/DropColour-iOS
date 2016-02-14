@@ -35,6 +35,12 @@ extension GameViewController: GameDelegate {
         tracker.trackGameScoredEvent(scoredValue: to - from)
     }
     
+    func gameDidPause() {
+        guard presentedViewController == nil else { return }
+        let menuViewController = MenuViewController(delegate: self, tracker: tracker)
+        presentViewController(menuViewController, animated: true, completion: nil)
+    }
+    
     // MARK: Helpers
     
     private func slotView(forSlot slot: Slot) -> GameBoardSlotView? {
