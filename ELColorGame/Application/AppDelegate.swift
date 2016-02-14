@@ -10,6 +10,7 @@ import UIKit
 import Fabric
 import Crashlytics
 import GameAnalytics
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,10 +28,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self, GameAnalytics.self])
         GameAnalytics.initializeWithConfiguredGameKeyAndGameSecret()
         setupGoogleAnalytics()
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = StartViewController(tracker: Tracker(gaiTracker: gai.defaultTracker))
         window?.makeKeyAndVisible()
         return true
+    }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        FBSDKAppEvents.activateApp()
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
     func setupGoogleAnalytics() {
@@ -38,4 +48,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
     }
+    
 }
