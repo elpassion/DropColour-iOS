@@ -35,6 +35,7 @@ class Game {
     }
     
     func pause() {
+        delegate?.gameDidPause()
         stopInsertingCircles()
     }
     
