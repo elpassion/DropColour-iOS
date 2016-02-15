@@ -16,7 +16,7 @@ extension Game: BoardDelegate {
     }
     
     func boardBecameFull(board: Board) {
-        self.pause()
+        end()
         delegate?.gameOver(self)
     }
     
