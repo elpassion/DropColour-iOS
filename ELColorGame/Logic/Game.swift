@@ -39,6 +39,10 @@ class Game {
         stopInsertingCircles()
     }
     
+    func end() {
+        stopInsertingCircles()
+    }
+    
     var isPaused: Bool {
         return !isInsertingCircles
     }
