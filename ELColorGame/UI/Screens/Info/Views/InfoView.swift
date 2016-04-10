@@ -118,9 +118,9 @@ class InfoView: UIView {
     // MARK: Tap gestures
     
     private func configureTapGesturesRecognizer() {
-        logoDescriptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapLogoDescriptionView:"))
+        logoDescriptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(InfoView.tapLogoDescriptionView(_:))))
         for authorView in authorViews {
-            authorView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapAuthor:"))
+            authorView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(InfoView.tapAuthor(_:))))
         }
     }
     
