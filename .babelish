@@ -9,6 +9,7 @@ filename: "DropColour Translations"
 langs:
   EN: "en"
   PL: "pl"
+  ES: "es"
 
 fetch: true
 output_dir: "ELColorGame/Translations/"

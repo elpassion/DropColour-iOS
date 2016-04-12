@@ -1,0 +1,16 @@
+"new_game"              = "JUEGO NUEVO";
+"ranking"               = "LOS MEJORES JUGADORES";
+"score"                 = "PUNTUACIÓN";
+"resume"                = "CONTINUAR";
+"quit"                  = "SALIR";
+"pause"                 = "PAUSA";
+"retry"                 = "INTENTAR DE NUEVO";
+"your_score"            = "TU PUNTUACIÓN";
+"info_description"      = "DropColour es un juego simple pero muy adictivo escrita en Swift durante hackathons en EL Passion. Si necesitas matar un poco de tiempo, este juego es una elección perfecta. Tenga cuidado sin embargo, es posible en una manera que perderás tus planes! Muchas gracias a los creadores enumerados a continuación!";
+"github"                = "Github";
+"dribbble"              = "Dribbble";
+"twitter"               = "Twitter";
+"authors"               = "LOS AUTORES";
+"show_profile"          = "mostrar perfil";
+"cancel"                = "Cancelar";
+"App Store Description" = "DropColour es un juego de arcade, en el que sólo tienes que arrastrar y soltar un círculo a otro del mismo color. Cuando se hace esto, ambos círculos desaparecerán de la pantalla con la animación agradable y un sonido. El juego no tiene límite de tiempo.";

@@ -161,6 +161,7 @@
 		4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeueBold.otf; sourceTree = "<group>"; };
 		4E7903B61C635FED00767BE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E835C0F1BC091C600AA9293 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		4EB0350F1CBCFD0300CF05A0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4EBAF1001BC16ED0000E201E /* bomb_explosion.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bomb_explosion.m4a; sourceTree = "<group>"; };
 		9A603B96F16924EAF14D8E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A609573181FF1411DF13209 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
@@ -811,6 +812,7 @@
 				en,
 				Base,
 				pl,
+				es,
 			);
 			mainGroup = 4E4BB5661BB410240043C80C;
 			productRefGroup = 4E4BB5701BB410240043C80C /* Products */;
@@ -1087,6 +1089,7 @@
 				4E2494261C6F748600EA3875 /* pl */,
 				4E2494281C6F749400EA3875 /* en */,
 				4E2494291C6F749A00EA3875 /* Base */,
+				4EB0350F1CBCFD0300CF05A0 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
