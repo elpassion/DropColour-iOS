@@ -11,7 +11,7 @@ platform :ios do
 
   desc "Run all tests"
   lane :unittests do
-    scan(scheme: "ELColorGame", device: "iPhone 6s (9.2)")
+    scan(scheme: "ELColorGame", device: "iPhone 6s (9.3)")
     slack(
         message: nil,
         success: true,
