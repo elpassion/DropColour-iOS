@@ -30,8 +30,9 @@ extension CircleType {
 
 private func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
     var i = 0
-    return anyGenerator {
+    return AnyGenerator {
         let next = withUnsafePointer(&i) { UnsafePointer<T>($0).memory }
-        return next.hashValue == i++ ? next : nil
+        defer { i = i + 1 }
+        return next.hashValue == i ? next : nil
     }
 }

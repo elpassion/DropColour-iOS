@@ -22,7 +22,7 @@ class Timer: NSObject {
         self.action = action
         self.interval = interval
         super.init()
-        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: "timerTick", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: #selector(Timer.timerTick), userInfo: nil, repeats: true)
     }
     
     deinit {
