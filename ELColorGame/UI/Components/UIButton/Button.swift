@@ -21,6 +21,7 @@ class Button: UIButton {
         setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         layer.cornerRadius = 25.0
         backgroundColor = color
+        setBackgroundColor(UIColor.blackColor().colorWithAlphaComponent(0.25), forUIControlState: .Highlighted)
         configureButtonAction()
     }
     
