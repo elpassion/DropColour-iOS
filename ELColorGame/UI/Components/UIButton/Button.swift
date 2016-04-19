@@ -38,6 +38,7 @@ class Button: UIButton {
         titleFrame.size.height = bounds.height
         titleFrame.origin.y = titleEdgeInsets.top + 2.0
         titleLabel?.frame = titleFrame
+        clipsToBounds = true
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
