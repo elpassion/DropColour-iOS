@@ -38,6 +38,7 @@
 		4E2494271C6F748600EA3875 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E2494251C6F748600EA3875 /* Localizable.strings */; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; };
 		4E4BB5931BB410240043C80C /* ELColorGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */; };
+		4E50FAD41CC64350001BD4EC /* Button+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E50FAD31CC64350001BD4EC /* Button+BackgroundColor.swift */; };
 		4E74E3EA1C5CE76800D50FD8 /* InfoViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6BBC2329D6DDB8E4B4666E /* InfoViewControllerSpec.swift */; };
 		4E7903B71C635FED00767BE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E7903B61C635FED00767BE4 /* GoogleService-Info.plist */; };
 		4E835C101BC091C600AA9293 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E835C0F1BC091C600AA9293 /* GameKit.framework */; };
@@ -159,6 +160,7 @@
 		4E4BB5921BB410240043C80C /* ELColorGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELColorGameUITests.swift; sourceTree = "<group>"; };
 		4E4BB5941BB410240043C80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeueBold.otf; sourceTree = "<group>"; };
+		4E50FAD31CC64350001BD4EC /* Button+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+BackgroundColor.swift"; sourceTree = "<group>"; };
 		4E7903B61C635FED00767BE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E835C0F1BC091C600AA9293 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		4EB0350F1CBCFD0300CF05A0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -693,6 +695,7 @@
 			isa = PBXGroup;
 			children = (
 				077E3DC71BB70BEF00DE5F3B /* Button.swift */,
+				4E50FAD31CC64350001BD4EC /* Button+BackgroundColor.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -972,6 +975,7 @@
 				3107929E1BCC120F00D7D680 /* StartView.swift in Sources */,
 				31A9F99B1C09195B004DFC10 /* BoardSize.swift in Sources */,
 				31A9F9921C0905BC004DFC10 /* UIView+MoveToSuperview.swift in Sources */,
+				4E50FAD41CC64350001BD4EC /* Button+BackgroundColor.swift in Sources */,
 				9A6B267815828C05B2373699 /* AppDelegate.swift in Sources */,
 				317045281C0D05DE00D80BD6 /* GameBoardView+MaxSize.swift in Sources */,
 				07EE05271BB82B7A0073F30F /* UIView+CAAnimation.swift in Sources */,

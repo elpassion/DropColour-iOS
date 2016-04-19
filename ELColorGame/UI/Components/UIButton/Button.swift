@@ -21,6 +21,7 @@ class Button: UIButton {
         setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         layer.cornerRadius = 25.0
         backgroundColor = color
+        setBackgroundColor(UIColor.blackColor().colorWithAlphaComponent(0.25), forUIControlState: .Highlighted)
         configureButtonAction()
     }
     
@@ -38,6 +39,7 @@ class Button: UIButton {
         titleFrame.size.height = bounds.height
         titleFrame.origin.y = titleEdgeInsets.top + 2.0
         titleLabel?.frame = titleFrame
+        clipsToBounds = true
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
