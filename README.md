@@ -13,6 +13,31 @@ Simple iOS project written in <a href="https://github.com/apple/swift">Swift 2.2
 <img src="Images/start_screen.png" width = "40%" height = "40%"/>
 <img src="Images/game_screen.png" width = "40%" height = "40%"/>
 
+## Data users info
+
+<table>
+  <tr align="center">
+    <td>5907</td>
+    <td>user session :iphone:</td>
+  </tr>
+  <tr align="center">
+    <td>3152</td>
+    <td>users in rank :chart_with_upwards_trend:</td>
+  </tr>
+  <tr align="center">
+    <td>100%</td>
+    <td>users without crash :white_check_mark:</td>
+  </tr>
+  <tr align="center">
+    <td>4'09"</a></td>
+    <td>average playing time :alarm_clock:</td>
+  </tr>
+  <tr align="center">
+    <td>1780 pts</a></td>
+    <td>current highscore :rocket:</td>
+  </tr>
+</table>
+
 ## Authors
 
 - Mateusz Szlarek - development <a href="https://twitter.com/SzklarekMateusz">@SzklarekMateusz</a>
