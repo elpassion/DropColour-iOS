@@ -17,11 +17,11 @@ Simple iOS project written in <a href="https://github.com/apple/swift">Swift 2.2
 
 <table>
   <tr align="center">
-    <td>5907</td>
+    <td>5944</td>
     <td>user session :iphone:</td>
   </tr>
   <tr align="center">
-    <td>3152</td>
+    <td>3170</td>
     <td>users in rank :chart_with_upwards_trend:</td>
   </tr>
   <tr align="center">
@@ -29,7 +29,7 @@ Simple iOS project written in <a href="https://github.com/apple/swift">Swift 2.2
     <td>users without crash :white_check_mark:</td>
   </tr>
   <tr align="center">
-    <td>4'09"</a></td>
+    <td>4'07"</a></td>
     <td>average playing time :alarm_clock:</td>
   </tr>
   <tr align="center">
