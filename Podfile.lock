@@ -27,7 +27,7 @@ PODS:
   - GoogleSymbolUtilities (1.1.0)
   - GoogleUtilities (1.2.0):
     - GoogleSymbolUtilities (~> 1.0)
-  - Nimble (3.1.0)
+  - Nimble (4.0.1)
   - Quick (0.9.2)
   - SnapKit (0.20.0)
   - Spring (1.0.3)
@@ -38,8 +38,8 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 4.10)
   - GA-SDK-IOS (~> 2.1)
   - Google/Analytics
-  - Nimble (= 3.1.0)
-  - Quick (~> 0.9.0)
+  - Nimble (~> 4.0)
+  - Quick (~> 0.9)
   - SnapKit (~> 0.19)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
 
@@ -65,7 +65,7 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: ec1e9911aca811eb18b7144394fee6168b607785
   GoogleSymbolUtilities: eb3965ea12710569c7b80db198a39e39b18613f7
   GoogleUtilities: 85f8ad6b251544286a97163133d042ec95f889c5
-  Nimble: 79d40f4d69d47314229bbabacaa02b8838c779b9
+  Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
   SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
