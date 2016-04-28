@@ -1,7 +1,4 @@
 //
-//  GameView.swift
-//  ELColorGame
-//
 //  Created by Mateusz Szklarek on 12/10/15.
 //  Copyright © 2015 EL Passion. All rights reserved.
 //

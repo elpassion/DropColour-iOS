@@ -1,7 +1,4 @@
 //
-//  ELColorGameUITests.swift
-//  ELColorGameUITests
-//
 //  Created by Mateusz Szklarek on 24/09/15.
 //  Copyright © 2015 EL Passion. All rights reserved.
 //
@@ -16,9 +13,6 @@ class ELColorGameUITests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-    }
-    
-    func testExample() {
     }
     
 }
