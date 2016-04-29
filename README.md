@@ -13,9 +13,10 @@ iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> du
     <a href="https://t.co/5GlrejZSJe"><img src="Images/app-store-logo.png" width="20%"></a>
 </div>
 
-<img src="Images/1.jpg" width="32%" height="32%"/>
-<img src="Images/2.jpg" width="32%" height="32%"/>
-<img src="Images/3.jpg" width="32%" height="32%"/>
+<img src="Images/1.jpg" width="24%"/>
+<img src="Images/2.jpg" width="24%"/>
+<img src="Images/3.jpg" width="24%"/>
+<img src="Images/4.jpg" width="24%"/>
 
 ## Data users info
 
