@@ -10,8 +10,9 @@ Simple iOS project written in <a href="https://github.com/apple/swift">Swift 2.2
 
 [<img src="Images/app-store-logo.png" width="20%" height="20%"/>](https://t.co/5GlrejZSJe) 
 
-<img src="Images/start_screen.png" width="30%" height="30%"/>
-<img src="Images/game_screen.png" width="30%" height="30%"/>
+<img src="Images/1.jpg" width="32%" height="32%"/>
+<img src="Images/2.jpg" width="32%" height="32%"/>
+<img src="Images/3.jpg" width="32%" height="32%"/>
 
 ## Data users info
 
