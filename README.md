@@ -42,6 +42,15 @@ iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> du
   </tr>
 </table>
 
+## Supported languages
+
+<table>
+  <tr align="center">
+    <td>Languages</a></td>
+    <td>🇵🇱🇬🇧🇪🇸</td>
+  </tr>
+</table>
+
 ## Continuous development
 
 Thank you for your feedback! We promise that we will continue working on the game and making it even better. If you appreciate our work give us a :star:
