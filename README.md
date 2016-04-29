@@ -4,9 +4,9 @@
 [![License MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 [![Build Status](https://travis-ci.com/elpassion/el-color-game-ios.svg?token=nu9zU1tfHq8GJSir3pVq&branch=master)](https://travis-ci.com/elpassion/el-color-game-ios)
 
-# DropColour - open-source game for iOS
+# DropColour - Open-Source Arcade Game for iOS
 
-Simple iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> during several hackathons. DropColour is an arcade game in which you simply have to drag and drop one circle onto another of the same color. When you do that both circles will disappear from the screen with nice animation and sound. The game has no time limit.
+iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> during several hackathons. DropColour is an arcade game in which you simply have to drag and drop one circle onto another of the same color. When you do that both circles will disappear from the screen with nice animation and sound. The game has no time limit.
 
 <div style="margin: 0 auto; text-align: center;">
     <a href="https://t.co/5GlrejZSJe"><img src="Images/app-store-logo.png" width="20%"></a>
