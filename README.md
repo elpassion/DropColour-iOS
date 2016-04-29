@@ -7,7 +7,7 @@
 
 # DropColour - Open-Source Arcade Game for iOS
 
-iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> during several hackathons. DropColour is an arcade game in which you simply have to drag and drop one circle onto another of the same color. When you do that both circles will disappear from the screen with nice animation and sound. The game has no time limit.
+iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> during several hackathons at <a href="http://www.elpassion.com">EL Passion</a>. DropColour is an arcade game in which you simply have to drag and drop one circle onto another of the same color. When you do that both circles will disappear from the screen with nice animation and sound. The game has no time limit.
 
 <div style="margin: 0 auto; text-align: center;">
     <a href="https://t.co/5GlrejZSJe"><img src="Images/app-store-logo.png" width="20%"></a>
