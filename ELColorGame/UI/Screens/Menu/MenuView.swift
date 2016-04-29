@@ -1,7 +1,4 @@
 //
-//  MenuView.swift
-//  ELColorGame
-//
 //  Created by Dariusz Rybicki on 07/10/15.
 //  Copyright © 2015 EL Passion. All rights reserved.
 //

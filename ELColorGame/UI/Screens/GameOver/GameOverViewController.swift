@@ -1,7 +1,4 @@
 //
-//  GameOverViewController.swift
-//  ELColorGame
-//
 //  Created by Mateusz Szklarek on 26/09/15.
 //  Copyright © 2015 EL Passion. All rights reserved.
 //

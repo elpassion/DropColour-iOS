@@ -17,7 +17,7 @@ end
 
 target 'ELColorGameTests' do
   pod 'Google/Analytics'
-  pod 'Nimble', '~> 3.2'
+  pod 'Nimble', '~> 4.0'
   pod 'Quick', '~> 0.9'
 end
 
