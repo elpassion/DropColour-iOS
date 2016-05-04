@@ -22,8 +22,12 @@ iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> du
 
 <table>
   <tr align="center">
-    <td>6039</td>
-    <td>user session :iphone:</td>
+    <td>6046</td>
+    <td>users :family:</td>
+  </tr>
+  <tr align="center">
+    <td>16990</td>
+    <td>game sessions :iphone:</td>
   </tr>
   <tr align="center">
     <td>3187</td>
