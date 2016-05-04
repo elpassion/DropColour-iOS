@@ -22,11 +22,11 @@ iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> du
 
 <table>
   <tr align="center">
-    <td>5944</td>
+    <td>6039</td>
     <td>user session :iphone:</td>
   </tr>
   <tr align="center">
-    <td>3170</td>
+    <td>3187</td>
     <td>users in rank :chart_with_upwards_trend:</td>
   </tr>
   <tr align="center">
@@ -34,7 +34,7 @@ iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> du
     <td>users without crash :white_check_mark:</td>
   </tr>
   <tr align="center">
-    <td>4'07"</a></td>
+    <td>4'06"</a></td>
     <td>average playing time :alarm_clock:</td>
   </tr>
   <tr align="center">
