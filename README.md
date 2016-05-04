@@ -56,7 +56,7 @@ iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> du
 
 Thank you for your feedback! We promise that we will continue working on the game and making it even better. If you appreciate our work give us a :star:
 
-If you notice any bugs, please [open an issue](https://github.com/elpassion/el-color-game-ios/issues/new) on GitHub.
+If you notice any bugs, please [open an issue](https://github.com/elpassion/DropColour-iOS/issues/new) on GitHub.
 
 ## Authors
 
