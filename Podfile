@@ -20,6 +20,3 @@ target 'ELColorGameTests' do
   pod 'Nimble', '~> 4.0'
   pod 'Quick', '~> 0.9'
 end
-
-target 'ELColorGameUITests' do
-end
