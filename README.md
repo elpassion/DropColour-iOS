@@ -52,15 +52,25 @@ iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> du
   </tr>
 </table>
 
-## Continuous development
+## Contributing to DropColour
 
-Thank you for your feedback! We promise that we will continue working on the game and making it even better. If you appreciate our work give us a :star:
+We :heart: your feedback! If you notice any bug or want a new feature, just [open an Issue](https://github.com/elpassion/DropColour-iOS/issues/new)!
 
-If you notice any bugs, please [open an issue](https://github.com/elpassion/DropColour-iOS/issues/new) on GitHub.
+We also encourage you to make changes to the code - refactor it, add a feature, fix a typo. Even the smallest change counts!
 
-## Authors
+Just follow these steps:
 
-- [Mateusz Szlarek](https://github.com/mateuszszklarek) ([@SzklarekMateusz](https://twitter.com/SzklarekMateusz)) - development
+1. [Fork](https://help.github.com/articles/fork-a-repo/) the repository.
+2. Create a [Feature Branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) for your changes.
+3. Make the changes to the code.
+4. Create a [Pull Request](https://help.github.com/articles/creating-a-pull-request/).
+5. After reviewing the code, we'll merge your changes!
+
+If you like our work give us a :star: :)
+
+## Authors and Contributors
+
+- [Mateusz Szklarek](https://github.com/mateuszszklarek) ([@SzklarekMateusz](https://twitter.com/SzklarekMateusz)) - development
 - [Dariusz Rybicki](https://github.com/darrarski) ([@darrarski](https://twitter.com/darrarski)) - development
 - [Dawid Dapszus](https://dribbble.com/dashoo) ([@Dapszus](https://twitter.com/dapszus)) - design
 
