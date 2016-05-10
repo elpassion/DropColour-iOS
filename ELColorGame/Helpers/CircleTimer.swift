@@ -3,9 +3,7 @@
 //  Copyright © 2015 EL Passion. All rights reserved.
 //
 
-import Foundation
-
-class Timer: NSObject {
+class CircleTimer {
     
     typealias Action = () -> ()
     let action: Action
@@ -21,8 +19,7 @@ class Timer: NSObject {
     init(interval: NSTimeInterval, action: Action) {
         self.action = action
         self.interval = interval
-        super.init()
-        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: #selector(Timer.timerTick), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
     }
     
     deinit {
@@ -36,7 +33,7 @@ class Timer: NSObject {
     
     private var timer: NSTimer?
     
-    func timerTick() {
+    @objc private func timerTick() {
         action()
     }
     

@@ -28,7 +28,7 @@
 		31A9F99F1C0919A9004DFC10 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F99E1C0919A9004DFC10 /* Board.swift */; };
 		31A9F9A11C091D12004DFC10 /* SlotLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A01C091D12004DFC10 /* SlotLocation.swift */; };
 		31A9F9A31C091D74004DFC10 /* CircleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A21C091D74004DFC10 /* CircleType.swift */; };
-		31A9F9A51C0934DE004DFC10 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A41C0934DE004DFC10 /* Timer.swift */; };
+		31A9F9A51C0934DE004DFC10 /* CircleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A41C0934DE004DFC10 /* CircleTimer.swift */; };
 		31A9F9A71C0941D4004DFC10 /* SlotDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A61C0941D4004DFC10 /* SlotDelegate.swift */; };
 		31A9F9A91C0941F7004DFC10 /* BoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A81C0941F7004DFC10 /* BoardDelegate.swift */; };
 		31A9F9AB1C094468004DFC10 /* Board+SlotDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9AA1C094468004DFC10 /* Board+SlotDelegate.swift */; };
@@ -142,7 +142,7 @@
 		31A9F99E1C0919A9004DFC10 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		31A9F9A01C091D12004DFC10 /* SlotLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotLocation.swift; sourceTree = "<group>"; };
 		31A9F9A21C091D74004DFC10 /* CircleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleType.swift; sourceTree = "<group>"; };
-		31A9F9A41C0934DE004DFC10 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		31A9F9A41C0934DE004DFC10 /* CircleTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTimer.swift; sourceTree = "<group>"; };
 		31A9F9A61C0941D4004DFC10 /* SlotDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotDelegate.swift; sourceTree = "<group>"; };
 		31A9F9A81C0941F7004DFC10 /* BoardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDelegate.swift; sourceTree = "<group>"; };
 		31A9F9AA1C094468004DFC10 /* Board+SlotDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Board+SlotDelegate.swift"; sourceTree = "<group>"; };
@@ -449,7 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				31A9F99C1C091981004DFC10 /* Array+Random.swift */,
-				31A9F9A41C0934DE004DFC10 /* Timer.swift */,
+				31A9F9A41C0934DE004DFC10 /* CircleTimer.swift */,
 				9A67E7617D59A456EE4C9BFB /* String+Localized.swift */,
 			);
 			path = Helpers;
@@ -984,7 +984,7 @@
 				31A9F9A31C091D74004DFC10 /* CircleType.swift in Sources */,
 				9A657E756388E95866782E11 /* GameView.swift in Sources */,
 				31A9F9991C091314004DFC10 /* Circle.swift in Sources */,
-				31A9F9A51C0934DE004DFC10 /* Timer.swift in Sources */,
+				31A9F9A51C0934DE004DFC10 /* CircleTimer.swift in Sources */,
 				9A69C6EC912A517216D30ABA /* GameBoardView.swift in Sources */,
 				31A9F9AD1C0944BC004DFC10 /* Game+BoardDelegate.swift in Sources */,
 				317045261C0CFD4100D80BD6 /* CircleView+Circle.swift in Sources */,
