@@ -33,7 +33,6 @@
 		31A9F9A91C0941F7004DFC10 /* BoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9A81C0941F7004DFC10 /* BoardDelegate.swift */; };
 		31A9F9AB1C094468004DFC10 /* Board+SlotDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9AA1C094468004DFC10 /* Board+SlotDelegate.swift */; };
 		31A9F9AD1C0944BC004DFC10 /* Game+BoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F9AC1C0944BC004DFC10 /* Game+BoardDelegate.swift */; };
-		3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */; };
 		4E2332041C5F692C004E32B7 /* StringLocalizedSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B0808AFFA0173F43BB02C /* StringLocalizedSpec.swift */; };
 		4E2494271C6F748600EA3875 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E2494251C6F748600EA3875 /* Localizable.strings */; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; };
@@ -43,7 +42,7 @@
 		4E835C101BC091C600AA9293 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E835C0F1BC091C600AA9293 /* GameKit.framework */; };
 		4EBAF1011BC16ED0000E201E /* bomb_explosion.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4EBAF1001BC16ED0000E201E /* bomb_explosion.m4a */; };
 		4EC4B7DF1BB566BC00BCA4A9 /* BebasNeueBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */; };
-		88823B92DC70E0F5B9D1A296 /* Pods_ELColorGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB47B88709444D7F26F9704 /* Pods_ELColorGameTests.framework */; };
+		70B977CF09F6679AD69FC2DC /* Pods_ELColorGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF86A76DCC2ED28944018335 /* Pods_ELColorGame.framework */; };
 		9A60507C6A2FC43278B4C20E /* AlertActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6EEBF4F62377BFD81EEC79 /* AlertActionFactory.swift */; };
 		9A6060311492540BA560159D /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C8D53BFE58B4C0FC00341 /* Tracker.swift */; };
 		9A6084CF8C6846AEE0F88D8E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C1BAF80412C73F3938C3E /* MenuViewController.swift */; };
@@ -97,6 +96,7 @@
 		9DA8A40235DEAFDD684F7C71 /* GameViewController+GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A825B31CC9D6C12B1DF3 /* GameViewController+GameDelegate.swift */; };
 		9DA8A419986BD821B287B23E /* GameViewController+MenuViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A5CFC4D28B0AF0803529 /* GameViewController+MenuViewControllerDelegate.swift */; };
 		9DA8AFC9C127729893824BD3 /* GameViewController+GameViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8AEB72C4E45DC8FA37553 /* GameViewController+GameViewDelegate.swift */; };
+		C147C04EAB9C82528B1B0D69 /* Pods_ELColorGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636BDCE52918337C781B3CE2 /* Pods_ELColorGameTests.framework */; };
 		D1C16A4BD18417C45898D8FD /* GAIDictionaryFactoryFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1646CE359B10190015F61 /* GAIDictionaryFactoryFake.swift */; };
 /* End PBXBuildFile section */
 
@@ -121,9 +121,6 @@
 		0736493D1C63F65500EBEB91 /* GAIDictionaryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAIDictionaryFactory.swift; sourceTree = "<group>"; };
 		077E3DC71BB70BEF00DE5F3B /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		07EE05261BB82B7A0073F30F /* UIView+CAAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CAAnimation.swift"; sourceTree = "<group>"; };
-		16977F46865EC2462BA3AC10 /* Pods-ELColorGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGameTests/Pods-ELColorGameTests.release.xcconfig"; sourceTree = "<group>"; };
-		1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.release.xcconfig"; sourceTree = "<group>"; };
-		2AB47B88709444D7F26F9704 /* Pods_ELColorGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELColorGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3107929D1BCC120F00D7D680 /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		311589AE1C08A6CC001C7977 /* CircleViewDragger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewDragger.swift; sourceTree = "<group>"; };
 		316690371BC5C47600DFD40D /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -162,6 +159,9 @@
 		4E835C0F1BC091C600AA9293 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		4EB0350F1CBCFD0300CF05A0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4EBAF1001BC16ED0000E201E /* bomb_explosion.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bomb_explosion.m4a; sourceTree = "<group>"; };
+		4FBE32F695BD5CF529655FDC /* Pods-ELColorGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGameTests/Pods-ELColorGameTests.release.xcconfig"; sourceTree = "<group>"; };
+		636BDCE52918337C781B3CE2 /* Pods_ELColorGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELColorGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68F0D04DB415FBE68AA6510C /* Pods-ELColorGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGameTests/Pods-ELColorGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A603B96F16924EAF14D8E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A609573181FF1411DF13209 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		9A60D78DC3E088D6FC065F26 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -218,10 +218,10 @@
 		9DA8A5CFC4D28B0AF0803529 /* GameViewController+MenuViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+MenuViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		9DA8A825B31CC9D6C12B1DF3 /* GameViewController+GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameDelegate.swift"; sourceTree = "<group>"; };
 		9DA8AEB72C4E45DC8FA37553 /* GameViewController+GameViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameViewDelegate.swift"; sourceTree = "<group>"; };
-		B2AE70DF6B5CCE19628901D0 /* Pods-ELColorGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGameTests/Pods-ELColorGameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BF86A76DCC2ED28944018335 /* Pods_ELColorGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELColorGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C135F0B163D5251C9BB87299 /* Pods-ELColorGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.release.xcconfig"; sourceTree = "<group>"; };
 		D1C1646CE359B10190015F61 /* GAIDictionaryFactoryFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAIDictionaryFactoryFake.swift; sourceTree = "<group>"; };
-		EB25787C5D17C5AD4E56455B /* Pods-ELColorGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.debug.xcconfig"; sourceTree = "<group>"; };
-		EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELColorGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC3E5D6D9FBC540E2AF778A2 /* Pods-ELColorGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELColorGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,8 +229,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B6DFD30D89B18D42E9AE2E2 /* Pods_ELColorGame.framework in Frameworks */,
 				4E835C101BC091C600AA9293 /* GameKit.framework in Frameworks */,
+				70B977CF09F6679AD69FC2DC /* Pods_ELColorGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88823B92DC70E0F5B9D1A296 /* Pods_ELColorGameTests.framework in Frameworks */,
+				C147C04EAB9C82528B1B0D69 /* Pods_ELColorGameTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,13 +252,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17BB03F5B3A9938C48F553FF /* Pods */ = {
+		1E2CCF6586263C115B3FECD5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EB25787C5D17C5AD4E56455B /* Pods-ELColorGame.debug.xcconfig */,
-				1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */,
-				B2AE70DF6B5CCE19628901D0 /* Pods-ELColorGameTests.debug.xcconfig */,
-				16977F46865EC2462BA3AC10 /* Pods-ELColorGameTests.release.xcconfig */,
+				EC3E5D6D9FBC540E2AF778A2 /* Pods-ELColorGame.debug.xcconfig */,
+				C135F0B163D5251C9BB87299 /* Pods-ELColorGame.release.xcconfig */,
+				68F0D04DB415FBE68AA6510C /* Pods-ELColorGameTests.debug.xcconfig */,
+				4FBE32F695BD5CF529655FDC /* Pods-ELColorGameTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -290,8 +290,8 @@
 				9A6AAEA3D9B549575A831B3F /* ELColorGame */,
 				4E4BB5861BB410240043C80C /* ELColorGameTests */,
 				4E4BB5701BB410240043C80C /* Products */,
-				17BB03F5B3A9938C48F553FF /* Pods */,
 				9FBC9D9B73E2FB0AEAEBAFC9 /* Frameworks */,
+				1E2CCF6586263C115B3FECD5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -672,8 +672,8 @@
 			isa = PBXGroup;
 			children = (
 				4E835C0F1BC091C600AA9293 /* GameKit.framework */,
-				EB4A44030A7568B35240E3DA /* Pods_ELColorGame.framework */,
-				2AB47B88709444D7F26F9704 /* Pods_ELColorGameTests.framework */,
+				BF86A76DCC2ED28944018335 /* Pods_ELColorGame.framework */,
+				636BDCE52918337C781B3CE2 /* Pods_ELColorGameTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -711,13 +711,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E4BB5971BB410240043C80C /* Build configuration list for PBXNativeTarget "ELColorGame" */;
 			buildPhases = (
-				0781F2EC6E4ABF7DB3669D64 /* Check Pods Manifest.lock */,
+				0A6578DA66C3A7B7452A2041 /* 📦 Check Pods Manifest.lock */,
 				4E4BB56B1BB410240043C80C /* Sources */,
 				4E4BB56C1BB410240043C80C /* Frameworks */,
 				4E4BB56D1BB410240043C80C /* Resources */,
-				B743410976E404A8A0A43A3A /* Embed Pods Frameworks */,
-				DE7B02E4421720D70E847F5F /* Copy Pods Resources */,
 				4E6B6E681BB59CAA0033EF7C /* Run Script - Fabric */,
+				577A654C24D050B052283139 /* 📦 Embed Pods Frameworks */,
+				192D900DB04725BE166DF483 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -732,12 +732,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E4BB59A1BB410240043C80C /* Build configuration list for PBXNativeTarget "ELColorGameTests" */;
 			buildPhases = (
-				6B15601C0F0236875FA54A51 /* Check Pods Manifest.lock */,
+				0035D14499C24A716A65928B /* 📦 Check Pods Manifest.lock */,
 				4E4BB57F1BB410240043C80C /* Sources */,
 				4E4BB5801BB410240043C80C /* Frameworks */,
 				4E4BB5811BB410240043C80C /* Resources */,
-				29FADCD61454A9149C816B2C /* Embed Pods Frameworks */,
-				5C30BD6CBC3F89549F5A6D3B /* Copy Pods Resources */,
+				2C1A6CB37E16DBA5A177BCFD /* 📦 Embed Pods Frameworks */,
+				E2D37BA8E2B9F8BB0CB36E0D /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -848,14 +848,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0781F2EC6E4ABF7DB3669D64 /* Check Pods Manifest.lock */ = {
+		0035D14499C24A716A65928B /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -863,14 +863,44 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		29FADCD61454A9149C816B2C /* Embed Pods Frameworks */ = {
+		0A6578DA66C3A7B7452A2041 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		192D900DB04725BE166DF483 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C1A6CB37E16DBA5A177BCFD /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -892,44 +922,14 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 4fb6504551d9582cf1d2a1b3cd181e74a6b932fd a548a049d3e5ca6c1cea1bec687fa3d529d6e8189235c6b20e8b0d89f5910489";
 		};
-		5C30BD6CBC3F89549F5A6D3B /* Copy Pods Resources */ = {
+		577A654C24D050B052283139 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELColorGameTests/Pods-ELColorGameTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6B15601C0F0236875FA54A51 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B743410976E404A8A0A43A3A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -937,19 +937,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE7B02E4421720D70E847F5F /* Copy Pods Resources */ = {
+		E2D37BA8E2B9F8BB0CB36E0D /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELColorGame/Pods-ELColorGame-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELColorGameTests/Pods-ELColorGameTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1179,7 +1179,7 @@
 		};
 		4E4BB5981BB410240043C80C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB25787C5D17C5AD4E56455B /* Pods-ELColorGame.debug.xcconfig */;
+			baseConfigurationReference = EC3E5D6D9FBC540E2AF778A2 /* Pods-ELColorGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1200,7 +1200,7 @@
 		};
 		4E4BB5991BB410240043C80C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1896EF1EA492F32CF120F3C4 /* Pods-ELColorGame.release.xcconfig */;
+			baseConfigurationReference = C135F0B163D5251C9BB87299 /* Pods-ELColorGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -1221,7 +1221,7 @@
 		};
 		4E4BB59B1BB410240043C80C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2AE70DF6B5CCE19628901D0 /* Pods-ELColorGameTests.debug.xcconfig */;
+			baseConfigurationReference = 68F0D04DB415FBE68AA6510C /* Pods-ELColorGameTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ELColorGameTests/Info.plist;
@@ -1234,7 +1234,7 @@
 		};
 		4E4BB59C1BB410240043C80C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16977F46865EC2462BA3AC10 /* Pods-ELColorGameTests.release.xcconfig */;
+			baseConfigurationReference = 4FBE32F695BD5CF529655FDC /* Pods-ELColorGameTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ELColorGameTests/Info.plist;
