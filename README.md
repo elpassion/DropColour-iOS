@@ -3,7 +3,7 @@
 ![app version](https://img.shields.io/badge/version-1.0.3-brightgreen.svg)
 [![EL Passion](https://img.shields.io/badge/supported%20by-EL%20Passion-brightgreen.svg)](http://www.elpassion.com)
 [![License MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
-[![Build Status](https://travis-ci.com/elpassion/el-color-game-ios.svg?token=nu9zU1tfHq8GJSir3pVq&branch=master)](https://travis-ci.com/elpassion/el-color-game-ios)
+[![Build Status](https://travis-ci.org/elpassion/DropColour-iOS.svg?branch=master)](https://travis-ci.org/elpassion/DropColour-iOS)
 
 # DropColour - Open-Source Arcade Game for iOS
 
