@@ -15,5 +15,5 @@ class GAIDictionaryFactory: GAIDictionaryCreating {
         return GAIDictionaryBuilder.createEventWithCategory(category, action: action, label: nil, value: value)
             .build() as [NSObject : AnyObject]
     }
-    
+
 }

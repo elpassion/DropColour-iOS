@@ -6,7 +6,7 @@
 import UIKit
 
 extension GameBoardView {
-    
+
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
         let location = touch.locationInView(self)
@@ -16,14 +16,14 @@ extension GameBoardView {
         dragger.view.moveToSuperview(self)
         dragger.view.center = location
     }
-    
+
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
         guard let dragger = draggerForTouch(touch) else { return }
         let location = touch.locationInView(self)
         dragger.view.center = location
     }
-    
+
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
         guard let dragger = draggerForTouch(touch) else { return }
@@ -48,7 +48,7 @@ extension GameBoardView {
     private func draggerForTouch(touch: UITouch) -> CircleViewDragger? {
         return draggers.filter({ $0.touch == touch }).first
     }
-    
+
     private func restoreCircleDraggerViewToInitialPosition(circleViewDragger: CircleViewDragger, slotSuperview: UIView, slotView: GameBoardSlotView) {
         let targetCenter = slotSuperview.convertPoint(slotView.center, toView: self)
         UIView.animateWithDuration(0.2,
@@ -61,5 +61,5 @@ extension GameBoardView {
             }
         )
     }
-    
+
 }

@@ -8,9 +8,9 @@ class DifficultyLevelSpec: QuickSpec {
 
     override func spec() {
         describe("DifficultyLevel") {
-            
+
             var sut: DifficultyLevel!
-            
+
             let interval: (forScore: Int) -> Double = { score in
                 sut.scoreClosure = { score }
                 return sut.intervalTime()

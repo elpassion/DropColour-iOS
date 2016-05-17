@@ -116,7 +116,7 @@ class InfoViewControllerSpec: QuickSpec {
                     }
 
                 }
-                
+
                 context("with type .Designer") {
 
                     it("should present alert") {
@@ -139,7 +139,7 @@ class InfoViewControllerSpec: QuickSpec {
                         expect(alertController.actions[2].title).to(equal(kCancel.localized))
                     }
                 }
-                
+
                 context("without urls") {
 
                     it("should NOT present alert") {

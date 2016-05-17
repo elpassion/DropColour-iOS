@@ -6,9 +6,9 @@
 import UIKit
 
 class GameViewController: UIViewController {
-    
+
     let tracker: TrackerProtocol
-    
+
     init(tracker: TrackerProtocol) {
         self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
@@ -19,39 +19,39 @@ class GameViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-    
+
     // MARK: Application state
-    
+
     func applicationWillResignActive() {
         game?.pause()
     }
-    
+
     // MARK: View
-    
+
     override func loadView() {
         let view = GameView()
         view.delegate = self
         self.view = view
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tracker.trackScreenWithName(screenName: "GameViewController")
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupGameIfNeeded()
     }
-    
+
     // MARK: Game
-    
+
     var game: Game?
-    
+
     private func setupGameIfNeeded() {
         guard self.game == nil else { return }
         guard let gameView = view as? GameView else { return }
@@ -62,7 +62,7 @@ class GameViewController: UIViewController {
         self.game = game
         game.start()
     }
-    
+
     private func createGameBoardView(gameView gameView: GameView) -> GameBoardView {
         let slotSize = CGSize(width: 44, height: 44)
         let spacing = CGFloat(15.5)

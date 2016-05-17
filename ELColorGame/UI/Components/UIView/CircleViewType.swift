@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 protocol _CircleViewType {
-    
+
     var topColor: UIColor { get }
     var bottomColor: UIColor { get }
-    
+
 }
 
 struct CircleViewType: _CircleViewType {
 
-    let topColor: UIColor 
+    let topColor: UIColor
     let bottomColor: UIColor
 
 }
@@ -45,5 +45,5 @@ extension Array where Element: _CircleViewType {
         let randomIndex = Int(arc4random_uniform(UInt32(count)))
         return self[randomIndex]
     }
-    
+
 }

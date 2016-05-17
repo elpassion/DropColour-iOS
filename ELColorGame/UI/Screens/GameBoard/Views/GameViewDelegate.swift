@@ -6,10 +6,10 @@
 import Foundation
 
 protocol GameViewDelegate: class {
-    
+
     func gameViewDidTapPause(gameView: GameView)
     func gameViewDidTapRestart(gameView: GameView)
     func gameViewCanMoveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) -> Bool
     func gameViewMoveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation)
-    
+
 }

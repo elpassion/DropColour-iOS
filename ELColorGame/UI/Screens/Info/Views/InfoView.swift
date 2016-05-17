@@ -6,11 +6,11 @@
 import UIKit
 
 protocol InfoViewDelegate: class {
-    
+
     func infoViewDidTapQuit()
     func infoViewDidTapAuthor(author: Author)
     func infoViewDidTapCompanyLogo()
-    
+
 }
 
 class InfoView: UIView {
@@ -32,17 +32,17 @@ class InfoView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        closeButtonBlur.layer.cornerRadius = closeButtonBlur.frame.width / 2 
+        closeButtonBlur.layer.cornerRadius = closeButtonBlur.frame.width / 2
     }
-    
+
     // MARK: Subviews
-    
+
     private let scrollView: UIScrollView = {
         let view = UIScrollView(frame: CGRectZero)
         view.contentInset = UIEdgeInsetsMake(80.0, 0.0, 20.0, 0.0);
         return view
     }()
-    
+
     private let closeButtonBlur: UIView = {
         let view = UIView(frame: CGRectZero)
         view.clipsToBounds = true
@@ -51,12 +51,12 @@ class InfoView: UIView {
         blur.snp_makeConstraints { $0.edges.equalTo(0) }
         return view
     }()
-    
+
     private let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
     private let closeButton = Button(image: UIImage(asset: .Close))
     private let logoDescriptionView = LogoDescriptionView()
     private let lineViewAuthors = LineViewAuthors()
-    
+
     private func addSubviews() {
         addSubview(blurEffectView)
         addSubview(scrollView)
@@ -106,7 +106,7 @@ class InfoView: UIView {
             make.size.equalTo(closeButton.snp_size)
         }
     }
-    
+
     // MARK: Button actions
 
     private func configureButtonActions() {
@@ -114,23 +114,23 @@ class InfoView: UIView {
             self?.delegate?.infoViewDidTapQuit()
         }
     }
-    
+
     // MARK: Tap gestures
-    
+
     private func configureTapGesturesRecognizer() {
         logoDescriptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(InfoView.tapLogoDescriptionView(_:))))
         for authorView in authorViews {
             authorView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(InfoView.tapAuthor(_:))))
         }
     }
-    
+
     func tapLogoDescriptionView(sender: UITapGestureRecognizer) {
         delegate?.infoViewDidTapCompanyLogo()
     }
-    
+
     func tapAuthor(sender: UITapGestureRecognizer) {
         guard let view = sender.view as? AuthorView else { return }
         delegate?.infoViewDidTapAuthor(view.author)
     }
-    
+
 }

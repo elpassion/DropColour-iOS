@@ -32,7 +32,7 @@ class StartView: UIView {
         addSubview(rankingButton)
         addSubview(infoButton)
     }
-    
+
     private let backgroundView: UIView = {
         let backgroundView = UIView(frame: CGRectZero)
         backgroundView.backgroundColor = UIColor(color: .Gray202B39)
@@ -52,7 +52,7 @@ class StartView: UIView {
         view.contentMode = .ScaleAspectFit
         return view
     }()
-    
+
     private let newGameButton = Button(title: kNewGame.localized, color: UIColor(color: .Green6BE01A))
     private let rankingButton = Button(title: kRanking.localized, color: UIColor(color: .Turquoise54C7C7))
     private let infoButton = Button(image: UIImage(asset: .Info))
@@ -63,16 +63,16 @@ class StartView: UIView {
         backgroundView.snp_makeConstraints { (make) -> Void in
             make.edges.equalTo(0)
         }
-        
+
         backgroundImageView.snp_makeConstraints { (make) -> Void in
             make.edges.equalTo(0)
         }
-        
+
         logoImageView.snp_makeConstraints { (make) -> Void in
             make.centerY.equalTo(0).offset(-80)
             make.centerX.equalTo(0)
         }
-        
+
         newGameButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(logoImageView.snp_bottom).offset(50)
             make.width.equalTo(200)
@@ -90,7 +90,7 @@ class StartView: UIView {
             make.bottom.equalTo(-20)
         }
     }
-    
+
     private func addGradientForView(view: UIView) {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = UIScreen.mainScreen().bounds
@@ -101,9 +101,9 @@ class StartView: UIView {
         gradient.colors = [topColorWithAlpha, bottomColorWithAlpha]
         view.layer.insertSublayer(gradient, atIndex: 0)
     }
-    
+
     // MARK: Button actions
-    
+
     private func configureButtonActions() {
         newGameButton.buttonActionClosure = { [unowned self] in
             self.delegate?.startViewDidTapNewGame(self)
@@ -121,7 +121,7 @@ class StartView: UIView {
 // MARK: - Delegate
 
 protocol StartViewDelegate: class {
-    
+
     func startViewDidTapNewGame(startView: StartView)
     func startViewDidTapRanking(startView: StartView)
     func startViewDidTapInfo(startView: StartView)

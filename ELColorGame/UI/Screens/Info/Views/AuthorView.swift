@@ -16,9 +16,9 @@ class AuthorView: UIView {
         setupLayout()
         applyType()
     }
-    
+
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
@@ -32,19 +32,19 @@ class AuthorView: UIView {
         configureProfessionLoginLabel()
         configureTwitterLoginLabel()
     }
-    
+
     // MARK: Configure subviews with data
-    
+
     private func configureImageForAvatarImageView() {
         guard let avatarUrl = author.avatarUrl else { return }
         avatarImageView.image = UIImage(named: avatarUrl.absoluteString)
     }
-    
+
     private func configureProfessionLoginLabel() {
         guard let professionUrl = author.professionUrl else { return }
         professionLoginLabel.text = author.loginFromUrl(professionUrl)
     }
-    
+
     private func configureTwitterLoginLabel() {
         guard let twitterUrl = author.twitterUrl else { return }
         twitterLoginLabel.text = author.loginFromUrl(twitterUrl)
@@ -83,9 +83,9 @@ class AuthorView: UIView {
         view.contentMode = UIViewContentMode.ScaleAspectFit
         return view
     }()
-    
+
     private let twitterLoginLabel = AuthorView.createLabel()
-    
+
     private class func createLabel() -> UILabel {
         let label = UILabel(frame: CGRectZero)
         label.font = UIFont.systemFontOfSize(12)

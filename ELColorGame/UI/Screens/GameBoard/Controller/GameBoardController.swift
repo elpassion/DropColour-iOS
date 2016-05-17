@@ -9,30 +9,30 @@
 import Foundation
 
 class GameBoardController: NSObject {
-    
+
     let view: GameBoardView
     var myTimer: NSTimer?
-    
+
     init(view: GameBoardView) {
         self.view = view
         super.init()
     }
-    
+
     var isInserting: Bool {
         return myTimer != nil
     }
-    
+
     func startInserting() {
         guard myTimer == nil else { return }
         myTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "timerTick:", userInfo: nil, repeats: true)
     }
-    
+
     func stopInserting() {
         guard let timer = myTimer else { return }
         timer.invalidate()
         myTimer = nil
     }
-    
+
     func restartGame() {
         stopInserting()
         view.enumerateSlotViewsUsingBlock { (slotView, x, y) -> Void in
@@ -40,18 +40,18 @@ class GameBoardController: NSObject {
         }
         startInserting()
     }
-    
+
     func timerTick(timer: NSTimer) {
         insertCircle()
     }
-    
+
     private func insertCircle() {
         guard let slot = view.allSlotViews.emptySlotViews.randomSlotView else { return }
         slot.circleView = CircleView(type: CircleViewTypes.randomType)
     }
-    
+
     private func slotForCircleView(circleView: CircleView) -> GameBoardSlotView? {
         return view.allSlotViews.findFirstMatching({ $0.circleView == circleView })
     }
-    
+
 }

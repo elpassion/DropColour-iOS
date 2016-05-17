@@ -6,7 +6,7 @@
 import UIKit
 
 extension UIView {
-    
+
     func moveToSuperview(newSuperview: UIView) {
         guard let currentSuperview = self.superview else {
             newSuperview.addSubview(self)
@@ -17,5 +17,5 @@ extension UIView {
         center = currentSuperview.convertPoint(center, toView: newSuperview)
         newSuperview.addSubview(self)
     }
-    
+
 }

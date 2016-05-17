@@ -10,5 +10,5 @@ struct CircleViewDragger {
 
     let view: CircleView
     let touch: UITouch
-    
+
 }

@@ -6,18 +6,18 @@
 import Foundation
 
 enum CircleType {
-    
+
     case Purple
     case Blue
     case Orange
     case Red
     case Turquoise
     case Green
-    
+
 }
 
 extension CircleType {
-    
+
     static var allTypes: [CircleType] {
         var types = [CircleType]()
         for value in iterateEnum(CircleType) {
@@ -25,7 +25,7 @@ extension CircleType {
         }
         return types
     }
-    
+
 }
 
 private func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {

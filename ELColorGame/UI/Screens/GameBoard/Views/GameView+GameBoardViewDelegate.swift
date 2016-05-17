@@ -13,5 +13,5 @@ extension GameView: GameBoardViewDelegate {
     func gameBoardViewMoveCircle(fromLocation from: SlotLocation, toLocation: SlotLocation) {
         delegate?.gameViewMoveCircle(fromLocation: from, toLocation: toLocation)
     }
-    
+
 }

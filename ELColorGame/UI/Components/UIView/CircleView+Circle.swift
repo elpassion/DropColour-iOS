@@ -6,12 +6,12 @@
 import UIKit
 
 extension CircleView {
-    
+
     convenience init(circle: Circle) {
         let colors = CircleView.colorsForCircle(circle)
         self.init(topColor: colors.top, bottomColor: colors.bottom)
     }
-    
+
     private class func colorsForCircle(circle: Circle) -> (top: UIColor, bottom: UIColor) {
         switch circle.type {
         case .Purple:
@@ -28,5 +28,5 @@ extension CircleView {
             return (UIColor(color: .GreenA5E01A), UIColor(color: .Green32E01A))
         }
     }
-    
+
 }

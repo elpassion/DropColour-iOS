@@ -6,15 +6,15 @@
 import Foundation
 
 class Slot {
-    
+
     let location: SlotLocation
     private weak var delegate: SlotDelegate?
-    
+
     init(location: SlotLocation, delegate: SlotDelegate?) {
         self.location = location
         self.delegate = delegate
     }
-    
+
     var circle: Circle? {
         didSet {
             if let oldValue = oldValue {
@@ -25,9 +25,9 @@ class Slot {
             }
         }
     }
-    
+
     var isEmpty: Bool {
         return circle == nil
     }
-    
+
 }

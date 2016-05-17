@@ -6,7 +6,7 @@
 import Foundation
 
 extension GameViewController: GameViewDelegate {
-    
+
     func gameViewDidTapPause(gameView: GameView) {
         game?.pause()
     }
@@ -16,12 +16,12 @@ extension GameViewController: GameViewDelegate {
         game.restart()
         gameView.updateScore(game.scoreNumber)
     }
-    
+
     func gameViewCanMoveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) -> Bool {
         guard let game = game else { return false }
         return game.canMoveCircle(fromLocation: fromLocation, toLocation: toLocation)
     }
-    
+
     func gameViewMoveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) {
         try! game?.moveCircle(fromLocation: fromLocation, toLocation: toLocation)
     }

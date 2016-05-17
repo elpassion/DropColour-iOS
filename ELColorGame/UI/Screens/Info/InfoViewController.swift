@@ -13,7 +13,7 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     var viewControllerPresenter: ViewControllerPresenting
     var authorProvider: AuthorProviding
     var urlOpener: UrlOpening
-    
+
     init(tracker: TrackerProtocol) {
         self.tracker = tracker
         alertActionFactory = AlertActionFactory()
@@ -32,7 +32,7 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     override func loadView() {
         view = InfoView(delegate: self, authors: authorProvider.authors)
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tracker.trackScreenWithName(screenName: "InfoViewController")
@@ -47,7 +47,7 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     func infoViewDidTapAuthor(author: Author) {
         presentAlertControllerWithAuthor(author)
     }
-    
+
     func infoViewDidTapCompanyLogo() {
         openCompanyWebsite()
     }

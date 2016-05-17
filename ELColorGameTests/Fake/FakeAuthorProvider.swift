@@ -24,7 +24,7 @@ class FakeAuthorProvider: AuthorProviding {
 }
 
 extension Author {
-        
+
     func copyWithType(type: AuthorType) -> Author {
         return Author(
                 name: self.name,

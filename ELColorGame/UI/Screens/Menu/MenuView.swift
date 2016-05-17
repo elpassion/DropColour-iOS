@@ -6,9 +6,9 @@
 import UIKit
 
 class MenuView: UIView {
-    
+
     private weak var delegate: MenuViewDelegate?
-    
+
     init(delegate: MenuViewDelegate?) {
         self.delegate = delegate
         super.init(frame: CGRectZero)
@@ -24,11 +24,11 @@ class MenuView: UIView {
             delegate?.menuViewDidTapQuit(self)
         }
     }
-    
+
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
+
     // MARK: Subviews
-    
+
     private func loadSubviews() {
         addSubview(blurEffectView)
         addSubview(resumeButton)
@@ -37,19 +37,19 @@ class MenuView: UIView {
         addSubview(pauseImageView)
         addSubview(pauseLabelText)
     }
-    
+
     private let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
     private let resumeButton = Button(title: kResume.localized, color: UIColor(color: .Blue0091FC))
     private let newGameButton = Button(title: kNewGame.localized, color: UIColor(color: .Green6BE01A))
     private let quitButton = Button(title: kQuit.localized, color: UIColor(color: .RedE82654))
-    
+
     private let pauseImageView: UIImageView = {
         let view = UIImageView(frame: CGRectZero)
         view.image = UIImage(asset: .PauseIcon)
         view.contentMode = UIViewContentMode.ScaleAspectFit
         return view
     }()
-    
+
     private let pauseLabelText: UILabel = {
         let label = UILabel(frame: CGRectZero)
         label.text = kPause.localized
@@ -57,9 +57,9 @@ class MenuView: UIView {
         label.textColor = UIColor(color: .White)
         return label
     }()
-    
+
     // MARK: Layout
-    
+
     private func setupLayout() {
         blurEffectView.snp_makeConstraints { (make) -> Void in
             make.edges.equalTo(0)
@@ -91,15 +91,15 @@ class MenuView: UIView {
             make.centerX.equalTo(0)
         }
     }
-    
+
 }
 
 // MARK: - Delegate
 
 protocol MenuViewDelegate: class {
-    
+
     func menuViewDidTapResume(menuView: MenuView)
     func menuViewDidTapNewGame(menuView: MenuView)
     func menuViewDidTapQuit(menuView: MenuView)
-    
+
 }

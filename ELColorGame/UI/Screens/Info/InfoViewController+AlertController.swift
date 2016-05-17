@@ -14,20 +14,20 @@ extension InfoViewController {
         configureCancelActionIfNeeded(author, alertController: alertController)
         presentAlertControllerIfNeeded(author, alertController: alertController)
     }
-    
+
     func openCompanyWebsite() {
         let companyUrl = NSURL(string: "https://www.elpassion.com")
         guard let url = companyUrl else { return }
         urlOpener.openURL(url)
     }
-    
+
     private func configureProfessionActionIfNeeded(author: Author, alertController: UIAlertController) {
         guard let professionUrl = author.professionUrl else { return }
         guard urlOpener.canOpenURL(professionUrl) else { return }
         let proffesionAction = openUrlAlertActionWithTitle(author.type == AuthorType.Developer ? kGithub.localized : kDribbble.localized, url: professionUrl)
         alertController.addAction(proffesionAction)
     }
-    
+
     private func configureTwitterActionIfNeeded(author: Author, alertController: UIAlertController) {
         guard let twitterUrl = author.twitterUrl else { return }
         guard urlOpener.canOpenURL(twitterUrl) else { return }
@@ -40,12 +40,12 @@ extension InfoViewController {
         let cancelAction = cancelAlertAction()
         alertController.addAction(cancelAction)
     }
-    
+
     private func presentAlertControllerIfNeeded(author: Author, alertController: UIAlertController) {
         guard hasOneCorrectUrlAtLeast(author) else { return }
         viewControllerPresenter.presentViewController(alertController)
     }
-    
+
     private func hasOneCorrectUrlAtLeast(author: Author) -> Bool {
         return urlOpener.canOpenURL(author.professionUrl) || urlOpener.canOpenURL(author.twitterUrl)
     }

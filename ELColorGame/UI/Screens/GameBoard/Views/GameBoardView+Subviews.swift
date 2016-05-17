@@ -6,7 +6,7 @@
 import UIKit
 
 extension GameBoardView {
-    
+
     class func createSlotViews(rows rows: Int, columns: Int) -> [GameBoardSlotView] {
         var views = [GameBoardSlotView]()
         for row in 0...(rows-1) {
@@ -16,11 +16,11 @@ extension GameBoardView {
         }
         return views
     }
-    
+
     func slotViewAtLocation(column column: Int, row: Int) -> GameBoardSlotView? {
         return slotViews.filter({ $0.column == column && $0.row == row }).first
     }
-    
+
     func circleViewAtPoint(point: CGPoint) -> CircleView? {
         let circleViews = slotViews.filter({ $0.circleView != nil }).map { $0.circleView! }
         for circleView in circleViews {
@@ -31,11 +31,11 @@ extension GameBoardView {
         }
         return nil
     }
-    
+
     func slotViewForCircleView(circleView: CircleView) -> GameBoardSlotView? {
         return slotViews.filter({ $0.circleView == circleView }).first
     }
-    
+
     func slotViewsAtRect(rect: CGRect) -> [GameBoardSlotView] {
         var array = [GameBoardSlotView]()
         for slotView in slotViews {
@@ -46,5 +46,5 @@ extension GameBoardView {
         }
         return array
     }
-    
+
 }

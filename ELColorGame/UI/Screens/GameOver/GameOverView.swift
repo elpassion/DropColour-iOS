@@ -30,7 +30,7 @@ class GameOverView: UIView {
     }
 
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
+
     private func updateScore() {
         scoreNumberLabel.text = "\(score)"
     }
@@ -112,7 +112,7 @@ class GameOverView: UIView {
             make.bottom.equalTo(-40)
         }
     }
-    
+
     // MARK: Button actions
 
     private func configureButtonActions() {

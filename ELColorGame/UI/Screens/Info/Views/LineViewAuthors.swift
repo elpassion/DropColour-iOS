@@ -16,7 +16,7 @@ class LineViewAuthors: UIView {
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     // MARK: Subviews
-    
+
     private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
         label.text = kAuthors.localized

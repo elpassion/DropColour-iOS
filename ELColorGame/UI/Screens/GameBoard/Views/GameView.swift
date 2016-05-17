@@ -6,9 +6,9 @@
 import UIKit
 
 class GameView: UIView {
-    
+
     weak var delegate: GameViewDelegate?
-    
+
     init() {
         super.init(frame: CGRectZero)
         backgroundColor = UIColor(color: .DarkPurple383357)
@@ -21,7 +21,7 @@ class GameView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func updateScore(score: Int) {
         scoreNumberLabel.text = "\(score)"
     }
@@ -41,9 +41,9 @@ class GameView: UIView {
             sself.delegate?.gameViewDidTapRestart(sself)
         }
     }
-    
+
     // MARK: Subviews
-    
+
     private func addSubviews() {
         addSubview(topView)
         topView.addSubview(pauseButton)
@@ -53,22 +53,22 @@ class GameView: UIView {
         scoreView.addSubview(scoreNumberLabel)
         addSubview(boardContainerView)
     }
-    
+
     private let topView: UIView = {
         let view = UIView(frame: CGRectZero)
         view.backgroundColor = UIColor.clearColor()
         return view
     }()
-    
+
     private let pauseButton = Button(image: UIImage(asset: .Pause))
     private let restartButton = Button(image: UIImage(asset: .RestartIcon))
-    
+
     private let scoreView: UIView = {
         let view = UIView(frame: CGRectZero)
         view.backgroundColor = UIColor.clearColor()
         return view
     }()
-    
+
     private let scoreTextLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
         label.text = kScore.localized
@@ -76,7 +76,7 @@ class GameView: UIView {
         label.textColor = UIColor(color: .LightPurple7D75C7)
         return label
     }()
-    
+
     private let scoreNumberLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
         label.text = "0"
@@ -86,13 +86,13 @@ class GameView: UIView {
         label.textColor = UIColor(color: .White)
         return label
     }()
-    
+
     let boardContainerView: UIView = {
         let view = UIView(frame: CGRectZero)
         view.backgroundColor = UIColor.clearColor()
         return view
     }()
-    
+
     var boardView: GameBoardView? {
         didSet {
             if let oldValue = oldValue {
@@ -103,7 +103,7 @@ class GameView: UIView {
             }
         }
     }
-    
+
     // MARK: Layout
 
     private func setupLayout() {
@@ -149,7 +149,7 @@ class GameView: UIView {
             make.bottom.equalTo(-16)
         }
     }
-    
+
     private func configureBoardView(boardView: GameBoardView) {
         boardView.delegate = self
         boardContainerView.addSubview(boardView)

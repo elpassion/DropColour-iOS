@@ -20,25 +20,25 @@ class Tracker: TrackerProtocol {
 
     let gaiTracker: GAITracker
     var gaiDictionaryFactory: GAIDictionaryCreating
-    
+
     init(gaiTracker: GAITracker) {
         self.gaiTracker = gaiTracker
         self.gaiDictionaryFactory = GAIDictionaryFactory()
     }
-    
+
     func trackScreenWithName(screenName name: String) {
         gaiTracker.set(kGAIScreenName, value: name)
         gaiTracker.send(GAIDictionaryBuilder.createScreenView().build() as [NSObject : AnyObject])
     }
-    
+
     func trackGameStartEvent() {
         gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-start", value: nil))
     }
-    
+
     func trackGameEndEvent(score score: Int) {
         gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-end", value: score))
     }
-    
+
     func trackGameScoredEvent(scoredValue value: Int) {
         gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-scored", value: value))
     }

@@ -10,7 +10,7 @@ extension Button {
     func setBackgroundColor(backgroundColor: UIColor, forUIControlState state: UIControlState) {
         self.setBackgroundImage(imageFromColor(backgroundColor), forState: state)
     }
-    
+
     private func imageFromColor(color: UIColor) -> UIImage {
         let rect = CGRectMake(0.0, 0.0, 1.0, 1.0)
         UIGraphicsBeginImageContext(rect.size)
@@ -21,5 +21,5 @@ extension Button {
         UIGraphicsEndImageContext()
         return image
     }
-    
+
 }

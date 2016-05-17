@@ -16,10 +16,10 @@ class UrlOpener: UrlOpening {
         guard UIApplication.sharedApplication().canOpenURL(url) else { return false }
         return UIApplication.sharedApplication().openURL(url)
     }
-    
+
     func canOpenURL(url: NSURL?) -> Bool {
         guard let url = url else { return false }
         return UIApplication.sharedApplication().canOpenURL(url)
     }
-    
+
 }

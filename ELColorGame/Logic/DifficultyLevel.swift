@@ -19,24 +19,24 @@ class DifficultyLevel {
         let max = maxInterval(forScore: currentScore)
         return max - (max - min) * currentLevelProgress
     }
-    
+
     func actionPoints() -> Int {
         return 10
     }
-    
+
     private var currentScore: Int {
         guard let score = scoreClosure?() else { return 0 }
         return score
     }
-    
+
     private func minInterval(forScore score: Int) -> Double {
         return initialTimeInterval / (1 + (Double(score) / minTimeIntervalRatio))
     }
-    
+
     private func maxInterval(forScore score: Int) -> Double {
         return initialTimeInterval / (1 + (Double(score) / maxTimeIntervalRatio))
     }
-    
+
     private var currentLevelProgress: Double {
         return (Double(currentScore) % scorePerLevel) / scorePerLevel
     }

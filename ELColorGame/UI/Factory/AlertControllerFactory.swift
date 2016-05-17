@@ -6,9 +6,9 @@
 import UIKit
 
 protocol AlertControllerCreating {
-    
+
     func createAlertControllerWithTitle(title: String?, message: String?, preferredStyle: UIAlertControllerStyle) -> UIAlertController
-    
+
 }
 
 class AlertControllerFactory: AlertControllerCreating {

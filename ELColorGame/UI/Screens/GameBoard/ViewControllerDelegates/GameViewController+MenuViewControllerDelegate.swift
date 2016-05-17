@@ -6,17 +6,17 @@
 import Foundation
 
 extension GameViewController: MenuViewControllerDelegate {
-    
+
     func menuViewControllerDidResumeGame(menuViewController: MenuViewController) {
         game?.start()
     }
-    
+
     func menuViewControllerDidTapNewGame(menuViewController: MenuViewController) {
         game?.restart()
     }
-    
+
     func menuViewControllerDidTapQuit(menuViewController: MenuViewController) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+
 }
