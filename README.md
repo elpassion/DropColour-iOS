@@ -4,6 +4,7 @@
 [![EL Passion](https://img.shields.io/badge/supported%20by-EL%20Passion-brightgreen.svg)](http://www.elpassion.com)
 [![License MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/elpassion/DropColour-iOS.svg?branch=master)](https://travis-ci.org/elpassion/DropColour-iOS)
+[![Code Climate](https://codeclimate.com/github/elpassion/DropColour-iOS/badges/gpa.svg)](https://codeclimate.com/github/elpassion/DropColour-iOS)
 
 # DropColour - Open-Source Arcade Game for iOS
 
