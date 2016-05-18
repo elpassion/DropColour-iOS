@@ -20,7 +20,7 @@ class InfoView: UIView {
 
     init(delegate: InfoViewDelegate?, authors: [Author]) {
         self.delegate = delegate
-        self.authorViews = authors.map{ AuthorView(author: $0) }
+        self.authorViews = authors.map { AuthorView(author: $0) }
         super.init(frame: CGRectZero)
         addSubviews()
         setupLayout()
@@ -28,7 +28,9 @@ class InfoView: UIView {
         configureTapGesturesRecognizer()
     }
 
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -39,7 +41,7 @@ class InfoView: UIView {
 
     private let scrollView: UIScrollView = {
         let view = UIScrollView(frame: CGRectZero)
-        view.contentInset = UIEdgeInsetsMake(80.0, 0.0, 20.0, 0.0);
+        view.contentInset = UIEdgeInsetsMake(80.0, 0.0, 20.0, 0.0)
         return view
     }()
 
@@ -62,7 +64,9 @@ class InfoView: UIView {
         addSubview(scrollView)
         scrollView.addSubview(logoDescriptionView)
         scrollView.addSubview(lineViewAuthors)
-        for authorView in authorViews { scrollView.addSubview(authorView) }
+        for authorView in authorViews {
+            scrollView.addSubview(authorView)
+        }
         addSubview(closeButtonBlur)
         addSubview(closeButton)
     }

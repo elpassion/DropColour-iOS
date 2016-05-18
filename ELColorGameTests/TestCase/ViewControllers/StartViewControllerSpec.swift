@@ -36,5 +36,6 @@ class StartViewControllerSpec: QuickSpec {
                 }
             }
         }
+
     }
 }

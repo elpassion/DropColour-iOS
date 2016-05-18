@@ -20,6 +20,6 @@ extension SlotLocation: Hashable {
 
 }
 
-func ==(lhs: SlotLocation, rhs: SlotLocation) -> Bool {
+func == (lhs: SlotLocation, rhs: SlotLocation) -> Bool {
     return lhs.hashValue == rhs.hashValue
 }

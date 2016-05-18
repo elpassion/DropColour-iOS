@@ -22,6 +22,7 @@ struct Author {
 }
 
 extension Author {
+
     var fullName: String {
         return "\(name) \(surname)"
     }
@@ -31,4 +32,5 @@ extension Author {
         guard urlString.containsString("/") else { return nil }
         return urlString.componentsSeparatedByString("/").last
     }
+
 }

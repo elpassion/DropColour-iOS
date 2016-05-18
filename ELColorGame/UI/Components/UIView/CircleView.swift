@@ -48,4 +48,5 @@ class CircleView: SpringView {
         layer.colors = colors.map { $0.CGColor }
         return layer
     }
+
 }

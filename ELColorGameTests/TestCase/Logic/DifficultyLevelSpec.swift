@@ -41,5 +41,6 @@ class DifficultyLevelSpec: QuickSpec {
                 expect(interval(forScore: 200)).to(beGreaterThan(interval(forScore: 190)))
             }
         }
+
     }
 }

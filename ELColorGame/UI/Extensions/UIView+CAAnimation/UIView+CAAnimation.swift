@@ -31,4 +31,5 @@ extension UIView {
         keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
         self.layer.addAnimation(keyFrame, forKey: "transform.scale")
     }
+
 }

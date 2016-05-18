@@ -36,5 +36,6 @@ class GameOverViewControllerSpec: QuickSpec {
                 }
             }
         }
+
     }
 }

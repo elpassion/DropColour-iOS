@@ -41,5 +41,6 @@ class StringLocalizedSpec: QuickSpec {
                 }
             }
         }
+
     }
 }

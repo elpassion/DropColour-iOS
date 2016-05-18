@@ -28,7 +28,7 @@ class Tracker: TrackerProtocol {
 
     func trackScreenWithName(screenName name: String) {
         gaiTracker.set(kGAIScreenName, value: name)
-        gaiTracker.send(GAIDictionaryBuilder.createScreenView().build() as [NSObject : AnyObject])
+        gaiTracker.send(GAIDictionaryBuilder.createScreenView().build() as [NSObject: AnyObject])
     }
 
     func trackGameStartEvent() {
