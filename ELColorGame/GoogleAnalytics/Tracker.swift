@@ -7,7 +7,6 @@ import Foundation
 
 protocol TrackerProtocol {
 
-    var gaiTracker: GAITracker { get }
     var gaiDictionaryFactory: GAIDictionaryCreating { get set }
     func trackScreenWithName(screenName name: String)
     func trackGameStartEvent()
@@ -18,8 +17,8 @@ protocol TrackerProtocol {
 
 class Tracker: TrackerProtocol {
 
-    let gaiTracker: GAITracker
     var gaiDictionaryFactory: GAIDictionaryCreating
+    private let gaiTracker: GAITracker
 
     init(gaiTracker: GAITracker) {
         self.gaiTracker = gaiTracker
