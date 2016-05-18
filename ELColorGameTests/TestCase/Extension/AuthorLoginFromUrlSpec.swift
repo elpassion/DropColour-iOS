@@ -44,6 +44,6 @@ class AuthorLoginFromUrlSpec: QuickSpec {
                 }
             }
         }
-
     }
+
 }

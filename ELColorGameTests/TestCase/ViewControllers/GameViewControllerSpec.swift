@@ -45,6 +45,6 @@ class GameViewControllerSpec: QuickSpec {
                 }
             }
         }
-
     }
+
 }

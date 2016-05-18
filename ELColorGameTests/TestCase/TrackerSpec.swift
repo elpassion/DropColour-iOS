@@ -75,6 +75,6 @@ class TrackerSpec: QuickSpec {
                 }
             }
          }
-        
     }
+
 }
