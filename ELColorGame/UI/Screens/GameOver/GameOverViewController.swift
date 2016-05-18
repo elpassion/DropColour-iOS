@@ -21,7 +21,9 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
         self.modalPresentationStyle = UIModalPresentationStyle.Custom
     }
 
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
         self.view = GameOverView(score: scoreNumber, delegate: self)

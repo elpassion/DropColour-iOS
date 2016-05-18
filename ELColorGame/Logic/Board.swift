@@ -12,7 +12,7 @@ class Board {
 
     init(size: BoardSize) {
         self.size = size
-        _slots = Board.createSlots(size, slotDelegate: self)
+        internalSlots = Board.createSlots(size, slotDelegate: self)
     }
 
     // MARK: Slots
@@ -29,20 +29,20 @@ class Board {
         return slots
     }
 
-    private var _slots: [Slot]?
+    private var internalSlots: [Slot]?
 
     var slots: [Slot] {
-        return _slots ?? []
+        return internalSlots ?? []
     }
 
     func slot(atLocation location: SlotLocation) -> Slot? {
         guard location.column < size.columns else { return nil }
         guard location.row < size.rows else { return nil }
-        return slots.filter({ $0.location == location }).first
+        return slots.filter { $0.location == location }.first
     }
 
     func slot(forCircle circle: Circle) -> Slot? {
-        return slots.filter({ $0.circle === circle }).first
+        return slots.filter { $0.circle === circle }.first
     }
 
     // MARK: Circles

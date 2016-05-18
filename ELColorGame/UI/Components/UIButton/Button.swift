@@ -29,6 +29,10 @@ class Button: UIButton {
         configureButtonAction()
     }
 
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -38,8 +42,6 @@ class Button: UIButton {
         titleLabel?.frame = titleFrame
         clipsToBounds = true
     }
-
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     private func configureButtonAction() {
         addTarget(self, action: #selector(Button.didTapOnButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)

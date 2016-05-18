@@ -12,7 +12,7 @@ class GAITrackerSpy: NSObject, GAITracker {
 
     private(set) var dataWasSend = false
     private(set) var parameterNameWasSet = false
-    private(set) var capturedData: [NSObject : AnyObject]!
+    private(set) var capturedData: [NSObject: AnyObject]!
 
     // MARK: GAITracker
 
@@ -28,7 +28,7 @@ class GAITrackerSpy: NSObject, GAITracker {
         return ""
     }
 
-    func send(parameters: [NSObject : AnyObject]!) {
+    func send(parameters: [NSObject: AnyObject]!) {
         dataWasSend = true
         capturedData = parameters
     }

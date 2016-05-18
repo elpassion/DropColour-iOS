@@ -29,7 +29,9 @@ class GameOverView: UIView {
         updateScore()
     }
 
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     private func updateScore() {
         scoreNumberLabel.text = "\(score)"
@@ -49,9 +51,9 @@ class GameOverView: UIView {
 
     private let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
     private let scoreView = UIView(frame: CGRectZero)
-    private let retryButton = Button(title: kRetry.localized, color: UIColor(color: .Green6BE01A))
-    private let rankingButton = Button(title: kRanking.localized, color: UIColor(color: .Turquoise54C7C7))
-    private let quitButton = Button(title: kQuit.localized, color: UIColor(color: .RedE82654))
+    private let retryButton = Button(title: retry.localized, color: UIColor(color: .Green6BE01A))
+    private let rankingButton = Button(title: ranking.localized, color: UIColor(color: .Turquoise54C7C7))
+    private let quitButton = Button(title: quit.localized, color: UIColor(color: .RedE82654))
 
     private let scoreNumberLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
@@ -64,7 +66,7 @@ class GameOverView: UIView {
 
     private let scoreTextLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
-        label.text = kYourScore.localized
+        label.text = yourScore.localized
         label.font = UIFont(name: BebasNeueBold, size: 20)
         label.textColor = UIColor(color: .White)
         return label
@@ -117,16 +119,16 @@ class GameOverView: UIView {
 
     private func configureButtonActions() {
         retryButton.buttonActionClosure = { [weak self] in
-            guard let _self = self else { return }
-            _self.delegate?.gameOverViewDidTapRetry(_self)
+            guard let `self` = self else { return }
+            self.delegate?.gameOverViewDidTapRetry(self)
         }
         rankingButton.buttonActionClosure = { [weak self] in
-            guard let _self = self else { return }
-            _self.delegate?.gameOverViewDidTapShowLeaders(_self)
+            guard let `self` = self else { return }
+            self.delegate?.gameOverViewDidTapShowLeaders(self)
         }
         quitButton.buttonActionClosure = { [weak self] in
-            guard let _self = self else { return }
-            _self.delegate?.gameOverViewDidTapQuit(_self)
+            guard let `self` = self else { return }
+            self.delegate?.gameOverViewDidTapQuit(self)
         }
     }
 

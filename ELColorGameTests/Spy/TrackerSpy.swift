@@ -10,6 +10,7 @@ import ELColorGame
 
 class TrackerSpy: TrackerProtocol {
 
+    private let gaiTracker: GAITracker
     private(set) var screenWasTracked = false
     private(set) var startEventWasTracked = false
     private(set) var endEventWasTracked = false
@@ -22,7 +23,6 @@ class TrackerSpy: TrackerProtocol {
 
     // MARK: TrackerProtocol
 
-    let gaiTracker: GAITracker
     var gaiDictionaryFactory: GAIDictionaryCreating
 
     func trackScreenWithName(screenName name: String) {

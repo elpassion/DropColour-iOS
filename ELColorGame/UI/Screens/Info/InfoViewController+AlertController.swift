@@ -8,7 +8,7 @@ import UIKit
 extension InfoViewController {
 
     func presentAlertControllerWithAuthor(author: Author) {
-        let alertController = alertControllerFactory.createAlertControllerWithTitle("\(author.fullName) \(kShowProfile.localized)", message: nil, preferredStyle: .ActionSheet)
+        let alertController = alertControllerFactory.createAlertControllerWithTitle("\(author.fullName) \(showProfile.localized)", message: nil, preferredStyle: .ActionSheet)
         configureProfessionActionIfNeeded(author, alertController: alertController)
         configureTwitterActionIfNeeded(author, alertController: alertController)
         configureCancelActionIfNeeded(author, alertController: alertController)
@@ -24,14 +24,14 @@ extension InfoViewController {
     private func configureProfessionActionIfNeeded(author: Author, alertController: UIAlertController) {
         guard let professionUrl = author.professionUrl else { return }
         guard urlOpener.canOpenURL(professionUrl) else { return }
-        let proffesionAction = openUrlAlertActionWithTitle(author.type == AuthorType.Developer ? kGithub.localized : kDribbble.localized, url: professionUrl)
+        let proffesionAction = openUrlAlertActionWithTitle(author.type == AuthorType.Developer ? github.localized : dribbble.localized, url: professionUrl)
         alertController.addAction(proffesionAction)
     }
 
     private func configureTwitterActionIfNeeded(author: Author, alertController: UIAlertController) {
         guard let twitterUrl = author.twitterUrl else { return }
         guard urlOpener.canOpenURL(twitterUrl) else { return }
-        let twitterAction = openUrlAlertActionWithTitle(kTwitter.localized, url: twitterUrl)
+        let twitterAction = openUrlAlertActionWithTitle(twitter.localized, url: twitterUrl)
         alertController.addAction(twitterAction)
     }
 
@@ -59,7 +59,7 @@ extension InfoViewController {
     }
 
     private func cancelAlertAction() -> UIAlertAction {
-        return self.alertActionFactory.createActionWithTitle(kCancel.localized, style: .Cancel, handler: nil)
+        return self.alertActionFactory.createActionWithTitle(cancel.localized, style: .Cancel, handler: nil)
     }
 
 }

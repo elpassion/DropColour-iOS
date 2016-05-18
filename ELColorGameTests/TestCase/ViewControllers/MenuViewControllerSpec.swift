@@ -36,5 +36,6 @@ class MenuViewControllerSpec: QuickSpec {
                 }
             }
         }
+
     }
 }

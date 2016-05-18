@@ -13,7 +13,9 @@ class LogoDescriptionView: UIView {
         setupLayout()
     }
 
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: Subviews
 
@@ -26,7 +28,7 @@ class LogoDescriptionView: UIView {
 
     private let descriptionLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
-        label.text = kInfoDescription.localized
+        label.text = infoDescription.localized
         label.numberOfLines = 0
         label.textAlignment = .Center
         label.font = UIFont.systemFontOfSize(11)

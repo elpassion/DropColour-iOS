@@ -18,11 +18,11 @@ extension GameBoardView {
     }
 
     func slotViewAtLocation(column column: Int, row: Int) -> GameBoardSlotView? {
-        return slotViews.filter({ $0.column == column && $0.row == row }).first
+        return slotViews.filter { $0.column == column && $0.row == row }.first
     }
 
     func circleViewAtPoint(point: CGPoint) -> CircleView? {
-        let circleViews = slotViews.filter({ $0.circleView != nil }).map { $0.circleView! }
+        let circleViews = slotViews.filter { $0.circleView != nil }.map { $0.circleView! }
         for circleView in circleViews {
             let frame = circleView.convertRect(circleView.bounds, toView: self)
             if CGRectContainsPoint(frame, point) {
@@ -33,7 +33,7 @@ extension GameBoardView {
     }
 
     func slotViewForCircleView(circleView: CircleView) -> GameBoardSlotView? {
-        return slotViews.filter({ $0.circleView == circleView }).first
+        return slotViews.filter { $0.circleView == circleView }.first
     }
 
     func slotViewsAtRect(rect: CGRect) -> [GameBoardSlotView] {

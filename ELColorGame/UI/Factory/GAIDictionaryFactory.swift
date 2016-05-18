@@ -6,14 +6,14 @@
 import Foundation
 
 protocol GAIDictionaryCreating {
-    func createEventWithCategory(category: String, action: String, value: NSNumber?) -> [NSObject : AnyObject]
+    func createEventWithCategory(category: String, action: String, value: NSNumber?) -> [NSObject: AnyObject]
 }
 
 class GAIDictionaryFactory: GAIDictionaryCreating {
 
-    func createEventWithCategory(category: String, action: String, value: NSNumber?) -> [NSObject : AnyObject] {
+    func createEventWithCategory(category: String, action: String, value: NSNumber?) -> [NSObject: AnyObject] {
         return GAIDictionaryBuilder.createEventWithCategory(category, action: action, label: nil, value: value)
-            .build() as [NSObject : AnyObject]
+            .build() as [NSObject: AnyObject]
     }
 
 }

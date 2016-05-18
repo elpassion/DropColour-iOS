@@ -13,13 +13,15 @@ class LineViewAuthors: UIView {
         setupLayout()
     }
 
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: Subviews
 
     private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRectZero)
-        label.text = kAuthors.localized
+        label.text = authors.localized
         label.textAlignment = .Center
         label.font = UIFont(name: BebasNeueBold, size: 14)
         label.textColor = UIColor(color: .White)

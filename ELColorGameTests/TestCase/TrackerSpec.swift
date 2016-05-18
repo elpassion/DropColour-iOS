@@ -12,9 +12,11 @@ class TrackerSpec: QuickSpec {
         describe("Tracker") {
 
             var sut: Tracker!
+            var gaiTrackerSpy: GAITrackerSpy!
 
             beforeEach {
-                sut = Tracker(gaiTracker: GAITrackerSpy())
+                gaiTrackerSpy = GAITrackerSpy()
+                sut = Tracker(gaiTracker: gaiTrackerSpy)
                 sut.gaiDictionaryFactory = GAIDictionaryFactoryFake()
             }
 
@@ -28,12 +30,10 @@ class TrackerSpec: QuickSpec {
 
             describe("initially") {
                 it("data shouldn't be sent") {
-                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
                     expect(gaiTrackerSpy.dataWasSend).to(beFalse())
                 }
 
                 it("parameter shouldn't be sent") {
-                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
                     expect(gaiTrackerSpy.parameterNameWasSet).to(beFalse())
                 }
             }
@@ -44,12 +44,10 @@ class TrackerSpec: QuickSpec {
                 }
 
                 it("should send data") {
-                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
                     expect(gaiTrackerSpy.dataWasSend).to(beTrue())
                 }
 
                 it("should set parameter") {
-                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
                     expect(gaiTrackerSpy.parameterNameWasSet).to(beTrue())
                 }
             }
@@ -57,7 +55,6 @@ class TrackerSpec: QuickSpec {
             describe("track start event") {
                 it("should send data") {
                     sut.trackGameStartEvent()
-                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
                     expect(gaiTrackerSpy.dataWasSend).to(beTrue())
                 }
             }
@@ -65,7 +62,6 @@ class TrackerSpec: QuickSpec {
             describe("track event end") {
                 it("should send data with score") {
                     sut.trackGameEndEvent(score: 46)
-                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
                     expect(gaiTrackerSpy.dataWasSend).to(beTrue())
                     expect(gaiTrackerSpy.capturedData["value"] as? NSNumber).to(equal(46))
                 }
@@ -74,11 +70,11 @@ class TrackerSpec: QuickSpec {
             describe("track game scored event") {
                 it("should send data with score") {
                     sut.trackGameScoredEvent(scoredValue: 73)
-                    let gaiTrackerSpy = sut.gaiTracker as! GAITrackerSpy
                     expect(gaiTrackerSpy.dataWasSend).to(beTrue())
                     expect(gaiTrackerSpy.capturedData["value"] as? NSNumber).to(equal(73))
                 }
             }
          }
+        
     }
 }

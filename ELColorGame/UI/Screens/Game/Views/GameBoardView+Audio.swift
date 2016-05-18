@@ -12,7 +12,7 @@ extension GameBoardView {
         if let soundURL = NSBundle.mainBundle().URLForResource("bubble_pop_sound", withExtension: "m4a") {
             var mySound: SystemSoundID = 0
             AudioServicesCreateSystemSoundID(soundURL, &mySound)
-            AudioServicesPlaySystemSound(mySound);
+            AudioServicesPlaySystemSound(mySound)
         }
     }
 
@@ -20,7 +20,7 @@ extension GameBoardView {
         if let soundURL = NSBundle.mainBundle().URLForResource("bomb_explosion", withExtension: "m4a") {
             var mySound: SystemSoundID = 0
             AudioServicesCreateSystemSoundID(soundURL, &mySound)
-            AudioServicesPlaySystemSound(mySound);
+            AudioServicesPlaySystemSound(mySound)
         }
     }
 

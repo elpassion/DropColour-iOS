@@ -15,7 +15,9 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,7 +35,7 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
     }
 
     func authenticatePlayer() {
-        GKLocalPlayer.localPlayer().authenticateHandler = {(viewController, error) -> Void in
+        GKLocalPlayer.localPlayer().authenticateHandler = { (viewController, error) -> Void in
             guard let vc = viewController else { return }
             self.presentViewController(vc, animated: true, completion: nil)
         }

@@ -46,7 +46,7 @@ extension GameBoardView {
     }
 
     private func draggerForTouch(touch: UITouch) -> CircleViewDragger? {
-        return draggers.filter({ $0.touch == touch }).first
+        return draggers.filter { $0.touch == touch }.first
     }
 
     private func restoreCircleDraggerViewToInitialPosition(circleViewDragger: CircleViewDragger, slotSuperview: UIView, slotView: GameBoardSlotView) {
