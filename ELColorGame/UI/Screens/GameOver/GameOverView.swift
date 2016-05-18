@@ -119,16 +119,16 @@ class GameOverView: UIView {
 
     private func configureButtonActions() {
         retryButton.buttonActionClosure = { [weak self] in
-            guard let _self = self else { return }
-            _self.delegate?.gameOverViewDidTapRetry(_self)
+            guard let `self` = self else { return }
+            self.delegate?.gameOverViewDidTapRetry(self)
         }
         rankingButton.buttonActionClosure = { [weak self] in
-            guard let _self = self else { return }
-            _self.delegate?.gameOverViewDidTapShowLeaders(_self)
+            guard let `self` = self else { return }
+            self.delegate?.gameOverViewDidTapShowLeaders(self)
         }
         quitButton.buttonActionClosure = { [weak self] in
-            guard let _self = self else { return }
-            _self.delegate?.gameOverViewDidTapQuit(_self)
+            guard let `self` = self else { return }
+            self.delegate?.gameOverViewDidTapQuit(self)
         }
     }
 
