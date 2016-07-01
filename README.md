@@ -23,15 +23,15 @@ iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> du
 
 <table>
   <tr align="center">
-    <td>6046</td>
+    <td>6530</td>
     <td>users :family:</td>
   </tr>
   <tr align="center">
-    <td>16990</td>
+    <td>18630</td>
     <td>game sessions :iphone:</td>
   </tr>
   <tr align="center">
-    <td>3187</td>
+    <td>3301</td>
     <td>users in rank :chart_with_upwards_trend:</td>
   </tr>
   <tr align="center">
