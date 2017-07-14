@@ -16,7 +16,7 @@ for keyword in ${array[@]}; do
 if [[ "$keyword" == "[testflight]" ]]; then
 echo "Deploy to Test Flight will be done."
 # Add username to keychain
-fastlane-credentials add --username mateusz.szklarek@elpassion.com --password $FASTLANE_PASSWORD
+fastlane-credentials add --username mateusz.szklarek@elpassion.pl --password $FASTLANE_PASSWORD
 # Fix for issues with SSL in Ruby (only Xcode 7.3)
 rvm reinstall 2.0.0-p643 --disable-binary
 # TESTFLIGHT
