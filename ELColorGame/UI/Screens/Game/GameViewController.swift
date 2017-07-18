@@ -12,8 +12,8 @@ class GameViewController: UIViewController {
     init(tracker: TrackerProtocol) {
         self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
-        modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GameViewController.applicationWillResignActive), name: UIApplicationWillResignActiveNotification, object: nil)
+        modalTransitionStyle = .crossDissolve
+        NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.applicationWillResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -21,7 +21,7 @@ class GameViewController: UIViewController {
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
     // MARK: Application state
@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
         self.view = view
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tracker.trackScreenWithName(screenName: "GameViewController")
     }
@@ -63,10 +63,11 @@ class GameViewController: UIViewController {
         game.start()
     }
 
-    private func createGameBoardView(gameView gameView: GameView) -> GameBoardView {
+    private func createGameBoardView(gameView: GameView) -> GameBoardView {
         let slotSize = CGSize(width: 44, height: 44)
-        let spacing = CGFloat(15.5)
-        let (rows, columns) = GameBoardView.maxBoardSize(forViewSize: gameView.boardContainerView.frame.size, slotSize: slotSize, spacing: spacing)
+        let spacing: CGFloat = 15.5
+        let boardSize = gameView.boardContainerView.frame.size
+        let (rows, columns) = GameBoardView.maxBoardSize(forViewSize: boardSize, slotSize: slotSize, spacing: spacing)
         return GameBoardView(slotSize: slotSize, rows: rows, columns: columns, spacing: spacing)
     }
 

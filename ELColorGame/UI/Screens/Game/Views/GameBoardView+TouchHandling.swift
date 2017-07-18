@@ -7,28 +7,28 @@ import UIKit
 
 extension GameBoardView {
 
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        let location = touch.locationInView(self)
-        guard let circleView = circleViewAtPoint(location) else { return }
+        let location = touch.location(in: self)
+        guard let circleView = circleView(atPoint: location) else { return }
         let dragger = CircleViewDragger(view: circleView, touch: touch)
         draggers.append(dragger)
-        dragger.view.moveToSuperview(self)
+        dragger.view.moveTo(superview: self)
         dragger.view.center = location
     }
 
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        guard let dragger = draggerForTouch(touch) else { return }
-        let location = touch.locationInView(self)
+        guard let dragger = dragger(forTouch: touch) else { return }
+        let location = touch.location(in: self)
         dragger.view.center = location
     }
 
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        guard let dragger = draggerForTouch(touch) else { return }
+        guard let dragger = dragger(forTouch: touch) else { return }
         draggers = draggers.filter { $0.view != dragger.view }
-        guard let slotView = slotViewForCircleView(dragger.view) else { return }
+        guard let slotView = slotView(forCircleView: dragger.view) else { return }
         guard let slotSuperview = slotView.superview else { return }
         let slotLocationFrom = SlotLocation(column: slotView.column, row: slotView.row)
 
@@ -45,19 +45,19 @@ extension GameBoardView {
         restoreCircleDraggerViewToInitialPosition(dragger, slotSuperview: slotSuperview, slotView: slotView)
     }
 
-    private func draggerForTouch(touch: UITouch) -> CircleViewDragger? {
+    private func dragger(forTouch touch: UITouch) -> CircleViewDragger? {
         return draggers.filter { $0.touch == touch }.first
     }
 
-    private func restoreCircleDraggerViewToInitialPosition(circleViewDragger: CircleViewDragger, slotSuperview: UIView, slotView: GameBoardSlotView) {
-        let targetCenter = slotSuperview.convertPoint(slotView.center, toView: self)
-        UIView.animateWithDuration(0.2,
+    private func restoreCircleDraggerViewToInitialPosition(_ circleViewDragger: CircleViewDragger, slotSuperview: UIView, slotView: GameBoardSlotView) {
+        let targetCenter = slotSuperview.convert(slotView.center, to: self)
+        UIView.animate(withDuration: 0.2,
             animations: {
                 circleViewDragger.view.center = targetCenter
                 circleViewDragger.view.addBounceAnimation()
             },
             completion: { finished in
-                circleViewDragger.view.moveToSuperview(slotView)
+                circleViewDragger.view.moveTo(superview: slotView)
             }
         )
     }

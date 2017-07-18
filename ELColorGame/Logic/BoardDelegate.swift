@@ -7,8 +7,8 @@ import Foundation
 
 protocol BoardDelegate: class {
 
-    func board(board: Board, didInsertCircle circle: Circle, intoSlot slot: Slot)
-    func board(board: Board, didRemoveCircle circle: Circle, fromSlot slot: Slot)
-    func boardBecameFull(board: Board)
+    func board(_ board: Board, didInsertCircle circle: Circle, intoSlot slot: Slot)
+    func board(_ board: Board, didRemoveCircle circle: Circle, fromSlot slot: Slot)
+    func boardBecameFull(_ board: Board)
 
 }

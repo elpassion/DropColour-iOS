@@ -19,14 +19,14 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tracker.trackScreenWithName(screenName: "StartViewController")
     }
 
     override func loadView() {
         self.view = StartView(delegate: self)
-        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.modalTransitionStyle = .crossDissolve
     }
 
     override func viewDidLoad() {
@@ -37,31 +37,31 @@ class StartViewController: UIViewController, StartViewDelegate, GKGameCenterCont
     func authenticatePlayer() {
         GKLocalPlayer.localPlayer().authenticateHandler = { (viewController, error) -> Void in
             guard let vc = viewController else { return }
-            self.presentViewController(vc, animated: true, completion: nil)
+            self.present(vc, animated: true)
         }
     }
 
     // MARK: StartViewDelegate
 
-    func startViewDidTapNewGame(startView: StartView) {
+    func startViewDidTapNewGame(_ startView: StartView) {
         let gameViewController = GameViewController(tracker: tracker)
-        presentViewController(gameViewController, animated: true, completion: nil)
+        present(gameViewController, animated: true, completion: nil)
     }
 
-    func startViewDidTapRanking(startView: StartView) {
+    func startViewDidTapRanking(_ startView: StartView) {
         let gc = GKGameCenterViewController()
         gc.gameCenterDelegate = self
-        presentViewController(gc, animated: true, completion: nil)
+        present(gc, animated: true, completion: nil)
     }
 
-    func startViewDidTapInfo(startView: StartView) {
-        presentViewController(InfoViewController(tracker: tracker), animated: true, completion: nil)
+    func startViewDidTapInfo(_ startView: StartView) {
+        present(InfoViewController(tracker: tracker), animated: true, completion: nil)
     }
 
     // MARK: GKGameCenterControllerDelegate
 
-    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController) {
-        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
     }
 
 }

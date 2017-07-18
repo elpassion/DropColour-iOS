@@ -7,7 +7,7 @@ import Foundation
 
 protocol SlotDelegate: class {
 
-    func slot(slot: Slot, didInsertCircle circle: Circle)
-    func slot(slot: Slot, didRemoveCirlce circle: Circle)
+    func slot(_ slot: Slot, didInsertCircle circle: Circle)
+    func slot(_ slot: Slot, didRemoveCirlce circle: Circle)
 
 }

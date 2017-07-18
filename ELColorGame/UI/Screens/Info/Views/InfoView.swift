@@ -8,7 +8,7 @@ import UIKit
 protocol InfoViewDelegate: class {
 
     func infoViewDidTapQuit()
-    func infoViewDidTapAuthor(author: Author)
+    func infoViewDidTapAuthor(_ author: Author)
     func infoViewDidTapCompanyLogo()
 
 }
@@ -21,7 +21,7 @@ class InfoView: UIView {
     init(delegate: InfoViewDelegate?, authors: [Author]) {
         self.delegate = delegate
         self.authorViews = authors.map { AuthorView(author: $0) }
-        super.init(frame: CGRectZero)
+        super.init(frame: .zero)
         addSubviews()
         setupLayout()
         configureButtonActions()
@@ -40,22 +40,22 @@ class InfoView: UIView {
     // MARK: Subviews
 
     private let scrollView: UIScrollView = {
-        let view = UIScrollView(frame: CGRectZero)
+        let view = UIScrollView(frame: .zero)
         view.contentInset = UIEdgeInsetsMake(80.0, 0.0, 20.0, 0.0)
         return view
     }()
 
     private let closeButtonBlur: UIView = {
-        let view = UIView(frame: CGRectZero)
+        let view = UIView(frame: CGRect.zero)
         view.clipsToBounds = true
-        let blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
+        let blur = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         view.addSubview(blur)
-        blur.snp_makeConstraints { $0.edges.equalTo(0) }
+        blur.snp.makeConstraints { $0.edges.equalTo(0) }
         return view
     }()
 
-    private let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-    private let closeButton = Button(image: UIImage(asset: .Close))
+    private let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    private let closeButton = Button(image: UIImage(asset: .close))
     private let logoDescriptionView = LogoDescriptionView()
     private let lineViewAuthors = LineViewAuthors()
 
@@ -74,40 +74,41 @@ class InfoView: UIView {
     // MARK: Layout
 
     private func setupLayout() {
-        blurEffectView.snp_makeConstraints { (make) -> Void in
-            make.edges.equalTo(0)
+        blurEffectView.snp.makeConstraints {
+            $0.edges.equalTo(0)
         }
-        scrollView.snp_makeConstraints { (make) -> Void in
-            make.edges.equalTo(0)
+        scrollView.snp.makeConstraints {
+            $0.edges.equalTo(0)
         }
-        logoDescriptionView.snp_makeConstraints { (make) -> Void in
-            make.top.left.right.centerX.equalTo(0)
+        logoDescriptionView.snp.makeConstraints {
+            $0.top.left.right.equalToSuperview()
+            $0.centerXWithinMargins.equalTo(0)
         }
-        lineViewAuthors.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(logoDescriptionView.snp_bottom).offset(30)
-            make.left.right.equalTo(0)
+        lineViewAuthors.snp.makeConstraints {
+            $0.top.equalTo(logoDescriptionView.snp.bottom).offset(30)
+            $0.left.right.equalTo(0)
         }
-        for (idx, authorView) in authorViews.enumerate() {
-            authorView.snp_makeConstraints {
+        for (idx, authorView) in authorViews.enumerated() {
+            authorView.snp.makeConstraints {
                 $0.left.right.equalTo(0)
                 if authorView == authorViews.first {
-                    $0.top.equalTo(lineViewAuthors.snp_bottom).offset(20)
+                    $0.top.equalTo(lineViewAuthors.snp.bottom).offset(20)
                 } else {
                     let previous = authorViews[idx - 1]
-                    $0.top.equalTo(previous.snp_bottom).offset(20)
+                    $0.top.equalTo(previous.snp.bottom).offset(20)
                 }
                 if authorView == authorViews.last {
                     $0.bottom.equalTo(0)
                 }
             }
         }
-        closeButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(30)
-            make.right.equalTo(-15)
+        closeButton.snp.makeConstraints {
+            $0.top.equalTo(30)
+            $0.right.equalTo(-15)
         }
-        closeButtonBlur.snp_makeConstraints { (make) -> Void in
-            make.center.equalTo(closeButton.snp_center)
-            make.size.equalTo(closeButton.snp_size)
+        closeButtonBlur.snp.makeConstraints {
+            $0.centerWithinMargins.equalTo(closeButton.snp.centerWithinMargins)
+            $0.size.equalTo(closeButton.snp.size)
         }
     }
 
@@ -128,11 +129,11 @@ class InfoView: UIView {
         }
     }
 
-    func tapLogoDescriptionView(sender: UITapGestureRecognizer) {
+    func tapLogoDescriptionView(_ sender: UITapGestureRecognizer) {
         delegate?.infoViewDidTapCompanyLogo()
     }
 
-    func tapAuthor(sender: UITapGestureRecognizer) {
+    func tapAuthor(_ sender: UITapGestureRecognizer) {
         guard let view = sender.view as? AuthorView else { return }
         delegate?.infoViewDidTapAuthor(view.author)
     }

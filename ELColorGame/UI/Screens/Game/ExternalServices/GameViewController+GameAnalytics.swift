@@ -9,11 +9,11 @@ import GameAnalytics
 extension GameViewController {
 
     func gameAnalyticsStartEvent() {
-        GameAnalytics.addProgressionEventWithProgressionStatus(GAProgressionStatusStart, progression01: "New game", progression02: nil, progression03: nil)
+        GameAnalytics.addProgressionEvent(with: GAProgressionStatusStart, progression01: "New game", progression02: nil, progression03: nil)
     }
 
-    func gameAnalyticsCompleteEventWithScore(score: Int) {
-        GameAnalytics.addProgressionEventWithProgressionStatus(GAProgressionStatusComplete, progression01: "Complete game", progression02: nil, progression03: nil, score: score)
+    func gameAnalyticsCompleteEventWithScore(_ score: Int) {
+        GameAnalytics.addProgressionEvent(with: GAProgressionStatusComplete, progression01: "Complete game", progression02: nil, progression03: nil, score: score)
     }
 
 }

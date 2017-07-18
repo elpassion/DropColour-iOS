@@ -7,13 +7,13 @@ import UIKit
 
 protocol AlertControllerCreating {
 
-    func createAlertControllerWithTitle(title: String?, message: String?, preferredStyle: UIAlertControllerStyle) -> UIAlertController
+    func createAlertController(withTitle title: String?, message: String?, preferredStyle: UIAlertControllerStyle) -> UIAlertController
 
 }
 
 class AlertControllerFactory: AlertControllerCreating {
 
-    func createAlertControllerWithTitle(title: String?, message: String?, preferredStyle: UIAlertControllerStyle) -> UIAlertController {
+    func createAlertController(withTitle title: String?, message: String?, preferredStyle: UIAlertControllerStyle) -> UIAlertController {
         return UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
     }
 

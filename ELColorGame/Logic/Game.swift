@@ -87,9 +87,9 @@ class Game {
 
     // MARK: Inserting Circles
 
-    private var insertingTimer: Timer?
+    private var insertingTimer: GameTimer?
 
-    var timeInterval: NSTimeInterval {
+    var timeInterval: TimeInterval {
         return difficultyLevel.intervalTime()
     }
 
@@ -101,7 +101,7 @@ class Game {
         if let _ = insertingTimer {
             stopInsertingCircles()
         }
-        insertingTimer = Timer(interval: timeInterval) { [weak self] in
+        insertingTimer = GameTimer(interval: timeInterval) { [weak self] in
             self?.insertingTimer?.interval = self?.timeInterval
             self?.insertRandomCircle()
         }

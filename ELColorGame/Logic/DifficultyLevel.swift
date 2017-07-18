@@ -7,14 +7,14 @@ import Foundation
 
 class DifficultyLevel {
 
-    private let initialTimeInterval: NSTimeInterval = 0.75
+    private let initialTimeInterval: TimeInterval = 0.75
     private let scorePerLevel: Double = 200
     private let minTimeIntervalRatio: Double = 200
     private let maxTimeIntervalRatio: Double = 800
 
     var scoreClosure: (() -> Int)?
 
-    func intervalTime() -> NSTimeInterval {
+    func intervalTime() -> TimeInterval {
         let min = minInterval(forScore: currentScore)
         let max = maxInterval(forScore: currentScore)
         return max - (max - min) * currentLevelProgress
@@ -38,7 +38,7 @@ class DifficultyLevel {
     }
 
     private var currentLevelProgress: Double {
-        return (Double(currentScore) % scorePerLevel) / scorePerLevel
+        return Double(currentScore).truncatingRemainder(dividingBy: scorePerLevel) / scorePerLevel
     }
 
 }

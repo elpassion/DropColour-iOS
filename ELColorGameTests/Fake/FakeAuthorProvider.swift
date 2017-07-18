@@ -14,10 +14,10 @@ class FakeAuthorProvider: AuthorProviding {
             Author(
                 name: "John",
                 surname: "Apple",
-                type: .Developer,
-                avatarUrl: NSURL(string: "https://google.pl/avatar"),
-                professionUrl: NSURL(string: "https://github.com/johnapple"),
-                twitterUrl: NSURL(string: "https://twitter.com/johnapple")
+                type: .developer,
+                avatarUrl: URL(string: "https://google.pl/avatar"),
+                professionUrl: URL(string: "https://github.com/johnapple"),
+                twitterUrl: URL(string: "https://twitter.com/johnapple")
             )
     ]
 
@@ -25,21 +25,21 @@ class FakeAuthorProvider: AuthorProviding {
 
 extension Author {
 
-    func copyWithType(type: AuthorType) -> Author {
+    func copyWithType(_ type: AuthorType) -> Author {
         return Author(
-                name: self.name,
-                surname: self.surname,
+                name: name,
+                surname: surname,
                 type: type,
-                avatarUrl: self.avatarUrl,
-                professionUrl: self.professionUrl,
-                twitterUrl: self.twitterUrl
+                avatarUrl: avatarUrl,
+                professionUrl: professionUrl,
+                twitterUrl: twitterUrl
         )
     }
 
     func copyWithoutUrls() -> Author {
         return Author(
-                name: self.name,
-                surname: self.surname,
+                name: name,
+                surname: surname,
                 type: type,
                 avatarUrl: nil,
                 professionUrl: nil,
@@ -47,14 +47,14 @@ extension Author {
         )
     }
 
-    func copyWithProffessionUrl(url: NSURL?) -> Author {
+    func copyWithProffessionUrl(_ url: URL?) -> Author {
         return Author(
-                name: self.name,
-                surname: self.surname,
-                type: self.type,
-                avatarUrl: self.avatarUrl,
+                name: name,
+                surname: surname,
+                type: type,
+                avatarUrl: avatarUrl,
                 professionUrl: url,
-                twitterUrl: self.twitterUrl
+                twitterUrl: twitterUrl
         )
     }
 

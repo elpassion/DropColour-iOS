@@ -5,12 +5,12 @@
 
 import Foundation
 
-class Timer: NSObject {
+class GameTimer: NSObject {
 
-    typealias Action = () -> ()
+    typealias Action = () -> Void
     let action: Action
 
-    var interval: NSTimeInterval? {
+    var interval: TimeInterval? {
         didSet {
             if let interval = interval {
                 updateTimeInterval(interval)
@@ -18,11 +18,11 @@ class Timer: NSObject {
         }
     }
 
-    init(interval: NSTimeInterval, action: Action) {
-        self.action = action
+    init(interval: TimeInterval, action: @escaping Action) {
         self.interval = interval
+        self.action = action
         super.init()
-        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: #selector(Timer.timerTick), userInfo: nil, repeats: true)
+        timer = Foundation.Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(GameTimer.timerTick), userInfo: nil, repeats: true)
     }
 
     deinit {
@@ -34,15 +34,17 @@ class Timer: NSObject {
         timer = nil
     }
 
-    private var timer: NSTimer?
-
     func timerTick() {
         action()
     }
 
-    private func updateTimeInterval(timeInterval: NSTimeInterval) {
+    // MARK: Private
+
+    private var timer: Timer?
+
+    private func updateTimeInterval(_ timeInterval: TimeInterval) {
         guard let timer = timer else { return }
-        timer.fireDate = timer.fireDate.dateByAddingTimeInterval(timeInterval)
+        timer.fireDate = timer.fireDate.addingTimeInterval(timeInterval)
     }
 
 }

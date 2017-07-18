@@ -13,8 +13,8 @@ class GameBoardSlotView: UIView {
     init(column: Int, row: Int) {
         self.column = column
         self.row = row
-        super.init(frame: CGRectZero)
-        userInteractionEnabled = false
+        super.init(frame: .zero)
+        isUserInteractionEnabled = false
         loadSubviews()
     }
 
@@ -36,8 +36,8 @@ class GameBoardSlotView: UIView {
     }
 
     private let backgroundView: UIView = {
-        let view = UIView(frame: CGRectZero)
-        view.backgroundColor = UIColor(color: .DarkPurple3D3B5E)
+        let view = UIView(frame: .zero)
+        view.backgroundColor = UIColor(color: .darkPurple3D3B5E)
         return view
     }()
 
@@ -52,14 +52,14 @@ class GameBoardSlotView: UIView {
         }
     }
 
-    private func addCircleViewWithAnimation(circleView: CircleView) {
-        circleView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    private func addCircleViewWithAnimation(_ circleView: CircleView) {
+        circleView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         circleView.frame = bounds
         circleView.addAppearAnimation()
         addSubview(circleView)
     }
 
-    private func removeCircleViewWithAnimation(circleView: CircleView) {
+    private func removeCircleViewWithAnimation(_ circleView: CircleView) {
         circleView.animation = "zoomOut"
         circleView.animateNext { circleView.removeFromSuperview() }
     }

@@ -17,7 +17,7 @@ class Board {
 
     // MARK: Slots
 
-    private class func createSlots(size: BoardSize, slotDelegate: SlotDelegate?) -> [Slot] {
+    private class func createSlots(_ size: BoardSize, slotDelegate: SlotDelegate?) -> [Slot] {
         var slots = [Slot]()
         for column in 0..<size.columns {
             for row in 0..<size.rows {
@@ -51,16 +51,16 @@ class Board {
         return slot(atLocation: location)?.circle
     }
 
-    func canMoveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) -> Bool {
+    func canMoveCircle(fromLocation: SlotLocation, toLocation: SlotLocation) -> Bool {
         guard fromLocation != toLocation else { return false }
         guard let movingCircle = circle(atLocation: fromLocation) else { return false }
         guard let targetCircle = circle(atLocation: toLocation) else { return false }
         return movingCircle.type == targetCircle.type
     }
 
-    func moveCircle(fromLocation fromLocation: SlotLocation, toLocation: SlotLocation) throws {
-        guard let _ = circle(atLocation: fromLocation) else { throw Error.NoCircleAtLocation(location: fromLocation) }
-        guard let _ = circle(atLocation: toLocation) else { throw Error.NoCircleAtLocation(location: toLocation) }
+    func moveCircle(fromLocation: SlotLocation, toLocation: SlotLocation) throws {
+        guard let _ = circle(atLocation: fromLocation) else { throw BoardError.noCircleAtLocation(location: fromLocation) }
+        guard let _ = circle(atLocation: toLocation) else { throw BoardError.noCircleAtLocation(location: toLocation) }
         slot(atLocation: fromLocation)?.circle = nil
         slot(atLocation: toLocation)?.circle = nil
     }
@@ -68,7 +68,7 @@ class Board {
 }
 
 extension Board {
-    enum Error: ErrorType {
-        case NoCircleAtLocation(location: SlotLocation)
+    enum BoardError: Error {
+        case noCircleAtLocation(location: SlotLocation)
     }
 }

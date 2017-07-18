@@ -20,7 +20,7 @@ class GameBoardView: UIView {
         self.columns = columns
         self.spacing = spacing
         slotViews = GameBoardView.createSlotViews(rows: rows, columns: columns)
-        super.init(frame: CGRectZero)
+        super.init(frame: .zero)
         loadSubviews()
     }
 
@@ -41,7 +41,7 @@ class GameBoardView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         for slotView in slotViews {
-            var frame = CGRectZero
+            var frame: CGRect = .zero
             frame.size = slotSize
             frame.origin.x = CGFloat(slotView.column) * (slotSize.width + spacing) + boardHorizontalMargin()
             frame.origin.y = CGFloat(slotView.row) * (slotSize.height + spacing) + boardVerticalMargin()

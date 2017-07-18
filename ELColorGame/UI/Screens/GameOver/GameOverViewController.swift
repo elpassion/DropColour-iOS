@@ -17,8 +17,8 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
         self.delegate = delegate
         self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
-        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        self.modalPresentationStyle = UIModalPresentationStyle.Custom
+        self.modalTransitionStyle = .crossDissolve
+        self.modalPresentationStyle = .custom
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -29,25 +29,25 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
         self.view = GameOverView(score: scoreNumber, delegate: self)
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tracker.trackScreenWithName(screenName: "GameOverViewController")
     }
 
     // MARK: GameOverViewDelegate
 
-    func gameOverViewDidTapRetry(gameOverView: GameOverView) {
-        self.dismissViewControllerAnimated(true) {
+    func gameOverViewDidTapRetry(_ gameOverView: GameOverView) {
+        dismiss(animated: true) {
             self.delegate?.gameOverViewControllerDidTapRetry(self)
         }
     }
 
-    func gameOverViewDidTapShowLeaders(gameOverView: GameOverView) {
+    func gameOverViewDidTapShowLeaders(_ gameOverView: GameOverView) {
         showLeaders()
     }
 
-    func gameOverViewDidTapQuit(gameOverView: GameOverView) {
-        self.dismissViewControllerAnimated(true) {
+    func gameOverViewDidTapQuit(_ gameOverView: GameOverView) {
+        dismiss(animated: true) {
             self.delegate?.gameOverViewControllerDidTapQuit(self)
         }
     }
@@ -57,11 +57,11 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
     func showLeaders() {
         let gc = GKGameCenterViewController()
         gc.gameCenterDelegate = self
-        presentViewController(gc, animated: true, completion: nil)
+        present(gc, animated: true, completion: nil)
     }
 
-    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController) {
-        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
     }
 
 }
@@ -70,7 +70,7 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
 
 protocol GameOverViewControllerDelegate: class {
 
-    func gameOverViewControllerDidTapRetry(gameOverViewController: GameOverViewController)
-    func gameOverViewControllerDidTapQuit(gameOverViewController: GameOverViewController)
+    func gameOverViewControllerDidTapRetry(_ gameOverViewController: GameOverViewController)
+    func gameOverViewControllerDidTapQuit(_ gameOverViewController: GameOverViewController)
 
 }

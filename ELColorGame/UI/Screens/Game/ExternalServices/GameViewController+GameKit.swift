@@ -11,15 +11,11 @@ let leaderboardIdentifier = "drop_colour_leaderboard"
 extension GameViewController {
 
     func synchronizeHighestScore() {
-        guard GKLocalPlayer.localPlayer().authenticated else { return }
+        guard GKLocalPlayer.localPlayer().isAuthenticated else { return }
         let score = GKScore(leaderboardIdentifier: leaderboardIdentifier)
         guard let game = game else { return }
         score.value = Int64(game.scoreNumber)
-        GKScore.reportScores([score], withCompletionHandler: { (error) -> Void in
-            if error != nil {
-                print("error")
-            }
-        })
+        GKScore.report([score], withCompletionHandler: nil)
     }
 
 }

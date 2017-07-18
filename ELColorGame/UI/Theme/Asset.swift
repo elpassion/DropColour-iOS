@@ -6,17 +6,17 @@
 import UIKit
 
 enum Asset: String {
-    case CircleBackground = "background-circles"
-    case DropColourLogo   = "logo"
-    case PauseIcon        = "pause_icon"
-    case Pause            = "pause"
-    case RestartIcon      = "restart"
-    case Info             = "info"
-    case Close            = "close"
-    case Elpassion        = "elpassion"
-    case Dribbble         = "dribbble"
-    case Github           = "github"
-    case Twitter          = "twitter"
+    case circleBackground = "background-circles"
+    case dropColourLogo   = "logo"
+    case pauseIcon        = "pause_icon"
+    case pause            = "pause"
+    case restartIcon      = "restart"
+    case info             = "info"
+    case close            = "close"
+    case elpassion        = "elpassion"
+    case dribbble         = "dribbble"
+    case github           = "github"
+    case twitter          = "twitter"
 }
 
 extension UIImage {

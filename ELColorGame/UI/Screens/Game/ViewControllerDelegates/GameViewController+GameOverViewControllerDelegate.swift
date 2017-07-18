@@ -5,12 +5,12 @@
 
 extension GameViewController: GameOverViewControllerDelegate {
 
-    func gameOverViewControllerDidTapRetry(gameOverViewController: GameOverViewController) {
+    func gameOverViewControllerDidTapRetry(_ gameOverViewController: GameOverViewController) {
         game?.restart()
     }
 
-    func gameOverViewControllerDidTapQuit(gameOverViewController: GameOverViewController) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func gameOverViewControllerDidTapQuit(_ gameOverViewController: GameOverViewController) {
+        dismiss(animated: true, completion: nil)
     }
 
 }

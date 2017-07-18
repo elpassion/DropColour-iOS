@@ -14,8 +14,8 @@ class MenuViewController: UIViewController, MenuViewDelegate {
         self.delegate = delegate
         self.tracker = tracker
         super.init(nibName: nil, bundle: nil)
-        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        self.modalPresentationStyle = UIModalPresentationStyle.Custom
+        self.modalTransitionStyle = .crossDissolve
+        self.modalPresentationStyle = .custom
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -26,27 +26,27 @@ class MenuViewController: UIViewController, MenuViewDelegate {
         self.view = MenuView(delegate: self)
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tracker.trackScreenWithName(screenName: "MenuViewController")
     }
 
     // MARK: MenuViewDelegate
 
-    func menuViewDidTapResume(menuView: MenuView) {
-        self.dismissViewControllerAnimated(true) {
+    func menuViewDidTapResume(_ menuView: MenuView) {
+        dismiss(animated: true) {
             self.delegate?.menuViewControllerDidResumeGame(self)
         }
     }
 
-    func menuViewDidTapNewGame(menuView: MenuView) {
-        self.dismissViewControllerAnimated(true) {
+    func menuViewDidTapNewGame(_ menuView: MenuView) {
+        dismiss(animated: true) {
             self.delegate?.menuViewControllerDidTapNewGame(self)
         }
     }
 
-    func menuViewDidTapQuit(menuView: MenuView) {
-        self.dismissViewControllerAnimated(true) {
+    func menuViewDidTapQuit(_ menuView: MenuView) {
+        dismiss(animated: true) {
             self.delegate?.menuViewControllerDidTapQuit(self)
         }
     }
@@ -57,8 +57,8 @@ class MenuViewController: UIViewController, MenuViewDelegate {
 
 protocol MenuViewControllerDelegate: class {
 
-    func menuViewControllerDidResumeGame(menuViewController: MenuViewController)
-    func menuViewControllerDidTapNewGame(menuViewController: MenuViewController)
-    func menuViewControllerDidTapQuit(menuViewController: MenuViewController)
+    func menuViewControllerDidResumeGame(_ menuViewController: MenuViewController)
+    func menuViewControllerDidTapNewGame(_ menuViewController: MenuViewController)
+    func menuViewControllerDidTapQuit(_ menuViewController: MenuViewController)
 
 }

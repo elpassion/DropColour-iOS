@@ -7,9 +7,9 @@ import UIKit
 
 protocol GameOverViewDelegate: class {
 
-    func gameOverViewDidTapRetry(gameOverView: GameOverView)
-    func gameOverViewDidTapShowLeaders(gameOverView: GameOverView)
-    func gameOverViewDidTapQuit(gameOverView: GameOverView)
+    func gameOverViewDidTapRetry(_ gameOverView: GameOverView)
+    func gameOverViewDidTapShowLeaders(_ gameOverView: GameOverView)
+    func gameOverViewDidTapQuit(_ gameOverView: GameOverView)
 
 }
 
@@ -22,7 +22,7 @@ class GameOverView: UIView {
     init(score: Int, delegate: GameOverViewDelegate?) {
         self.score = score
         self.delegate = delegate
-        super.init(frame: CGRectZero)
+        super.init(frame: .zero)
         addSubviews()
         setupLayout()
         configureButtonActions()
@@ -49,69 +49,69 @@ class GameOverView: UIView {
         addSubview(quitButton)
     }
 
-    private let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-    private let scoreView = UIView(frame: CGRectZero)
-    private let retryButton = Button(title: retry.localized, color: UIColor(color: .Green6BE01A))
-    private let rankingButton = Button(title: ranking.localized, color: UIColor(color: .Turquoise54C7C7))
-    private let quitButton = Button(title: quit.localized, color: UIColor(color: .RedE82654))
+    private let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.dark))
+    private let scoreView = UIView(frame: CGRect.zero)
+    private let retryButton = Button(title: retry.localized, color: UIColor(color: .green6BE01A))
+    private let rankingButton = Button(title: ranking.localized, color: UIColor(color: .turquoise54C7C7))
+    private let quitButton = Button(title: quit.localized, color: UIColor(color: .redE82654))
 
     private let scoreNumberLabel: UILabel = {
-        let label = UILabel(frame: CGRectZero)
+        let label = UILabel(frame: CGRect.zero)
         label.font = UIFont(name: BebasNeueBold, size: 60)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
-        label.textColor = UIColor(color: .White)
+        label.textColor = UIColor(color: .white)
         return label
     }()
 
     private let scoreTextLabel: UILabel = {
-        let label = UILabel(frame: CGRectZero)
+        let label = UILabel(frame: .zero)
         label.text = yourScore.localized
         label.font = UIFont(name: BebasNeueBold, size: 20)
-        label.textColor = UIColor(color: .White)
+        label.textColor = UIColor(color: .white)
         return label
     }()
 
     // MARK: Layout
 
     private func setupLayout() {
-        blurEffectView.snp_makeConstraints { (make) -> Void in
-            make.edges.equalTo(0)
+        blurEffectView.snp.makeConstraints {
+            $0.edges.equalTo(0)
         }
-        scoreView.snp_makeConstraints { (make) -> Void in
-            make.centerY.equalTo(0).offset(-110)
-            make.centerX.equalTo(0)
+        scoreView.snp.makeConstraints {
+            $0.centerYWithinMargins.equalTo(0).offset(-110)
+            $0.centerXWithinMargins.equalTo(0)
         }
-        scoreNumberLabel.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(0)
-            make.centerX.equalTo(0)
-            make.left.greaterThanOrEqualTo(0)
-            make.right.lessThanOrEqualTo(0)
+        scoreNumberLabel.snp.makeConstraints {
+            $0.top.equalTo(0)
+            $0.centerXWithinMargins.equalTo(0)
+            $0.left.greaterThanOrEqualTo(0)
+            $0.right.lessThanOrEqualTo(0)
         }
-        scoreTextLabel.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(scoreNumberLabel.snp_bottom)
-            make.centerX.equalTo(0)
-            make.left.greaterThanOrEqualTo(0)
-            make.right.lessThanOrEqualTo(0)
-            make.bottom.equalTo(0)
+        scoreTextLabel.snp.makeConstraints {
+            $0.top.equalTo(scoreNumberLabel.snp.bottom)
+            $0.centerXWithinMargins.equalTo(0)
+            $0.left.greaterThanOrEqualTo(0)
+            $0.right.lessThanOrEqualTo(0)
+            $0.bottom.equalTo(0)
         }
-        retryButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(scoreTextLabel.snp_bottom).offset(40)
-            make.width.equalTo(200)
-            make.height.equalTo(50)
-            make.centerX.equalTo(0)
+        retryButton.snp.makeConstraints {
+            $0.top.equalTo(scoreTextLabel.snp.bottom).offset(40)
+            $0.width.equalTo(200)
+            $0.height.equalTo(50)
+            $0.centerXWithinMargins.equalTo(0)
         }
-        rankingButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(retryButton.snp_bottom).offset(15)
-            make.width.equalTo(200)
-            make.height.equalTo(50)
-            make.centerX.equalTo(0)
+        rankingButton.snp.makeConstraints {
+            $0.top.equalTo(retryButton.snp.bottom).offset(15)
+            $0.width.equalTo(200)
+            $0.height.equalTo(50)
+            $0.centerXWithinMargins.equalTo(0)
         }
-        quitButton.snp_makeConstraints { (make) -> Void in
-            make.width.equalTo(200)
-            make.height.equalTo(50)
-            make.centerX.equalTo(0)
-            make.bottom.equalTo(-40)
+        quitButton.snp.makeConstraints {
+            $0.width.equalTo(200)
+            $0.height.equalTo(50)
+            $0.centerXWithinMargins.equalTo(0)
+            $0.bottom.equalTo(-40)
         }
     }
 

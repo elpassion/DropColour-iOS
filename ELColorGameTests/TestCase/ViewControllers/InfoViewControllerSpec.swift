@@ -56,7 +56,7 @@ class InfoViewControllerSpec: QuickSpec {
             describe("tap on quit") {
                 it("should be dismissed") {
                     sut.infoViewDidTapQuit()
-                    expect(spyPresenter.capturedDismissedViewController).to(beAKindOf(InfoViewController))
+                    expect(spyPresenter.capturedDismissedViewController).to(beAKindOf(InfoViewController.self))
                 }
             }
 
@@ -95,18 +95,18 @@ class InfoViewControllerSpec: QuickSpec {
 
                     context("with 2 correct urls") {
                         it("should present alert") {
-                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Developer))
+                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.developer))
                             expect(spyPresenter.capturedPresentedViewController as? UIAlertController).notTo(beNil())
                         }
 
                         it("should show correct title for alert") {
-                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Developer))
+                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.developer))
                             let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                             expect(alertController.title).to(equal("John Apple \(showProfile.localized)"))
                         }
 
                         it("should have alert with 3 actions") {
-                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Developer))
+                            sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.developer))
                             let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                             expect(alertController.actions.count).to(equal(3))
                             expect(alertController.actions[0].title).to(equal(github.localized))
@@ -120,18 +120,18 @@ class InfoViewControllerSpec: QuickSpec {
                 context("with type .Designer") {
 
                     it("should present alert") {
-                        sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Designer))
+                        sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.designer))
                         expect(spyPresenter.capturedPresentedViewController as? UIAlertController).notTo(beNil())
                     }
 
                     it("should show correct title for alert") {
-                        sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Designer))
+                        sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.designer))
                         let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                         expect(alertController.title).to(equal("John Apple \(showProfile.localized)"))
                     }
 
                     it("should have alert with 3 actions") {
-                        sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.Designer))
+                        sut.infoViewDidTapAuthor(FakeAuthorProvider().authors.first!.copyWithType(.designer))
                         let alertController = spyPresenter.capturedPresentedViewController as! UIAlertController
                         expect(alertController.actions.count).to(equal(3))
                         expect(alertController.actions[0].title).to(equal(dribbble.localized))

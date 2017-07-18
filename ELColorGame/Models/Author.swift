@@ -6,8 +6,8 @@
 import Foundation
 
 enum AuthorType: String {
-    case Developer = "Developer"
-    case Designer = "Designer"
+    case developer = "Developer"
+    case designer = "Designer"
 }
 
 struct Author {
@@ -15,9 +15,9 @@ struct Author {
     let name: String
     let surname: String
     let type: AuthorType
-    let avatarUrl: NSURL?
-    let professionUrl: NSURL?
-    let twitterUrl: NSURL?
+    let avatarUrl: URL?
+    let professionUrl: URL?
+    let twitterUrl: URL?
 
 }
 
@@ -27,10 +27,10 @@ extension Author {
         return "\(name) \(surname)"
     }
 
-    func loginFromUrl(url: NSURL) -> String? {
+    func loginFromUrl(_ url: URL) -> String? {
         let urlString = url.absoluteString
-        guard urlString.containsString("/") else { return nil }
-        return urlString.componentsSeparatedByString("/").last
+        guard urlString.contains("/") else { return nil }
+        return urlString.components(separatedBy: "/").last
     }
 
 }

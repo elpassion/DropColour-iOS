@@ -9,17 +9,9 @@ import AVFoundation
 extension GameBoardView {
 
     func playSound() {
-        if let soundURL = NSBundle.mainBundle().URLForResource("bubble_pop_sound", withExtension: "m4a") {
+        if let soundURL = Bundle.main.url(forResource: "bubble_pop_sound", withExtension: "m4a") {
             var mySound: SystemSoundID = 0
-            AudioServicesCreateSystemSoundID(soundURL, &mySound)
-            AudioServicesPlaySystemSound(mySound)
-        }
-    }
-
-    func playBombSound() {
-        if let soundURL = NSBundle.mainBundle().URLForResource("bomb_explosion", withExtension: "m4a") {
-            var mySound: SystemSoundID = 0
-            AudioServicesCreateSystemSoundID(soundURL, &mySound)
+            AudioServicesCreateSystemSoundID(soundURL as CFURL, &mySound)
             AudioServicesPlaySystemSound(mySound)
         }
     }

@@ -15,7 +15,7 @@ class AuthorLoginFromUrlSpec: QuickSpec {
             describe("when url has login") {
 
                 beforeEach {
-                    let url = NSURL(string: "www.google.pl/LoginName")
+                    let url = URL(string: "www.google.pl/LoginName")
                     sut = FakeAuthorProvider().authors.first!.copyWithProffessionUrl(url!)
                 }
 
@@ -31,7 +31,7 @@ class AuthorLoginFromUrlSpec: QuickSpec {
             describe("when url has NOT login") {
 
                 beforeEach {
-                    let url = NSURL(string: "www.google.pl")
+                    let url = URL(string: "www.google.pl")
                     sut = FakeAuthorProvider().authors.first!.copyWithProffessionUrl(url!)
                 }
 
