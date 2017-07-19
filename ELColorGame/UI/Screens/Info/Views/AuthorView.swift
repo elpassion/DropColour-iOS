@@ -1,8 +1,3 @@
-//
-// Created by Mateusz Szklarek on 29/01/16.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 import UIKit
 
 class AuthorView: UIView {

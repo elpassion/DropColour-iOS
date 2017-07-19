@@ -1,8 +1,3 @@
-//
-// Created by Mateusz Szklarek on 19/01/16.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 extension Array where Element: Slot {
 
     var emptySlots: [Slot] {

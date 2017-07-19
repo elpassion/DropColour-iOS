@@ -1,8 +1,3 @@
-//
-// Created by Mateusz Szklarek on 03/02/16.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 import Foundation
 import GameAnalytics
 

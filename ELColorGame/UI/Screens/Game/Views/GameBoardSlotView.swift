@@ -1,8 +1,3 @@
-//
-//  Created by Dariusz Rybicki on 12/10/15.
-//  Copyright © 2015 EL Passion. All rights reserved.
-//
-
 import UIKit
 
 class GameBoardSlotView: UIView {

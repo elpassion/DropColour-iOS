@@ -1,8 +1,3 @@
-//
-// Created by Mateusz Szklarek on 23/01/16.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 let newGame = "new_game"
 let ranking = "ranking"
 let score = "score"

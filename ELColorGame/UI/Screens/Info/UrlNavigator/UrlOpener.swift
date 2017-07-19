@@ -1,8 +1,3 @@
-//
-// Created by Mateusz Szklarek on 14/02/16.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 import Foundation
 import UIKit
 

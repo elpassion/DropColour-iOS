@@ -1,8 +1,3 @@
-//
-// Created by Mateusz Szklarek on 23/01/16.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 import UIKit
 
 enum Asset: String {
