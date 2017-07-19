@@ -32,6 +32,7 @@ PODS:
   - Quick (1.1.0)
   - SnapKit (3.2.0)
   - Spring (1.0.3)
+  - SwiftLint (0.20.1)
 
 DEPENDENCIES:
   - Crashlytics (~> 3.8)
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - Quick (~> 1.1)
   - SnapKit (~> 3.2)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
+  - SwiftLint
 
 EXTERNAL SOURCES:
   Spring:
@@ -70,7 +72,8 @@ SPEC CHECKSUMS:
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  SwiftLint: f60095dc173a3f3ec505bb34f5229c3dfd779a54
 
-PODFILE CHECKSUM: fbd3d90dadc87c1ba1300bd029dd3301436e320d
+PODFILE CHECKSUM: b2bcc94ec303dbac3fc5fbb93ce3c2fa533af01c
 
 COCOAPODS: 1.2.1

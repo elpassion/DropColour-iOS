@@ -12,6 +12,7 @@ target 'ELColorGame' do
   pod 'FBSDKCoreKit', '~> 4.2'
   pod 'GA-SDK-IOS', '~> 2.2'
   pod 'Google/Analytics'
+  pod 'SwiftLint'
 end
 
 target 'ELColorGameTests' do
