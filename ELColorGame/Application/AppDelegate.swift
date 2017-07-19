@@ -28,13 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
-    func setupGoogleAnalytics() {
+    // MARK: Private
+
+    private func setupGoogleAnalytics() {
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
     }
-
-    // MARK: Private
 
     private let gai: GAI = {
         guard let gai = GAI.sharedInstance() else { fatalError("Google Analytics not configured correctly") }
