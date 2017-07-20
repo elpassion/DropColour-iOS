@@ -54,8 +54,12 @@ class Board {
     }
 
     func moveCircle(fromLocation: SlotLocation, toLocation: SlotLocation) throws {
-        guard let _ = circle(atLocation: fromLocation) else { throw BoardError.noCircleAtLocation(location: fromLocation) }
-        guard let _ = circle(atLocation: toLocation) else { throw BoardError.noCircleAtLocation(location: toLocation) }
+        guard circle(atLocation: fromLocation) != nil else {
+            throw BoardError.noCircleAtLocation(location: fromLocation)
+        }
+        guard circle(atLocation: toLocation) != nil else {
+            throw BoardError.noCircleAtLocation(location: toLocation)
+        }
         slot(atLocation: fromLocation)?.circle = nil
         slot(atLocation: toLocation)?.circle = nil
     }
