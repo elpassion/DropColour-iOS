@@ -38,6 +38,7 @@
 		4E2494271C6F748600EA3875 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E2494251C6F748600EA3875 /* Localizable.strings */; };
 		4E40715B1BB5D58C00509C4B /* bubble_pop_sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E40715A1BB5D58C00509C4B /* bubble_pop_sound.m4a */; };
 		4E50FAD41CC64350001BD4EC /* Button+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E50FAD31CC64350001BD4EC /* Button+BackgroundColor.swift */; };
+		4E698EDC1F20F5740091137D /* ArrayRandomSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E698EDB1F20F5740091137D /* ArrayRandomSpec.swift */; };
 		4E74E3EA1C5CE76800D50FD8 /* InfoViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6BBC2329D6DDB8E4B4666E /* InfoViewControllerSpec.swift */; };
 		4E7903B71C635FED00767BE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E7903B61C635FED00767BE4 /* GoogleService-Info.plist */; };
 		4E835C101BC091C600AA9293 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E835C0F1BC091C600AA9293 /* GameKit.framework */; };
@@ -157,6 +158,7 @@
 		4E4BB58E1BB410240043C80C /* ELColorGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELColorGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4D9EAA1BB4B078001104C7 /* BebasNeueBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeueBold.otf; sourceTree = "<group>"; };
 		4E50FAD31CC64350001BD4EC /* Button+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+BackgroundColor.swift"; sourceTree = "<group>"; };
+		4E698EDB1F20F5740091137D /* ArrayRandomSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayRandomSpec.swift; sourceTree = "<group>"; };
 		4E7903B61C635FED00767BE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E835C0F1BC091C600AA9293 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		4EB0350F1CBCFD0300CF05A0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				9A6175D6E678762C31A7ED55 /* Extension */,
 				9A68F3010033B9D94CE6A875 /* TrackerSpec.swift */,
 				9A69C471DAB4D99145ADC072 /* Logic */,
+				4E698EDB1F20F5740091137D /* ArrayRandomSpec.swift */,
 			);
 			path = TestCase;
 			sourceTree = "<group>";
@@ -1063,6 +1066,7 @@
 				9A625266267A191236E9BDC3 /* TrackerSpy.swift in Sources */,
 				9A6196D2172EA220DE8F1DC1 /* StartViewControllerSpec.swift in Sources */,
 				9A646C33DEB16B8067291F99 /* MenuViewControllerSpec.swift in Sources */,
+				4E698EDC1F20F5740091137D /* ArrayRandomSpec.swift in Sources */,
 				9A6F8DCC06C44733DC632D81 /* GameOverViewControllerSpec.swift in Sources */,
 				9A6D4DC9EDBF98D321B8B4ED /* GameViewControllerSpec.swift in Sources */,
 				9A61622399D8064F9130B1D7 /* DifficultyLevelSpec.swift in Sources */,
