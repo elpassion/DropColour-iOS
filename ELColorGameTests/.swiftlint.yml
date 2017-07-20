@@ -1,0 +1,18 @@
+disabled_rules:
+  - force_try
+  - force_cast
+  - force_unwrapping
+  - line_length
+  - type_name
+  - todo
+  - valid_docs
+  - function_parameter_count
+  - cyclomatic_complexity
+  - function_body_length
+  - file_length
+  - type_body_length
+  - identifier_name
+
+opt_in_rules:
+  - empty_count
+  - vertical_whitespace
