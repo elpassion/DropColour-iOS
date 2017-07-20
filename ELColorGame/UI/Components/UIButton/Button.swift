@@ -2,7 +2,7 @@ import UIKit
 
 class Button: UIButton {
 
-    typealias ButtonActionClosure = () -> ()
+    typealias ButtonActionClosure = () -> Void
     var buttonActionClosure: ButtonActionClosure?
 
     init(title: String, color: UIColor) {
