@@ -50,7 +50,7 @@ class MenuView: UIView {
     private let pauseLabelText: UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.text = pause.localized
-        label.font = UIFont(name: BebasNeueBold, size: 30)
+        label.font = UIFont(font: FontFamily.BebasNeue.bold, size: 30)
         label.textColor = UIColor(color: .white)
         return label
     }()

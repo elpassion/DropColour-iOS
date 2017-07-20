@@ -9,7 +9,7 @@ class Button: UIButton {
         super.init(frame: .zero)
 
         setTitle(title, for: .normal)
-        titleLabel?.font = UIFont(name: BebasNeueBold, size: 22)
+        titleLabel?.font = UIFont(font: FontFamily.BebasNeue.bold, size: 22)
         setTitleColor(.white, for: .normal)
         layer.cornerRadius = 25.0
         backgroundColor = color

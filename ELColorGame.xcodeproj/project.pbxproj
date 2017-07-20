@@ -82,7 +82,7 @@
 		9A6B65B250759EE8574693BC /* GameViewController+GameKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6BB1C735F3DDAC6115BD58 /* GameViewController+GameKit.swift */; };
 		9A6B9946EE05DE14ACDF7C0B /* GameBoardSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A68FA3016EE2B2536A7B8E9 /* GameBoardSlotView.swift */; };
 		9A6BC732B6A85ACE0F558CA9 /* ViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6321107D251F46D2ECD229 /* ViewControllerPresenterSpy.swift */; };
-		9A6C497E5C23F58B1BA9A76A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66592DD1F983A0AAF76679 /* Fonts.swift */; };
+		9A6C497E5C23F58B1BA9A76A /* UIFont_Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66592DD1F983A0AAF76679 /* UIFont_Font.swift */; };
 		9A6CFBCE2437B4EF35CEAF3E /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A681470AEEB857177142DB7 /* GameOverView.swift */; };
 		9A6D4BE8953E665B305D5FAD /* AlertControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62043CAA01F90BF21D0BA1 /* AlertControllerFactory.swift */; };
 		9A6D4DC9EDBF98D321B8B4ED /* GameViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E3F5613F8A800A5C96523 /* GameViewControllerSpec.swift */; };
@@ -184,7 +184,7 @@
 		9A65599E2ABDAB7F47FEB8A4 /* LogoDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoDescriptionView.swift; sourceTree = "<group>"; };
 		9A65E20786EF9FDFEA8B9F6D /* AuthorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
 		9A660ABBDBF0B88A78FF6190 /* AuthorLoginFromUrlSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorLoginFromUrlSpec.swift; sourceTree = "<group>"; };
-		9A66592DD1F983A0AAF76679 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		9A66592DD1F983A0AAF76679 /* UIFont_Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont_Font.swift; sourceTree = "<group>"; };
 		9A66DDEC747665108D8A2ACD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A67096A98AF85E62A342136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ELColorGame/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		9A6767A54348AC09B0F524BA /* DifficultyLevelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyLevelSpec.swift; sourceTree = "<group>"; };
@@ -598,7 +598,7 @@
 				9A6B9F47D60E10B58A30B081 /* KeyConstants.swift */,
 				9A69283DEE7459D5B366C0C9 /* Asset.swift */,
 				9A62BF89ACEBCB72D4BA3870 /* Color.swift */,
-				9A66592DD1F983A0AAF76679 /* Fonts.swift */,
+				9A66592DD1F983A0AAF76679 /* UIFont_Font.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -1026,7 +1026,7 @@
 				9A69AAC1EEBF43140B1B2165 /* KeyConstants.swift in Sources */,
 				9A6AF59F1380FCDE2CFC58B9 /* Asset.swift in Sources */,
 				9A6DA966B56B70B4D36DC684 /* Color.swift in Sources */,
-				9A6C497E5C23F58B1BA9A76A /* Fonts.swift in Sources */,
+				9A6C497E5C23F58B1BA9A76A /* UIFont_Font.swift in Sources */,
 				9A6E0075F5F96FF5F3B47AA8 /* InfoViewController.swift in Sources */,
 				9A6AE13DECD0898CD22FAFA8 /* Author.swift in Sources */,
 				9A62B4CC1C8A4681E750B9DA /* LogoDescriptionView.swift in Sources */,

@@ -67,7 +67,7 @@ class GameView: UIView {
     private let scoreTextLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = score.localized
-        label.font = UIFont(name: BebasNeueBold, size: 17)
+        label.font = UIFont(font: FontFamily.BebasNeue.bold, size: 17)
         label.textColor = UIColor(color: .lightPurple7D75C7)
         return label
     }()
@@ -75,7 +75,7 @@ class GameView: UIView {
     private let scoreNumberLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "0"
-        label.font = UIFont(name: BebasNeueBold, size: 46)
+        label.font = UIFont(font: FontFamily.BebasNeue.bold, size: 46)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.textColor = UIColor(color: .white)

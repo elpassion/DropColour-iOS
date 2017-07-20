@@ -58,7 +58,7 @@ class AuthorView: UIView {
 
     private let fullNameLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.font = UIFont(name: BebasNeueBold, size: 20)
+        label.font = UIFont(font: FontFamily.BebasNeue.bold, size: 20)
         label.textColor = UIColor(color: .white)
         return label
     }()
