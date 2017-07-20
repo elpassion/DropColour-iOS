@@ -11,10 +11,13 @@ extension UIView {
     }
 
     func addAppearAnimation() {
-        configureKeyFrameAnimation(withValues: [0.0, 0.2, 0.5, 1.4, 1.0], keyTimes: [0, 0.3, 0.5, 0.75, 1], duration: 0.4)
+        let values = [0.0, 0.2, 0.5, 1.4, 1.0]
+        configureKeyFrameAnimation(withValues: values, keyTimes: [0, 0.3, 0.5, 0.75, 1], duration: 0.4)
     }
 
-    private func configureKeyFrameAnimation(withValues values: [Any], keyTimes: [NSNumber], duration: CFTimeInterval? = nil) {
+    private func configureKeyFrameAnimation(withValues values: [Any],
+                                            keyTimes: [NSNumber],
+                                            duration: CFTimeInterval? = nil) {
         let keyFrame = CAKeyframeAnimation(keyPath: "transform.scale")
         keyFrame.values = values
         keyFrame.keyTimes = keyTimes
@@ -23,7 +26,10 @@ extension UIView {
         }
         keyFrame.isRemovedOnCompletion = false
         keyFrame.fillMode = kCAFillModeForwards
-        keyFrame.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
+        keyFrame.timingFunctions = [
+            CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
+            CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        ]
         layer.add(keyFrame, forKey: "transform.scale")
     }
 
