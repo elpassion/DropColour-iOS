@@ -17,7 +17,11 @@ class GameTimer: NSObject {
         self.interval = interval
         self.action = action
         super.init()
-        timer = Foundation.Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(GameTimer.timerTick), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: interval,
+                                     target: self,
+                                     selector: #selector(GameTimer.timerTick),
+                                     userInfo: nil,
+                                     repeats: true)
     }
 
     deinit {
