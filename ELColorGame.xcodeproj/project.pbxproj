@@ -738,6 +738,7 @@
 			buildConfigurationList = 4E4BB59A1BB410240043C80C /* Build configuration list for PBXNativeTarget "ELColorGameTests" */;
 			buildPhases = (
 				0035D14499C24A716A65928B /* [CP] Check Pods Manifest.lock */,
+				4E698EDD1F20FC520091137D /* SwiftLint */,
 				4E4BB57F1BB410240043C80C /* Sources */,
 				4E4BB5801BB410240043C80C /* Frameworks */,
 				4E4BB5811BB410240043C80C /* Resources */,
@@ -929,6 +930,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ \"$CI\" = \"true\" ]; then\n  echo \"Skipping SwiftLint on CI\"\n  exit 0\nfi\ncd ELColorGame; ${PODS_ROOT}/SwiftLint/swiftlint";
+		};
+		4E698EDD1F20FC520091137D /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CI\" = \"true\" ]; then\necho \"Skipping SwiftLint on CI\"\nexit 0\nfi\ncd ELColorGameTests; ${PODS_ROOT}/SwiftLint/swiftlint";
 		};
 		4E6B6E681BB59CAA0033EF7C /* Run Script - Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
