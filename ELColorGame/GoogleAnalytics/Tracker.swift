@@ -26,15 +26,22 @@ class Tracker: TrackerProtocol {
     }
 
     func trackGameStartEvent() {
-        gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-start", value: nil))
+        let params = createEvent(withCategory: "event", action: "dropcolour.event.game-start")
+        gaiTracker.send(params)
     }
 
     func trackGameEndEvent(score: Int) {
-        gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-end", value: score.number))
+        let params = createEvent(withCategory: "event", action: "dropcolour.event.game-end", value: score)
+        gaiTracker.send(params)
     }
 
     func trackGameScoredEvent(scoredValue value: Int) {
-        gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-scored", value: value.number))
+        let params = createEvent(withCategory: "event", action: "dropcolour.event.game-scored", value: value)
+        gaiTracker.send(params)
+    }
+
+    private func createEvent(withCategory category: String, action: String, value: Int? = nil) -> [AnyHashable: Any] {
+        return gaiDictionaryFactory.createEventWithCategory(category, action: action, value: value?.number)
     }
 
 }
