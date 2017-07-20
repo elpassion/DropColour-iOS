@@ -93,7 +93,7 @@ class Game {
     }
 
     private func startInsertingCircles() {
-        if let _ = insertingTimer {
+        if insertingTimer != nil {
             stopInsertingCircles()
         }
         insertingTimer = GameTimer(interval: timeInterval) { [weak self] in
