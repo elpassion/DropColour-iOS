@@ -20,7 +20,7 @@ class UrlOpenerSpy: UrlOpening {
     }
 
     func canOpen(url: URL?) -> Bool {
-        guard let _ = url else { return false }
+        guard url != nil else { return false }
         return true
     }
 
