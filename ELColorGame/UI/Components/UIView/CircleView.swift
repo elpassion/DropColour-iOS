@@ -3,9 +3,6 @@ import Spring
 
 class CircleView: SpringView {
 
-    private let topColor: UIColor
-    private let bottomColor: UIColor
-
     init(topColor: UIColor, bottomColor: UIColor) {
         self.topColor = topColor
         self.bottomColor = bottomColor
@@ -43,5 +40,10 @@ class CircleView: SpringView {
         layer.colors = colors.map { $0.cgColor }
         return layer
     }
+
+    // MARK: Private
+
+    private let topColor: UIColor
+    private let bottomColor: UIColor
 
 }
