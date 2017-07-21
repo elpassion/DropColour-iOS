@@ -2,6 +2,7 @@ language: objective-c
 osx_image: xcode8.3
 sudo: false
 before_install:
+- bundle install
 - bundle exec pod repo update
 - bundle exec pod install
 before_script:
