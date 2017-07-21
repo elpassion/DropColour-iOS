@@ -50,13 +50,13 @@ extension InfoViewController {
     // MARK: Alert Actions
 
     private func openUrlAlertActionWithTitle(_ title: String, url: URL) -> UIAlertAction {
-        return alertActionFactory.createAction(withTitle: title, style: .default) { [weak self] _ in
+        return alertActionFactory.create(withTitle: title, style: .default) { [weak self] _ in
             _ = self?.urlOpener.open(url: url)
         }
     }
 
     private func cancelAlertAction() -> UIAlertAction {
-        return alertActionFactory.createAction(withTitle: cancel.localized, style: .cancel, handler: nil)
+        return alertActionFactory.create(withTitle: cancel.localized, style: .cancel, handler: nil)
     }
 
 }
