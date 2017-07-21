@@ -6,14 +6,12 @@ enum AuthorType: String {
 }
 
 struct Author {
-
     let name: String
     let surname: String
     let type: AuthorType
     let avatarUrl: URL?
     let professionUrl: URL?
     let twitterUrl: URL?
-
 }
 
 extension Author {

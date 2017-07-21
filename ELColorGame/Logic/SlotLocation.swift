@@ -1,10 +1,8 @@
 import Foundation
 
 struct SlotLocation {
-
     let column: Int
     let row: Int
-
 }
 
 extension SlotLocation: Hashable {

@@ -1,13 +1,11 @@
 import Foundation
 
 protocol TrackerProtocol {
-
     var gaiDictionaryFactory: GAIDictionaryCreating { get set }
     func trackScreenWithName(screenName name: String)
     func trackGameStartEvent()
     func trackGameEndEvent(score: Int)
     func trackGameScoredEvent(scoredValue value: Int)
-
 }
 
 class Tracker: TrackerProtocol {

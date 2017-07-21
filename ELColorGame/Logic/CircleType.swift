@@ -1,14 +1,12 @@
 import Foundation
 
 enum CircleType {
-
     case purple
     case blue
     case orange
     case red
     case turquoise
     case green
-
 }
 
 extension CircleType {

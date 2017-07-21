@@ -1,12 +1,9 @@
 import UIKit
 
 protocol ViewControllerPresenting {
-
     var viewController: UIViewController? { get set }
-
     func present(viewController: UIViewController)
     func dismiss(viewController: UIViewController)
-
 }
 
 class ViewControllerPresenter: ViewControllerPresenting {
