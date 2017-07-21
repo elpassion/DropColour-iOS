@@ -45,12 +45,12 @@ class LineViewAuthors: UIView {
 
     private func setupLayout() {
         titleLabel.snp.makeConstraints {
-            $0.top.bottom.centerX.equalTo(0)
+            $0.top.bottom.centerX.equalToSuperview()
         }
         leftLineView.snp.makeConstraints {
             $0.left.equalTo(30)
             $0.height.equalTo(1)
-            $0.centerY.equalTo(0)
+            $0.centerY.equalToSuperview()
             $0.right.equalTo(titleLabel.snp.left).offset(-10)
         }
         rightLineView.snp.makeConstraints {

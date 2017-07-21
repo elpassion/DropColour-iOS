@@ -58,29 +58,29 @@ class StartView: UIView {
 
     private func setupLayout() {
         backgroundView.snp.makeConstraints {
-            $0.edges.equalTo(0)
+            $0.edges.equalToSuperview()
         }
 
         backgroundImageView.snp.makeConstraints {
-            $0.edges.equalTo(0)
+            $0.edges.equalToSuperview()
         }
 
         logoImageView.snp.makeConstraints {
-            $0.centerYWithinMargins.equalTo(0).offset(-80)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerYWithinMargins.equalToSuperview().offset(-80)
+            $0.centerXWithinMargins.equalToSuperview()
         }
 
         newGameButton.snp.makeConstraints {
             $0.top.equalTo(logoImageView.snp.bottom).offset(50)
             $0.width.equalTo(200)
             $0.height.equalTo(50)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
         }
         rankingButton.snp.makeConstraints {
             $0.top.equalTo(newGameButton.snp.bottom).offset(15)
             $0.width.equalTo(200)
             $0.height.equalTo(50)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
         }
         infoButton.snp.makeConstraints {
             $0.right.equalTo(-15)

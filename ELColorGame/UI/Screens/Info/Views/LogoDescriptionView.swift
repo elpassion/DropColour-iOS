@@ -40,14 +40,14 @@ class LogoDescriptionView: UIView {
 
     private func setupLayout() {
         logoImageView.snp.makeConstraints {
-            $0.top.equalTo(0)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.top.equalToSuperview()
+            $0.centerXWithinMargins.equalToSuperview()
         }
         descriptionLabel.snp.makeConstraints {
             $0.top.equalTo(logoImageView.snp.bottom).offset(25)
             $0.left.equalTo(25)
             $0.right.equalTo(-25)
-            $0.bottom.equalTo(0)
+            $0.bottom.equalToSuperview()
         }
     }
 

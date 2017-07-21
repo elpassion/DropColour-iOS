@@ -45,7 +45,7 @@ class InfoView: UIView {
         view.clipsToBounds = true
         let blur = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         view.addSubview(blur)
-        blur.snp.makeConstraints { $0.edges.equalTo(0) }
+        blur.snp.makeConstraints { $0.edges.equalToSuperview() }
         return view
     }()
 
@@ -70,22 +70,22 @@ class InfoView: UIView {
 
     private func setupLayout() {
         blurEffectView.snp.makeConstraints {
-            $0.edges.equalTo(0)
+            $0.edges.equalToSuperview()
         }
         scrollView.snp.makeConstraints {
-            $0.edges.equalTo(0)
+            $0.edges.equalToSuperview()
         }
         logoDescriptionView.snp.makeConstraints {
             $0.top.left.right.equalToSuperview()
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
         }
         lineViewAuthors.snp.makeConstraints {
             $0.top.equalTo(logoDescriptionView.snp.bottom).offset(30)
-            $0.left.right.equalTo(0)
+            $0.left.right.equalToSuperview()
         }
         for (idx, authorView) in authorViews.enumerated() {
             authorView.snp.makeConstraints {
-                $0.left.right.equalTo(0)
+                $0.left.right.equalToSuperview()
                 if authorView == authorViews.first {
                     $0.top.equalTo(lineViewAuthors.snp.bottom).offset(20)
                 } else {
@@ -93,7 +93,7 @@ class InfoView: UIView {
                     $0.top.equalTo(previous.snp.bottom).offset(20)
                 }
                 if authorView == authorViews.last {
-                    $0.bottom.equalTo(0)
+                    $0.bottom.equalToSuperview()
                 }
             }
         }

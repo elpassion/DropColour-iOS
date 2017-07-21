@@ -46,33 +46,33 @@ class MenuView: UIView {
 
     private func setupLayout() {
         blurEffectView.snp.makeConstraints {
-            $0.edges.equalTo(0)
+            $0.edges.equalToSuperview()
         }
         resumeButton.snp.makeConstraints {
             $0.width.equalTo(200)
             $0.height.equalTo(50)
-            $0.centerXWithinMargins.equalTo(0)
-            $0.centerYWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
+            $0.centerYWithinMargins.equalToSuperview()
         }
         newGameButton.snp.makeConstraints {
             $0.top.equalTo(resumeButton.snp.bottom).offset(15)
             $0.width.equalTo(200)
             $0.height.equalTo(50)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
         }
         quitButton.snp.makeConstraints {
             $0.width.equalTo(200)
             $0.height.equalTo(50)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
             $0.bottom.equalTo(-40)
         }
         pauseLabelText.snp.makeConstraints {
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
             $0.bottom.equalTo(resumeButton.snp.top).offset(-40)
         }
         pauseImageView.snp.makeConstraints {
             $0.bottom.equalTo(pauseLabelText.snp.top).offset(-20)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
         }
     }
 

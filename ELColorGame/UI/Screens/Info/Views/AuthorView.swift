@@ -104,7 +104,7 @@ class AuthorView: UIView {
 
     private func setupLayout() {
         avatarImageView.snp.makeConstraints {
-            $0.top.equalTo(0)
+            $0.top.equalToSuperview()
             $0.bottom.lessThanOrEqualTo(0)
             $0.size.equalTo(CGSize(width: 80, height: 80))
             $0.left.equalTo(45)

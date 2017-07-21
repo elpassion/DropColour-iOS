@@ -69,41 +69,41 @@ class GameOverView: UIView {
 
     private func setupLayout() {
         blurEffectView.snp.makeConstraints {
-            $0.edges.equalTo(0)
+            $0.edges.equalToSuperview()
         }
         scoreView.snp.makeConstraints {
-            $0.centerYWithinMargins.equalTo(0).offset(-110)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerYWithinMargins.equalToSuperview().offset(-110)
+            $0.centerXWithinMargins.equalToSuperview()
         }
         scoreNumberLabel.snp.makeConstraints {
-            $0.top.equalTo(0)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.top.equalToSuperview()
+            $0.centerXWithinMargins.equalToSuperview()
             $0.left.greaterThanOrEqualTo(0)
             $0.right.lessThanOrEqualTo(0)
         }
         scoreTextLabel.snp.makeConstraints {
             $0.top.equalTo(scoreNumberLabel.snp.bottom)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
             $0.left.greaterThanOrEqualTo(0)
             $0.right.lessThanOrEqualTo(0)
-            $0.bottom.equalTo(0)
+            $0.bottom.equalToSuperview()
         }
         retryButton.snp.makeConstraints {
             $0.top.equalTo(scoreTextLabel.snp.bottom).offset(40)
             $0.width.equalTo(200)
             $0.height.equalTo(50)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
         }
         rankingButton.snp.makeConstraints {
             $0.top.equalTo(retryButton.snp.bottom).offset(15)
             $0.width.equalTo(200)
             $0.height.equalTo(50)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
         }
         quitButton.snp.makeConstraints {
             $0.width.equalTo(200)
             $0.height.equalTo(50)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
             $0.bottom.equalTo(-40)
         }
     }

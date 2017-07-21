@@ -111,31 +111,31 @@ class GameView: UIView {
             $0.height.equalTo(topViewSuperview).multipliedBy(0.15).priority(.low)
         }
         pauseButton.snp.makeConstraints {
-            $0.left.equalTo(0)
-            $0.centerYWithinMargins.equalTo(0)
+            $0.left.equalToSuperview()
+            $0.centerYWithinMargins.equalToSuperview()
         }
         pauseButton.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .horizontal)
         scoreView.snp.makeConstraints {
-            $0.centerWithinMargins.equalTo(0)
+            $0.centerWithinMargins.equalToSuperview()
             $0.left.greaterThanOrEqualTo(pauseButton.snp.right).offset(16)
             $0.right.lessThanOrEqualTo(restartButton.snp.left).offset(-16)
         }
         scoreNumberLabel.snp.makeConstraints {
-            $0.top.equalTo(0)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.top.equalToSuperview()
+            $0.centerXWithinMargins.equalToSuperview()
             $0.left.greaterThanOrEqualTo(0)
             $0.right.lessThanOrEqualTo(0)
         }
         scoreTextLabel.snp.makeConstraints {
             $0.top.equalTo(scoreNumberLabel.snp.bottom)
-            $0.centerXWithinMargins.equalTo(0)
+            $0.centerXWithinMargins.equalToSuperview()
             $0.left.greaterThanOrEqualTo(0)
             $0.right.lessThanOrEqualTo(0)
-            $0.bottom.equalTo(0)
+            $0.bottom.equalToSuperview()
         }
         restartButton.snp.makeConstraints {
-            $0.right.equalTo(0)
-            $0.centerYWithinMargins.equalTo(0)
+            $0.right.equalToSuperview()
+            $0.centerYWithinMargins.equalToSuperview()
         }
         restartButton.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .horizontal)
         boardContainerView.snp.makeConstraints {
@@ -150,7 +150,7 @@ class GameView: UIView {
         boardView.delegate = self
         boardContainerView.addSubview(boardView)
         boardView.snp.makeConstraints {
-            $0.edges.equalTo(0)
+            $0.edges.equalToSuperview()
         }
     }
 
