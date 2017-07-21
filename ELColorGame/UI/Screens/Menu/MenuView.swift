@@ -35,25 +35,12 @@ class MenuView: UIView {
         addSubview(pauseLabelText)
     }
 
-    private let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.dark))
+    private let blurEffectView = Factory.blurEffectView
     private let resumeButton = Button(title: resume.localized, color: UIColor(color: .blue0091FC))
     private let newGameButton = Button(title: newGame.localized, color: UIColor(color: .green6BE01A))
     private let quitButton = Button(title: quit.localized, color: UIColor(color: .redE82654))
-
-    private let pauseImageView: UIImageView = {
-        let view = UIImageView(frame: .zero)
-        view.image = UIImage(asset: .pauseIcon)
-        view.contentMode = .scaleAspectFit
-        return view
-    }()
-
-    private let pauseLabelText: UILabel = {
-        let label = UILabel(frame: CGRect.zero)
-        label.text = pause.localized
-        label.font = UIFont(font: FontFamily.BebasNeue.bold, size: 30)
-        label.textColor = UIColor(color: .white)
-        return label
-    }()
+    private let pauseImageView = Factory.pauseImageView
+    private let pauseLabelText = Factory.pauseLabel
 
     // MARK: Layout
 
@@ -99,4 +86,28 @@ protocol MenuViewDelegate: class {
     func menuViewDidTapNewGame(_ menuView: MenuView)
     func menuViewDidTapQuit(_ menuView: MenuView)
 
+}
+
+private extension MenuView {
+    struct Factory {
+        static var blurEffectView: UIVisualEffectView {
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+            return UIVisualEffectView(effect: blurEffect)
+        }
+
+        static var pauseImageView: UIImageView {
+            let view = UIImageView(frame: .zero)
+            view.image = UIImage(asset: .pauseIcon)
+            view.contentMode = .scaleAspectFit
+            return view
+        }
+
+        static var pauseLabel: UILabel {
+            let label = UILabel(frame: CGRect.zero)
+            label.text = pause.localized
+            label.font = UIFont(font: FontFamily.BebasNeue.bold, size: 30)
+            label.textColor = UIColor(color: .white)
+            return label
+        }
+    }
 }
