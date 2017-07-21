@@ -1,5 +1,5 @@
 ![platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)
-![langauge Swift](https://img.shields.io/badge/language-Swift%202.2-brightgreen.svg)
+![langauge Swift](https://img.shields.io/badge/language-Swift%203.1-brightgreen.svg)
 ![app version](https://img.shields.io/badge/version-1.0.3-brightgreen.svg)
 [![EL Passion](https://img.shields.io/badge/supported%20by-EL%20Passion-brightgreen.svg)](http://www.elpassion.com)
 [![License MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
@@ -14,10 +14,10 @@ iOS project written in <a href="https://github.com/apple/swift">Swift 2.2</a> du
     <a href="https://t.co/5GlrejZSJe"><img src="Images/app-store-logo.png" width="20%"></a>
 </div>
 
-<img src="Images/1.jpg" width="24%"/>
-<img src="Images/2.jpg" width="24%"/>
-<img src="Images/3.jpg" width="24%"/>
-<img src="Images/4.jpg" width="24%"/>
+<img align="center" src="Images/1.jpg" width="22%"/>
+<img align="center" src="Images/2.jpg" width="22%"/>
+<img align="center" src="Images/3.jpg" width="22%"/>
+<img align="center" src="Images/4.jpg" width="22%"/>
 
 ## Data users info
 
