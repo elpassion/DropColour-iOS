@@ -2,11 +2,6 @@ import Foundation
 
 class DifficultyLevel {
 
-    private let initialTimeInterval: TimeInterval = 0.75
-    private let scorePerLevel: Double = 200
-    private let minTimeIntervalRatio: Double = 200
-    private let maxTimeIntervalRatio: Double = 800
-
     var scoreClosure: (() -> Int)?
 
     func intervalTime() -> TimeInterval {
@@ -18,6 +13,13 @@ class DifficultyLevel {
     func actionPoints() -> Int {
         return 10
     }
+
+    // MARK: Private
+
+    private let initialTimeInterval: TimeInterval = 0.75
+    private let scorePerLevel: Double = 200
+    private let minTimeIntervalRatio: Double = 200
+    private let maxTimeIntervalRatio: Double = 800
 
     private var currentScore: Int {
         return scoreClosure?() ?? 0
