@@ -20,8 +20,7 @@ class DifficultyLevel {
     }
 
     private var currentScore: Int {
-        guard let score = scoreClosure?() else { return 0 }
-        return score
+        return scoreClosure?() ?? 0
     }
 
     private func minInterval(forScore score: Int) -> Double {
