@@ -28,7 +28,7 @@ extension GameBoardView {
         let slotLocationFrom = SlotLocation(column: slotView.column, row: slotView.row)
 
         guard let delegate = delegate else { return }
-        let targetSlotViews = slotViewsAtRect(dragger.view.frame)
+        let targetSlotViews = slotViews(inRect: dragger.view.frame)
         for targetSlotView in targetSlotViews {
             let slotLocationTo = SlotLocation(column: targetSlotView.column, row: targetSlotView.row)
             if delegate.gameBoardViewCanMoveCircle(fromLocation: slotLocationFrom, toLocation: slotLocationTo) {

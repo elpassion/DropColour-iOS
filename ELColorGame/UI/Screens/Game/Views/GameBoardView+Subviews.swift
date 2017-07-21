@@ -31,7 +31,7 @@ extension GameBoardView {
         return slotViews.filter { $0.circleView == circleView }.first
     }
 
-    func slotViewsAtRect(_ rect: CGRect) -> [GameBoardSlotView] {
+    func slotViews(inRect rect: CGRect) -> [GameBoardSlotView] {
         var array = [GameBoardSlotView]()
         for slotView in slotViews {
             let frame = slotView.convert(slotView.bounds, to: self)
