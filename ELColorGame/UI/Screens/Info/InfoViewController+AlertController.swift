@@ -3,7 +3,7 @@ import UIKit
 extension InfoViewController {
 
     func presentAlertController(withAuthor author: Author) {
-        let alertController = alertControllerFactory.createAlertController(withTitle: "\(author.fullName) \(showProfile.localized)", message: nil, preferredStyle: .actionSheet)
+        let alertController = alertControllerFactory.create(withTitle: "\(author.fullName) \(showProfile.localized)", message: nil, preferredStyle: .actionSheet)
         configureProfessionActionIfNeeded(author, alertController: alertController)
         configureTwitterActionIfNeeded(author, alertController: alertController)
         configureCancelActionIfNeeded(author, alertController: alertController)
