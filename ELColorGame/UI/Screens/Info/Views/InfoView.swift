@@ -36,7 +36,7 @@ class InfoView: UIView {
 
     private let scrollView: UIScrollView = {
         let view = UIScrollView(frame: .zero)
-        view.contentInset = UIEdgeInsetsMake(80.0, 0.0, 20.0, 0.0)
+        view.contentInset = UIEdgeInsets(top: 80, left: 0, bottom: 20, right: 0)
         return view
     }()
 
@@ -117,13 +117,6 @@ class InfoView: UIView {
 
     // MARK: Tap gestures
 
-    private func configureTapGesturesRecognizer() {
-        logoDescriptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(InfoView.tapLogoDescriptionView(_:))))
-        for authorView in authorViews {
-            authorView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(InfoView.tapAuthor(_:))))
-        }
-    }
-
     func tapLogoDescriptionView(_ sender: UITapGestureRecognizer) {
         delegate?.infoViewDidTapCompanyLogo()
     }
@@ -131,6 +124,15 @@ class InfoView: UIView {
     func tapAuthor(_ sender: UITapGestureRecognizer) {
         guard let view = sender.view as? AuthorView else { return }
         delegate?.infoViewDidTapAuthor(view.author)
+    }
+
+    private func configureTapGesturesRecognizer() {
+        let tapLogoRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapLogoDescriptionView(_:)))
+        logoDescriptionView.addGestureRecognizer(tapLogoRecognizer)
+        for authorView in authorViews {
+            let tapAuthorRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAuthor(_:)))
+            authorView.addGestureRecognizer(tapAuthorRecognizer)
+        }
     }
 
 }

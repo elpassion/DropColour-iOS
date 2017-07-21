@@ -44,14 +44,15 @@ extension GameBoardView {
         return draggers.filter { $0.touch == touch }.first
     }
 
-    private func restoreCircleDraggerViewToInitialPosition(_ circleViewDragger: CircleViewDragger, slotSuperview: UIView, slotView: GameBoardSlotView) {
+    private func restoreCircleDraggerViewToInitialPosition(_ circleViewDragger: CircleViewDragger,
+                                                           slotSuperview: UIView,
+                                                           slotView: GameBoardSlotView) {
         let targetCenter = slotSuperview.convert(slotView.center, to: self)
         UIView.animate(withDuration: 0.2,
             animations: {
                 circleViewDragger.view.center = targetCenter
                 circleViewDragger.view.addBounceAnimation()
-            },
-            completion: { finished in
+            }, completion: { _ in
                 circleViewDragger.view.moveTo(superview: slotView)
             }
         )
