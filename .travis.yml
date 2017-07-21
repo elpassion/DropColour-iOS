@@ -2,7 +2,7 @@ language: objective-c
 osx_image: xcode8.3
 sudo: false
 before_install:
-- bundle exec repo update
+- bundle exec pod repo update
 - bundle exec pod install
 before_script:
 - ./.fastlane/add-key.sh
