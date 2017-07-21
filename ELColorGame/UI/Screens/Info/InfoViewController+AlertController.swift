@@ -3,11 +3,12 @@ import UIKit
 extension InfoViewController {
 
     func presentAlertController(withAuthor author: Author) {
-        let alertController = alertControllerFactory.create(withTitle: "\(author.fullName) \(showProfile.localized)", message: nil, preferredStyle: .actionSheet)
-        configureProfessionActionIfNeeded(author, alertController: alertController)
-        configureTwitterActionIfNeeded(author, alertController: alertController)
-        configureCancelActionIfNeeded(author, alertController: alertController)
-        presentAlertControllerIfNeeded(author, alertController: alertController)
+        let title = "\(author.fullName) \(showProfile.localized)"
+        let alert = alertControllerFactory.create(withTitle: title, message: nil, preferredStyle: .actionSheet)
+        configureProfessionActionIfNeeded(author, alertController: alert)
+        configureTwitterActionIfNeeded(author, alertController: alert)
+        configureCancelActionIfNeeded(author, alertController: alert)
+        presentAlertControllerIfNeeded(author, alertController: alert)
     }
 
     func openCompanyWebsite() {
@@ -19,7 +20,8 @@ extension InfoViewController {
     private func configureProfessionActionIfNeeded(_ author: Author, alertController: UIAlertController) {
         guard let professionUrl = author.professionUrl else { return }
         guard urlOpener.canOpen(url: professionUrl) else { return }
-        let proffesionAction = openUrlAlertActionWithTitle(author.type == .developer ? github.localized : dribbble.localized, url: professionUrl)
+        let title = author.type == .developer ? github.localized : dribbble.localized
+        let proffesionAction = openUrlAlertActionWithTitle(title, url: professionUrl)
         alertController.addAction(proffesionAction)
     }
 
@@ -48,13 +50,13 @@ extension InfoViewController {
     // MARK: Alert Actions
 
     private func openUrlAlertActionWithTitle(_ title: String, url: URL) -> UIAlertAction {
-        return self.alertActionFactory.createAction(withTitle: title, style: .default) { [weak self] (action) -> () in
+        return alertActionFactory.createAction(withTitle: title, style: .default) { [weak self] _ in
             _ = self?.urlOpener.open(url: url)
         }
     }
 
     private func cancelAlertAction() -> UIAlertAction {
-        return self.alertActionFactory.createAction(withTitle: cancel.localized, style: .cancel, handler: nil)
+        return alertActionFactory.createAction(withTitle: cancel.localized, style: .cancel, handler: nil)
     }
 
 }
