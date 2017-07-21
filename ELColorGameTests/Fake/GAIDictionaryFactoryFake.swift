@@ -10,7 +10,7 @@ import ELColorGame
 
 class GAIDictionaryFactoryFake: GAIDictionaryCreating {
 
-    func createEventWithCategory(_ category: String, action: String, value: NSNumber?) -> [AnyHashable: Any] {
+    func createEvent(withCategory category: String, action: String, value: NSNumber?) -> [AnyHashable: Any] {
         return [
             "category": category,
             "action": action,

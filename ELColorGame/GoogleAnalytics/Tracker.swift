@@ -41,7 +41,7 @@ class Tracker: TrackerProtocol {
     }
 
     private func createEvent(withCategory category: String, action: String, value: Int? = nil) -> [AnyHashable: Any] {
-        return gaiDictionaryFactory.createEventWithCategory(category, action: action, value: value?.number)
+        return gaiDictionaryFactory.createEvent(withCategory: category, action: action, value: value?.number)
     }
 
 }
