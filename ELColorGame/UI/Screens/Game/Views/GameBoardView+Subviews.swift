@@ -17,7 +17,7 @@ extension GameBoardView {
     }
 
     func circleView(atPoint point: CGPoint) -> CircleView? {
-        let circleViews = slotViews.filter { $0.circleView != nil }.map { $0.circleView! }
+        let circleViews = slotViews.flatMap { $0.circleView }
         for circleView in circleViews {
             let frame = circleView.convert(circleView.bounds, to: self)
             if frame.contains(point) {
