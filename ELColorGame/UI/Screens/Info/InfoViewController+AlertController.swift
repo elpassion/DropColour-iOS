@@ -28,7 +28,7 @@ extension InfoViewController {
     private func configureTwitterActionIfNeeded(_ author: Author, alertController: UIAlertController) {
         guard let twitterUrl = author.twitterUrl else { return }
         guard urlOpener.canOpen(url: twitterUrl) else { return }
-        let twitterAction = openUrlAlertActionWithTitle(twitter.localized, url: twitterUrl as URL)
+        let twitterAction = openUrlAlertActionWithTitle(twitter.localized, url: twitterUrl)
         alertController.addAction(twitterAction)
     }
 

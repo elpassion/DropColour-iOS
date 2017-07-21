@@ -25,7 +25,7 @@ class FakeAuthorProvider: AuthorProviding {
 
 extension Author {
 
-    func copyWithType(_ type: AuthorType) -> Author {
+    func copy(withType type: AuthorType) -> Author {
         return Author(
                 name: name,
                 surname: surname,
@@ -47,7 +47,7 @@ extension Author {
         )
     }
 
-    func copyWithProffessionUrl(_ url: URL?) -> Author {
+    func copy(withProffessionUrl url: URL?) -> Author {
         return Author(
                 name: name,
                 surname: surname,

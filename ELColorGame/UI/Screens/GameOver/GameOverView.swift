@@ -43,13 +43,13 @@ class GameOverView: UIView {
     }
 
     private let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.dark))
-    private let scoreView = UIView(frame: CGRect.zero)
+    private let scoreView = UIView(frame: .zero)
     private let retryButton = Button(title: retry.localized, color: UIColor(color: .green6BE01A))
     private let rankingButton = Button(title: ranking.localized, color: UIColor(color: .turquoise54C7C7))
     private let quitButton = Button(title: quit.localized, color: UIColor(color: .redE82654))
 
     private let scoreNumberLabel: UILabel = {
-        let label = UILabel(frame: CGRect.zero)
+        let label = UILabel(frame: .zero)
         label.font = UIFont(font: FontFamily.BebasNeue.bold, size: 60)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5

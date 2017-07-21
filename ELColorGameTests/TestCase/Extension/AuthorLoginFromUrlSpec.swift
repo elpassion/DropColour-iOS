@@ -16,7 +16,7 @@ class AuthorLoginFromUrlSpec: QuickSpec {
 
                 beforeEach {
                     let url = URL(string: "www.google.pl/LoginName")
-                    sut = FakeAuthorProvider().authors.first!.copyWithProffessionUrl(url!)
+                    sut = FakeAuthorProvider().authors.first!.copy(withProffessionUrl: url!)
                 }
 
                 afterEach {
@@ -32,7 +32,7 @@ class AuthorLoginFromUrlSpec: QuickSpec {
 
                 beforeEach {
                     let url = URL(string: "www.google.pl")
-                    sut = FakeAuthorProvider().authors.first!.copyWithProffessionUrl(url!)
+                    sut = FakeAuthorProvider().authors.first!.copy(withProffessionUrl: url!)
                 }
 
                 afterEach {
