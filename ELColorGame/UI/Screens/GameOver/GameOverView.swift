@@ -1,11 +1,9 @@
 import UIKit
 
 protocol GameOverViewDelegate: class {
-
     func gameOverViewDidTapRetry(_ gameOverView: GameOverView)
     func gameOverViewDidTapShowLeaders(_ gameOverView: GameOverView)
     func gameOverViewDidTapQuit(_ gameOverView: GameOverView)
-
 }
 
 class GameOverView: UIView {

@@ -51,9 +51,7 @@ class MenuViewController: UIViewController, MenuViewDelegate {
 // MARK: - Delegate
 
 protocol MenuViewControllerDelegate: class {
-
     func menuViewControllerDidResumeGame(_ menuViewController: MenuViewController)
     func menuViewControllerDidTapNewGame(_ menuViewController: MenuViewController)
     func menuViewControllerDidTapQuit(_ menuViewController: MenuViewController)
-
 }

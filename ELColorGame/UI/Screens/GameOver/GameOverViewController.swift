@@ -64,8 +64,6 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate, 
 // MARK: - Delegate
 
 protocol GameOverViewControllerDelegate: class {
-
     func gameOverViewControllerDidTapRetry(_ gameOverViewController: GameOverViewController)
     func gameOverViewControllerDidTapQuit(_ gameOverViewController: GameOverViewController)
-
 }

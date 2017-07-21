@@ -118,9 +118,7 @@ class StartView: UIView {
 // MARK: - Delegate
 
 protocol StartViewDelegate: class {
-
     func startViewDidTapNewGame(_ startView: StartView)
     func startViewDidTapRanking(_ startView: StartView)
     func startViewDidTapInfo(_ startView: StartView)
-
 }
