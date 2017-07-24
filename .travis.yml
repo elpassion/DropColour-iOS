@@ -9,6 +9,7 @@ before_script:
 - ./.fastlane/add-key.sh
 script:
 - ./.fastlane/unittests.sh
+after_success:
 - ./.fastlane/testflight.sh
 env:
   global:
