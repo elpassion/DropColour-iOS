@@ -1,8 +1,3 @@
-//
-// Created by Mateusz Szklarek on 28/01/16.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 import UIKit
 
 class InfoViewController: UIViewController, InfoViewDelegate {
@@ -22,8 +17,8 @@ class InfoViewController: UIViewController, InfoViewDelegate {
         authorProvider = AuthorProvider()
         urlOpener = UrlOpener()
         super.init(nibName: nil, bundle: nil)
-        modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        modalPresentationStyle = UIModalPresentationStyle.Custom
+        modalTransitionStyle = .crossDissolve
+        modalPresentationStyle = .custom
         viewControllerPresenter.viewController = self
     }
 
@@ -35,7 +30,7 @@ class InfoViewController: UIViewController, InfoViewDelegate {
         view = InfoView(delegate: self, authors: authorProvider.authors)
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tracker.trackScreenWithName(screenName: "InfoViewController")
     }
@@ -43,11 +38,11 @@ class InfoViewController: UIViewController, InfoViewDelegate {
     // MARK: InfoViewDelegate
 
     func infoViewDidTapQuit() {
-        viewControllerPresenter.dismissViewController(self)
+        viewControllerPresenter.dismiss(viewController: self)
     }
 
-    func infoViewDidTapAuthor(author: Author) {
-        presentAlertControllerWithAuthor(author)
+    func infoViewDidTapAuthor(_ author: Author) {
+        presentAlertController(withAuthor: author)
     }
 
     func infoViewDidTapCompanyLogo() {

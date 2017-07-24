@@ -1,8 +1,3 @@
-//
-//  Created by Dariusz Rybicki on 07/10/15.
-//  Copyright © 2015 EL Passion. All rights reserved.
-//
-
 import UIKit
 
 class MenuView: UIView {
@@ -11,7 +6,7 @@ class MenuView: UIView {
 
     init(delegate: MenuViewDelegate?) {
         self.delegate = delegate
-        super.init(frame: CGRectZero)
+        super.init(frame: .zero)
         loadSubviews()
         setupLayout()
         resumeButton.buttonActionClosure = { [unowned self] in
@@ -40,57 +35,44 @@ class MenuView: UIView {
         addSubview(pauseLabelText)
     }
 
-    private let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-    private let resumeButton = Button(title: resume.localized, color: UIColor(color: .Blue0091FC))
-    private let newGameButton = Button(title: newGame.localized, color: UIColor(color: .Green6BE01A))
-    private let quitButton = Button(title: quit.localized, color: UIColor(color: .RedE82654))
-
-    private let pauseImageView: UIImageView = {
-        let view = UIImageView(frame: CGRectZero)
-        view.image = UIImage(asset: .PauseIcon)
-        view.contentMode = UIViewContentMode.ScaleAspectFit
-        return view
-    }()
-
-    private let pauseLabelText: UILabel = {
-        let label = UILabel(frame: CGRectZero)
-        label.text = pause.localized
-        label.font = UIFont(name: BebasNeueBold, size: 30)
-        label.textColor = UIColor(color: .White)
-        return label
-    }()
+    private let blurEffectView = Factory.blurEffectView
+    private let resumeButton = Button(title: resume.localized, color: UIColor(color: .blue0091FC))
+    private let newGameButton = Button(title: newGame.localized, color: UIColor(color: .green6BE01A))
+    private let quitButton = Button(title: quit.localized, color: UIColor(color: .redE82654))
+    private let pauseImageView = Factory.pauseImageView
+    private let pauseLabelText = Factory.pauseLabel
 
     // MARK: Layout
 
     private func setupLayout() {
-        blurEffectView.snp_makeConstraints { (make) -> Void in
-            make.edges.equalTo(0)
+        blurEffectView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
-        resumeButton.snp_makeConstraints { (make) -> Void in
-            make.width.equalTo(200)
-            make.height.equalTo(50)
-            make.centerX.equalTo(0)
-            make.centerY.equalTo(0)
+        resumeButton.snp.makeConstraints {
+            $0.width.equalTo(200)
+            $0.height.equalTo(50)
+            $0.centerXWithinMargins.equalToSuperview()
+            $0.centerYWithinMargins.equalToSuperview()
         }
-        newGameButton.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(resumeButton.snp_bottom).offset(15)
-            make.width.equalTo(200)
-            make.height.equalTo(50)
-            make.centerX.equalTo(0)
+        newGameButton.snp.makeConstraints {
+            $0.top.equalTo(resumeButton.snp.bottom).offset(15)
+            $0.width.equalTo(200)
+            $0.height.equalTo(50)
+            $0.centerXWithinMargins.equalToSuperview()
         }
-        quitButton.snp_makeConstraints { (make) -> Void in
-            make.width.equalTo(200)
-            make.height.equalTo(50)
-            make.centerX.equalTo(0)
-            make.bottom.equalTo(-40)
+        quitButton.snp.makeConstraints {
+            $0.width.equalTo(200)
+            $0.height.equalTo(50)
+            $0.centerXWithinMargins.equalToSuperview()
+            $0.bottom.equalTo(-40)
         }
-        pauseLabelText.snp_makeConstraints { (make) -> Void in
-            make.centerX.equalTo(0)
-            make.bottom.equalTo(resumeButton.snp_top).offset(-40)
+        pauseLabelText.snp.makeConstraints {
+            $0.centerXWithinMargins.equalToSuperview()
+            $0.bottom.equalTo(resumeButton.snp.top).offset(-40)
         }
-        pauseImageView.snp_makeConstraints { (make) -> Void in
-            make.bottom.equalTo(pauseLabelText.snp_top).offset(-20)
-            make.centerX.equalTo(0)
+        pauseImageView.snp.makeConstraints {
+            $0.bottom.equalTo(pauseLabelText.snp.top).offset(-20)
+            $0.centerXWithinMargins.equalToSuperview()
         }
     }
 
@@ -100,8 +82,32 @@ class MenuView: UIView {
 
 protocol MenuViewDelegate: class {
 
-    func menuViewDidTapResume(menuView: MenuView)
-    func menuViewDidTapNewGame(menuView: MenuView)
-    func menuViewDidTapQuit(menuView: MenuView)
+    func menuViewDidTapResume(_ menuView: MenuView)
+    func menuViewDidTapNewGame(_ menuView: MenuView)
+    func menuViewDidTapQuit(_ menuView: MenuView)
 
+}
+
+private extension MenuView {
+    struct Factory {
+        static var blurEffectView: UIVisualEffectView {
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+            return UIVisualEffectView(effect: blurEffect)
+        }
+
+        static var pauseImageView: UIImageView {
+            let view = UIImageView(frame: .zero)
+            view.image = UIImage(asset: .pauseIcon)
+            view.contentMode = .scaleAspectFit
+            return view
+        }
+
+        static var pauseLabel: UILabel {
+            let label = UILabel(frame: CGRect.zero)
+            label.text = pause.localized
+            label.font = UIFont(font: FontFamily.BebasNeue.bold, size: 30)
+            label.textColor = UIColor(color: .white)
+            return label
+        }
+    }
 }

@@ -1,26 +1,19 @@
-//
-//  Created by Dariusz Rybicki on 28/11/15.
-//  Copyright © 2015 EL Passion. All rights reserved.
-//
-
 import Foundation
 
 enum CircleType {
-
-    case Purple
-    case Blue
-    case Orange
-    case Red
-    case Turquoise
-    case Green
-
+    case purple
+    case blue
+    case orange
+    case red
+    case turquoise
+    case green
 }
 
 extension CircleType {
 
     static var allTypes: [CircleType] {
-        var types = [CircleType]()
-        for value in iterateEnum(CircleType) {
+        var types: [CircleType] = []
+        for value in iterateEnum(CircleType.self) {
             types.append(value)
         }
         return types
@@ -28,10 +21,10 @@ extension CircleType {
 
 }
 
-private func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
+private func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
     var i = 0
-    return AnyGenerator {
-        let next = withUnsafePointer(&i) { UnsafePointer<T>($0).memory }
+    return AnyIterator {
+        let next = withUnsafePointer(to: &i) { UnsafeRawPointer($0).load(as: T.self) }
         defer { i = i + 1 }
         return next.hashValue == i ? next : nil
     }

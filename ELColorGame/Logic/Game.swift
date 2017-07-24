@@ -1,8 +1,3 @@
-//
-//  Created by Dariusz Rybicki on 27/11/15.
-//  Copyright © 2015 EL Passion. All rights reserved.
-//
-
 import Foundation
 
 class Game {
@@ -87,9 +82,9 @@ class Game {
 
     // MARK: Inserting Circles
 
-    private var insertingTimer: Timer?
+    private var insertingTimer: GameTimer?
 
-    var timeInterval: NSTimeInterval {
+    var timeInterval: TimeInterval {
         return difficultyLevel.intervalTime()
     }
 
@@ -98,10 +93,10 @@ class Game {
     }
 
     private func startInsertingCircles() {
-        if let _ = insertingTimer {
+        if insertingTimer != nil {
             stopInsertingCircles()
         }
-        insertingTimer = Timer(interval: timeInterval) { [weak self] in
+        insertingTimer = GameTimer(interval: timeInterval) { [weak self] in
             self?.insertingTimer?.interval = self?.timeInterval
             self?.insertRandomCircle()
         }

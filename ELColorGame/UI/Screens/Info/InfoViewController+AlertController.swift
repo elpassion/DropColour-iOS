@@ -1,65 +1,62 @@
-//
-// Created by Mateusz Szklarek on 30/01/16.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 import UIKit
 
 extension InfoViewController {
 
-    func presentAlertControllerWithAuthor(author: Author) {
-        let alertController = alertControllerFactory.createAlertControllerWithTitle("\(author.fullName) \(showProfile.localized)", message: nil, preferredStyle: .ActionSheet)
-        configureProfessionActionIfNeeded(author, alertController: alertController)
-        configureTwitterActionIfNeeded(author, alertController: alertController)
-        configureCancelActionIfNeeded(author, alertController: alertController)
-        presentAlertControllerIfNeeded(author, alertController: alertController)
+    func presentAlertController(withAuthor author: Author) {
+        let title = "\(author.fullName) \(showProfile.localized)"
+        let alert = alertControllerFactory.create(withTitle: title, message: nil, preferredStyle: .actionSheet)
+        configureProfessionActionIfNeeded(author, alertController: alert)
+        configureTwitterActionIfNeeded(author, alertController: alert)
+        configureCancelActionIfNeeded(author, alertController: alert)
+        presentAlertControllerIfNeeded(author, alertController: alert)
     }
 
     func openCompanyWebsite() {
-        let companyUrl = NSURL(string: "https://www.elpassion.com")
+        let companyUrl = URL(string: "https://www.elpassion.com")
         guard let url = companyUrl else { return }
-        urlOpener.openURL(url)
+        _ = urlOpener.open(url: url)
     }
 
-    private func configureProfessionActionIfNeeded(author: Author, alertController: UIAlertController) {
+    private func configureProfessionActionIfNeeded(_ author: Author, alertController: UIAlertController) {
         guard let professionUrl = author.professionUrl else { return }
-        guard urlOpener.canOpenURL(professionUrl) else { return }
-        let proffesionAction = openUrlAlertActionWithTitle(author.type == AuthorType.Developer ? github.localized : dribbble.localized, url: professionUrl)
+        guard urlOpener.canOpen(url: professionUrl) else { return }
+        let title = author.type == .developer ? github.localized : dribbble.localized
+        let proffesionAction = openUrlAlertActionWithTitle(title, url: professionUrl)
         alertController.addAction(proffesionAction)
     }
 
-    private func configureTwitterActionIfNeeded(author: Author, alertController: UIAlertController) {
+    private func configureTwitterActionIfNeeded(_ author: Author, alertController: UIAlertController) {
         guard let twitterUrl = author.twitterUrl else { return }
-        guard urlOpener.canOpenURL(twitterUrl) else { return }
+        guard urlOpener.canOpen(url: twitterUrl) else { return }
         let twitterAction = openUrlAlertActionWithTitle(twitter.localized, url: twitterUrl)
         alertController.addAction(twitterAction)
     }
 
-    private func configureCancelActionIfNeeded(author: Author, alertController: UIAlertController) {
+    private func configureCancelActionIfNeeded(_ author: Author, alertController: UIAlertController) {
         guard hasOneCorrectUrlAtLeast(author) else { return }
         let cancelAction = cancelAlertAction()
         alertController.addAction(cancelAction)
     }
 
-    private func presentAlertControllerIfNeeded(author: Author, alertController: UIAlertController) {
+    private func presentAlertControllerIfNeeded(_ author: Author, alertController: UIAlertController) {
         guard hasOneCorrectUrlAtLeast(author) else { return }
-        viewControllerPresenter.presentViewController(alertController)
+        viewControllerPresenter.present(viewController: alertController)
     }
 
-    private func hasOneCorrectUrlAtLeast(author: Author) -> Bool {
-        return urlOpener.canOpenURL(author.professionUrl) || urlOpener.canOpenURL(author.twitterUrl)
+    private func hasOneCorrectUrlAtLeast(_ author: Author) -> Bool {
+        return urlOpener.canOpen(url: author.professionUrl) || urlOpener.canOpen(url: author.twitterUrl)
     }
 
     // MARK: Alert Actions
 
-    private func openUrlAlertActionWithTitle(title: String, url: NSURL) -> UIAlertAction {
-        return self.alertActionFactory.createActionWithTitle(title, style: .Default) { [weak self] (action) -> () in
-            self?.urlOpener.openURL(url)
+    private func openUrlAlertActionWithTitle(_ title: String, url: URL) -> UIAlertAction {
+        return alertActionFactory.create(withTitle: title, style: .default) { [weak self] _ in
+            _ = self?.urlOpener.open(url: url)
         }
     }
 
     private func cancelAlertAction() -> UIAlertAction {
-        return self.alertActionFactory.createActionWithTitle(cancel.localized, style: .Cancel, handler: nil)
+        return alertActionFactory.create(withTitle: cancel.localized, style: .cancel, handler: nil)
     }
 
 }

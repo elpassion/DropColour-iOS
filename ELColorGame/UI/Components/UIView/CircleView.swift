@@ -1,22 +1,14 @@
-//
-//  Created by Mateusz Szklarek on 24/09/15.
-//  Copyright © 2015 EL Passion. All rights reserved.
-//
-
 import UIKit
 import Spring
 
 class CircleView: SpringView {
 
-    private let topColor: UIColor
-    private let bottomColor: UIColor
-
     init(topColor: UIColor, bottomColor: UIColor) {
         self.topColor = topColor
         self.bottomColor = bottomColor
-        super.init(frame: CGRectZero)
+        super.init(frame: .zero)
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = .clear
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -26,7 +18,7 @@ class CircleView: SpringView {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = bounds.width / 2
-        gradientLayer = createGradientLayer([topColor, bottomColor])
+        gradientLayer = createGradientLayer(withColors: [topColor, bottomColor])
     }
 
     // MARK: Gradient backgorund
@@ -37,16 +29,21 @@ class CircleView: SpringView {
                 oldValue.removeFromSuperlayer()
             }
             if let newValue = gradientLayer {
-                layer.insertSublayer(newValue, atIndex: 0)
+                layer.insertSublayer(newValue, at: 0)
             }
         }
     }
 
-    private func createGradientLayer(colors: [UIColor]) -> CAGradientLayer {
+    private func createGradientLayer(withColors colors: [UIColor]) -> CAGradientLayer {
         let layer = CAGradientLayer()
         layer.frame = bounds
-        layer.colors = colors.map { $0.CGColor }
+        layer.colors = colors.map { $0.cgColor }
         return layer
     }
+
+    // MARK: Private
+
+    private let topColor: UIColor
+    private let bottomColor: UIColor
 
 }

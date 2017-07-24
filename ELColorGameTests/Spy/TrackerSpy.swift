@@ -33,7 +33,7 @@ class TrackerSpy: TrackerProtocol {
         startEventWasTracked = true
     }
 
-    func trackGameEndEvent(score score: Int) {
+    func trackGameEndEvent(score: Int) {
         endEventWasTracked = true
     }
 

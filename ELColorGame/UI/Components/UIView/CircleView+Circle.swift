@@ -1,31 +1,26 @@
-//
-//  Created by Dariusz Rybicki on 30/11/15.
-//  Copyright © 2015 EL Passion. All rights reserved.
-//
-
 import UIKit
 
 extension CircleView {
 
     convenience init(circle: Circle) {
-        let colors = CircleView.colorsForCircle(circle)
+        let colors = CircleView.colorsFor(circle: circle)
         self.init(topColor: colors.top, bottomColor: colors.bottom)
     }
 
-    private class func colorsForCircle(circle: Circle) -> (top: UIColor, bottom: UIColor) {
+    private class func colorsFor(circle: Circle) -> (top: UIColor, bottom: UIColor) {
         switch circle.type {
-        case .Purple:
-            return (UIColor(color: .PurpleC86DD7), UIColor(color: .Purple906DD7))
-        case .Blue:
-            return (UIColor(color: .Blue00C7FF), UIColor(color: .Blue0076FF))
-        case .Orange:
-            return (UIColor(color: .OrangeFAD961), UIColor(color: .OrangeF7821C))
-        case .Red:
-            return (UIColor(color: .RedE92578), UIColor(color: .RedE9253D))
-        case .Turquoise:
-            return (UIColor(color: .Turquoise3CFFB7), UIColor(color: .Turquoise50CFE3))
-        case .Green:
-            return (UIColor(color: .GreenA5E01A), UIColor(color: .Green32E01A))
+        case .purple:
+            return (UIColor(color: .purpleC86DD7), UIColor(color: .purple906DD7))
+        case .blue:
+            return (UIColor(color: .blue00C7FF), UIColor(color: .blue0076FF))
+        case .orange:
+            return (UIColor(color: .orangeFAD961), UIColor(color: .orangeF7821C))
+        case .red:
+            return (UIColor(color: .redE92578), UIColor(color: .redE9253D))
+        case .turquoise:
+            return (UIColor(color: .turquoise3CFFB7), UIColor(color: .turquoise50CFE3))
+        case .green:
+            return (UIColor(color: .greenA5E01A), UIColor(color: .green32E01A))
         }
     }
 

@@ -1,0 +1,27 @@
+opt_in_rules:
+  - identifier_name
+  - force_cast
+  - todo
+  - empty_count
+  - force_unwrapping
+  - vertical_whitespace
+disabled_rules:
+  - large_tuple
+type_body_length:
+  - 300 # warning
+  - 400 # error
+file_length:
+  warning: 500
+  error: 1200
+type_name:
+  min_length: 2 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+identifier_name:
+  min_length: 3 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded:
+    - to

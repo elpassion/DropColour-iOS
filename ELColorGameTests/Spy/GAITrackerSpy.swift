@@ -12,7 +12,7 @@ class GAITrackerSpy: NSObject, GAITracker {
 
     private(set) var dataWasSend = false
     private(set) var parameterNameWasSet = false
-    private(set) var capturedData: [NSObject: AnyObject]!
+    private(set) var capturedData: [AnyHashable: Any]!
 
     // MARK: GAITracker
 
@@ -20,15 +20,15 @@ class GAITrackerSpy: NSObject, GAITracker {
 
     var allowIDFACollection = false
 
-    func set(parameterName: String!, value: String!) {
+    func set(_ parameterName: String!, value: String!) {
         parameterNameWasSet = true
     }
 
-    func get(parameterName: String!) -> String! {
+    func get(_ parameterName: String!) -> String! {
         return ""
     }
 
-    func send(parameters: [NSObject: AnyObject]!) {
+    func send(_ parameters: [AnyHashable: Any]!) {
         dataWasSend = true
         capturedData = parameters
     }

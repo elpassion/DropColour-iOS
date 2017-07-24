@@ -1,18 +1,11 @@
-//
-// Created by Mateusz Szklarek on 04/02/16.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 import Foundation
 
 protocol TrackerProtocol {
-
     var gaiDictionaryFactory: GAIDictionaryCreating { get set }
     func trackScreenWithName(screenName name: String)
     func trackGameStartEvent()
-    func trackGameEndEvent(score score: Int)
+    func trackGameEndEvent(score: Int)
     func trackGameScoredEvent(scoredValue value: Int)
-
 }
 
 class Tracker: TrackerProtocol {
@@ -27,19 +20,34 @@ class Tracker: TrackerProtocol {
 
     func trackScreenWithName(screenName name: String) {
         gaiTracker.set(kGAIScreenName, value: name)
-        gaiTracker.send(GAIDictionaryBuilder.createScreenView().build() as [NSObject: AnyObject])
+        gaiTracker.send(GAIDictionaryBuilder.createScreenView().buildDict())
     }
 
     func trackGameStartEvent() {
-        gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-start", value: nil))
+        let params = createEvent(withCategory: "event", action: "dropcolour.event.game-start")
+        gaiTracker.send(params)
     }
 
-    func trackGameEndEvent(score score: Int) {
-        gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-end", value: score))
+    func trackGameEndEvent(score: Int) {
+        let params = createEvent(withCategory: "event", action: "dropcolour.event.game-end", value: score)
+        gaiTracker.send(params)
     }
 
     func trackGameScoredEvent(scoredValue value: Int) {
-        gaiTracker.send(gaiDictionaryFactory.createEventWithCategory("event", action: "dropcolour.event.game-scored", value: value))
+        let params = createEvent(withCategory: "event", action: "dropcolour.event.game-scored", value: value)
+        gaiTracker.send(params)
+    }
+
+    private func createEvent(withCategory category: String, action: String, value: Int? = nil) -> [AnyHashable: Any] {
+        return gaiDictionaryFactory.createEvent(withCategory: category, action: action, value: value?.number)
+    }
+
+}
+
+private extension Int {
+
+    var number: NSNumber {
+        return NSNumber(value: self)
     }
 
 }

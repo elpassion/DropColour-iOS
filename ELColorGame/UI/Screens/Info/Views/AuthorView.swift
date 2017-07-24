@@ -1,8 +1,3 @@
-//
-// Created by Mateusz Szklarek on 29/01/16.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 import UIKit
 
 class AuthorView: UIView {
@@ -11,7 +6,7 @@ class AuthorView: UIView {
 
     init(author: Author) {
         self.author = author
-        super.init(frame: CGRectZero)
+        super.init(frame: .zero)
         addSubviews()
         setupLayout()
         applyType()
@@ -55,43 +50,43 @@ class AuthorView: UIView {
     // MARK: Subviews
 
     private let avatarImageView: UIImageView = {
-        let view = UIImageView(frame: CGRectZero)
-        view.contentMode = UIViewContentMode.ScaleAspectFit
+        let view = UIImageView(frame: .zero)
+        view.contentMode = .scaleAspectFit
         view.clipsToBounds = true
         return view
     }()
 
     private let fullNameLabel: UILabel = {
-        let label = UILabel(frame: CGRectZero)
-        label.font = UIFont(name: BebasNeueBold, size: 20)
-        label.textColor = UIColor(color: .White)
+        let label = UILabel(frame: .zero)
+        label.font = UIFont(font: FontFamily.BebasNeue.bold, size: 20)
+        label.textColor = UIColor(color: .white)
         return label
     }()
 
     private let authorTypeLabel: UILabel = AuthorView.createLabel()
 
     private let professionImageView: UIImageView = {
-        let view = UIImageView(frame: CGRectZero)
+        let view = UIImageView(frame: .zero)
         view.clipsToBounds = true
-        view.contentMode = UIViewContentMode.ScaleAspectFit
+        view.contentMode = .scaleAspectFit
         return view
     }()
 
     private let professionLoginLabel = AuthorView.createLabel()
 
     private let twitterImageView: UIImageView = {
-        let view = UIImageView(frame: CGRectZero)
-        view.image = UIImage(asset: .Twitter)
-        view.contentMode = UIViewContentMode.ScaleAspectFit
+        let view = UIImageView(frame: .zero)
+        view.image = UIImage(asset: .twitter)
+        view.contentMode = .scaleAspectFit
         return view
     }()
 
     private let twitterLoginLabel = AuthorView.createLabel()
 
     private class func createLabel() -> UILabel {
-        let label = UILabel(frame: CGRectZero)
-        label.font = UIFont.systemFontOfSize(12)
-        label.textColor = UIColor(color: .White).colorWithAlphaComponent(0.8)
+        let label = UILabel(frame: .zero)
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor = UIColor(color: .white).withAlphaComponent(0.8)
         return label
     }
 
@@ -108,38 +103,38 @@ class AuthorView: UIView {
     // MARK: Layout
 
     private func setupLayout() {
-        avatarImageView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(0)
-            make.bottom.lessThanOrEqualTo(0)
-            make.size.equalTo(CGSize(width: 80, height: 80))
-            make.left.equalTo(45)
+        avatarImageView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.bottom.lessThanOrEqualTo(0)
+            $0.size.equalTo(CGSize(width: 80, height: 80))
+            $0.left.equalTo(45)
         }
-        fullNameLabel.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(avatarImageView.snp_top)
-            make.left.equalTo(avatarImageView.snp_right).offset(15)
-            make.right.equalTo(-16)
+        fullNameLabel.snp.makeConstraints {
+            $0.top.equalTo(avatarImageView.snp.top)
+            $0.left.equalTo(avatarImageView.snp.right).offset(15)
+            $0.right.equalTo(-16)
         }
-        authorTypeLabel.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(fullNameLabel.snp_bottom).offset(5)
-            make.left.equalTo(fullNameLabel.snp_left)
-            make.right.equalTo(-16)
+        authorTypeLabel.snp.makeConstraints {
+            $0.top.equalTo(fullNameLabel.snp.bottom).offset(5)
+            $0.left.equalTo(fullNameLabel.snp.left)
+            $0.right.equalTo(-16)
         }
-        professionImageView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(authorTypeLabel.snp_bottom).offset(5)
-            make.left.equalTo(authorTypeLabel.snp_left)
+        professionImageView.snp.makeConstraints {
+            $0.top.equalTo(authorTypeLabel.snp.bottom).offset(5)
+            $0.left.equalTo(authorTypeLabel.snp.left)
         }
-        professionLoginLabel.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(professionImageView.snp_right).offset(5)
-            make.centerY.equalTo(professionImageView.snp_centerY)
+        professionLoginLabel.snp.makeConstraints {
+            $0.left.equalTo(professionImageView.snp.right).offset(5)
+            $0.centerY.equalTo(professionImageView.snp.centerY)
         }
-        twitterImageView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(professionImageView.snp_bottom).offset(5)
-            make.left.equalTo(professionImageView.snp_left)
+        twitterImageView.snp.makeConstraints {
+            $0.top.equalTo(professionImageView.snp.bottom).offset(5)
+            $0.left.equalTo(professionImageView.snp.left)
         }
-        twitterLoginLabel.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(twitterImageView.snp_right).offset(5)
-            make.centerY.equalTo(twitterImageView.snp_centerY)
-            make.bottom.lessThanOrEqualTo(0)
+        twitterLoginLabel.snp.makeConstraints {
+            $0.left.equalTo(twitterImageView.snp.right).offset(5)
+            $0.centerY.equalTo(twitterImageView.snp.centerY)
+            $0.bottom.lessThanOrEqualTo(0)
         }
     }
 
@@ -148,10 +143,10 @@ class AuthorView: UIView {
 private extension AuthorType {
     var image: UIImage? {
         switch self {
-        case .Developer:
-            return UIImage(asset: .Github)
-        case .Designer:
-            return UIImage(asset: .Dribbble)
+        case .developer:
+            return UIImage(asset: .github)
+        case .designer:
+            return UIImage(asset: .dribbble)
         }
     }
 }

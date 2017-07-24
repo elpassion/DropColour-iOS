@@ -14,13 +14,13 @@ class UrlOpenerSpy: UrlOpening {
 
     // MARK: UrlOpening
 
-    func openURL(url: NSURL) -> Bool {
+    func open(url: URL) -> Bool {
         urlWasOpened = true
         return true
     }
 
-    func canOpenURL(url: NSURL?) -> Bool {
-        guard let _ = url else { return false }
+    func canOpen(url: URL?) -> Bool {
+        guard url != nil else { return false }
         return true
     }
 

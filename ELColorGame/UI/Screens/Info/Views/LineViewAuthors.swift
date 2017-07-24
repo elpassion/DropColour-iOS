@@ -1,14 +1,9 @@
-//
-// Created by Mateusz Szklarek on 28/01/16.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 import UIKit
 
 class LineViewAuthors: UIView {
 
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: .zero)
         addSubviews()
         setupLayout()
     }
@@ -20,23 +15,23 @@ class LineViewAuthors: UIView {
     // MARK: Subviews
 
     private let titleLabel: UILabel = {
-        let label = UILabel(frame: CGRectZero)
+        let label = UILabel(frame: .zero)
         label.text = authors.localized
-        label.textAlignment = .Center
-        label.font = UIFont(name: BebasNeueBold, size: 14)
-        label.textColor = UIColor(color: .White)
+        label.textAlignment = .center
+        label.font = UIFont(font: FontFamily.BebasNeue.bold, size: 14)
+        label.textColor = UIColor(color: .white)
         return label
     }()
 
     private let leftLineView: UIView = {
-        let view = UIView(frame: CGRectZero)
-        view.backgroundColor = UIColor(color: .White).colorWithAlphaComponent(0.1)
+        let view = UIView(frame: .zero)
+        view.backgroundColor = UIColor(color: .white).withAlphaComponent(0.1)
         return view
     }()
 
     private let rightLineView: UIView = {
-        let view = UIView(frame: CGRectZero)
-        view.backgroundColor = UIColor(color: .White).colorWithAlphaComponent(0.1)
+        let view = UIView(frame: .zero)
+        view.backgroundColor = UIColor(color: .white).withAlphaComponent(0.1)
         return view
     }()
 
@@ -49,20 +44,20 @@ class LineViewAuthors: UIView {
     // MARK: Layout
 
     private func setupLayout() {
-        titleLabel.snp_makeConstraints { (make) -> Void in
-            make.top.bottom.centerX.equalTo(0)
+        titleLabel.snp.makeConstraints {
+            $0.top.bottom.centerX.equalToSuperview()
         }
-        leftLineView.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(30)
-            make.height.equalTo(1)
-            make.centerY.equalTo(0)
-            make.right.equalTo(titleLabel.snp_left).offset(-10)
+        leftLineView.snp.makeConstraints {
+            $0.left.equalTo(30)
+            $0.height.equalTo(1)
+            $0.centerY.equalToSuperview()
+            $0.right.equalTo(titleLabel.snp.left).offset(-10)
         }
-        rightLineView.snp_makeConstraints { (make) -> Void in
-            make.right.equalTo(-30)
-            make.height.equalTo(leftLineView.snp_height)
-            make.left.equalTo(titleLabel.snp_right).offset(10)
-            make.centerY.equalTo(titleLabel.snp_centerY)
+        rightLineView.snp.makeConstraints {
+            $0.right.equalTo(-30)
+            $0.height.equalTo(leftLineView.snp.height)
+            $0.left.equalTo(titleLabel.snp.right).offset(10)
+            $0.centerY.equalTo(titleLabel.snp.centerY)
         }
     }
 
